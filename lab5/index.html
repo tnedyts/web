@@ -2,50 +2,160 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Інформаційний сайт про історію, напрями та застосування ШІ" />
 <meta name="keywords" content="штучний інтелект, ШІ, машинне навчання, нейронні мережі" />
 <meta name="author" content="Прізвище Ім'я По батькові" />
 <title>Що таке штучний інтелект — Світ штучного інтелекту</title>
+<link rel="icon" type="image/png" href="images/favicon.png" />
 <style type="text/css">
-body { background-color: #f4f6fb; color: #222222; margin: 0; padding: 15px 0; font-family: Verdana, Arial, sans-serif; font-size: 14px; line-height: 1.5; }
-h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: #1b2a41; }
-h1 { color: #ffffff; margin: 0; font-size: 30px; }
-td.menu a { color: #1b2a41; text-decoration: none; font-weight: bold; }
-td.menu a:hover { color: #3a6ea5; }
-td.footer { color: #ffffff; font-size: 12px; }
-td.footer a { color: #ffffff; }
-caption { padding: 6px; color: #1b2a41; }
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("fonts/unbounded-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/onest-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+body {
+  margin: 0;
+  padding: 28px 20px;
+  font-family: "Onest", Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  background-color: #F2F3F8;
+  color: #16173A;
+}
+h1, h2, h3 { font-family: "Unbounded", Georgia, serif; letter-spacing: -0.015em; line-height: 1.2; }
+h2 { font-size: 34px; font-weight: 700; margin: 0 0 18px; }
+h3 { font-size: 20px; font-weight: 600; margin: 36px 0 12px; }
+p { margin: 0 0 14px; hyphens: auto; }
+
+/* ---- таблиця-макет ---- */
+table.layout { max-width: 1240px; margin: 0 auto; border-collapse: separate; border-spacing: 0; }
+td.logo { border-radius: 28px 0 0 0; }
+td.title {
+  border-radius: 0 28px 0 0;
+  padding: 34px 40px 34px 8px;
+  background-image: url("images/matrix-dark.svg");
+  background-repeat: no-repeat;
+  background-position: right 28px center;
+  background-size: auto 112px;
+}
+td.title h1 { margin: 0 0 6px; color: #F2F3F8; font-size: 34px; font-weight: 700; }
+td.title h1, td.title span { position: relative; max-width: calc(100% - 470px); display: block; }
+td.title span { color: rgba(242, 243, 248, 0.7); font-size: 15px; }
+td.side { padding: 28px 18px; border-left: 1px solid rgba(22, 23, 58, 0.08); }
+td.main { background-color: #ffffff; border-right: 1px solid rgba(22, 23, 58, 0.08); }
+td.footer {
+  border-radius: 0 0 28px 28px;
+  padding: 18px 30px;
+  color: rgba(242, 243, 248, 0.75);
+  font-size: 14px;
+}
+td.footer a { color: #F2F3F8; }
+
+/* ---- меню ---- */
+table.menu { border-collapse: separate; border-spacing: 0 6px; }
+td.menu { border-radius: 12px; padding: 10px 16px; }
+td.menu a { color: #16173A; text-decoration: none; font-weight: 600; display: block; }
+td.menu:hover { background-color: rgba(59, 75, 245, 0.10); }
+td.menu.active { background-color: #3B4BF5; }
+td.menu.active a { color: #F2F3F8; }
+
+/* ---- таблиці з даними у вмісті ---- */
+td.main table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(22, 23, 58, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 8px 0 18px;
+}
+td.main table th, td.main table td { border: 0; border-top: 1px solid rgba(22, 23, 58, 0.08); }
+td.main table tr:first-child th { border-top: 0; font-size: 14px; text-align: left; }
+td.main table th[colspan] { font-family: "Unbounded", Georgia, serif; font-size: 14px; font-weight: 600; color: #3B4BF5; }
+td.main table td[rowspan] { font-family: "Unbounded", Georgia, serif; font-size: 14px; color: #3B4BF5; }
+td.main caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0 0 12px;
+  font-family: "Unbounded", Georgia, serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+td.main caption b { font-weight: 600; }
+td.main table.tiles { border: 0; border-spacing: 12px; margin: 0 -12px; overflow: visible; }
+td.main table.tiles td { border: 0; border-radius: 18px; padding: 20px; }
+td.main table.tiles a { font-family: "Unbounded", Georgia, serif; font-size: 16px; text-decoration: none; }
+a { color: #3B4BF5; }
+
+@media (max-width: 760px) {
+  body { padding: 12px; }
+  td.title h1 { font-size: 24px; }
+  td.title { background-image: none; }
+  td.title h1, td.title span { max-width: none; }
+  td.logo img { width: 56px; height: 56px; }
+  td.side { padding: 16px 6px; }
+  h2 { font-size: 26px; }
+}
+
 </style>
 </head>
 <body>
 <!-- Макет сторінки: таблиця 2 стовпці x 3 рядки -->
-<table width="900" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" summary="Макет сторінки">
+<table class="layout" width="100%" align="center" border="0" cellpadding="0" cellspacing="0" summary="Макет сторінки">
 
 <!-- Рядок 1: шапка (логотип + назва сайту) -->
 <tr>
-  <td width="200" height="120" align="center" valign="middle" bgcolor="#1b2a41">
-    <a href="index.html"><img src="images/logo.png" alt="Логотип сайту" width="90" height="90" border="0" /></a>
+  <td class="logo" width="220" height="150" align="center" valign="middle" bgcolor="#16173A">
+    <a href="index.html"><img src="images/logo.png" alt="Логотип сайту" width="96" height="96" border="0" /></a>
   </td>
-  <td valign="middle" bgcolor="#1b2a41">
+  <td class="title" valign="middle" bgcolor="#16173A">
     <h1>Світ штучного інтелекту</h1>
-    <font color="#c9d6ea">Інформаційний сайт про історію, напрями та застосування ШІ</font>
+    <span>Інформаційний сайт про історію, напрями та застосування ШІ</span>
   </td>
 </tr>
 
 <!-- Рядок 2: меню + основний вміст -->
 <tr>
-  <td width="200" valign="top" bgcolor="#e3e9f3">
-    <table width="100%" border="0" cellpadding="10" cellspacing="1" summary="Меню сайту">
-<tr><td class="menu" bgcolor="#c9d6ea" height="34"><a href="index.html">Головна</a></td></tr>
-<tr><td class="menu" bgcolor="#e3e9f3" height="34"><a href="history.html">Історія ШІ</a></td></tr>
-<tr><td class="menu" bgcolor="#e3e9f3" height="34"><a href="directions.html">Напрями ШІ</a></td></tr>
-<tr><td class="menu" bgcolor="#e3e9f3" height="34"><a href="application.html">Застосування</a></td></tr>
-<tr><td class="menu" bgcolor="#e3e9f3" height="34"><a href="author.html">Про автора</a></td></tr>
+  <td class="side" width="220" valign="top" bgcolor="#F2F3F8">
+    <table class="menu" width="100%" border="0" cellpadding="0" cellspacing="0" summary="Меню сайту">
+      <tr><td class="menu active"><a href="index.html">Головна</a></td></tr>
+      <tr><td class="menu"><a href="history.html">Історія ШІ</a></td></tr>
+      <tr><td class="menu"><a href="directions.html">Напрями ШІ</a></td></tr>
+      <tr><td class="menu"><a href="application.html">Застосування</a></td></tr>
+      <tr><td class="menu"><a href="author.html">Про автора</a></td></tr>
     </table>
   </td>
-  <td valign="top">
-    <table width="100%" border="0" cellpadding="20" cellspacing="0" summary="Вміст сторінки">
-    <tr><td>
+  <td class="main" valign="top" bgcolor="#ffffff">
+    <table width="100%" border="0" cellpadding="44" cellspacing="0" summary="Вміст сторінки" style="border:0;margin:0;border-radius:0">
+    <tr><td style="border:0">
 <h2>Що таке штучний інтелект</h2>
 <p align="justify"><b>Штучний інтелект</b> (ШІ) — галузь інформатики, яка створює комп'ютерні
 системи, здатні виконувати завдання, що зазвичай потребують людського інтелекту: розуміти мову,
@@ -56,7 +166,7 @@ caption { padding: 6px; color: #1b2a41; }
 
 <table width="100%" border="1" cellpadding="8" cellspacing="0" summary="Порівняння видів ШІ">
 <caption><b>Види штучного інтелекту</b></caption>
-<tr bgcolor="#dfe7f3">
+<tr bgcolor="#E3E6FB">
   <th width="25%">Вид</th>
   <th>Опис</th>
   <th width="30%">Приклади</th>
@@ -79,11 +189,11 @@ caption { padding: 6px; color: #1b2a41; }
 </table>
 
 <h3>Розділи сайту</h3>
-<table width="100%" border="0" cellpadding="6" cellspacing="4" summary="Розділи сайту">
+<table class="tiles" width="100%" border="0" cellpadding="6" cellspacing="12" summary="Розділи сайту">
 <tr valign="top">
-  <td width="33%" bgcolor="#eef2f8"><a href="history.html"><b>Історія ШІ</b></a><br />Від перших моделей нейрона до сучасних мовних моделей.</td>
-  <td width="33%" bgcolor="#eef2f8"><a href="directions.html"><b>Напрями ШІ</b></a><br />Машинне навчання, комп'ютерний зір, обробка мови та інше.</td>
-  <td width="33%" bgcolor="#eef2f8"><a href="application.html"><b>Застосування</b></a><br />Як ШІ змінює медицину, транспорт, освіту та фінанси.</td>
+  <td width="33%" bgcolor="#F2F3F8"><a href="history.html"><b>Історія ШІ</b></a><br />Від перших моделей нейрона до сучасних мовних моделей.</td>
+  <td width="33%" bgcolor="#F2F3F8"><a href="directions.html"><b>Напрями ШІ</b></a><br />Машинне навчання, комп'ютерний зір, обробка мови та інше.</td>
+  <td width="33%" bgcolor="#F2F3F8"><a href="application.html"><b>Застосування</b></a><br />Як ШІ змінює медицину, транспорт, освіту та фінанси.</td>
 </tr>
 </table>
     </td></tr>
@@ -93,7 +203,7 @@ caption { padding: 6px; color: #1b2a41; }
 
 <!-- Рядок 3: нижній колонтитул -->
 <tr>
-  <td colspan="2" class="footer" height="50" align="center" bgcolor="#1b2a41">
+  <td colspan="2" class="footer" height="60" bgcolor="#16173A">
     &copy; 2026 Світ штучного інтелекту. Автор: <a href="author.html">Прізвище Ім'я По батькові</a>, група ____
   </td>
 </tr>

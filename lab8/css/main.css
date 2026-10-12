@@ -4,14 +4,50 @@
      [ Заголовок | Меню ]
      [ Вміст | Додаткова секція ]
      [ Нижній колонтитул ]
-   Кольори (4): #1b2a41 темно-синій, #3a6ea5 синій, #f4f6fb світлий, #ffffff білий
-   Шрифти (2): Georgia — заголовки, Verdana — основний текст
+   Кольори (4): #F2F3F8 папір, #16173A індиго, #3B4BF5 кобальт, #F2496B малиновий
+   (прозорість rgba() — це ті самі кольори з альфа-каналом)
+   Шрифти (2): Unbounded — заголовки, Onest — основний текст
    ========================================================== */
+
+/* --- шрифти (файли в папці fonts) --- */
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("../fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("../fonts/unbounded-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("../fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("../fonts/onest-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
 
 /* --- скидання відступів для всіх елементів (селектор *) --- */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -20,160 +56,170 @@ html, body {
 }
 
 body {
-  background: #f4f6fb;
-  color: #1b2a41;
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
+  background: #F2F3F8;
+  color: #16173A;
+  font-family: "Onest", Verdana, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
 }
 
-/* --- контейнер фіксованої ширини по центру --- */
+/* --- контейнер: сітка з 12 колонок по центру --- */
 #container {
-  width: 900px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  max-width: 1240px;
   margin: 0 auto;
-  /* «фальшиві колонки»: фон додаткової секції тягнеться до колонтитула */
-  background: #ffffff linear-gradient(to right, #ffffff 600px, #f4f6fb 600px);
+  padding: 20px;
 }
 
 /* --- рядок 1: заголовок (ліворуч) --- */
 #header {
-  float: left;
-  width: 450px;
-  height: 150px;
-  background: #1b2a41;
-  color: #ffffff;
-}
-
-#header a {
-  color: #ffffff;
-  text-decoration: none;
+  grid-column: 1 / 7;
+  min-height: 230px;
+  padding: 34px 36px;
+  border-radius: 28px;
+  background: #16173A url("../images/matrix-dark.svg") no-repeat right 34px top 34px;
+  background-size: auto 56px;
+  color: #F2F3F8;
 }
 
 #header img {
-  float: left;
-  margin: 30px 15px 0 20px;
+  display: block;
+  margin-bottom: 22px;
   border: 0;
 }
 
 #header h1 {
-  padding-top: 38px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 26px;
+  font-family: "Unbounded", Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
   line-height: 1.15;
-  font-weight: normal;
+  letter-spacing: -0.02em;
+}
+
+#header h1 a {
+  color: #F2F3F8;
+  text-decoration: none;
 }
 
 #header span {
   display: block;
-  margin: 6px 20px 0 0;
-  font-size: 12px;
+  max-width: 22em;
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(242, 243, 248, 0.7);
 }
 
 /* --- рядок 1: меню (праворуч), створене списком ul/li --- */
 #nav {
-  float: right;
-  width: 450px;
-  height: 150px;
-  background: #3a6ea5;
+  grid-column: 7 / 13;
+  padding: 18px;
+  border-radius: 28px;
+  background: #3B4BF5;
 }
 
 #nav ul {
   list-style-type: none;
-}
-
-#nav ul li {
-  float: left;
-  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  height: 100%;
+  align-content: center;
 }
 
 #nav ul li a {
   display: block;
-  padding-left: 25px;
-  line-height: 50px;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 12px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  color: #F2F3F8;
+  font-weight: 600;
+  font-size: 16px;
   text-decoration: none;
-  border-bottom: 1px dotted #f4f6fb;
 }
 
 /* динамічний ефект: зміна вигляду пункту меню при наведенні та для активної сторінки */
-#nav ul li a:hover,
+#nav ul li a:hover {
+  background: rgba(22, 23, 58, 0.28);
+}
+
 #nav ul li a.active {
-  background: #ffffff;
-  color: #1b2a41;
+  background: #F2F3F8;
+  color: #16173A;
 }
 
 /* --- рядок 2: основний вміст (ліворуч) --- */
 #content {
-  float: left;
-  width: 560px;
-  padding: 25px 20px 30px 20px;
+  grid-column: 1 / 9;
+  padding: 36px 36px 48px 8px;
+  max-width: 760px;
 }
 
 /* --- рядок 2: додаткова секція — рекламний блок (праворуч) --- */
 #sidebar {
-  float: right;
-  width: 260px;
-  padding: 25px 20px 30px 20px;
-  background: #f4f6fb;
+  grid-column: 9 / 13;
+  padding-top: 36px;
 }
 
 /* --- рядок 3: нижній колонтитул --- */
 #footer {
-  clear: both;
-  height: 70px;
-  padding: 0 20px;
-  background: #1b2a41;
-  color: #ffffff;
-  font-size: 12px;
-  text-align: center;
+  grid-column: 1 / 13;
+  padding: 28px 36px;
+  border-radius: 28px;
+  background: #16173A;
+  color: rgba(242, 243, 248, 0.75);
+  font-size: 14px;
 }
 
 #footer p {
   margin: 0;
-  padding-top: 10px;
-  text-align: center;
+}
+
+#footer p + p {
+  margin-top: 6px;
 }
 
 #footer a {
-  color: #ffffff;
+  color: #F2F3F8;
 }
 
 /* --- типографіка --- */
 h2, h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: normal;
-  color: #1b2a41;
+  font-family: "Unbounded", Georgia, serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #16173A;
 }
 
 h2 {
-  font-size: 26px;
-  margin-bottom: 12px;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 h3 {
-  font-size: 19px;
-  margin: 22px 0 8px 0;
+  font-size: 21px;
+  font-weight: 600;
+  margin: 40px 0 14px 0;
 }
 
 /* абзац, що йде одразу після заголовка h2 (селектор «+») */
 h2 + p {
-  font-size: 15px;
+  font-size: 20px;
+  line-height: 1.55;
 }
 
 p {
-  margin-bottom: 12px;
-  text-align: justify;
+  margin-bottom: 16px;
+  hyphens: auto;
 }
 
 a {
-  color: #3a6ea5;
+  color: #3B4BF5;
 }
 
 a:visited {
-  color: #1b2a41;
+  color: #16173A;
 }
 
 /* посилання на зображення .jpg (селектор атрибута з $=) */
@@ -181,20 +227,23 @@ a[href$=".jpg"] {
   text-decoration: none;
 }
 
-/* --- картки (класи) --- */
+/* --- списки «термін — пояснення» (класи) --- */
 ul.cards {
   list-style-type: none;
+  border-top: 1px solid rgba(22, 23, 58, 0.14);
 }
 
 ul.cards > li {
-  margin-bottom: 10px;
-  padding: 10px 14px;
-  border-left: 4px solid #3a6ea5;
-  background: #f4f6fb;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(22, 23, 58, 0.14);
 }
 
 .term {
-  font-weight: bold;
+  display: block;
+  font-family: "Unbounded", Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3B4BF5;
 }
 
 /* --- список розділів на головній --- */
@@ -204,134 +253,185 @@ ul.info-list {
 
 #content li a.info {
   display: block;
-  padding: 10px 0 10px 40px;
-  background: url("../images/info.png") no-repeat left center;
-  color: #1b2a41;
+  padding: 18px 0 18px 48px;
+  background: url("../images/info.png") no-repeat left 22px;
+  color: #16173A;
   text-decoration: none;
-  border-bottom: 1px dotted #3a6ea5;
-}
-
-#content li a.info:hover {
-  background-color: #f4f6fb;
+  border-bottom: 1px solid rgba(22, 23, 58, 0.14);
 }
 
 #content li a.info span.title {
   display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
-  color: #3a6ea5;
+  font-family: "Unbounded", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+#content li a.info:hover span.title {
+  color: #F2496B;
 }
 
 /* --- хронологія --- */
 ul.timeline {
   list-style-type: none;
-  border-left: 2px solid #3a6ea5;
-  margin-left: 6px;
 }
 
 ul.timeline li {
-  padding: 4px 0 8px 16px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(22, 23, 58, 0.14);
 }
 
 span.year {
-  display: inline-block;
-  min-width: 85px;
-  font-weight: bold;
-  color: #3a6ea5;
+  font-family: "Unbounded", Georgia, serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #3B4BF5;
 }
 
 /* --- галерея --- */
 #gallery {
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 20px;
+  margin-top: 28px;
 }
 
 .photo {
-  float: left;
-  width: 176px;
-  height: 215px;
-  margin: 0 8px 12px 0;
-  font-size: 11px;
-  line-height: 1.4;
-  text-align: center;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .photo img {
-  border: 2px solid #3a6ea5;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(22, 23, 58, 0.12);
+  border-radius: 16px;
+  margin-bottom: 10px;
 }
 
 .photo a:hover img {
-  border-color: #1b2a41;
+  outline: 3px solid #F2496B;
+  outline-offset: 3px;
 }
 
-.photo span.caption {
+.photo span.caption br {
+  display: none;
+}
+
+.photo span.caption strong {
   display: block;
-  margin-top: 4px;
+  font-family: "Unbounded", Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 2px;
 }
 
 /* --- про автора --- */
 dl.about {
-  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  margin-bottom: 24px;
+  border-top: 1px solid rgba(22, 23, 58, 0.14);
+}
+
+dl.about dt, dl.about dd {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(22, 23, 58, 0.14);
 }
 
 dl.about dt {
-  float: left;
-  width: 120px;
-  font-weight: bold;
-}
-
-dl.about dd {
-  margin-left: 120px;
-  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 /* --- рекламний блок у додатковій секції --- */
 .promo {
-  margin-bottom: 20px;
-  padding: 14px;
-  background: #1b2a41;
-  color: #ffffff;
-  text-align: center;
+  margin-bottom: 16px;
+  padding: 22px;
+  border-radius: 24px;
+  background: #16173A;
+  color: #F2F3F8;
 }
 
 .promo h3 {
-  font-size: 17px;
-  color: #ffffff;
-  margin: 0 0 8px 0;
+  margin: 0 0 14px 0;
+  font-size: 19px;
+  color: #F2F3F8;
 }
 
 .promo img {
   display: block;
-  margin: 0 auto 8px auto;
-  border: 2px solid #ffffff;
+  width: 100%;
+  height: auto;
+  margin-bottom: 14px;
+  border-radius: 14px;
+}
+
+.promo p {
+  font-size: 15px;
+  color: rgba(242, 243, 248, 0.8);
 }
 
 .promo a {
   display: inline-block;
-  margin-top: 6px;
-  padding: 4px 14px;
-  background: #3a6ea5;
-  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #F2496B;
+  color: #16173A;
+  font-weight: 600;
   text-decoration: none;
 }
 
 .promo a:hover {
-  background: #ffffff;
-  color: #1b2a41;
-}
-
-.fact h3 {
-  font-size: 15px;
-  margin: 0 0 6px 0;
+  background: #F2F3F8;
 }
 
 .fact {
-  padding: 12px;
-  border: 1px solid #3a6ea5;
-  background: #ffffff;
-  font-size: 12px;
+  padding: 22px;
+  border-radius: 24px;
+  border: 1.5px solid rgba(22, 23, 58, 0.14);
+  font-size: 15px;
+}
+
+.fact h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+
+.fact p {
+  margin: 0;
 }
 
 /* елемент h3 з атрибутом title (селектор [атрибут]) */
 h3[title] {
   cursor: help;
+}
+
+/* видимий фокус для клавіатури */
+a:focus-visible {
+  outline: 3px solid #F2496B;
+  outline-offset: 2px;
+}
+
+/* --- адаптивність: одна колонка на вузьких екранах --- */
+@media (max-width: 900px) {
+  #header, #nav, #content, #sidebar, #footer {
+    grid-column: 1 / 13;
+  }
+  #content {
+    padding: 16px 4px;
+  }
+  #sidebar {
+    padding-top: 0;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  #gallery {
+    grid-template-columns: 1fr 1fr;
+  }
 }

@@ -2,33 +2,147 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Проста вебсторінка про штучний інтелект" />
 <meta name="keywords" content="штучний інтелект, ШІ, нейронні мережі, машинне навчання" />
 <meta name="author" content="Студент" />
 <title>Штучний інтелект — що це таке?</title>
+<link rel="icon" type="image/png" href="images/favicon.png" />
 <!-- Основні стилі сторінки -->
 <style type="text/css">
-body {
-  margin: 20px 40px;
-  background-color: #f4f6fb;
-  color: #222222;
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
-h1, h2, h3, h4, h5 { color: #1b2a41; font-family: Georgia, "Times New Roman", serif; }
-blockquote { border-left: 4px solid #3a6ea5; padding-left: 12px; color: #444444; }
-pre { background-color: #1b2a41; color: #e8eef7; padding: 10px; }
-kbd { border: 1px solid #999999; padding: 0 4px; background-color: #ffffff; }
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("fonts/unbounded-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/onest-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url("fonts/jetbrains-mono-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url("fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* ---- Основні стилі сторінки ---- */
+html { background-color: #F2F3F8; }
+body {
+  margin: 0;
+  color: #16173A;
+  font-family: "Onest", Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+img.band { display: block; width: 100%; height: 150px; object-fit: cover; }
+.page { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+.hero { padding: 56px 0 8px; }
+h1, h2, h3, h4, h5 { font-family: "Unbounded", Georgia, serif; line-height: 1.15; letter-spacing: -0.01em; }
+h1 { font-size: 64px; font-weight: 700; margin: 0 0 16px; letter-spacing: -0.03em; }
+h2 { font-size: 30px; font-weight: 600; margin: 56px 0 16px; }
+h3 { font-size: 21px; font-weight: 600; margin: 36px 0 10px; }
+h4 { font-size: 17px; font-weight: 600; margin: 28px 0 8px; }
+h5 { font-size: 14px; font-weight: 600; margin: 24px 0 4px; color: #3B4BF5; }
+p { margin: 0 0 16px; hyphens: auto; }
+hr { border: 0; border-top: 1px solid rgba(22, 23, 58, 0.18); margin: 40px auto; }
+strong, b { font-weight: 650; }
+code, tt, kbd, samp, var, pre { font-family: "JetBrains Mono", "Courier New", monospace; font-size: 0.86em; }
+var { font-style: italic; color: #3B4BF5; }
+code { background-color: rgba(59, 75, 245, 0.10); padding: 2px 6px; border-radius: 6px; }
+samp { color: #F2496B; }
+kbd {
+  border: 1px solid rgba(22, 23, 58, 0.25);
+  border-bottom-width: 3px;
+  border-radius: 7px;
+  padding: 1px 8px;
+  background-color: #ffffff;
+}
+pre {
+  background-color: #16173A;
+  color: #F2F3F8;
+  padding: 22px 26px;
+  border-radius: 18px;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+.formula {
+  margin: 28px 0;
+  padding: 26px 20px;
+  border-radius: 18px;
+  background-color: #ffffff;
+  font-size: 20px;
+}
+blockquote {
+  margin: 28px 0;
+  padding: 4px 0 4px 26px;
+  border-left: 4px solid #F2496B;
+  font-family: "Unbounded", Georgia, serif;
+  font-size: 26px;
+  line-height: 1.35;
+}
+blockquote p { margin: 0; }
+cite { font-style: normal; font-weight: 600; color: #3B4BF5; }
+small { font-size: 0.82em; opacity: 0.75; }
+strike { text-decoration-color: #F2496B; text-decoration-thickness: 2px; }
+u { text-decoration-color: #3B4BF5; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.foot { padding-top: 8px; }
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  h1 { font-size: 40px; }
+  h2 { font-size: 24px; }
+  blockquote { font-size: 20px; }
+}
+
 </style>
 </head>
 <body>
-<basefont size="3" color="#222222" face="Verdana" />
+<basefont size="3" color="#16173A" face="Onest" />
+
+<!-- Декоративна «матриця ваг» нейромережі -->
+<img class="band" src="images/matrix.svg" alt="" />
+
+<div class="page">
 
 <!-- Заголовок сторінки -->
+<div class="hero">
 <h1 align="center">Штучний інтелект</h1>
-<center><font face="Georgia" size="4" color="#3a6ea5"><i>Коротко про те, як машини вчаться думати</i></font></center>
-<hr align="center" width="80%" size="3" noshade="noshade" />
+<center><font face="Onest" size="4" color="#3B4BF5"><i>Коротко про те, як машини вчаться думати</i></font></center>
+</div>
+<hr align="center" width="100%" size="1" noshade="noshade" />
 
 <!-- Розділ 1 -->
 <h2>Що таке штучний інтелект?</h2>
@@ -61,7 +175,7 @@ kbd { border: 1px solid #999999; padding: 0 4px; background-color: #ffffff; }
 множить їх на ваги <var>w</var><sub>1</sub>, <var>w</var><sub>2</sub>, …, <var>w</var><sub>n</sub>,
 додає зміщення <var>b</var> і пропускає суму через функцію активації <var>f</var>:
 </p>
-<p align="center">
+<p class="formula" align="center">
 <big><tt>y = f(w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + … + w<sub>n</sub>x<sub>n</sub> + b)</tt></big>
 </p>
 <p align="justify">
@@ -89,7 +203,7 @@ print(neuron([1.0, 0.5], [0.4, -0.2], 0.1))
 <h5>Примітка</h5>
 <p><small>Функція <code>math.exp</code> обчислює експоненту, а змінна <var>s</var> — зважену суму входів.</small></p>
 
-<hr align="left" width="50%" size="1" />
+<hr align="left" width="40%" size="1" />
 
 <!-- Розділ 3: цитата -->
 <h2>Тест Тюрінга</h2>
@@ -102,7 +216,8 @@ print(neuron([1.0, 0.5], [0.4, -0.2], 0.1))
 не може надійно відрізнити, хто з них хто, — машину можна вважати «мислячою».
 </p>
 
-<hr align="center" width="100%" size="2" noshade="noshade" />
-<p align="right"><font size="2" color="#666666">Сторінку створено в межах лабораторної роботи № 4</font></p>
+<hr align="center" width="100%" size="1" noshade="noshade" />
+<p class="foot" align="right"><font size="2" color="#3B4BF5">Сторінку створено в межах лабораторної роботи № 4</font></p>
+</div>
 </body>
 </html>

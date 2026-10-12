@@ -5,18 +5,58 @@
 <meta name="author" content="Прізвище Ім'я По батькові" />
 <title>Логотип</title>
 <style type="text/css">
-body { margin: 0; padding: 12px; font-family: Verdana, Arial, sans-serif; font-size: 14px; line-height: 1.5; }
-h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
-h1 { margin: 0; font-size: 28px; color: #ffffff; }
-body { padding: 0; }
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("fonts/unbounded-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/onest-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+body { margin: 0; padding: 28px 24px; font-family: "Onest", Verdana, sans-serif; font-size: 15px; line-height: 1.6; }
+h1, h2, h3 { font-family: "Unbounded", Georgia, serif; letter-spacing: -0.015em; line-height: 1.2; }
+p { hyphens: auto; }
+
+body {
+  padding: 38px 36px;
+  background-image: url("images/matrix-dark.svg");
+  background-repeat: no-repeat;
+  background-position: right 28px center;
+  background-size: auto 96px;
+  border-bottom: 1px solid rgba(242, 243, 248, 0.08);
+}
+h1 { margin: 0 0 8px; font-size: 28px; font-weight: 700; color: #F2F3F8; }
+p { margin: 0; color: rgba(242, 243, 248, 0.7); }
+h1, p { max-width: calc(100% - 300px); }
+@media (max-width: 900px) { body { background-image: none; } h1, p { max-width: none; } h1 { font-size: 22px; } }
 </style>
 </head>
-<body bgcolor="#3a6ea5" text="#ffffff">
-<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="Логотип">
-<tr>
-  <td width="120" height="118" align="center"><a href="home.html" target="content"><img src="images/logo.png" alt="Логотип" width="90" height="90" border="0" /></a></td>
-  <td><h1>Світ штучного інтелекту</h1><font color="#c9d6ea">Інформаційний сайт про історію, напрями та застосування ШІ</font></td>
-</tr>
-</table>
+<body bgcolor="#16173A" text="#F2F3F8">
+<h1>Світ штучного інтелекту</h1>
+<p>Інформаційний сайт про історію, напрями та застосування ШІ</p>
 </body>
 </html>

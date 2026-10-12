@@ -5,20 +5,59 @@
 <meta name="author" content="Прізвище Ім'я По батькові" />
 <title>Меню</title>
 <style type="text/css">
-body { margin: 0; padding: 12px; font-family: Verdana, Arial, sans-serif; font-size: 14px; line-height: 1.5; }
-h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
-h3 { color: #ffffff; border-bottom: 1px solid #3a6ea5; padding-bottom: 6px; }
-a { font-weight: bold; text-decoration: none; }
-a:hover { text-decoration: underline; }
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url("fonts/unbounded-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("fonts/onest-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+body { margin: 0; padding: 28px 24px; font-family: "Onest", Verdana, sans-serif; font-size: 15px; line-height: 1.6; }
+h1, h2, h3 { font-family: "Unbounded", Georgia, serif; letter-spacing: -0.015em; line-height: 1.2; }
+p { hyphens: auto; }
+
+body { padding: 28px 18px; }
+ul { list-style: none; margin: 36px 0 0; padding: 0; }
+li { margin: 0 0 4px; }
+a { display: block; padding: 10px 14px; border-radius: 12px; font-weight: 600; text-decoration: none; }
+a:hover, a:focus { background-color: rgba(59, 75, 245, 0.35); }
+img { display: block; padding: 0; }
 </style>
 </head>
-<body bgcolor="#1b2a41" text="#ffffff" link="#ffffff" vlink="#c9d6ea" alink="#3a6ea5">
-<h3>Меню</h3>
-<p><a href="home.html" target="content">Головна</a></p>
-<p><a href="history.html" target="content">Історія ШІ</a></p>
-<p><a href="directions.html" target="content">Напрями ШІ</a></p>
-<p><a href="application.html" target="content">Застосування</a></p>
-<p><a href="author.html" target="content">Про автора</a></p>
-<p><a href="glossary.html" target="content">Словник термінів</a></p>
+<body bgcolor="#16173A" text="#F2F3F8" link="#F2F3F8" vlink="#F2F3F8" alink="#F2496B">
+<a href="home.html" target="content"><img src="images/logo.png" alt="На головну" width="56" height="56" border="0" /></a>
+<ul>
+<li><a href="home.html" target="content">Головна</a></li>
+<li><a href="history.html" target="content">Історія ШІ</a></li>
+<li><a href="directions.html" target="content">Напрями ШІ</a></li>
+<li><a href="application.html" target="content">Застосування</a></li>
+<li><a href="author.html" target="content">Про автора</a></li>
+<li><a href="glossary.html" target="content">Словник термінів</a></li>
+</ul>
 </body>
 </html>
