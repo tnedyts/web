@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Колофон — Зерно, журнал про каву</title>
+<meta name="description" content="Про автора й макет сайту" />
+<meta name="author" content="Прізвище Ім'я По батькові" />
+<meta name="theme-color" content="#F3EAD7" />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script>try{if(sessionStorage.getItem('pour'))document.documentElement.classList.add('pour-in')}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 8. Макет на div, варіант 15:
+     [ Заголовок | Меню ] / [ Вміст | Додаткова секція ] / [ Нижній колонтитул ] -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <pattern id="dotI" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="2.3" fill="#2A1A12"/></pattern>
+  <pattern id="dotB" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="4" cy="4" r="2" fill="#2F4AB5"/></pattern>
+  <pattern id="dotO" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-20)"><circle cx="4" cy="4" r="2.4" fill="#FF5A1F"/></pattern>
+  <pattern id="lines" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="3" height="10" fill="#2A1A12"/></pattern>
+  <radialGradient id="fadeR"><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+  <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+  <mask id="mR"><rect width="100%" height="100%" fill="url(#fadeR)"/></mask>
+  <mask id="mL"><rect width="100%" height="100%" fill="url(#fadeL)"/></mask>
+</defs></svg>
+<div id="container">
+  <div id="header">
+    <p class="topline"><span>Журнал про каву</span><span>Випуск №8 · жовтень 2026</span><span>Ціна — одна чашка</span></p>
+    <a class="masthead" href="index.html" title="На головну"><h1 class="riso">Зерно</h1></a>
+    <p class="tagline">Незалежне видання для тих, хто прокидається заради кави.</p>
+    <p class="note" aria-hidden="true">свіжий випуск!<svg viewBox="0 0 70 40"><path d="M2 6 C20 30 40 36 64 30 M52 22 L64 30 L54 38"/></svg></p>
+  </div>
+  <div id="nav">
+    <div class="board__title"><h2>Меню</h2><span>сьогодні в номері</span></div>
+    <button class="menu-toggle" type="button" aria-expanded="false">Меню</button>
+    <ul>
+      <li><a href="index.html"><span class="item">Головна<span class="sub">тема номера</span></span><span class="dots"></span><span class="price">№ 01</span></a></li>
+      <li><a href="origins.html"><span class="item">Походження<span class="sub">звідки кава</span></span><span class="dots"></span><span class="price">№ 02</span></a></li>
+      <li><a href="brewing.html"><span class="item">Заварювання<span class="sub">шість способів</span></span><span class="dots"></span><span class="price">№ 03</span></a></li>
+      <li><a href="roasting.html"><span class="item">Обсмаження<span class="sub">вогонь і зерно</span></span><span class="dots"></span><span class="price">№ 04</span></a></li>
+      <li><a href="author.html" class="active" aria-current="page"><span class="item">Колофон<span class="sub">про автора</span></span><span class="dots"></span><span class="price">№ 05</span></a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <span class="kicker">Про автора</span>
+    <h2 class="title riso" data-text="Колофон">Колофон</h2>
+    <p class="deck">Хто зробив цей номер і з чого він «надрукований».</p>
+    <table class="spec">
+      <caption>вихідні дані</caption>
+      <tbody>
+        <tr><td>Автор</td><td>Прізвище Ім'я По батькові</td></tr>
+        <tr><td>Група</td><td>____</td></tr>
+        <tr><td>Робота</td><td>Лабораторна №8 — каскадні таблиці стилів і макет на div</td></tr>
+        <tr><td>Варіант</td><td>15: [Заголовок | Меню] / [Вміст | Додаткова секція] / [Нижній колонтитул]</td></tr>
+        <tr><td>Розмітка</td><td>лише div і span для макета, меню — список ul/li, без таблиць-каркасу</td></tr>
+        <tr><td>Стилі</td><td>один файл css/main.css для всіх сторінок</td></tr>
+        <tr><td>Дата створення</td><td>12.10.2026</td></tr>
+      </tbody>
+    </table>
+    <div class="body">
+      <p>Дизайн натхненний ризографом — трафаретним друком, де кожен колір наноситься окремим барабаном. Звідси обмеження в чотири «фарби», зерно паперу й легкий зсув між кольорами.</p>
+    </div>
+    <a class="btn" href="index.html">На головну <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+  </div>
+  <div id="extra">
+    <div class="wall">
+      <figure class="poster poster--wide">
+  <span class="poster__label">Схема</span>
+  <svg class="art" viewBox="0 0 600 360" role="img" aria-label="Схема макета варіанта 15">
+  <rect width="600" height="360" fill="#F3EAD7"/>
+  <g font-family="Commissioner, sans-serif" font-weight="700" font-size="16" letter-spacing="2">
+    <rect x="20" y="20" width="280" height="90" fill="#FF5A1F" stroke="#2A1A12" stroke-width="3"/><text x="40" y="72" fill="#F3EAD7">#header · ЗАГОЛОВОК</text>
+    <rect x="300" y="20" width="280" height="90" fill="#F3EAD7" stroke="#2A1A12" stroke-width="3"/><text x="320" y="72" fill="#2A1A12">#nav · МЕНЮ</text>
+    <rect x="20" y="110" width="190" height="160" fill="#F3EAD7" stroke="#2A1A12" stroke-width="3"/><text x="40" y="196" fill="#2A1A12">#content</text>
+    <rect x="210" y="110" width="370" height="160" fill="#2F4AB5" stroke="#2A1A12" stroke-width="3"/><text x="230" y="196" fill="#F3EAD7">#extra · ДОДАТКОВА СЕКЦІЯ</text>
+    <rect x="20" y="270" width="560" height="70" fill="#2A1A12" stroke="#2A1A12" stroke-width="3"/><text x="40" y="312" fill="#F3EAD7">#footer · НИЖНІЙ КОЛОНТИТУЛ</text>
+  </g>
+</svg>
+  <figcaption class="poster__cap"><h4>Варіант 15</h4><p>Шапка й меню — в одному рядку, під ними вміст і широка додаткова секція, внизу — колонтитул на всю ширину.</p></figcaption>
+</figure>
+      <div class="poster poster--wide" style="padding:20px">
+        <span class="poster__label" style="position:static;display:inline-block;margin-bottom:14px">Фарби</span>
+        <div style="display:flex;flex-wrap:wrap;gap:10px"><div style="flex:1;min-width:90px;padding:12px;border:2px solid #2A1A12;background:#F3EAD7;color:#2A1A12"><b style="font:800 18px/1.1 var(--serif)">Папір</b><br><span style="font-size:13px">#F3EAD7</span></div><div style="flex:1;min-width:90px;padding:12px;border:2px solid #2A1A12;background:#2A1A12;color:#F3EAD7"><b style="font:800 18px/1.1 var(--serif)">Еспресо</b><br><span style="font-size:13px">#2A1A12</span></div><div style="flex:1;min-width:90px;padding:12px;border:2px solid #2A1A12;background:#FF5A1F;color:#F3EAD7"><b style="font:800 18px/1.1 var(--serif)">Помаранч</b><br><span style="font-size:13px">#FF5A1F</span></div><div style="flex:1;min-width:90px;padding:12px;border:2px solid #2A1A12;background:#2F4AB5;color:#F3EAD7"><b style="font:800 18px/1.1 var(--serif)">Синій</b><br><span style="font-size:13px">#2F4AB5</span></div></div>
+        <p style="margin:18px 0 0;font:italic 800 34px/1.1 var(--serif)">Playfair Display — заголовки</p>
+        <p style="margin:6px 0 0;font:500 18px/1.4 var(--sans)">Commissioner — основний текст і таблиці</p>
+        <p style="margin:6px 0 0;font:600 30px/1.1 var(--hand);color:#2F4AB5">Caveat — нотатки від руки</p>
+      </div>
+      <div class="poster poster--two poster--ink" style="padding:30px 24px">
+        <span class="ad-tag" style="color:#F3EAD7">Реклама</span>
+        <h4 class="title" style="font-size:58px;color:#FF5A1F;margin:0 0 12px">Тут могла бути ваша реклама</h4>
+        <p style="margin:0">Але тут кава. Як і завжди.</p>
+      </div>
+      <div class="poster poster--one" style="display:grid;place-items:center;padding:22px 10px"><div class="badge" aria-hidden="true">
+  <svg viewBox="0 0 150 150"><defs><path id="circ" d="M75 75 m-58 0 a58 58 0 1 1 116 0 a58 58 0 1 1 -116 0"/></defs>
+  <circle cx="75" cy="75" r="72" fill="#F3EAD7" stroke="#2A1A12" stroke-width="2.5"/>
+  <text><textPath href="#circ">Зерно · журнал про каву · </textPath></text></svg>
+  <b>З</b>
+</div></div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="receipt-wrap">
+      <div class="receipt">
+        <h3>Зерно</h3>
+        <p class="c">журнал про каву<br>ЧЕК № 0008 · каса 1</p>
+        <hr>
+        <p class="row"><span>Автор</span><span>Прізвище Ім'я По батькові</span></p>
+        <p class="row"><span>Група</span><span>____</span></p>
+        <p class="row"><span>Лабораторна робота</span><span>№8, варіант 15</span></p>
+        <p class="row"><span>Сторінка</span><span>Колофон</span></p>
+        <p class="row"><span>Сайт створено</span><span>12.10.2026</span></p>
+        <hr>
+        <p class="row total"><span>РАЗОМ</span><span>4 кольори · 3 шрифти</span></p>
+        <div class="barcode" aria-hidden="true"></div>
+        <p class="c">2026-10-12 · 08:00 · <a href="index.html">повернутися на головну</a></p>
+        <p class="thanks">Дякуємо, приходьте ще!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cup" aria-hidden="true"><svg viewBox="0 0 48 48"><g class="steam" transform="translate(12 -6) scale(.12)" style="opacity:0;transition:opacity .4s"><path d="M20 120 C0 90 40 70 20 40"/><path d="M60 120 C40 90 80 70 60 40"/><path d="M100 120 C80 90 120 70 100 40"/></g>
+  <defs><clipPath id="cupClip"><path d="M8 14 L36 14 L33 40 L11 40 Z"/></clipPath></defs>
+  <rect id="cupFill" x="0" y="40" width="48" height="0" fill="#2A1A12" clip-path="url(#cupClip)"/>
+  <path d="M8 14 L36 14 L33 40 L11 40 Z" fill="none" stroke="#2A1A12" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M36 19 C44 19 44 31 34.5 31" fill="none" stroke="#2A1A12" stroke-width="2.5"/></svg></div>
+<div class="bean-cursor" aria-hidden="true"><svg viewBox="0 0 26 34"><ellipse cx="13" cy="17" rx="11" ry="15" fill="#2A1A12"/><path d="M13 3 C7 11 19 23 13 31" stroke="#FF5A1F" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+<div class="pour" aria-hidden="true"><svg viewBox="0 0 100 1000" preserveAspectRatio="none"><path class="w2" d="M0 30 L100 30 L100 1000 L0 1000 Z"/><path class="w1" d="M0 70 L100 70 L100 1000 L0 1000 Z"/></svg></div>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

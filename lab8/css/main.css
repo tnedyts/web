@@ -1,0 +1,306 @@
+/* =====================================================================
+   ЗЕРНО — журнал про каву. Один файл стилів для всіх сторінок.
+   Ризограф-друк: рівно 4 кольори і 3 шрифти.
+   Кольори:  папір #F3EAD7 · еспресо #2A1A12 · помаранч #FF5A1F · синій #2F4AB5
+   Шрифти:   Playfair Display (заголовки) · Commissioner (текст) · Caveat (рукопис)
+   Макет варіанта 15:  [ Заголовок | Меню ] / [ Вміст | Додаткова секція ] / [ Нижній колонтитул ]
+   ===================================================================== */
+@import url("fonts.css");
+
+:root {
+  --paper: #F3EAD7;
+  --ink: #2A1A12;
+  --orange: #FF5A1F;
+  --blue: #2F4AB5;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Commissioner", "Segoe UI", sans-serif;
+  --hand: "Caveat", cursive;
+  --gap: clamp(16px, 2.2vw, 30px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html.lenis, html.lenis body { height: auto; }
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font: 400 17px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--orange); color: var(--paper); }
+a { color: var(--blue); }
+img, svg { display: block; }
+h1, h2, h3, h4 { margin: 0; font-family: var(--serif); font-weight: 800; line-height: .95; }
+p { margin: 0 0 1em; }
+
+/* Зерно паперу та фарби */
+.grain {
+  position: fixed; inset: -50%; z-index: 90; pointer-events: none; opacity: .14; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .1 0 0 0 0 .07 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain .9s steps(5) infinite;
+}
+@keyframes grain { 20% { transform: translate(-4%, 3%); } 40% { transform: translate(3%, -5%); } 60% { transform: translate(-2%, 6%); } 80% { transform: translate(5%, 1%); } }
+
+/* ===== Каркас: сітка варіанта 15 ===== */
+#container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 34fr 16fr 50fr;
+  grid-template-areas:
+    "header header nav"
+    "content extra extra"
+    "footer footer footer";
+  border-left: 2px solid var(--ink);
+  border-right: 2px solid var(--ink);
+}
+#header { grid-area: header; position: relative; padding: 28px var(--gap) 34px; border-bottom: 2px solid var(--ink); border-right: 2px solid var(--ink); overflow: hidden; }
+#nav { grid-area: nav; position: relative; padding: 28px var(--gap) 30px; border-bottom: 2px solid var(--ink); }
+#content { grid-area: content; position: relative; padding: 46px var(--gap) 70px; border-right: 2px solid var(--ink); min-width: 0; }
+#extra { grid-area: extra; position: relative; padding: 46px var(--gap) 70px; min-width: 0; }
+#footer { grid-area: footer; position: relative; border-top: 2px solid var(--ink); }
+@media (max-width: 980px) {
+  #container { grid-template-columns: 1fr; grid-template-areas: "header" "nav" "content" "extra" "footer"; border: 0; }
+  #header, #content { border-right: 0; }
+  #content { border-bottom: 2px solid var(--ink); }
+}
+
+/* ===== Заголовок (шапка) ===== */
+.topline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; margin-bottom: 10px; font: 600 11px/1.3 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+.masthead { position: relative; display: inline-block; text-decoration: none; color: var(--ink); }
+.masthead h1 {
+  position: relative;
+  font: italic 900 clamp(96px, 15vw, 230px)/.82 var(--serif);
+  letter-spacing: -.045em;
+  color: var(--orange);
+}
+.masthead h1 .l { display: inline-block; }
+/* Зсув друку: синя «фарба» лягає з невеликим зсувом (як на ризографі) */
+.riso { text-shadow: var(--dx, 4px) var(--dy, 3px) 0 var(--blue); transition: text-shadow .5s cubic-bezier(.2, .8, .2, 1); }
+.riso:hover { --dx: 0px; --dy: 0px; }
+.masthead h1.riso { text-shadow: var(--dx, 7px) var(--dy, 5px) 0 var(--blue); }
+.pull.riso, h3.riso { text-shadow: var(--dx, 2px) var(--dy, 2px) 0 var(--blue); }
+.tagline { margin: 14px 0 0; max-width: 30ch; font: italic 500 20px/1.3 var(--serif); }
+.hand { font-family: var(--hand); font-weight: 600; }
+.note {
+  position: absolute; right: var(--gap); bottom: 26px;
+  font: 600 26px/1 var(--hand); color: var(--blue); transform: rotate(-6deg);
+}
+.note svg { width: 70px; height: 40px; margin: 4px 0 0 30px; fill: none; stroke: var(--blue); stroke-width: 2; stroke-linecap: round; }
+
+/* ===== Меню — як кавова дошка з цінами ===== */
+.board__title { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+.board__title h2 { font: 700 46px/1 var(--hand); color: var(--ink); }
+.board__title span { font: 600 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+#nav ul { margin: 0; padding: 0; list-style: none; }
+#nav li { border-top: 1.5px dashed var(--ink); }
+#nav li:last-child { border-bottom: 1.5px dashed var(--ink); }
+#nav li a {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 11px 4px;
+  text-decoration: none;
+  color: var(--ink);
+  overflow: hidden;
+  isolation: isolate;
+}
+#nav li a::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--orange);
+  transform: scaleY(0); transform-origin: bottom; transition: transform .45s cubic-bezier(.7, 0, .2, 1);
+}
+#nav li a:hover::before, #nav li a.active::before { transform: scaleY(1); }
+#nav li a:hover, #nav li a.active { color: var(--paper); }
+#nav .item { font: italic 700 clamp(22px, 2.2vw, 30px)/1 var(--serif); white-space: nowrap; }
+#nav .dots { flex: 1; border-bottom: 2px dotted currentColor; transform: translateY(-6px); opacity: .6; }
+#nav .price { font: 700 15px/1 var(--sans); letter-spacing: .06em; }
+#nav .sub { display: block; font: 500 12px/1.2 var(--sans); letter-spacing: .02em; opacity: .75; }
+.menu-toggle { display: none; }
+
+/* ===== Вміст ===== */
+.kicker { display: inline-block; margin-bottom: 18px; padding: 5px 10px; background: var(--ink); color: var(--paper); font: 700 11px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
+.title { font: 900 clamp(46px, 5vw, 78px)/.92 var(--serif); letter-spacing: -.035em; margin-bottom: 22px; }
+.title em { color: var(--orange); font-style: italic; }
+.deck { font: italic 500 21px/1.4 var(--serif); margin-bottom: 26px; }
+.body p { hyphens: auto; }
+.drop::first-letter { float: left; margin: 6px 10px 0 -2px; font: 900 92px/.78 var(--serif); color: var(--orange); }
+#content h3 { font-size: 30px; margin: 46px 0 14px; letter-spacing: -.02em; }
+.pull {
+  margin: 40px -6px; padding: 26px 0 18px;
+  border-top: 6px solid var(--ink); border-bottom: 2px solid var(--ink);
+  font: italic 800 30px/1.15 var(--serif); letter-spacing: -.02em;
+}
+.pull cite { display: block; margin-top: 12px; font: 600 26px/1 var(--hand); font-style: normal; color: var(--blue); }
+.facts { margin: 30px 0 0; padding: 0; list-style: none; counter-reset: f; }
+.facts li { position: relative; padding: 16px 0 16px 56px; border-top: 1.5px solid var(--ink); counter-increment: f; }
+.facts li::before { content: counter(f); position: absolute; left: 0; top: 10px; width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: var(--paper); font: 800 18px/40px var(--serif); text-align: center; }
+.toc { margin: 24px 0 0; padding: 0; list-style: none; }
+.toc li a { display: grid; grid-template-columns: 54px 1fr; gap: 10px; padding: 14px 0; border-top: 1.5px solid var(--ink); text-decoration: none; color: var(--ink); transition: color .3s, padding .4s cubic-bezier(.2, .8, .2, 1); }
+.toc li a:hover { color: var(--orange); padding-left: 10px; }
+.toc b { font: 900 36px/1 var(--serif); }
+.toc span { font: italic 700 22px/1.15 var(--serif); }
+.toc small { display: block; font: 500 14px/1.4 var(--sans); font-style: normal; opacity: .8; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 14px 22px;
+  border: 2px solid var(--ink); border-radius: 99px; background: var(--paper); color: var(--ink);
+  font: 700 14px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+  box-shadow: 4px 4px 0 var(--ink); transition: transform .2s, box-shadow .2s, background-color .3s;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); background: var(--orange); color: var(--paper); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; }
+
+/* Таблиці даних у журнальному стилі */
+.spec { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 15px; }
+.spec caption { caption-side: top; text-align: left; padding-bottom: 8px; font: 600 24px/1 var(--hand); color: var(--blue); }
+.spec th { padding: 10px 6px; text-align: left; font: 700 11px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; border-bottom: 3px solid var(--ink); }
+.spec td { padding: 11px 6px; border-bottom: 1.5px solid var(--ink); vertical-align: top; }
+.spec td:first-child { font: italic 700 17px/1.2 var(--serif); }
+
+/* ===== Додаткова секція: стіна постерів і реклама ===== */
+.wall { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--gap); align-items: start; }
+.poster { position: relative; border: 2px solid var(--ink); background: var(--paper); overflow: hidden; }
+.poster--wide { grid-column: span 6; }
+.poster--half { grid-column: span 3; }
+.poster--two { grid-column: span 4; }
+.poster--one { grid-column: span 2; }
+@media (max-width: 700px) { .poster--half, .poster--two, .poster--one { grid-column: span 6; } }
+.poster__label { position: absolute; left: 12px; top: 12px; z-index: 3; padding: 4px 8px; background: var(--paper); border: 1.5px solid var(--ink); font: 700 10px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
+.poster svg.art { width: 100%; height: auto; }
+.poster__cap { padding: 14px 16px 16px; border-top: 2px solid var(--ink); }
+.poster__cap h4 { font: italic 800 26px/1 var(--serif); margin-bottom: 6px; }
+.poster__cap p { margin: 0; font-size: 14.5px; }
+.poster--orange { background: var(--orange); color: var(--paper); }
+.poster--orange .poster__cap { border-color: var(--ink); }
+.poster--blue { background: var(--blue); color: var(--paper); }
+.poster--ink { background: var(--ink); color: var(--paper); }
+
+/* Купон з лінією відрізу */
+.coupon { position: relative; padding: 26px 24px 24px; border: 2.5px dashed var(--ink); background: var(--paper); }
+.coupon__scissors { position: absolute; left: 14px; top: -14px; width: 28px; height: 28px; background: var(--paper); transition: left 1.6s cubic-bezier(.6, 0, .3, 1); }
+.coupon:hover .coupon__scissors { left: calc(100% - 42px); }
+.coupon__scissors svg { width: 100%; height: 100%; fill: none; stroke: var(--ink); stroke-width: 2; }
+.coupon .coupon__off { font: 900 clamp(70px, 8vw, 128px)/.8 var(--serif); letter-spacing: -.05em; color: var(--orange); }
+.coupon h4 { font: italic 800 28px/1.05 var(--serif); margin: 10px 0 8px; }
+.coupon p { margin: 0; font-size: 14.5px; }
+.coupon__code { display: inline-block; margin-top: 14px; padding: 6px 12px; border: 2px solid var(--ink); font: 800 18px/1 var(--sans); letter-spacing: .2em; }
+.ad-tag { position: absolute; right: 12px; top: 10px; font: 700 10px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; }
+
+/* Кругла печатка з текстом по колу */
+.badge { position: relative; width: 150px; height: 150px; }
+.badge svg { width: 100%; height: 100%; animation: spin 16s linear infinite; }
+.badge text { font: 700 11.5px var(--sans); letter-spacing: .32em; text-transform: uppercase; fill: var(--ink); }
+.badge b { position: absolute; inset: 0; display: grid; place-items: center; font: italic 900 40px/1 var(--serif); color: var(--orange); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Біжучий рядок */
+.marquee { overflow: hidden; margin: 0 calc(var(--gap) * -1); padding: 12px 0; background: var(--orange); color: var(--paper); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: rotate(-2deg) scale(1.04); }
+.marquee__track { display: flex; width: max-content; animation: run 22s linear infinite; }
+.marquee span { padding-right: 28px; font: italic 900 40px/1 var(--serif); white-space: nowrap; }
+.marquee span i { font-style: normal; color: var(--ink); }
+@keyframes run { to { transform: translateX(-50%); } }
+
+/* Шлях зерна */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: s; }
+.steps div { position: relative; padding: 18px 14px 16px; border: 2px solid var(--ink); background: var(--paper); counter-increment: s; }
+.steps div::before { content: "0" counter(s); display: block; font: 900 40px/1 var(--serif); color: var(--blue); }
+.steps h4 { font: italic 800 22px/1.05 var(--serif); margin: 8px 0 6px; }
+.steps p { margin: 0; font-size: 14px; }
+@media (max-width: 700px) { .steps { grid-template-columns: 1fr 1fr; } }
+
+/* Велетенські числа */
+.big-num { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.big-num div { padding: 18px 14px 18px 0; border-bottom: 2px solid var(--ink); }
+.big-num div:nth-child(odd) { border-right: 2px solid var(--ink); }
+.big-num div:nth-child(even) { padding-left: 18px; }
+.big-num b { display: block; font: 900 clamp(48px, 5vw, 80px)/.9 var(--serif); letter-spacing: -.04em; color: var(--blue); }
+.big-num span { font-size: 14.5px; }
+
+/* Калькулятор заварювання з поворотною ручкою */
+.brew { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 2px solid var(--ink); background: var(--paper); }
+@media (max-width: 760px) { .brew { grid-template-columns: 1fr; } }
+.brew__left { padding: 22px; border-right: 2px solid var(--ink); }
+.brew__right { padding: 22px; background: var(--ink); color: var(--paper); }
+.methods { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 20px; }
+.methods button { padding: 9px 14px; border: 2px solid var(--ink); border-radius: 99px; background: var(--paper); color: var(--ink); font: 700 13px/1 var(--sans); cursor: pointer; transition: background-color .3s, color .3s; }
+.methods button[aria-pressed="true"] { background: var(--orange); color: var(--paper); }
+.knob-wrap { display: flex; align-items: center; gap: 22px; }
+.knob { position: relative; width: 150px; height: 150px; border-radius: 50%; touch-action: none; cursor: grab; outline: none; }
+.knob:active { cursor: grabbing; }
+.knob:focus-visible { box-shadow: 0 0 0 4px var(--blue); }
+.knob svg { width: 100%; height: 100%; }
+.knob__dial { transform-origin: 75px 75px; }
+.knob-val b { display: block; font: 900 64px/.9 var(--serif); color: var(--orange); }
+.knob-val span { font: 600 26px/1 var(--hand); }
+.out-row { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1.5px dashed rgba(243, 234, 215, .5); }
+.out-row:last-child { border-bottom: 0; }
+.out-row span { font-size: 14px; letter-spacing: .04em; }
+.out-row b { font: 800 30px/1 var(--serif); color: var(--paper); }
+.out-row b.o { color: var(--orange); }
+
+/* Шкала обсмаження */
+.roast { padding: 22px; border: 2px solid var(--ink); }
+.roast input { width: 100%; accent-color: var(--orange); }
+.roast__bean { width: 180px; height: 120px; margin: 10px auto; }
+.roast__labels { display: flex; justify-content: space-between; font: 600 22px/1 var(--hand); }
+.roast__out { margin-top: 12px; text-align: center; font: italic 700 22px/1.3 var(--serif); }
+
+/* Пара над чашкою */
+.steam path { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 60 140; animation: steam 3.2s linear infinite; opacity: .65; }
+.steam path:nth-child(2) { animation-delay: -1.1s; }
+.steam path:nth-child(3) { animation-delay: -2.2s; }
+@keyframes steam { from { stroke-dashoffset: 200; } to { stroke-dashoffset: 0; } }
+
+/* ===== Нижній колонтитул — касовий чек ===== */
+.receipt-wrap { display: flex; justify-content: center; padding: 60px var(--gap) 80px; background: var(--ink); }
+.receipt {
+  position: relative; width: min(100%, 460px); padding: 34px 30px 40px; background: var(--paper); color: var(--ink);
+  font: 500 14px/1.6 var(--sans); letter-spacing: .02em;
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 18px 100%;
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 18px 100%;
+}
+.receipt h3 { text-align: center; font: italic 900 44px/1 var(--serif); }
+.receipt .c { text-align: center; }
+.receipt hr { border: 0; border-top: 2px dashed var(--ink); margin: 14px 0; }
+.receipt .row { display: flex; justify-content: space-between; gap: 14px; }
+.receipt .row span:last-child { text-align: right; font-weight: 700; }
+.receipt .total { font: 800 20px/1.3 var(--sans); }
+.barcode { height: 54px; margin: 18px 0 6px; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 7px, transparent 7px 8px, var(--ink) 8px 9px, transparent 9px 13px); }
+.receipt .thanks { margin-top: 10px; text-align: center; font: 600 30px/1 var(--hand); color: var(--orange); }
+
+/* ===== Перехід — кава заливає екран ===== */
+.pour { position: fixed; inset: 0; z-index: 100; pointer-events: none; }
+.pour svg { position: absolute; left: 0; width: 100%; height: 140%; top: 100%; }
+.pour .w1 { fill: var(--ink); }
+.pour .w2 { fill: var(--orange); }
+.pour-in .pour svg { top: -20%; }
+
+/* Чашка-індикатор прокручування */
+.cup { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 58px; height: 58px; pointer-events: none; }
+.cup svg { width: 100%; height: 100%; overflow: visible; }
+
+/* Курсор-зернятко */
+.bean-cursor { position: fixed; left: 0; top: 0; z-index: 95; width: 26px; height: 34px; margin: -17px 0 0 -13px; pointer-events: none; transition: width .25s, height .25s, margin .25s; }
+.bean-cursor svg { width: 100%; height: 100%; }
+.bean-cursor.is-big { width: 46px; height: 60px; margin: -30px 0 0 -23px; }
+@media (hover: hover) and (pointer: fine) { body.has-bean, body.has-bean a, body.has-bean button { cursor: none; } }
+@media (hover: none), (pointer: coarse) { .bean-cursor { display: none; } }
+
+@media (max-width: 980px) {
+  .menu-toggle { display: inline-block; position: absolute; right: var(--gap); top: 26px; padding: 8px 12px; border: 2px solid var(--ink); border-radius: 99px; background: var(--paper); font: 700 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
+  .note { display: none; }
+  .board__title span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+}
+
+/* Карта кавового поясу */
+.map .mt { font: 600 11px var(--sans); fill: var(--ink); letter-spacing: .08em; }
+.map .mn { font: italic 700 16px var(--serif); fill: var(--ink); }
+.map .ring { transform-box: fill-box; transform-origin: center; animation: ping 2.4s ease-out infinite; animation-delay: var(--d); }
+@keyframes ping { 0% { transform: scale(.4); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
+.drip { animation: drip 1.2s linear infinite; }
+@keyframes drip { to { stroke-dashoffset: -28; } }

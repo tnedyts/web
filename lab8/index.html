@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Головна — Зерно, журнал про каву</title>
+<meta name="description" content="Журнал про каву: від ягоди до чашки" />
+<meta name="author" content="Прізвище Ім'я По батькові" />
+<meta name="theme-color" content="#F3EAD7" />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script>try{if(sessionStorage.getItem('pour'))document.documentElement.classList.add('pour-in')}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 8. Макет на div, варіант 15:
+     [ Заголовок | Меню ] / [ Вміст | Додаткова секція ] / [ Нижній колонтитул ] -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <pattern id="dotI" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="2.3" fill="#2A1A12"/></pattern>
+  <pattern id="dotB" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="4" cy="4" r="2" fill="#2F4AB5"/></pattern>
+  <pattern id="dotO" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-20)"><circle cx="4" cy="4" r="2.4" fill="#FF5A1F"/></pattern>
+  <pattern id="lines" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="3" height="10" fill="#2A1A12"/></pattern>
+  <radialGradient id="fadeR"><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+  <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+  <mask id="mR"><rect width="100%" height="100%" fill="url(#fadeR)"/></mask>
+  <mask id="mL"><rect width="100%" height="100%" fill="url(#fadeL)"/></mask>
+</defs></svg>
+<div id="container">
+  <div id="header">
+    <p class="topline"><span>Журнал про каву</span><span>Випуск №8 · жовтень 2026</span><span>Ціна — одна чашка</span></p>
+    <a class="masthead" href="index.html" title="На головну"><h1 class="riso">Зерно</h1></a>
+    <p class="tagline">Незалежне видання для тих, хто прокидається заради кави.</p>
+    <p class="note" aria-hidden="true">свіжий випуск!<svg viewBox="0 0 70 40"><path d="M2 6 C20 30 40 36 64 30 M52 22 L64 30 L54 38"/></svg></p>
+  </div>
+  <div id="nav">
+    <div class="board__title"><h2>Меню</h2><span>сьогодні в номері</span></div>
+    <button class="menu-toggle" type="button" aria-expanded="false">Меню</button>
+    <ul>
+      <li><a href="index.html" class="active" aria-current="page"><span class="item">Головна<span class="sub">тема номера</span></span><span class="dots"></span><span class="price">№ 01</span></a></li>
+      <li><a href="origins.html"><span class="item">Походження<span class="sub">звідки кава</span></span><span class="dots"></span><span class="price">№ 02</span></a></li>
+      <li><a href="brewing.html"><span class="item">Заварювання<span class="sub">шість способів</span></span><span class="dots"></span><span class="price">№ 03</span></a></li>
+      <li><a href="roasting.html"><span class="item">Обсмаження<span class="sub">вогонь і зерно</span></span><span class="dots"></span><span class="price">№ 04</span></a></li>
+      <li><a href="author.html"><span class="item">Колофон<span class="sub">про автора</span></span><span class="dots"></span><span class="price">№ 05</span></a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <span class="kicker">Тема номера</span>
+    <h2 class="title riso" data-text="Від вишні до чашки">Від вишні <em>до чашки</em></h2>
+    <p class="deck">Кавове зерно — це насінина ягоди. Шлях від куща в горах Ефіопії до вашої ранкової чашки займає місяці й тисячі кілометрів.</p>
+    <div class="body">
+      <p class="drop">Кавове дерево — вічнозелений кущ із білими квітами, що пахнуть жасмином. Через кілька місяців після цвітіння на гілках достигають червоні ягоди, схожі на вишні. Усередині кожної ховаються дві насінини, звернені одна до одної пласкими боками. Саме їх ми й називаємо кавовими зернами.</p>
+      <p>Щоб зерно стало кавою, його треба зібрати, звільнити від м'якоті, висушити, обсмажити, змолоти й заварити. На кожному кроці смак може стати кращим — або зіпсуватися назавжди.</p>
+      <p>Щодня світ випиває понад два мільярди чашок кави. А в Україні кавова культура має особливу столицю — Львів, де кав'ярні століттями були місцем зустрічей, суперечок і новин.</p>
+    </div>
+    <blockquote class="pull riso" data-text="Кава — це привід зупинитися на п'ять хвилин.">Кава — це привід зупинитися на п'ять хвилин.<cite>— редакція «Зерна»</cite></blockquote>
+    <h3 class="riso" data-text="У номері">У номері</h3>
+    <ul class="toc"><li><a href="origins.html"><b>02</b><span>Походження<small>звідки кава</small></span></a></li><li><a href="brewing.html"><b>03</b><span>Заварювання<small>шість способів</small></span></a></li><li><a href="roasting.html"><b>04</b><span>Обсмаження<small>вогонь і зерно</small></span></a></li><li><a href="author.html"><b>05</b><span>Колофон<small>про автора</small></span></a></li></ul>
+    <h3 class="riso" data-text="Чи знали ви">Чи знали ви</h3>
+    <ol class="facts">
+      <li>Приблизно в одній ягоді з десяти розвивається лише одна кругла насінина — її називають «перлинкою».</li>
+      <li>Свіжообсмажена кава кілька днів виділяє вуглекислий газ, тому її краще заварювати не одразу.</li>
+      <li>Аеропрес винайшов 2005 року інженер Алан Адлер — той самий, що придумав літаючий диск Aerobie.</li>
+    </ol>
+  </div>
+  <div id="extra">
+    <div class="wall">
+      <figure class="poster poster--two">
+  <span class="poster__label">Обкладинка</span>
+  <svg class="art" viewBox="0 30 600 540" role="img" aria-label="Чашка капучино з латте-артом, вид згори">
+  <rect y="30" width="600" height="540" fill="#2F4AB5"/>
+  <rect y="30" width="600" height="540" fill="url(#dotI)" opacity=".22" mask="url(#mL)"/>
+  <circle cx="318" cy="318" r="226" fill="#2A1A12" opacity=".9"/>
+  <circle cx="300" cy="300" r="226" fill="#F3EAD7"/>
+  <circle cx="300" cy="300" r="226" fill="url(#dotB)" mask="url(#mR)" opacity=".7"/>
+  <rect x="452" y="276" width="96" height="48" rx="24" fill="#F3EAD7" stroke="#2A1A12" stroke-width="7"/>
+  <circle cx="300" cy="300" r="164" fill="#F3EAD7" stroke="#2A1A12" stroke-width="7"/>
+  <circle cx="300" cy="300" r="144" fill="#2A1A12"/>
+  <circle cx="300" cy="300" r="138" fill="none" stroke="#FF5A1F" stroke-width="16" style="mix-blend-mode:multiply" opacity=".85"/>
+  <circle cx="300" cy="300" r="122" fill="url(#dotO)" opacity=".55"/>
+  <path d="M300 372 C232 328 222 270 258 248 C284 232 300 254 300 270 C300 254 316 232 342 248 C378 270 368 328 300 372 Z" fill="#F3EAD7"/>
+  <path d="M300 220 L300 372" stroke="#2A1A12" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  <circle cx="306" cy="306" r="144" fill="none" stroke="#FF5A1F" stroke-width="3" opacity=".6" style="mix-blend-mode:multiply"/>
+  <path d="M86 470 L190 400" stroke="#2A1A12" stroke-width="14" stroke-linecap="round"/>
+  <ellipse cx="200" cy="394" rx="26" ry="17" transform="rotate(-34 200 394)" fill="#2A1A12"/>
+</svg>
+  <figcaption class="poster__cap"><h4>Капучино «Серце»</h4><p>Латте-арт малюють молочною піною: бариста наливає молоко струменем і в останню мить «розрізає» малюнок.</p></figcaption>
+</figure>
+      <div class="poster poster--one poster--ink" style="display:grid;place-items:center;padding:24px 10px;min-height:100%;align-self:stretch">
+        <div class="badge" aria-hidden="true">
+  <svg viewBox="0 0 150 150"><defs><path id="circ" d="M75 75 m-58 0 a58 58 0 1 1 116 0 a58 58 0 1 1 -116 0"/></defs>
+  <circle cx="75" cy="75" r="72" fill="#F3EAD7" stroke="#2A1A12" stroke-width="2.5"/>
+  <text><textPath href="#circ">Свіже обсмаження · щотижня · </textPath></text></svg>
+  <b>№8</b>
+</div>
+        <p class="hand" style="margin:14px 0 0;font-size:26px;text-align:center;color:#F3EAD7">з любов'ю до зерна</p>
+      </div>
+      <div class="marquee poster--wide" style="grid-column:span 6" aria-hidden="true"><div class="marquee__track"><span>Еспресо <i>✺</i></span><span>Фільтр <i>✺</i></span><span>Джезва <i>✺</i></span><span>Колд-брю <i>✺</i></span><span>Аеропрес <i>✺</i></span><span>Френч-прес <i>✺</i></span><span>Еспресо <i>✺</i></span><span>Фільтр <i>✺</i></span><span>Джезва <i>✺</i></span><span>Колд-брю <i>✺</i></span><span>Аеропрес <i>✺</i></span><span>Френч-прес <i>✺</i></span></div></div>
+      <div class="coupon poster--half" style="grid-column:span 3">
+  <span class="coupon__scissors"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5 20 18M8.5 16.5 20 6"/></svg></span>
+  <span class="ad-tag">Реклама</span>
+  <p class="coupon__off">−20%</p>
+  <h4>Обсмажувальня «Зерно»</h4>
+  <p>Знижка на першу пачку свіжообсмаженої арабіки. Покажіть купон баристі.</p>
+  <span class="coupon__code">ZERNO-08</span>
+</div>
+      <figure class="poster poster--half poster--orange">
+  <span class="poster__label">Анатомія</span>
+  <svg class="art" viewBox="0 0 400 400" role="img" aria-label="Кавове зерно">
+  <rect width="400" height="400" fill="#FF5A1F"/>
+  <rect width="400" height="400" fill="url(#lines)" opacity=".12"/>
+  <g transform="rotate(-28 200 200)">
+    <ellipse cx="214" cy="212" rx="112" ry="152" fill="#2F4AB5" style="mix-blend-mode:multiply"/>
+    <ellipse cx="200" cy="200" rx="112" ry="152" fill="#2A1A12"/>
+    <ellipse cx="200" cy="200" rx="112" ry="152" fill="url(#dotO)" mask="url(#mR)" opacity=".35"/>
+    <path d="M200 52 C140 130 262 266 200 348" stroke="#FF5A1F" stroke-width="16" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
+  <figcaption class="poster__cap"><h4>Одна ягода — два зерна</h4><p>Зерна лежать у ягоді пласкими боками одне до одного — звідси борозенка посередині.</p></figcaption>
+</figure>
+      <figure class="poster poster--wide" style="padding:18px 18px 20px;background:#F3EAD7">
+        <span class="poster__label" style="position:static;display:inline-block;margin-bottom:14px">Інфографіка</span>
+        <h4 class="title riso" data-text="Шлях зерна" style="font-size:44px;margin-bottom:16px">Шлях зерна</h4>
+        <div class="steps"><div><h4>Збір</h4><p>Ягоди достигають нерівномірно, тож найкращу каву збирають вручну.</p></div><div><h4>Обробка</h4><p>Мʼякоть знімають: «мита» обробка дає чистий смак, «натуральна» — ягідний.</p></div><div><h4>Сушіння</h4><p>Зерна сушать на сонці або в сушарках до вологості близько 11%.</p></div><div><h4>Обсмаження</h4><p>При 190–230 °C зелене зерно буріє й розкриває сотні ароматів.</p></div><div><h4>Помел</h4><p>Мелють перед самим заварюванням — аромат вивітрюється за хвилини.</p></div><div><h4>Чашка</h4><p>Вода, температура й час завершують подорож зерна.</p></div></div>
+      </figure>
+      <div class="poster poster--two" style="padding:18px">
+        <div class="big-num">
+          <div><b><span class="count" data-to="2">2</span> млрд+</b><span>чашок кави випивають у світі щодня</span></div>
+          <div><b><span class="count" data-to="2">2</span></b><span>зернини зазвичай ховаються в одній ягоді</span></div>
+          <div><b><span class="count" data-to="9">9</span> бар</b><span>тиск, під яким готують еспресо</span></div>
+          <div><b><span class="count" data-to="1683">1683</span></b><span>рік легенди про першу віденську кав'ярню</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="footer">
+    <div class="receipt-wrap">
+      <div class="receipt">
+        <h3>Зерно</h3>
+        <p class="c">журнал про каву<br>ЧЕК № 0008 · каса 1</p>
+        <hr>
+        <p class="row"><span>Автор</span><span>Прізвище Ім'я По батькові</span></p>
+        <p class="row"><span>Група</span><span>____</span></p>
+        <p class="row"><span>Лабораторна робота</span><span>№8, варіант 15</span></p>
+        <p class="row"><span>Сторінка</span><span>Головна</span></p>
+        <p class="row"><span>Сайт створено</span><span>12.10.2026</span></p>
+        <hr>
+        <p class="row total"><span>РАЗОМ</span><span>4 кольори · 3 шрифти</span></p>
+        <div class="barcode" aria-hidden="true"></div>
+        <p class="c">2026-10-12 · 08:00 · <a href="index.html">повернутися на головну</a></p>
+        <p class="thanks">Дякуємо, приходьте ще!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cup" aria-hidden="true"><svg viewBox="0 0 48 48"><g class="steam" transform="translate(12 -6) scale(.12)" style="opacity:0;transition:opacity .4s"><path d="M20 120 C0 90 40 70 20 40"/><path d="M60 120 C40 90 80 70 60 40"/><path d="M100 120 C80 90 120 70 100 40"/></g>
+  <defs><clipPath id="cupClip"><path d="M8 14 L36 14 L33 40 L11 40 Z"/></clipPath></defs>
+  <rect id="cupFill" x="0" y="40" width="48" height="0" fill="#2A1A12" clip-path="url(#cupClip)"/>
+  <path d="M8 14 L36 14 L33 40 L11 40 Z" fill="none" stroke="#2A1A12" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M36 19 C44 19 44 31 34.5 31" fill="none" stroke="#2A1A12" stroke-width="2.5"/></svg></div>
+<div class="bean-cursor" aria-hidden="true"><svg viewBox="0 0 26 34"><ellipse cx="13" cy="17" rx="11" ry="15" fill="#2A1A12"/><path d="M13 3 C7 11 19 23 13 31" stroke="#FF5A1F" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+<div class="pour" aria-hidden="true"><svg viewBox="0 0 100 1000" preserveAspectRatio="none"><path class="w2" d="M0 30 L100 30 L100 1000 L0 1000 Z"/><path class="w1" d="M0 70 L100 70 L100 1000 L0 1000 Z"/></svg></div>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
