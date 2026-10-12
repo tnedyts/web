@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Проста вебсторінка про штучний інтелект" />
+<meta name="keywords" content="штучний інтелект, ШІ, нейронні мережі, машинне навчання" />
+<meta name="author" content="Студент" />
+<title>Штучний інтелект — що це таке?</title>
+<!-- Основні стилі сторінки -->
+<style type="text/css">
+body {
+  margin: 20px 40px;
+  background-color: #f4f6fb;
+  color: #222222;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+h1, h2, h3, h4, h5 { color: #1b2a41; font-family: Georgia, "Times New Roman", serif; }
+blockquote { border-left: 4px solid #3a6ea5; padding-left: 12px; color: #444444; }
+pre { background-color: #1b2a41; color: #e8eef7; padding: 10px; }
+kbd { border: 1px solid #999999; padding: 0 4px; background-color: #ffffff; }
+</style>
+</head>
+<body>
+<basefont size="3" color="#222222" face="Verdana" />
+
+<!-- Заголовок сторінки -->
+<h1 align="center">Штучний інтелект</h1>
+<center><font face="Georgia" size="4" color="#3a6ea5"><i>Коротко про те, як машини вчаться думати</i></font></center>
+<hr align="center" width="80%" size="3" noshade="noshade" />
+
+<!-- Розділ 1 -->
+<h2>Що таке штучний інтелект?</h2>
+<p align="justify">
+<b>Штучний інтелект</b> (ШІ, англ. <i>Artificial Intelligence</i>, AI) — це галузь
+інформатики, що створює <strong>комп'ютерні системи, здатні виконувати завдання,
+які зазвичай потребують людського інтелекту</strong>: розпізнавати мову та зображення,
+перекладати тексти, ухвалювати рішення та навчатися на власному досвіді.
+</p>
+<p align="justify">
+Сам термін запропонував американський учений <em>Джон Маккарті</em>, готуючи
+літній семінар у Дартмутському коледжі, що відбувся у 1956 році. Саме цю подію вважають
+<u>офіційною датою народження ШІ</u> як наукового напряму.
+</p>
+
+<h3>Слабкий і сильний ШІ</h3>
+<p align="left">
+Розрізняють <b>слабкий (вузький) ШІ</b>, який виконує одне конкретне завдання,
+і <b>сильний (загальний) ШІ</b>, що мав би мислити на рівні людини в будь-якій сфері.<br />
+Усі сучасні системи — від голосових помічників до чат-ботів — поки що належать до вузького ШІ.<br />
+Колись популярну думку <strike>«комп'ютер ніколи не обіграє людину в шахи»</strike>
+спростувала програма Deep Blue ще у 1997 році.
+</p>
+
+<!-- Розділ 2 -->
+<h2>Як працює штучний нейрон</h2>
+<p align="justify">
+Основою більшості сучасних систем ШІ є <b>штучні нейронні мережі</b>. Кожен нейрон
+отримує вхідні сигнали <var>x</var><sub>1</sub>, <var>x</var><sub>2</sub>, …, <var>x</var><sub>n</sub>,
+множить їх на ваги <var>w</var><sub>1</sub>, <var>w</var><sub>2</sub>, …, <var>w</var><sub>n</sub>,
+додає зміщення <var>b</var> і пропускає суму через функцію активації <var>f</var>:
+</p>
+<p align="center">
+<big><tt>y = f(w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + … + w<sub>n</sub>x<sub>n</sub> + b)</tt></big>
+</p>
+<p align="justify">
+Великі мовні моделі містять сотні мільярдів таких параметрів — понад 10<sup>11</sup>.
+Для їх навчання потрібні тисячі графічних процесорів і величезні обсяги текстів.
+<small>(Для порівняння: мозок людини має близько 8,6·10<sup>10</sup> нейронів.)</small>
+</p>
+
+<h4>Приклад коду</h4>
+<p>Ось як можна описати один нейрон мовою Python (функція <code>neuron</code>):</p>
+<pre>
+import math
+
+def neuron(x, w, b):
+    s = sum(xi * wi for xi, wi in zip(x, w)) + b
+    return 1 / (1 + math.exp(-s))   # сигмоїда
+
+print(neuron([1.0, 0.5], [0.4, -0.2], 0.1))
+</pre>
+<p>
+Щоб запустити програму, наберіть у терміналі <kbd>python neuron.py</kbd> і натисніть <kbd>Enter</kbd>.
+Програма виведе приблизно таке: <samp>0.598687660112452</samp>
+</p>
+
+<h5>Примітка</h5>
+<p><small>Функція <code>math.exp</code> обчислює експоненту, а змінна <var>s</var> — зважену суму входів.</small></p>
+
+<hr align="left" width="50%" size="1" />
+
+<!-- Розділ 3: цитата -->
+<h2>Тест Тюрінга</h2>
+<p>У статті <cite>«Обчислювальні машини та розум»</cite> (1950) Алан Тюрінг поставив питання:</p>
+<blockquote>
+<p><i>«Пропоную розглянути питання: чи можуть машини мислити?»</i></p>
+</blockquote>
+<p align="justify">
+Він запропонував «гру в імітацію»: якщо людина-суддя, листуючись із машиною та людиною,
+не може надійно відрізнити, хто з них хто, — машину можна вважати «мислячою».
+</p>
+
+<hr align="center" width="100%" size="2" noshade="noshade" />
+<p align="right"><font size="2" color="#666666">Сторінку створено в межах лабораторної роботи № 4</font></p>
+</body>
+</html>
