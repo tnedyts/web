@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Математика — Нескінченність</title>
+<meta name="description" content="Як працюють фрактали: множина Мандельброта, сніжинка Коха, розмірність">
+<meta name="author" content="Прізвище Ім'я По батькові">
+<meta name="theme-color" content="#06050a">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>try{if(sessionStorage.getItem('iris'))document.documentElement.classList.add('iris-in')}catch(e){}</script>
+</head>
+<body class="">
+<!-- Лабораторна робота 7. Розміщення на вебсторінці графічних об'єктів. Тема: фрактали -->
+<div class="iris" aria-hidden="true"></div>
+<div class="spot" aria-hidden="true"></div>
+<header class="nav">
+  <a class="nav__logo" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset=".5" stop-color="#7cf3ff"/><stop offset="1" stop-color="#9c7bff"/></linearGradient></defs><path d="M20 3 L37 33 L3 33 Z M20 18 L28.5 33 L11.5 33 Z M11.5 18 L20 33 M28.5 18 L20 33 M11.5 18 L28.5 18" fill="none" stroke="url(#lg)" stroke-width="1.6"/></svg><span>Нескінченність</span></a>
+  <nav aria-label="Розділи"><ul><li><a href="index.html">Занурення</a></li><li><a href="gallery.html">Каталог</a></li><li><a href="math.html" class="is-active" aria-current="page">Математика</a></li><li><a href="nature.html">Природа</a></li><li><a href="author.html">Автор</a></li></ul></nav>
+  <button class="nav__burger" type="button" aria-label="Меню" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M1 5h16M1 13h16" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+<main>
+  <div class="zoom-banner">
+    <canvas id="zoom" aria-hidden="true"></canvas>
+    <section class="page-head">
+      <span class="kicker">Як це працює</span>
+      <h1>Математика</h1>
+      <p>Живе занурення в долину морських коників: зображення щокадру перераховує відеокарта, тож детальність не закінчується.</p>
+    </section>
+    <div class="hud" aria-hidden="true"><b id="hudZoom">×1</b><span id="hudC">c = −0,6 + 0i</span><span>WebGL · до 1200 ітерацій</span></div>
+  </div>
+
+  <section class="section">
+    <span class="kicker">Одна формула</span>
+    <p class="formula iri">z → z<sup>2</sup> + c</p>
+    <div class="duo">
+      <div class="panel"><canvas id="orbitMap" aria-label="Мапа множини Мандельброта, на якій можна вибрати точку c" role="img"></canvas><p class="panel__cap">Ведіть курсором по множині — це вибір <b>c</b></p></div>
+      <div class="panel"><canvas id="orbitPlot" aria-label="Орбіта точки нуль" role="img"></canvas><p class="panel__cap" id="orbitOut">c = …</p></div>
+    </div>
+    <div class="cols">
+      <p>Візьміть <b>z = 0</b>, піднесіть до квадрата, додайте <b>c</b> — і повторюйте. Праворуч видно шлях, яким «стрибає» z. Якщо він назавжди лишається в колі радіусом 2, точка <b>c</b> належить множині Мандельброта.</p>
+      <p>На картинках галереї колір точки — це кількість кроків, за яку орбіта втекла. Чорне всередині — точки, що не втекли ніколи.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="kicker">Нескінченна довжина</span>
+    <h2 class="h2">Сніжинка <span class="iri">Коха</span></h2>
+    <div class="koch">
+      <div class="panel"><canvas id="koch" aria-label="Сніжинка Коха" role="img"></canvas></div>
+      <div>
+        <label class="mono" for="kochRange">Рівень: <b id="kLevel">0</b></label>
+        <input class="range" id="kochRange" type="range" min="0" max="6" value="0">
+        <dl class="kv">
+          <dt>Відрізків</dt><dd id="kSegs">3</dd>
+          <dt>Периметр</dt><dd id="kPer">×1,00</dd>
+          <dt>Площа</dt><dd id="kArea">×1,000</dd>
+        </dl>
+        <p class="muted" style="margin-top:20px">Кожен крок збільшує периметр на третину — він росте до нескінченності. А площа прямує до 1,6 від початкового трикутника.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="kicker">Дробові виміри</span>
+    <h2 class="h2">Розмірність <span class="iri">між</span> цілими</h2>
+    <table class="dim">
+      <caption>Таблиця 2. Розмірність Гаусдорфа</caption>
+      <thead><tr><th scope="col">Фігура</th><th scope="col">Формула</th><th scope="col">Розмірність</th></tr></thead>
+      <tbody>
+          <tr><td>Пряма лінія<span class="bar" style="width:33.3%"></span></td><td class="mono">1</td><td>1,0</td></tr>
+          <tr><td>Крива Коха<span class="bar" style="width:42.1%"></span></td><td class="mono">log 4 / log 3</td><td>1,262</td></tr>
+          <tr><td>Узбережжя Великої Британії<span class="bar" style="width:41.7%"></span></td><td class="mono">виміряно</td><td>1,25</td></tr>
+          <tr><td>Трикутник Серпінського<span class="bar" style="width:52.8%"></span></td><td class="mono">log 3 / log 2</td><td>1,585</td></tr>
+          <tr><td>Килим Серпінського<span class="bar" style="width:63.1%"></span></td><td class="mono">log 8 / log 3</td><td>1,893</td></tr>
+          <tr><td>Площина<span class="bar" style="width:66.7%"></span></td><td class="mono">2</td><td>2,0</td></tr>
+          <tr><td>Губка Менгера<span class="bar" style="width:90.9%"></span></td><td class="mono">log 20 / log 3</td><td>2,727</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <span class="kicker">Історія</span>
+    <h2 class="h2">Від сніжинки <span class="iri">до екрана</span></h2>
+    <ol class="timeline">
+        <li><b>1904</b><p><span class="iri">Гельге фон Кох</span> — описує «сніжинку» — криву нескінченної довжини, що обмежує скінченну площу.</p></li>
+        <li><b>1915</b><p><span class="iri">Вацлав Серпінський</span> — будує свій трикутник, а згодом і килим — фігури з дірками на всіх масштабах.</p></li>
+        <li><b>1918</b><p><span class="iri">Гастон Жюліа і П'єр Фату</span> — досліджують ітерації комплексних функцій — без жодного комп'ютера.</p></li>
+        <li><b>1918</b><p><span class="iri">Фелікс Гаусдорф</span> — вводить дробову розмірність, якою згодом міряють фрактали.</p></li>
+        <li><b>1967</b><p><span class="iri">Бенуа Мандельброт</span> — публікує статтю «Яка довжина узбережжя Британії?» — що коротша лінійка, то довше узбережжя.</p></li>
+        <li><b>1975</b><p><span class="iri">Слово «фрактал»</span> — Мандельброт утворює його від латинського fractus — «зламаний».</p></li>
+        <li><b>1980</b><p><span class="iri">Перші зображення</span> — на комп'ютерах IBM Мандельброт побачив множину, що тепер носить його ім'я.</p></li>
+        <li><b>1985</b><p><span class="iri">Фрактали стають популярними</span> — множина Мандельброта потрапляє на обкладинку Scientific American.</p></li>
+    </ol>
+  </section>
+</main>
+<footer class="footer">
+  <hr class="iri-line" size="2" noshade>
+  <p class="footer__big iri" aria-hidden="true">∞ фрактали</p>
+  <div class="footer__row">
+    <p>© 2026 «Нескінченність» · Лабораторна робота №7 — графічні об'єкти на вебсторінці</p>
+    <p>Автор: <b>Прізвище Ім'я По батькові</b>, група ____</p>
+    <p>Сайт створено: 12.10.2026</p>
+  </div>
+</footer>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/gl.js"></script>
+<script src="js/math.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

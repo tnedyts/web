@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Занурення — Нескінченність</title>
+<meta name="description" content="Галерея фракталів: дванадцять зображень, вкладених одне в одне">
+<meta name="author" content="Прізвище Ім'я По батькові">
+<meta name="theme-color" content="#06050a">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>try{if(sessionStorage.getItem('iris'))document.documentElement.classList.add('iris-in')}catch(e){}</script>
+</head>
+<body class="p-home">
+<!-- Лабораторна робота 7. Розміщення на вебсторінці графічних об'єктів. Тема: фрактали -->
+<div class="iris" aria-hidden="true"></div>
+<div class="spot" aria-hidden="true"></div>
+<header class="nav">
+  <a class="nav__logo" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset=".5" stop-color="#7cf3ff"/><stop offset="1" stop-color="#9c7bff"/></linearGradient></defs><path d="M20 3 L37 33 L3 33 Z M20 18 L28.5 33 L11.5 33 Z M11.5 18 L20 33 M28.5 18 L20 33 M11.5 18 L28.5 18" fill="none" stroke="url(#lg)" stroke-width="1.6"/></svg><span>Нескінченність</span></a>
+  <nav aria-label="Розділи"><ul><li><a href="index.html" class="is-active" aria-current="page">Занурення</a></li><li><a href="gallery.html">Каталог</a></li><li><a href="math.html">Математика</a></li><li><a href="nature.html">Природа</a></li><li><a href="author.html">Автор</a></li></ul></nav>
+  <button class="nav__burger" type="button" aria-label="Меню" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M1 5h16M1 13h16" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+<main>
+  <section class="droste" aria-label="Галерея-занурення: дванадцять фракталів, вкладених один в одного">
+    <div class="droste__pin">
+      <canvas id="droste" aria-hidden="true"></canvas>
+      <div class="hud-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="cross" aria-hidden="true"></div>
+      <div class="droste__intro">
+        <p class="kicker">Галерея фракталів · 12 зображень</p>
+        <h1 class="droste__title">Нескінчен&shy;ність</h1>
+        <p>Гортайте вниз — у кожному фракталі ховається вікно в наступний. Дванадцять світів, вкладених один в одного, а після останнього — знову перший.</p>
+        <span class="scroll-cue"><i></i>гортайте</span>
+      </div>
+      <p class="hud2 hud2--tl" id="hPlate" aria-hidden="true">PL. 01 / 12</p>
+      <p class="hud2 hud2--tr" aria-hidden="true"><b id="hZoom">×1</b>збільшення</p>
+      <div class="hud2 hud2--bl" aria-live="polite">
+        <h2 id="hTitle">Множина Мандельброта</h2>
+        <p id="hFormula">z → z² + c</p>
+      </div>
+      <div class="hud2 hud2--br" aria-hidden="true"><p id="hMeta"></p><span class="bar"><i id="hBar"></i></span></div>
+      <ol class="rail" aria-label="Рівні занурення"><li title="Множина Мандельброта"></li><li title="Долина морських коників"></li><li title="Долина слонів"></li><li title="Множина Жюліа"></li><li title="Кролик Дуаді"></li><li title="Палаючий корабель"></li><li title="Фрактал Ньютона"></li><li title="Папороть Барнслі"></li><li title="Атрактор Лоренца"></li><li title="Атрактор Кліффорда"></li><li title="Фрактал Ляпунова"></li><li title="Дерево Піфагора"></li></ol>
+    </div>
+    <ol class="plates">
+      <li data-thumb="images/thumbs/01-mandelbrot.jpg" data-full="images/full/01-mandelbrot.jpg" data-title="Множина Мандельброта" data-formula="z → z² + c" data-meta="центр −0,65 + 0i · ширина 3,4 · 600 ітерацій"><figure><img src="images/thumbs/01-mandelbrot.jpg" alt="Множина Мандельброта" title="Множина Мандельброта" width="480" height="270" loading="lazy"><figcaption>Множина Мандельброта — z → z² + c</figcaption></figure></li>
+      <li data-thumb="images/thumbs/02-seahorse-valley.jpg" data-full="images/full/02-seahorse-valley.jpg" data-title="Долина морських коників" data-formula="z → z² + c" data-meta="центр −0,7453 + 0,1127i · ширина 0,0105"><figure><img src="images/thumbs/02-seahorse-valley.jpg" alt="Долина морських коників" title="Долина морських коників" width="480" height="270" loading="lazy"><figcaption>Долина морських коників — z → z² + c</figcaption></figure></li>
+      <li data-thumb="images/thumbs/03-elephant-valley.jpg" data-full="images/full/03-elephant-valley.jpg" data-title="Долина слонів" data-formula="z → z² + c" data-meta="центр 0,2862 + 0,0115i · ширина 0,0185"><figure><img src="images/thumbs/03-elephant-valley.jpg" alt="Долина слонів" title="Долина слонів" width="480" height="270" loading="lazy"><figcaption>Долина слонів — z → z² + c</figcaption></figure></li>
+      <li data-thumb="images/thumbs/04-julia.jpg" data-full="images/full/04-julia.jpg" data-title="Множина Жюліа" data-formula="z → z² − 0,8 + 0,156i" data-meta="c = −0,8 + 0,156i · 700 ітерацій"><figure><img src="images/thumbs/04-julia.jpg" alt="Множина Жюліа" title="Множина Жюліа" width="480" height="270" loading="lazy"><figcaption>Множина Жюліа — z → z² − 0,8 + 0,156i</figcaption></figure></li>
+      <li data-thumb="images/thumbs/05-douady-rabbit.jpg" data-full="images/full/05-douady-rabbit.jpg" data-title="Кролик Дуаді" data-formula="z → z² − 0,123 + 0,745i" data-meta="c = −0,123 + 0,745i · 700 ітерацій"><figure><img src="images/thumbs/05-douady-rabbit.jpg" alt="Кролик Дуаді" title="Кролик Дуаді" width="480" height="270" loading="lazy"><figcaption>Кролик Дуаді — z → z² − 0,123 + 0,745i</figcaption></figure></li>
+      <li data-thumb="images/thumbs/06-burning-ship.jpg" data-full="images/full/06-burning-ship.jpg" data-title="Палаючий корабель" data-formula="z → (|Re z| + i|Im z|)² + c" data-meta="центр −1,762 − 0,028i · ширина 0,09"><figure><img src="images/thumbs/06-burning-ship.jpg" alt="Палаючий корабель" title="Палаючий корабель" width="480" height="270" loading="lazy"><figcaption>Палаючий корабель — z → (|Re z| + i|Im z|)² + c</figcaption></figure></li>
+      <li data-thumb="images/thumbs/07-newton.jpg" data-full="images/full/07-newton.jpg" data-title="Фрактал Ньютона" data-formula="z → z − (z³ − 1) / 3z²" data-meta="3 корені · до 60 ітерацій"><figure><img src="images/thumbs/07-newton.jpg" alt="Фрактал Ньютона" title="Фрактал Ньютона" width="480" height="270" loading="lazy"><figcaption>Фрактал Ньютона — z → z − (z³ − 1) / 3z²</figcaption></figure></li>
+      <li data-thumb="images/thumbs/08-barnsley-fern.jpg" data-full="images/full/08-barnsley-fern.jpg" data-title="Папороть Барнслі" data-formula="4 афінні перетворення" data-meta="6 млн точок · система ітерованих функцій"><figure><img src="images/thumbs/08-barnsley-fern.jpg" alt="Папороть Барнслі" title="Папороть Барнслі" width="480" height="270" loading="lazy"><figcaption>Папороть Барнслі — 4 афінні перетворення</figcaption></figure></li>
+      <li data-thumb="images/thumbs/09-lorenz.jpg" data-full="images/full/09-lorenz.jpg" data-title="Атрактор Лоренца" data-formula="σ = 10 · ρ = 28 · β = 8/3" data-meta="3 млн кроків інтегрування"><figure><img src="images/thumbs/09-lorenz.jpg" alt="Атрактор Лоренца" title="Атрактор Лоренца" width="480" height="270" loading="lazy"><figcaption>Атрактор Лоренца — σ = 10 · ρ = 28 · β = 8/3</figcaption></figure></li>
+      <li data-thumb="images/thumbs/10-clifford.jpg" data-full="images/full/10-clifford.jpg" data-title="Атрактор Кліффорда" data-formula="xₙ₊₁ = sin(a·yₙ) + c·cos(a·xₙ)" data-meta="a = −1,4 · b = 1,6 · c = 1 · d = 0,7"><figure><img src="images/thumbs/10-clifford.jpg" alt="Атрактор Кліффорда" title="Атрактор Кліффорда" width="480" height="270" loading="lazy"><figcaption>Атрактор Кліффорда — xₙ₊₁ = sin(a·yₙ) + c·cos(a·xₙ)</figcaption></figure></li>
+      <li data-thumb="images/thumbs/11-lyapunov.jpg" data-full="images/full/11-lyapunov.jpg" data-title="Фрактал Ляпунова" data-formula="xₙ₊₁ = rₙ·xₙ·(1 − xₙ)" data-meta="послідовність BBBBBBAAAAAA"><figure><img src="images/thumbs/11-lyapunov.jpg" alt="Фрактал Ляпунова" title="Фрактал Ляпунова" width="480" height="270" loading="lazy"><figcaption>Фрактал Ляпунова — xₙ₊₁ = rₙ·xₙ·(1 − xₙ)</figcaption></figure></li>
+      <li data-thumb="images/thumbs/12-pythagoras-tree.jpg" data-full="images/full/12-pythagoras-tree.jpg" data-title="Дерево Піфагора" data-formula="квадрат → 2 квадрати" data-meta="14 рівнів · кут 35,5°"><figure><img src="images/thumbs/12-pythagoras-tree.jpg" alt="Дерево Піфагора" title="Дерево Піфагора" width="480" height="270" loading="lazy"><figcaption>Дерево Піфагора — квадрат → 2 квадрати</figcaption></figure></li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <span class="kicker">Дослідник</span>
+    <h2 class="h2">Кожна точка — <span class="iri">окремий світ</span></h2>
+    <div class="explorer">
+      <div class="explorer__view"><canvas id="julia" aria-label="Множина Жюліа для вибраної точки c" role="img"></canvas></div>
+      <div class="explorer__panel">
+        <div class="explorer__map"><canvas id="map" aria-label="Мапа множини Мандельброта: проведіть, щоб вибрати точку c" role="img"></canvas><span class="explorer__dot"></span></div>
+        <p class="explorer__c"><b id="cOut">c = −0,800 + 0,156i</b><span id="cState" class="mono"></span></p>
+        <p class="muted">Ведіть курсором або пальцем по мапі ліворуч: кожна точка c множини Мандельброта задає власну множину Жюліа. Якщо відпустити — c саме мандруватиме вздовж межі кардіоїди.</p>
+      </div>
+    </div>
+    <div class="cols">
+      <p><b>Фрактал</b> — фігура, у якій частина схожа на ціле. Збільште гілку — побачите дерево, збільште узбережжя — побачите узбережжя. Слово придумав Бенуа Мандельброт 1975 року від латинського <i>fractus</i> — «зламаний».</p>
+      <p>Усі дванадцять зображень галереї отримано програмно: кожен піксель — результат сотень повторень однієї простої формули. Повні версії мають розмір <b>1920 × 1080</b> — під роздільну здатність монітора Full HD.</p>
+    </div>
+    <a class="btn" href="gallery.html">Відкрити каталог <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+    <a class="btn btn--ghost" href="math.html" style="margin-left:10px">Як це працює</a>
+  </section>
+</main>
+<footer class="footer">
+  <hr class="iri-line" size="2" noshade>
+  <p class="footer__big iri" aria-hidden="true">∞ фрактали</p>
+  <div class="footer__row">
+    <p>© 2026 «Нескінченність» · Лабораторна робота №7 — графічні об'єкти на вебсторінці</p>
+    <p>Автор: <b>Прізвище Ім'я По батькові</b>, група ____</p>
+    <p>Сайт створено: 12.10.2026</p>
+  </div>
+</footer>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/droste.js"></script>
+<script src="js/gl.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
