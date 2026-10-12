@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Медіа — Нічна хвиля</title>
+<meta name="description" content="Карти, відео, аудіо, соцмережі й інформери фестивалю">
+<meta name="author" content="Прізвище Ім'я По батькові">
+<meta name="theme-color" content="#0a0216">
+<meta property="og:title" content="Нічна хвиля — фестиваль синтвейву">
+<meta property="og:description" content="Карти, відео, аудіо, соцмережі й інформери фестивалю">
+<meta property="og:url" content="https://tnedyts.github.io/web/lab9/media.html">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Лабораторна робота 9. Вставлення додатків із зовнішніх джерел: карти Google, відео YouTube,
+     аудіо HTML5, кнопки соцмереж, інформери. Тема: вигаданий фестиваль синтвейву -->
+<div class="power" aria-hidden="true"><i></i></div>
+<div class="static" aria-hidden="true"><canvas></canvas><b>CH --</b></div>
+<div class="osd osd--tl" aria-hidden="true"><b>CH 03</b>МЕДІА</div>
+<div class="osd osd--tc"><a href="index.html" title="На головну">НІЧНА <span>ХВИЛЯ</span></a></div>
+<div class="osd osd--tr"><span class="rec">●</span> PLAY ▶<br><span id="osdTime">SP 00:00:00</span><br><button class="tape-btn" type="button" aria-pressed="false" title="Увімкнути трек фестивалю"><span>▶ ТРЕК</span></button></div>
+<div class="osd osd--bl" aria-hidden="true" id="osdDate">ЖОВ 12 2026</div>
+<nav aria-label="Канали (розділи сайту)"><ul class="guide"><li><a href="index.html" data-ch="01"><b>01</b><span>Ефір</span></a></li><li><a href="lineup.html" data-ch="02"><b>02</b><span>Лайнап</span></a></li><li><a href="media.html" data-ch="03" class="is-on" aria-current="page"><b>03</b><span>Медіа</span></a></li><li><a href="tickets.html" data-ch="04"><b>04</b><span>Квитки</span></a></li><li><a href="author.html" data-ch="05"><b>05</b><span>Автор</span></a></li></ul></nav>
+<main id="main">
+<section class="section" style="padding-top:clamp(130px,18vh,190px)">
+  <span class="label">CH 03 · МЕДІА</span>
+  <h1 class="h2 ab">Карта, касета <em>й відео</em></h1>
+  <p class="lead">Усе, що вбудовано з зовнішніх сервісів: карти Google, відео YouTube, аудіо HTML5, кнопки соцмереж і живі інформери.</p>
+</section>
+
+<section class="section" style="padding-top:0">
+  <span class="label">01 · ЯК ДІСТАТИСЯ</span>
+  <h2 class="h2 ab">Київ, <em>ВДНГ</em></h2>
+  <div class="duo">
+    <div class="monitor"><p class="monitor__bar"><span>GPS · СХЕМА · МІТКА</span><i>● LIVE</i></p>
+      <iframe src="https://maps.google.com/maps?q=%D0%92%D0%94%D0%9D%D0%93%2C%20%D0%9A%D0%B8%D1%97%D0%B2&hl=uk&z=16&output=embed" title="Карта: мітка на ВДНГ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Мітка задається параметром <code>q=</code>, масштаб — <code>z=16</code>.</p></div>
+    <div class="monitor"><p class="monitor__bar"><span>GPS · СУПУТНИК</span><i>● LIVE</i></p>
+      <iframe src="https://maps.google.com/maps?q=%D0%92%D0%94%D0%9D%D0%93%2C%20%D0%9A%D0%B8%D1%97%D0%B2&hl=uk&z=17&t=k&output=embed" title="Карта: супутниковий знімок ВДНГ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Супутниковий фон вмикає параметр <code>t=k</code>.</p></div>
+    <div class="monitor"><p class="monitor__bar"><span>МАРШРУТ · ПІШКИ ВІД МЕТРО</span><i>● ROUTE</i></p>
+      <iframe src="https://maps.google.com/maps?saddr=%D0%92%D0%B8%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%BE%D0%B2%D0%B8%D0%B9%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%2C%20%D0%BC%D0%B5%D1%82%D1%80%D0%BE%2C%20%D0%9A%D0%B8%D1%97%D0%B2&daddr=%D0%92%D0%94%D0%9D%D0%93%2C%20%D0%9A%D0%B8%D1%97%D0%B2&dirflg=w&hl=uk&output=embed" title="Пішохідний маршрут від метро «Виставковий центр» до ВДНГ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Маршрут: <code>saddr</code> — звідки, <code>daddr</code> — куди, <code>dirflg=w</code> — пішки.</p></div>
+    <div class="monitor"><p class="monitor__bar"><span>ПАНОРАМА · STREET VIEW</span><i>● 360°</i></p>
+      <iframe src="https://maps.google.com/maps?layer=c&cbll=50.3826,30.4776&cbp=12,170,0,0,0&hl=uk&output=svembed" title="Панорама вулиці біля ВДНГ" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Панорама: <code>layer=c</code>, координати <code>cbll</code>, напрямок погляду <code>cbp</code>.</p></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <span class="label">02 · ВІДЕО</span>
+  <h2 class="h2 ab">Атмосфера <em>фестивалю</em></h2>
+  <div class="monitor monitor--video"><p class="monitor__bar"><span>VIDEO · YOUTUBE · 00:30 → 02:30</span><i>● REC</i></p>
+    <iframe src="https://www.youtube-nocookie.com/embed/4NRXx6U8ABQ?start=30&end=150&cc_load_policy=1&cc_lang_pref=uk&hl=uk&rel=0&modestbranding=1" title="Відео YouTube у стилі синтвейв" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>Фрагмент вирізано параметрами <code>start=30&amp;end=150</code>, субтитри вмикає <code>cc_load_policy=1</code>, мова — <code>cc_lang_pref=uk</code>, без схожих відео — <code>rel=0</code>.
+    Власний змонтований у YouTube Studio ролик вставляється так само — достатньо замінити його ID.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <span class="label">03 · АУДІО</span>
+  <h2 class="h2 ab">Касета <em>фестивалю</em></h2>
+  <div class="deck">
+    <div><svg class="cassette" viewBox="0 0 400 250" role="img" aria-label="Касета «Нічна хвиля»">
+  <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1150"/><stop offset="1" stop-color="#12062a"/></linearGradient>
+  <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff2fb3"/><stop offset=".5" stop-color="#ffd23f"/><stop offset="1" stop-color="#31f3ff"/></linearGradient></defs>
+  <rect x="6" y="6" width="388" height="238" rx="16" fill="url(#cg)" stroke="#000" stroke-width="4"/>
+  <rect x="26" y="24" width="348" height="140" rx="8" fill="#f5efe0"/>
+  <rect x="26" y="24" width="348" height="30" rx="8" fill="url(#lg)"/>
+  <text x="200" y="45" text-anchor="middle" font-family="Russo One, sans-serif" font-size="18" fill="#12062a">НІЧНА ХВИЛЯ · SIDE A</text>
+  <rect x="90" y="74" width="220" height="74" rx="37" fill="#12062a"/>
+  <rect x="150" y="96" width="100" height="30" fill="#3a2a10" opacity=".7"/>
+  <g class="reel" ><circle cx="127" cy="111" r="26" fill="#f5efe0"/><circle cx="127" cy="111" r="9" fill="#12062a"/>
+    <path d="M127 89 v10 M127 123 v10 M105 111 h10 M139 111 h10" stroke="#12062a" stroke-width="5"/></g>
+  <g class="reel"><circle cx="273" cy="111" r="26" fill="#f5efe0"/><circle cx="273" cy="111" r="9" fill="#12062a"/>
+    <path d="M273 89 v10 M273 123 v10 M251 111 h10 M285 111 h10" stroke="#12062a" stroke-width="5"/></g>
+  <path d="M70 244 L96 184 L304 184 L330 244" fill="#0d0420" stroke="#000" stroke-width="4"/>
+  <circle cx="130" cy="214" r="9" fill="#000"/><circle cx="270" cy="214" r="9" fill="#000"/>
+  <text x="44" y="158" font-family="Press Start 2P, monospace" font-size="9" fill="#12062a">100 BPM · Am</text>
+  <text x="356" y="158" text-anchor="end" font-family="Press Start 2P, monospace" font-size="9" fill="#12062a">C-60</text>
+</svg></div>
+    <div>
+      <p class="track-title">Нічна хвиля</p>
+      <p class="track-sub">ОФІЦІЙНИЙ ТРЕК · 100 УД/ХВ · <span id="tapeCounter">00:00</span></p>
+      <div class="deck__ctrl" role="group" aria-label="Керування касетою">
+        <button class="key" type="button" data-k="rew" aria-label="Назад на 10 секунд">◀◀</button>
+        <button class="key" type="button" data-k="play" aria-label="Відтворити">▶</button>
+        <button class="key" type="button" data-k="pause" aria-label="Пауза">❚❚</button>
+        <button class="key" type="button" data-k="stop" aria-label="Стоп">■</button>
+        <button class="key" type="button" data-k="ff" aria-label="Вперед на 10 секунд">▶▶</button>
+      </div>
+      <canvas class="vu" aria-hidden="true"></canvas>
+      <audio id="track" controls preload="metadata">
+    <source src="media/nichna-khvylia.ogg" type="audio/ogg">
+    <source src="media/nichna-khvylia.mp3" type="audio/mpeg">
+    Ваш браузер не підтримує тег &lt;audio&gt;. <a href="media/nichna-khvylia.mp3">Завантажити трек</a>.
+      </audio>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:20px">Трек вставлено тегом &lt;audio&gt; з двома джерелами: OGG для Firefox і Chrome та MP3 для Safari. Мелодію створено програмно спеціально для сайту.</p>
+</section>
+
+<section class="section" style="padding-top:0">
+  <span class="label">04 · СОЦМЕРЕЖІ</span>
+  <h2 class="h2 ab">Поділися <em>хвилею</em></h2>
+  <div class="socials"><a class="soc" style="--c:#4f7bff" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//tnedyts.github.io/web/lab9/" target="_blank" rel="noopener" title="Поділитися: Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v8h4v-8H16l.5-4h-3V8.8c0-.5.3-.8.5-.8z"/></svg>Facebook</a><a class="soc" style="--c:#e9ffff" href="https://twitter.com/intent/tweet?url=https%3A//tnedyts.github.io/web/lab9/&text=%D0%9D%D1%96%D1%87%D0%BD%D0%B0%20%D1%85%D0%B2%D0%B8%D0%BB%D1%8F%20%E2%80%94%20%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D1%8C%20%D1%81%D0%B8%D0%BD%D1%82%D0%B2%D0%B5%D0%B9%D0%B2%D1%83%2C%2015%E2%80%9317%20%D1%81%D0%B5%D1%80%D0%BF%D0%BD%D1%8F%202027%2C%20%D0%9A%D0%B8%D1%97%D0%B2" target="_blank" rel="noopener" title="Поділитися: X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4.6l4 5.6L17.2 4H20l-6.1 7.2L20.5 20h-4.6l-4.3-6-5 6H4l6.4-7.5z"/></svg>X</a><a class="soc" style="--c:#31f3ff" href="https://t.me/share/url?url=https%3A//tnedyts.github.io/web/lab9/&text=%D0%9D%D1%96%D1%87%D0%BD%D0%B0%20%D1%85%D0%B2%D0%B8%D0%BB%D1%8F%20%E2%80%94%20%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D1%8C%20%D1%81%D0%B8%D0%BD%D1%82%D0%B2%D0%B5%D0%B9%D0%B2%D1%83%2C%2015%E2%80%9317%20%D1%81%D0%B5%D1%80%D0%BF%D0%BD%D1%8F%202027%2C%20%D0%9A%D0%B8%D1%97%D0%B2" target="_blank" rel="noopener" title="Поділитися: Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l5.5 2 2 6 3-3.6 4.5 3.3z M8.5 13l9-6-7 7.5"/></svg>Telegram</a><a class="soc" style="--c:#4fa3ff" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//tnedyts.github.io/web/lab9/" target="_blank" rel="noopener" title="Поділитися: LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h3v11H5zM6.5 4a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 9h3v1.6c.5-1 1.7-1.9 3.4-1.9 3 0 3.6 2 3.6 4.6V20h-3v-5.8c0-1.4 0-3-1.9-3s-2.1 1.4-2.1 2.9V20h-3z"/></svg>LinkedIn</a><a class="soc" style="--c:#ff2fb3" href="https://pinterest.com/pin/create/button/?url=https%3A//tnedyts.github.io/web/lab9/&description=%D0%9D%D1%96%D1%87%D0%BD%D0%B0%20%D1%85%D0%B2%D0%B8%D0%BB%D1%8F%20%E2%80%94%20%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D1%8C%20%D1%81%D0%B8%D0%BD%D1%82%D0%B2%D0%B5%D0%B9%D0%B2%D1%83%2C%2015%E2%80%9317%20%D1%81%D0%B5%D1%80%D0%BF%D0%BD%D1%8F%202027%2C%20%D0%9A%D0%B8%D1%97%D0%B2" target="_blank" rel="noopener" title="Поділитися: Pinterest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a8 8 0 0 0-2.9 15.5c-.1-.7-.1-1.7 0-2.5l1-4.2s-.3-.5-.3-1.3c0-1.2.7-2.1 1.6-2.1.7 0 1.1.6 1.1 1.2 0 .8-.5 1.9-.7 2.9-.2.9.4 1.6 1.3 1.6 1.6 0 2.8-1.7 2.8-4.1 0-2.1-1.5-3.6-3.7-3.6-2.5 0-4 1.9-4 3.8 0 .8.3 1.6.7 2l.1.3-.2 1c0 .2-.2.2-.4.1-1.2-.6-1.9-2.3-1.9-3.7 0-3 2.2-5.8 6.3-5.8 3.3 0 5.9 2.4 5.9 5.5 0 3.3-2.1 6-5 6-1 0-1.9-.5-2.2-1.1l-.6 2.3c-.2.8-.8 1.9-1.2 2.6A8 8 0 1 0 12 3z"/></svg>Pinterest</a><a class="soc" style="--c:#ff7a3d" href="https://www.instagram.com/" target="_blank" rel="noopener" title="Поділитися: Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm5 3.5A3.5 3.5 0 1 1 12 15.5 3.5 3.5 0 0 1 12 8.5zm0 2A1.5 1.5 0 1 0 12 13.5 1.5 1.5 0 0 0 12 10.5zM17 6.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>Instagram</a><a class="soc" style="--c:#ff3b3b" href="https://www.youtube.com/" target="_blank" rel="noopener" title="Поділитися: YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 4.8 2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 22 12a27 27 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg>YouTube</a></div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <span class="label">05 · ІНФОРМЕРИ</span>
+  <h2 class="h2 ab">Погода <em>й курс</em></h2>
+  <div class="grid3">
+    <div class="inf"><h3>ПОГОДА · ВДНГ ЗАРАЗ</h3><div id="weather"><p class="row"><span>Завантаження…</span></p></div><small>Дані: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · <a href="https://sinoptik.ua/" target="_blank" rel="noopener">прогноз на Sinoptik</a></small></div>
+    <div class="inf"><h3>КУРС НБУ</h3><div id="fx"><p class="row"><span>Завантаження…</span></p></div></div>
+    <div class="inf"><h3>ІНФОРМЕР WTTR.IN</h3><a href="https://wttr.in/Kyiv?lang=uk" target="_blank" rel="noopener"><img src="https://wttr.in/Kyiv_0pq_lang=uk.png" alt="Погода в Києві — інформер wttr.in" loading="lazy"></a><small>Класичний інформер-картинка, що оновлюється на сервері.</small></div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p class="pixel">© 2026 НІЧНА ХВИЛЯ · ЛАБОРАТОРНА РОБОТА №9</p>
+  <p>Автор: <b>Прізвище Ім'я По батькові</b>, група ____ · Сайт створено: 12.10.2026</p>
+  <p>Фестиваль і всі артисти вигадані для навчального сайту. Перемикайте канали клавішами <b>1–5</b>.</p>
+</footer>
+
+<div class="flicker" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+<div class="bezel" aria-hidden="true"></div>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/tv.js"></script>
+<script src="js/media.js"></script>
+</body>
+</html>

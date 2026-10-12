@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лайнап — Нічна хвиля</title>
+<meta name="description" content="Артисти та розклад фестивалю «Нічна хвиля»">
+<meta name="author" content="Прізвище Ім'я По батькові">
+<meta name="theme-color" content="#0a0216">
+<meta property="og:title" content="Нічна хвиля — фестиваль синтвейву">
+<meta property="og:description" content="Артисти та розклад фестивалю «Нічна хвиля»">
+<meta property="og:url" content="https://tnedyts.github.io/web/lab9/lineup.html">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Лабораторна робота 9. Вставлення додатків із зовнішніх джерел: карти Google, відео YouTube,
+     аудіо HTML5, кнопки соцмереж, інформери. Тема: вигаданий фестиваль синтвейву -->
+<div class="power" aria-hidden="true"><i></i></div>
+<div class="static" aria-hidden="true"><canvas></canvas><b>CH --</b></div>
+<div class="osd osd--tl" aria-hidden="true"><b>CH 02</b>ЛАЙНАП</div>
+<div class="osd osd--tc"><a href="index.html" title="На головну">НІЧНА <span>ХВИЛЯ</span></a></div>
+<div class="osd osd--tr"><span class="rec">●</span> PLAY ▶<br><span id="osdTime">SP 00:00:00</span><br><button class="tape-btn" type="button" aria-pressed="false" title="Увімкнути трек фестивалю"><span>▶ ТРЕК</span></button></div>
+<div class="osd osd--bl" aria-hidden="true" id="osdDate">ЖОВ 12 2026</div>
+<nav aria-label="Канали (розділи сайту)"><ul class="guide"><li><a href="index.html" data-ch="01"><b>01</b><span>Ефір</span></a></li><li><a href="lineup.html" data-ch="02" class="is-on" aria-current="page"><b>02</b><span>Лайнап</span></a></li><li><a href="media.html" data-ch="03"><b>03</b><span>Медіа</span></a></li><li><a href="tickets.html" data-ch="04"><b>04</b><span>Квитки</span></a></li><li><a href="author.html" data-ch="05"><b>05</b><span>Автор</span></a></li></ul></nav>
+<main id="main">
+<section class="section" style="padding-top:clamp(130px,18vh,190px)">
+  <span class="label">CH 02 · ЛАЙНАП</span>
+  <h1 class="h2 ab">Дванадцять <em>касет</em></h1>
+  <p class="lead">Кожен артист — окрема касета на полиці. Наведіть курсор, щоб витягнути її, і клацніть, щоб прочитати опис.</p>
+  <div class="shelf">
+    <div class="vhs" style="--c:#ff2fb3" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-120</span>
+      <div class="vhs__label"><b>Лазерний Гетьман</b><span>аутран</span></div>
+      <p class="vhs__meta">П'ЯТНИЦЯ<br>СЦЕНА <b>СОНЦЕ</b></p>
+      <p class="vhs__more">Гітарні соло поверх ревучих синтезаторів. Хедлайнер першого вечора.</p>
+    </div>
+    <div class="vhs" style="--c:#9b5cff" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-135</span>
+      <div class="vhs__label"><b>Мавка 2084</b><span>дарксинт</span></div>
+      <p class="vhs__meta">П'ЯТНИЦЯ<br>СЦЕНА <b>СІТКА</b></p>
+      <p class="vhs__more">Лісова міфологія в кіберпанк-обгортці: важкий бас і шепіт вокодера.</p>
+    </div>
+    <div class="vhs" style="--c:#31f3ff" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-150</span>
+      <div class="vhs__label"><b>Нічний Трамвай</b><span>чілвейв</span></div>
+      <p class="vhs__meta">П'ЯТНИЦЯ<br>СЦЕНА <b>АРКАДА</b></p>
+      <p class="vhs__more">Повільні грувові треки для прогулянки нічним містом.</p>
+    </div>
+    <div class="vhs" style="--c:#ffd23f" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-165</span>
+      <div class="vhs__label"><b>Касетна Доба</b><span>ретровейв</span></div>
+      <p class="vhs__meta">П'ЯТНИЦЯ<br>СЦЕНА <b>СІТКА</b></p>
+      <p class="vhs__more">Стрічкові петлі, шипіння касет і мелодії з дитинства.</p>
+    </div>
+    <div class="vhs" style="--c:#ff2fb3" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-180</span>
+      <div class="vhs__label"><b>Хромовий Дніпро</b><span>синтвейв</span></div>
+      <p class="vhs__meta">СУБОТА<br>СЦЕНА <b>СОНЦЕ</b></p>
+      <p class="vhs__more">Головний сет фестивалю — дві години синтезаторів і лазерне шоу.</p>
+    </div>
+    <div class="vhs" style="--c:#ff7a3d" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-195</span>
+      <div class="vhs__label"><b>Вій.exe</b><span>дарксинт</span></div>
+      <p class="vhs__meta">СУБОТА<br>СЦЕНА <b>СІТКА</b></p>
+      <p class="vhs__more">«Підніміть мені повіки» — і стробоскопи вмикаються на повну.</p>
+    </div>
+    <div class="vhs" style="--c:#31f3ff" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-210</span>
+      <div class="vhs__label"><b>Синій Вектор</b><span>аутран</span></div>
+      <p class="vhs__meta">СУБОТА<br>СЦЕНА <b>СОНЦЕ</b></p>
+      <p class="vhs__more">Музика для нічної траси, що зникає в неоновому горизонті.</p>
+    </div>
+    <div class="vhs" style="--c:#ffd23f" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-225</span>
+      <div class="vhs__label"><b>Електрополька</b><span>італо-диско</span></div>
+      <p class="vhs__meta">СУБОТА<br>СЦЕНА <b>АРКАДА</b></p>
+      <p class="vhs__more">Танцювальний сет із вокодерами, бас-гітарою й дзеркальною кулею.</p>
+    </div>
+    <div class="vhs" style="--c:#9b5cff" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-240</span>
+      <div class="vhs__label"><b>Космічний Чумак</b><span>дрімвейв</span></div>
+      <p class="vhs__meta">НЕДІЛЯ<br>СЦЕНА <b>СОНЦЕ</b></p>
+      <p class="vhs__more">Прощальний сет на світанку під зорі Чумацького Шляху.</p>
+    </div>
+    <div class="vhs" style="--c:#31f3ff" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-255</span>
+      <div class="vhs__label"><b>Піксельна Весна</b><span>чиптюн</span></div>
+      <p class="vhs__meta">НЕДІЛЯ<br>СЦЕНА <b>АРКАДА</b></p>
+      <p class="vhs__more">Звуки ігрових приставок, перетворені на справжній рейв.</p>
+    </div>
+    <div class="vhs" style="--c:#ff7a3d" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-270</span>
+      <div class="vhs__label"><b>Тролейбус 88</b><span>вейпорвейв</span></div>
+      <p class="vhs__meta">НЕДІЛЯ<br>СЦЕНА <b>СІТКА</b></p>
+      <p class="vhs__more">Сповільнені семпли, пальми й мармурові статуї на екранах.</p>
+    </div>
+    <div class="vhs" style="--c:#ff2fb3" tabindex="0" role="button" aria-expanded="false">
+      <span class="vhs__band">T-285</span>
+      <div class="vhs__label"><b>Полуничний Захід</b><span>синтпоп</span></div>
+      <p class="vhs__meta">НЕДІЛЯ<br>СЦЕНА <b>СОНЦЕ</b></p>
+      <p class="vhs__more">Пісні, які співає весь майданчик. Приспів — обов'язковий.</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <span class="label">РОЗКЛАД</span>
+  <h2 class="h2 ab">Хто <em>коли</em> грає</h2>
+  <div class="tt-wrap">
+    <table class="tt">
+      <caption>ГОЛОВНІ СЕТИ ТРЬОХ НОЧЕЙ</caption>
+      <thead><tr><th scope="col">ЧАС</th><th scope="col">П'ЯТНИЦЯ 15.08</th><th scope="col">СУБОТА 16.08</th><th scope="col">НЕДІЛЯ 17.08</th></tr></thead>
+      <tbody><tr><th scope="row">19:00</th><td><b>Нічний Трамвай</b><span>сцена «Аркада»</span></td><td><b>Електрополька</b><span>сцена «Аркада»</span></td><td><b>Піксельна Весна</b><span>сцена «Аркада»</span></td></tr><tr><th scope="row">20:30</th><td><b>Касетна Доба</b><span>сцена «Сітка»</span></td><td><b>Вій.exe</b><span>сцена «Сітка»</span></td><td><b>Тролейбус 88</b><span>сцена «Сітка»</span></td></tr><tr><th scope="row">22:00</th><td><b>Мавка 2084</b><span>сцена «Сітка»</span></td><td><b>Синій Вектор</b><span>сцена «Сонце»</span></td><td><b>Полуничний Захід</b><span>сцена «Сонце»</span></td></tr><tr><th scope="row">23:30</th><td><b>Лазерний Гетьман</b><span>сцена «Сонце»</span></td><td><b>Хромовий Дніпро</b><span>сцена «Сонце»</span></td><td><b>Космічний Чумак</b><span>сцена «Сонце»</span></td></tr></tbody>
+    </table>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p class="pixel">© 2026 НІЧНА ХВИЛЯ · ЛАБОРАТОРНА РОБОТА №9</p>
+  <p>Автор: <b>Прізвище Ім'я По батькові</b>, група ____ · Сайт створено: 12.10.2026</p>
+  <p>Фестиваль і всі артисти вигадані для навчального сайту. Перемикайте канали клавішами <b>1–5</b>.</p>
+</footer>
+<audio id="track" preload="metadata">
+    <source src="media/nichna-khvylia.ogg" type="audio/ogg">
+    <source src="media/nichna-khvylia.mp3" type="audio/mpeg">
+    Ваш браузер не підтримує тег &lt;audio&gt;. <a href="media/nichna-khvylia.mp3">Завантажити трек</a>.
+</audio>
+<div class="flicker" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+<div class="bezel" aria-hidden="true"></div>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/tv.js"></script>
+</body>
+</html>
