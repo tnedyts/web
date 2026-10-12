@@ -293,11 +293,10 @@ dl.about dd {
   text-align: center;
 }
 
-.promo h4 {
-  font-family: Georgia, "Times New Roman", serif;
+.promo h3 {
   font-size: 17px;
-  font-weight: normal;
-  margin-bottom: 8px;
+  color: #ffffff;
+  margin: 0 0 8px 0;
 }
 
 .promo img {
@@ -320,6 +319,11 @@ dl.about dd {
   color: #1b2a41;
 }
 
+.fact h3 {
+  font-size: 15px;
+  margin: 0 0 6px 0;
+}
+
 .fact {
   padding: 12px;
   border: 1px solid #3a6ea5;
@@ -327,7 +331,7 @@ dl.about dd {
   font-size: 12px;
 }
 
-/* елемент h4 з атрибутом title (селектор [атрибут]) */
-h4[title] {
+/* елемент h3 з атрибутом title (селектор [атрибут]) */
+h3[title] {
   cursor: help;
 }
