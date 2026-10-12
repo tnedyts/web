@@ -25,6 +25,9 @@
     'uniform float uZoom;',
     'uniform float uTilt;',
     'uniform vec2 uShift;',
+    'uniform float uYaw;',
+    'uniform float uFl;',
+    'uniform float uLook;',
     '#define RIN 2.6',
     '#define ROUT 12.0',
     'float hash13(vec3 p){p=fract(p*.1031);p+=dot(p,p.zyx+31.32);return fract((p.x+p.y)*p.z);}',
@@ -84,14 +87,15 @@
     ' uv-=uShift;',
     ' float dist=uZoom;',
     ' float pitch=uTilt+uMouse.y*.07;',
-    ' float yaw=uTime*.015+uMouse.x*.22;',
+    ' float yaw=uYaw+uTime*.01+uMouse.x*.18;',
     ' vec3 ro=vec3(dist*cos(pitch)*sin(yaw),dist*sin(pitch),-dist*cos(pitch)*cos(yaw));',
     ' vec3 ww=normalize(-ro);',
     ' vec3 uu=normalize(cross(ww,vec3(0.,1.,0.)));',
     ' vec3 vv=cross(uu,ww);',
+    ' float cl=cos(uLook),sl=sin(uLook);vec3 w2=cl*ww+sl*uu;uu=cl*uu-sl*ww;ww=w2;',
     ' float roll=-.12+uMouse.x*.04;',
     ' vec2 ruv=vec2(cos(roll)*uv.x-sin(roll)*uv.y,sin(roll)*uv.x+cos(roll)*uv.y);',
-    ' vec3 rd=normalize(ruv.x*uu+ruv.y*vv+1.7*ww);',
+    ' vec3 rd=normalize(ruv.x*uu+ruv.y*vv+uFl*ww);',
     ' vec3 pos=ro;vec3 vel=rd;',
     ' vec3 hv=cross(pos,vel);float h2=dot(hv,hv);',
     ' vec3 col=vec3(0.);float al=0.;bool fell=false;',
@@ -152,12 +156,12 @@
   gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
 
   var U = {};
-  ['uRes', 'uTime', 'uDisk', 'uMouse', 'uZoom', 'uTilt', 'uShift'].forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
+  ['uRes', 'uTime', 'uDisk', 'uMouse', 'uZoom', 'uTilt', 'uShift', 'uYaw', 'uFl', 'uLook'].forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var state = {
     scale: window.innerWidth < 700 ? 0.5 : 0.62,
-    zoom: 24, tilt: 0.13, shiftX: 0, shiftY: 0.02,
+    zoom: 60, tilt: 0.13, shiftX: 0, shiftY: 0.0, yaw: 0, fl: 1.7, look: 0,
     mouseX: 0, mouseY: 0, tx: 0, ty: 0,
     diskSpeed: reduce ? 0.15 : 1, diskTime: 0,
     visible: true, running: true
@@ -214,6 +218,9 @@
     gl.uniform1f(U.uZoom, state.zoom);
     gl.uniform1f(U.uTilt, state.tilt);
     gl.uniform2f(U.uShift, state.shiftX, state.shiftY);
+    gl.uniform1f(U.uYaw, state.yaw);
+    gl.uniform1f(U.uFl, state.fl);
+    gl.uniform1f(U.uLook, state.look);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
   requestAnimationFrame(frame);
