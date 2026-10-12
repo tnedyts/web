@@ -204,6 +204,7 @@
 
   if (!hasGsap) return;
   gsap.registerPlugin(ScrollTrigger);
+  gsap.config({ nullTargetWarn: false });
   if (!reduce && typeof window.Lenis !== 'undefined') {
     var lenis = new Lenis({ lerp: 0.1 });
     window.__lenis = lenis;

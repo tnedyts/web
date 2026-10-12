@@ -128,13 +128,13 @@
     var tl = gsap.timeline();
     lines.forEach(function (line) {
       var k = line.querySelector('kbd');
-      tl.set(line, { opacity: 1 });
       if (k) {
+        tl.set(line, { opacity: 1 });
         var t = k.textContent;
         var o = { n: 0 };
         k.textContent = '';
         tl.to(o, { n: t.length, duration: t.length * 0.03, ease: 'none', onUpdate: function () { k.textContent = t.slice(0, Math.round(o.n)); } });
-      } else tl.from(line, { opacity: 0, x: -10, duration: 0.25 });
+      } else tl.fromTo(line, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.25 });
       tl.to({}, { duration: 0.2 });
     });
   }

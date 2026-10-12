@@ -412,17 +412,17 @@
       '<path class="ridge__fill" d="' + dFill + '"/><path class="ridge__line" d="' + dLine + '"/>' +
       '<path class="ridge__route" id="route" d="' + routeD + '"/>' + labels +
       '<circle class="ridge__hiker" id="hiker" r="8" cx="' + line[0][0] + '" cy="' + (line[0][1] - 4) + '"/>';
-    var route = document.getElementById('route');
+    var ridgeRoute = document.getElementById('route');
     var hiker = document.getElementById('hiker');
-    var len = route.getTotalLength();
-    route.style.strokeDasharray = '8 8';
+    var len = ridgeRoute.getTotalLength();
+    ridgeRoute.style.strokeDasharray = '8 8';
     var ptEls = ridgeSvg.querySelectorAll('.pt');
     function place(p) {
-      var q = route.getPointAtLength(len * p);
+      var q = ridgeRoute.getPointAtLength(len * p);
       hiker.setAttribute('cx', q.x);
       hiker.setAttribute('cy', q.y);
-      route.style.strokeDashoffset = 0;
-      route.style.clipPath = 'inset(0 ' + ((1 - q.x / rw) * 100).toFixed(2) + '% 0 0)';
+      ridgeRoute.style.strokeDashoffset = 0;
+      ridgeRoute.style.clipPath = 'inset(0 ' + ((1 - q.x / rw) * 100).toFixed(2) + '% 0 0)';
       ptEls.forEach(function (el, k) { el.classList.toggle('is-hot', Math.abs(pts[k].x * rw - q.x) < 18); });
     }
     place(0);

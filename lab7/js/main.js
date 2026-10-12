@@ -64,6 +64,7 @@
 
   if (!hasGsap) return;
   gsap.registerPlugin(ScrollTrigger);
+  gsap.config({ nullTargetWarn: false });
 
   /* Плавне прокручування */
   if (!reduce && typeof window.Lenis !== 'undefined') {
