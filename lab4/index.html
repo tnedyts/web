@@ -1,223 +1,334 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
+<!DOCTYPE html>
+<html lang="uk">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Проста вебсторінка про штучний інтелект" />
-<meta name="keywords" content="штучний інтелект, ШІ, нейронні мережі, машинне навчання" />
-<meta name="author" content="Студент" />
-<title>Штучний інтелект — що це таке?</title>
-<link rel="icon" type="image/png" href="images/favicon.png" />
-<!-- Основні стилі сторінки -->
-<style type="text/css">
-@font-face {
-  font-family: "Unbounded";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200 900;
-  src: url("fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
-  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
-}
-@font-face {
-  font-family: "Unbounded";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200 900;
-  src: url("fonts/unbounded-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-@font-face {
-  font-family: "Onest";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
-  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
-}
-@font-face {
-  font-family: "Onest";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("fonts/onest-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 800;
-  src: url("fonts/jetbrains-mono-cyrillic-wght-normal.woff2") format("woff2");
-  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 800;
-  src: url("fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-
-/* ---- Основні стилі сторінки ---- */
-html { background-color: #F2F3F8; }
-body {
-  margin: 0;
-  color: #16173A;
-  font-family: "Onest", Verdana, sans-serif;
-  font-size: 18px;
-  line-height: 1.65;
-}
-img.band { display: block; width: 100%; height: 150px; object-fit: cover; }
-.page { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
-.hero { padding: 56px 0 8px; }
-h1, h2, h3, h4, h5 { font-family: "Unbounded", Georgia, serif; line-height: 1.15; letter-spacing: -0.01em; }
-h1 { font-size: 64px; font-weight: 700; margin: 0 0 16px; letter-spacing: -0.03em; }
-h2 { font-size: 30px; font-weight: 600; margin: 56px 0 16px; }
-h3 { font-size: 21px; font-weight: 600; margin: 36px 0 10px; }
-h4 { font-size: 17px; font-weight: 600; margin: 28px 0 8px; }
-h5 { font-size: 14px; font-weight: 600; margin: 24px 0 4px; color: #3B4BF5; }
-p { margin: 0 0 16px; hyphens: auto; }
-hr { border: 0; border-top: 1px solid rgba(22, 23, 58, 0.18); margin: 40px auto; }
-strong, b { font-weight: 650; }
-code, tt, kbd, samp, var, pre { font-family: "JetBrains Mono", "Courier New", monospace; font-size: 0.86em; }
-var { font-style: italic; color: #3B4BF5; }
-code { background-color: rgba(59, 75, 245, 0.10); padding: 2px 6px; border-radius: 6px; }
-samp { color: #F2496B; }
-kbd {
-  border: 1px solid rgba(22, 23, 58, 0.25);
-  border-bottom-width: 3px;
-  border-radius: 7px;
-  padding: 1px 8px;
-  background-color: #ffffff;
-}
-pre {
-  background-color: #16173A;
-  color: #F2F3F8;
-  padding: 22px 26px;
-  border-radius: 18px;
-  overflow-x: auto;
-  line-height: 1.55;
-}
-.formula {
-  margin: 28px 0;
-  padding: 26px 20px;
-  border-radius: 18px;
-  background-color: #ffffff;
-  font-size: 20px;
-}
-blockquote {
-  margin: 28px 0;
-  padding: 4px 0 4px 26px;
-  border-left: 4px solid #F2496B;
-  font-family: "Unbounded", Georgia, serif;
-  font-size: 26px;
-  line-height: 1.35;
-}
-blockquote p { margin: 0; }
-cite { font-style: normal; font-weight: 600; color: #3B4BF5; }
-small { font-size: 0.82em; opacity: 0.75; }
-strike { text-decoration-color: #F2496B; text-decoration-thickness: 2px; }
-u { text-decoration-color: #3B4BF5; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.foot { padding-top: 8px; }
-@media (max-width: 640px) {
-  body { font-size: 16px; }
-  h1 { font-size: 40px; }
-  h2 { font-size: 24px; }
-  blockquote { font-size: 20px; }
-}
-
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Горизонт подій — подорож до чорних дір</title>
+<meta name="description" content="Інтерактивна сторінка про чорні діри: що це таке, як вони влаштовані, як їх відкрили і чому з-за горизонту подій немає вороття.">
+<meta name="keywords" content="чорна діра, горизонт подій, астрономія, космос, радіус Шварцшильда">
+<meta name="author" content="Прізвище Ім'я По батькові">
+<meta name="theme-color" content="#050507">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<basefont size="3" color="#16173A" face="Onest" />
 
-<!-- Декоративна «матриця ваг» нейромережі -->
-<img class="band" src="images/matrix.svg" alt="" />
+<!-- ============================================================
+     Лабораторна робота 4. Розробка простої вебсторінки.
+     Тема: чорні діри. Одна сторінка з тегами форматування тексту:
+     b, strong, i, em, u, s, sup, sub, small, cite, code, samp, var,
+     kbd, blockquote, pre, h1–h5, hr, br, а також коментарі.
+     ============================================================ -->
 
-<div class="page">
-
-<!-- Заголовок сторінки -->
-<div class="hero">
-<h1 align="center">Штучний інтелект</h1>
-<center><font face="Onest" size="4" color="#3B4BF5"><i>Коротко про те, як машини вчаться думати</i></font></center>
+<!-- Екран завантаження -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__ring"><span></span></div>
+  <div class="loader__count"><span id="loaderCount">0</span><small>%</small></div>
+  <p class="loader__text">Наближення до горизонту подій</p>
 </div>
-<hr align="center" width="100%" size="1" noshade="noshade" />
 
-<!-- Розділ 1 -->
-<h2>Що таке штучний інтелект?</h2>
-<p align="justify">
-<b>Штучний інтелект</b> (ШІ, англ. <i>Artificial Intelligence</i>, AI) — це галузь
-інформатики, що створює <strong>комп'ютерні системи, здатні виконувати завдання,
-які зазвичай потребують людського інтелекту</strong>: розпізнавати мову та зображення,
-перекладати тексти, ухвалювати рішення та навчатися на власному досвіді.
-</p>
-<p align="justify">
-Сам термін запропонував американський учений <em>Джон Маккарті</em>, готуючи
-літній семінар у Дартмутському коледжі, що відбувся у 1956 році. Саме цю подію вважають
-<u>офіційною датою народження ШІ</u> як наукового напряму.
-</p>
+<!-- Полотно WebGL з чорною дірою (малюється скриптом js/blackhole.js) -->
+<canvas class="bh-canvas" id="bh" aria-hidden="true"></canvas>
+<div class="bh-fallback" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
-<h3>Слабкий і сильний ШІ</h3>
-<p align="left">
-Розрізняють <b>слабкий (вузький) ШІ</b>, який виконує одне конкретне завдання,
-і <b>сильний (загальний) ШІ</b>, що мав би мислити на рівні людини в будь-якій сфері.<br />
-Усі сучасні системи — від голосових помічників до чат-ботів — поки що належать до вузького ШІ.<br />
-Колись популярну думку <strike>«комп'ютер ніколи не обіграє людину в шахи»</strike>
-спростувала програма Deep Blue ще у 1997 році.
-</p>
+<!-- Курсор -->
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
 
-<!-- Розділ 2 -->
-<h2>Як працює штучний нейрон</h2>
-<p align="justify">
-Основою більшості сучасних систем ШІ є <b>штучні нейронні мережі</b>. Кожен нейрон
-отримує вхідні сигнали <var>x</var><sub>1</sub>, <var>x</var><sub>2</sub>, …, <var>x</var><sub>n</sub>,
-множить їх на ваги <var>w</var><sub>1</sub>, <var>w</var><sub>2</sub>, …, <var>w</var><sub>n</sub>,
-додає зміщення <var>b</var> і пропускає суму через функцію активації <var>f</var>:
-</p>
-<p class="formula" align="center">
-<big><tt>y = f(w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + … + w<sub>n</sub>x<sub>n</sub> + b)</tt></big>
-</p>
-<p align="justify">
-Великі мовні моделі містять сотні мільярдів таких параметрів — понад 10<sup>11</sup>.
-Для їх навчання потрібні тисячі графічних процесорів і величезні обсяги текстів.
-<small>(Для порівняння: мозок людини має близько 8,6·10<sup>10</sup> нейронів.)</small>
-</p>
+<!-- Індикатор прогресу прокручування -->
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-<h4>Приклад коду</h4>
-<p>Ось як можна описати один нейрон мовою Python (функція <code>neuron</code>):</p>
-<pre>
-import math
+<header class="nav" id="top">
+  <a class="nav__logo magnetic" href="#top" aria-label="На початок сторінки">
+    <span class="nav__mark"></span>
+    <span>Горизонт&nbsp;подій</span>
+  </a>
+  <nav aria-label="Розділи сторінки">
+    <ul class="nav__links">
+      <li><a href="#essence">Суть</a></li>
+      <li><a href="#formula">Формула</a></li>
+      <li><a href="#anatomy">Анатомія</a></li>
+      <li><a href="#types">Типи</a></li>
+      <li><a href="#history">Історія</a></li>
+      <li><a href="#myths">Міфи</a></li>
+    </ul>
+  </nav>
+  <button class="nav__sound magnetic" id="calmBtn" type="button" aria-pressed="false" title="Зупинити або запустити обертання диска">
+    <span class="nav__sound-bars"><i></i><i></i><i></i><i></i></span>
+    <span class="nav__sound-label">Диск</span>
+  </button>
+</header>
 
-def neuron(x, w, b):
-    s = sum(xi * wi for xi, wi in zip(x, w)) + b
-    return 1 / (1 + math.exp(-s))   # сигмоїда
+<main>
 
-print(neuron([1.0, 0.5], [0.4, -0.2], 0.1))
-</pre>
-<p>
-Щоб запустити програму, наберіть у терміналі <kbd>python neuron.py</kbd> і натисніть <kbd>Enter</kbd>.
-Програма виведе приблизно таке: <samp>0.598687660112452</samp>
-</p>
+  <!-- ===== Перший екран ===== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="hero__kicker mono">Об'єкт&nbsp;M87* · 55&nbsp;млн світлових років · 6,5&nbsp;млрд M<sub>☉</sub></p>
+    <h1 class="hero__title" id="hero-title">
+      <span class="hero__line">Горизонт</span>
+      <span class="hero__line hero__line--italic">подій</span>
+    </h1>
+    <p class="hero__lead">Подорож до найтемніших об'єктів Всесвіту — туди, де <em>простір</em> і <em>час</em> міняються ролями, а світло назавжди втрачає дорогу додому.</p>
+    <a class="hero__cta magnetic" href="#essence"><span>Перетнути межу</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0-6-6m6 6 6-6"/></svg></a>
+    <div class="hero__coords mono" aria-hidden="true">
+      <span>RA 12<sup>h</sup> 30<sup>m</sup> 49<sup>s</sup></span>
+      <span>Dec +12° 23′ 28″</span>
+      <span>z = 0,00428</span>
+    </div>
+  </section>
 
-<h5>Примітка</h5>
-<p><small>Функція <code>math.exp</code> обчислює експоненту, а змінна <var>s</var> — зважену суму входів.</small></p>
+  <!-- ===== Суть ===== -->
+  <section class="section essence" id="essence" aria-labelledby="essence-title">
+    <h2 class="eyebrow" id="essence-title"><span>01</span> Що таке чорна діра</h2>
+    <p class="essence__big reveal-words">
+      <b>Чорна діра</b> — це ділянка простору, де речовина стиснута так щільно, що її тяжіння не відпускає <strong>нічого</strong>, навіть світло. Межу, за якою втеча неможлива, називають <i>горизонтом подій</i>.
+    </p>
+    <div class="essence__cols">
+      <p>Уявіть, що ви стискаєте Сонце до кульки діаметром <b>менш як 6&nbsp;км</b>. Маса лишиться тією самою, але сила тяжіння біля поверхні стане такою, що друга космічна швидкість перевищить швидкість світла — <span class="nowrap">≈ 299 792 км/с</span>. Так народжується чорна діра.</p>
+      <p>Усередині горизонту всі можливі шляхи ведуть лише до центру. Для того, хто падає, це станеться за лічені миті; для того, хто спостерігає здалеку, падіння триватиме <em>вічно</em>: час біля горизонту ніби застигає, а світло від предмета, що падає, слабшає і червоніє.</p>
+    </div>
+    <hr class="rule" size="1" noshade>
+  </section>
 
-<hr align="left" width="40%" size="1" />
+  <!-- ===== Формула і калькулятор ===== -->
+  <section class="section formula" id="formula" aria-labelledby="formula-title">
+    <h2 class="eyebrow" id="formula-title"><span>02</span> Радіус Шварцшильда</h2>
+    <div class="formula__grid">
+      <div>
+        <p class="formula__eq" aria-label="R з індексом s дорівнює 2 G M поділити на c у квадраті">
+          <span class="rs"><var>R</var><sub>s</sub></span> <span class="op">=</span>
+          <span class="frac"><span>2<var>G</var><var>M</var></span><span><var>c</var><sup>2</sup></span></span>
+        </p>
+        <ul class="legend">
+          <li><var>G</var> — гравітаційна стала, 6,674·10<sup>−11</sup>&nbsp;м<sup>3</sup>/(кг·с<sup>2</sup>)</li>
+          <li><var>M</var> — маса тіла</li>
+          <li><var>c</var> — швидкість світла, 2,998·10<sup>8</sup>&nbsp;м/с</li>
+        </ul>
+        <p class="formula__note">Будь-яке тіло стало б чорною дірою, якби його стиснули до цього радіуса. Для Землі це <b>8,9&nbsp;мм</b> — розмір горошини.</p>
+      </div>
 
-<!-- Розділ 3: цитата -->
-<h2>Тест Тюрінга</h2>
-<p>У статті <cite>«Обчислювальні машини та розум»</cite> (1950) Алан Тюрінг поставив питання:</p>
-<blockquote>
-<p><i>«Пропоную розглянути питання: чи можуть машини мислити?»</i></p>
-</blockquote>
-<p align="justify">
-Він запропонував «гру в імітацію»: якщо людина-суддя, листуючись із машиною та людиною,
-не може надійно відрізнити, хто з них хто, — машину можна вважати «мислячою».
-</p>
+      <div class="calc" id="calc">
+        <h3 class="calc__title">Калькулятор горизонту</h3>
+        <label class="calc__label" for="massRange">Маса об'єкта</label>
+        <input class="calc__range" id="massRange" type="range" min="0" max="1000" value="338" step="1" aria-describedby="calcHint">
+        <div class="calc__ticks mono" aria-hidden="true"><span style="left:0%">Земля</span><span style="left:33.8%">Сонце</span><span style="left:74.2%">Sgr A*</span><span style="left:100%">TON 618</span></div>
+        <p class="calc__mass"><samp id="massOut">1 M☉</samp></p>
+        <div class="calc__orb" aria-hidden="true"><span id="calcOrb"></span></div>
+        <p class="calc__result">Радіус горизонту: <samp id="radiusOut">2,95 км</samp></p>
+        <p class="calc__compare" id="compareOut">Як невелике місто</p>
+        <p class="calc__hint" id="calcHint"><small>Підказка: клацніть на повзунок і натискайте <kbd>←</kbd> <kbd>→</kbd> або <kbd>Shift</kbd>&nbsp;+&nbsp;<kbd>↑</kbd>.</small></p>
+      </div>
+    </div>
+  </section>
 
-<hr align="center" width="100%" size="1" noshade="noshade" />
-<p class="foot" align="right"><font size="2" color="#3B4BF5">Сторінку створено в межах лабораторної роботи № 4</font></p>
-</div>
+  <!-- ===== Анатомія (закріплена схема + текст) ===== -->
+  <section class="section anatomy" id="anatomy" aria-labelledby="anatomy-title">
+    <h2 class="eyebrow" id="anatomy-title"><span>03</span> Анатомія чорної діри</h2>
+    <div class="anatomy__wrap">
+      <div class="anatomy__stage">
+        <svg class="anatomy__svg" viewBox="0 0 600 600" role="img" aria-label="Схема будови чорної діри">
+          <defs>
+            <radialGradient id="gDisk" cx="50%" cy="50%" r="50%">
+              <stop offset="40%" stop-color="#ffb35c" stop-opacity="0"/>
+              <stop offset="55%" stop-color="#ffd9a0" stop-opacity=".9"/>
+              <stop offset="75%" stop-color="#ff7a2f" stop-opacity=".55"/>
+              <stop offset="100%" stop-color="#ff3d1f" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="gJet" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#9fb8ff" stop-opacity="0"/>
+              <stop offset="1" stop-color="#cbd8ff" stop-opacity=".9"/>
+            </linearGradient>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+          </defs>
+          <g class="part" data-part="jets">
+            <path class="jet" d="M290 250 L300 0 L310 250 Z" fill="url(#gJet)"/>
+            <path class="jet" d="M290 250 L300 0 L310 250 Z" fill="url(#gJet)" transform="rotate(180 300 300)"/>
+          </g>
+          <g class="part" data-part="disk">
+            <ellipse cx="300" cy="300" rx="280" ry="70" fill="url(#gDisk)" class="disk-fill"/>
+            <ellipse cx="300" cy="300" rx="280" ry="70" class="ring" />
+          </g>
+          <g class="part" data-part="isco"><circle cx="300" cy="300" r="150" class="ring ring--dash"/></g>
+          <g class="part" data-part="photon"><circle cx="300" cy="300" r="75" class="ring ring--photon"/><circle cx="300" cy="300" r="75" class="ring ring--glow" filter="url(#glow)"/></g>
+          <g class="part" data-part="horizon"><circle cx="300" cy="300" r="50" class="horizon"/></g>
+          <g class="part" data-part="singularity"><circle cx="300" cy="300" r="3" class="singularity"/></g>
+          <g class="labels mono">
+            <text x="300" y="34" text-anchor="middle">джет</text>
+            <text x="560" y="286" text-anchor="end">диск</text>
+            <text x="300" y="140" text-anchor="middle">ISCO · 3R<tspan baseline-shift="sub" font-size="9">s</tspan></text>
+            <text x="300" y="215" text-anchor="middle">1,5R<tspan baseline-shift="sub" font-size="9">s</tspan></text>
+          </g>
+        </svg>
+      </div>
+      <ol class="anatomy__list">
+        <li data-part="singularity">
+          <h3>Сингулярність</h3>
+          <p>Точка в центрі, де, за загальною теорією відносності, густина стає <em>нескінченною</em>. Найімовірніше, тут потрібна ще не створена квантова теорія гравітації.</p>
+        </li>
+        <li data-part="horizon">
+          <h3>Горизонт подій</h3>
+          <p>Сфера радіусом <var>R</var><sub>s</sub>. Не поверхня, а <u>межа без вороття</u>: перетнути її можна, вийти — ніколи.</p>
+        </li>
+        <li data-part="photon">
+          <h3>Фотонна сфера</h3>
+          <p>На відстані 1,5&nbsp;<var>R</var><sub>s</sub> світло може обертатися по колу. Саме вона малює тонке яскраве кільце на знімках.</p>
+        </li>
+        <li data-part="isco">
+          <h3>Остання стійка орбіта</h3>
+          <p>Ближче за 3&nbsp;<var>R</var><sub>s</sub> речовина вже не може стабільно обертатися і по спіралі падає під горизонт.</p>
+        </li>
+        <li data-part="disk">
+          <h3>Акреційний диск</h3>
+          <p>Газ, розігнаний майже до швидкості світла, нагрівається до мільйонів градусів і світиться яскравіше за цілі галактики.</p>
+        </li>
+        <li data-part="jets">
+          <h3>Релятивістські струмені</h3>
+          <p>Магнітні поля викидають уздовж осі струмені плазми. Джет галактики M87 тягнеться приблизно на <b>5000 світлових років</b>.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Типи ===== -->
+  <section class="section types" id="types" aria-labelledby="types-title">
+    <h2 class="eyebrow" id="types-title"><span>04</span> Чотири розміри темряви</h2>
+    <div class="types__grid">
+      <article class="card tilt" style="--orb: .22">
+        <div class="card__orb"><span></span></div>
+        <h3>Зоряні</h3>
+        <h5 class="mono">3 – 100 M<sub>☉</sub></h5>
+        <p>Народжуються, коли ядро масивної зорі після вибуху наднової стискається під власною вагою.</p>
+      </article>
+      <article class="card tilt" style="--orb: .4">
+        <div class="card__orb"><span></span></div>
+        <h3>Проміжні</h3>
+        <h5 class="mono">10<sup>2</sup> – 10<sup>5</sup> M<sub>☉</sub></h5>
+        <p>Рідкісна «відсутня ланка». Їх шукають у щільних зоряних скупченнях і карликових галактиках.</p>
+      </article>
+      <article class="card tilt" style="--orb: .75">
+        <div class="card__orb"><span></span></div>
+        <h3>Надмасивні</h3>
+        <h5 class="mono">10<sup>5</sup> – 10<sup>10</sup> M<sub>☉</sub></h5>
+        <p>Сидять у серцях галактик. Наша — Стрілець A* — важить близько 4 мільйонів Сонць.</p>
+      </article>
+      <article class="card tilt" style="--orb: .1">
+        <div class="card__orb"><span></span></div>
+        <h3>Первісні</h3>
+        <h5 class="mono">гіпотетичні</h5>
+        <p>Могли з'явитися в перші миті після Великого вибуху. Деякі — завбільшки з атом, але масою з гору.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Спагетифікація (закріплена секція) ===== -->
+  <section class="spaghetti" id="spaghetti" aria-labelledby="sp-title">
+    <div class="spaghetti__pin">
+      <h2 class="spaghetti__word" id="sp-title" aria-label="Спагетифікація">Спагетифікація</h2>
+      <div class="spaghetti__hole" aria-hidden="true"></div>
+      <p class="spaghetti__text">Біля невеликої чорної діри тяжіння біля ніг набагато сильніше, ніж біля голови. Припливні сили розтягують усе вздовж і стискають упоперек, <s>як у мультфільмі</s> як справжнє спагеті. Фізики так і називають цей процес.</p>
+    </div>
+  </section>
+
+  <!-- ===== Історія (горизонтальна стрічка) ===== -->
+  <section class="history" id="history" aria-labelledby="history-title">
+    <div class="history__pin">
+      <h2 class="eyebrow history__title" id="history-title"><span>05</span> Як ми їх знайшли</h2>
+      <div class="history__track">
+        <article class="event"><h4>1783</h4><h5>Джон Мічелл</h5><p>Англійський священник і натураліст припускає існування «темних зір», з яких не може вирватися світло.</p></article>
+        <article class="event"><h4>1916</h4><h5>Карл Шварцшильд</h5><p>Знаходить перший точний розв'язок рівнянь Ейнштейна — і з ним радіус, що тепер носить його ім'я.</p></article>
+        <article class="event"><h4>1939</h4><h5>Оппенгеймер і Снайдер</h5><p>Показують, що масивна зоря може колапсувати безмежно, ховаючись за горизонтом.</p></article>
+        <article class="event"><h4>1967</h4><h5>Джон Вілер</h5><p>Популяризує назву «чорна діра», яка швидко витісняє незграбне «гравітаційно сколапсована зоря».</p></article>
+        <article class="event"><h4>1974</h4><h5>Стівен Гокінг</h5><p>Доводить, що чорні діри повільно випаровуються, випромінюючи квантове «випромінювання Гокінга».</p></article>
+        <article class="event"><h4>2015</h4><h5>LIGO</h5><p>Уперше зафіксовано гравітаційні хвилі — від злиття двох чорних дір за 1,3&nbsp;млрд світлових років.</p></article>
+        <article class="event"><h4>2019</h4><h5>Event Horizon Telescope</h5><p>Мережа радіотелескопів усієї планети отримує перше зображення тіні чорної діри M87*.</p></article>
+        <article class="event"><h4>2022</h4><h5>Стрілець A*</h5><p>Опубліковано знімок чорної діри в центрі нашого Чумацького Шляху.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Цифри ===== -->
+  <section class="section numbers" aria-labelledby="numbers-title">
+    <h2 class="eyebrow" id="numbers-title"><span>06</span> У цифрах</h2>
+    <div class="numbers__grid">
+      <div class="stat"><p class="stat__value"><span class="count" data-to="6.5" data-dec="1">0</span><small>млрд M<sub>☉</sub></small></p><p class="stat__label">маса M87*</p></div>
+      <div class="stat"><p class="stat__value"><span class="count" data-to="26000">0</span><small>св. років</small></p><p class="stat__label">до Стрільця A*</p></div>
+      <div class="stat"><p class="stat__value"><span class="count" data-to="1560">0</span><small>св. років</small></p><p class="stat__label">до найближчої відомої, Gaia BH1</p></div>
+      <div class="stat"><p class="stat__value">10<sup><span class="count" data-to="67">0</span></sup><small>років</small></p><p class="stat__label">випаровуватиметься діра масою Сонця</p></div>
+    </div>
+  </section>
+
+  <!-- ===== Цитата ===== -->
+  <section class="section quote" aria-label="Цитата">
+    <blockquote class="quote__block">
+      <p class="reveal-words">Чорні діри не такі вже й чорні.</p>
+      <footer>— <cite>Стівен Гокінг</cite></footer>
+    </blockquote>
+  </section>
+
+  <!-- ===== Міфи ===== -->
+  <section class="section myths" id="myths" aria-labelledby="myths-title">
+    <h2 class="eyebrow" id="myths-title"><span>07</span> Міфи і правда</h2>
+    <div class="myths__list">
+      <article class="myth">
+        <p class="myth__false"><s>Чорна діра — космічний пилосос, що засмоктує все довкола.</s></p>
+        <p class="myth__true">Здалеку вона притягує так само, як зоря тієї ж маси. Якби Сонце замінила чорна діра такої самої маси, Земля й далі оберталася б по своїй орбіті.</p>
+      </article>
+      <article class="myth">
+        <p class="myth__false"><s>Це буквально дірка в просторі.</s></p>
+        <p class="myth__true">Це надзвичайно компактне тіло з величезною масою — не порожнеча, а <em>найщільніше</em>, що є у Всесвіті.</p>
+      </article>
+      <article class="myth">
+        <p class="myth__false"><s>Чорні діри вічні.</s></p>
+        <p class="myth__true">Через випромінювання Гокінга вони дуже повільно втрачають масу. Діра масою Сонця проживе близько 10<sup>67</sup> років.</p>
+      </article>
+      <article class="myth">
+        <p class="myth__false"><s>Побачити чорну діру неможливо.</s></p>
+        <p class="myth__true">Ми бачимо її <u>тінь</u> на тлі розжареного газу та зорі, що мчать довкола неї по тісних орбітах.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Журнал спостережень (pre + code) ===== -->
+  <section class="section log" aria-labelledby="log-title">
+    <h2 class="eyebrow" id="log-title"><span>08</span> Журнал спостережень</h2>
+    <div class="terminal">
+      <div class="terminal__bar"><i></i><i></i><i></i><span class="mono">eht-console — M87*</span></div>
+<pre class="terminal__body" id="terminal"><code><span class="line"><span class="t-prompt">$</span> <kbd>eht observe --target "M87*" --wavelength 1.3mm</kbd></span>
+<span class="line"><samp><b class="t-ok">[ok]</b> Під'єднано 8 радіотелескопів на 4 континентах</samp></span>
+<span class="line"><samp><b class="t-ok">[ok]</b> Ефективний розмір «антени»: діаметр Землі</samp></span>
+<span class="line"><samp><b class="t-wait">[..]</b> Запис даних: ≈ 3,5 ПБ на жорстких дисках</samp></span>
+<span class="line"><span class="t-prompt">$</span> <kbd>eht image --pipeline all</kbd></span>
+<span class="line"><samp><b class="t-ok">[ok]</b> Тінь знайдено. Діаметр кільця ≈ 42 мкс дуги</samp></span>
+<span class="line"><span class="t-prompt">$</span> <kbd>calc --schwarzschild</kbd> <var>M</var>=6.5e9</span>
+<span class="line"><samp>R<sub>s</sub> = 1,92 · 10<sup>10</sup> км  (≈ 128 а. о.)</samp></span>
+<span class="line"><span class="t-prompt">$</span> <span class="t-caret"></span></span></code></pre>
+    </div>
+  </section>
+
+  <!-- ===== Фінал ===== -->
+  <section class="finale" aria-labelledby="finale-title">
+    <h3 class="finale__title" id="finale-title">Усе, що перетинає горизонт, <br><em>стає частиною темряви.</em></h3>
+    <h4 class="finale__sub mono">Але світло, яке встигло втекти, розповідає нам її історію.</h4>
+    <a class="hero__cta magnetic" href="#top"><span>Повернутися на орбіту</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4m0 0-6 6m6-6 6 6"/></svg></a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <hr class="rule" size="1" width="100%" noshade>
+  <div class="footer__row">
+    <p><small>© 2026 «Горизонт подій». Лабораторна робота №4 — розробка простої вебсторінки.</small></p>
+    <p><small>Автор: <b>Прізвище Ім'я По батькові</b>, група ____</small></p>
+    <p><small>Чорна діра на першому екрані — живий рендер WebGL<br>із гравітаційним лінзуванням променів.</small></p>
+  </div>
+</footer>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/SplitText.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/blackhole.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
