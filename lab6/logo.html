@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Логотип — Безодня</title>
+<meta name="author" content="Прізвище Ім'я По батькові">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/frame.css">
+</head>
+<body data-frame="logo">
+<header class="f-logo">
+  <div>
+    <h1 class="f-logo__title"><a href="home.html" target="content">Безодня</a></h1>
+    <p class="f-logo__sub">Подорож у глибини Світового океану</p>
+  </div>
+  <div class="readouts" aria-live="polite">
+    <div class="readout"><b id="rDepth">0 м</b><span>Глибина</span></div>
+    <div class="readout"><b id="rPress">1 атм</b><span>Тиск</span></div>
+    <div class="readout"><b id="rTemp">20 °C</b><span>Вода</span></div>
+    <div class="readout"><b id="rLight">100 %</b><span>Світло</span></div>
+  </div>
+</header>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/frame.js"></script>
+</body>
+</html>

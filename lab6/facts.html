@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Факти — Безодня</title>
+<meta name="author" content="Прізвище Ім'я По батькові">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/frame.css">
+</head>
+<body data-frame="facts">
+<aside class="f-facts">
+  <section class="now" aria-live="polite">
+    <p class="now__label">Ви зараз тут</p>
+    <h3 id="nowName">Поверхня океану</h3>
+    <dl>
+      <dt>Глибина</dt><dd id="nowDepth">0 м</dd>
+      <dt>Тиск</dt><dd id="nowPress">1 атм</dd>
+      <dt>Температура</dt><dd id="nowTemp">≈ 20 °C</dd>
+    </dl>
+    <p class="now__who" id="nowWho">Почніть занурення, щоб дізнатися, хто тут живе.</p>
+  </section>
+  <section class="dyk" title="Клацніть, щоб показати наступний факт">
+    <h3>Чи знали ви?</h3>
+      <p class="dyk__item">Океан вкриває близько 71% поверхні Землі, а його середня глибина — приблизно 3,7 км.</p>
+      <p class="dyk__item">Сонячне світло проникає у воду лише на кілька сотень метрів. Глибше за 1000 м панує вічна темрява.</p>
+      <p class="dyk__item">Близько трьох чвертей тварин товщі океану вміють світитися. Це явище називають біолюмінесценцією.</p>
+      <p class="dyk__item">На дні Маріанської западини на кожен квадратний сантиметр тисне понад тонна води.</p>
+      <p class="dyk__item">Щоночі мільярди тварин піднімаються з глибин до поверхні по їжу — це наймасштабніша міграція на Землі.</p>
+      <p class="dyk__item">Кашалоти пірнають глибше ніж на 2 км, щоб полювати на кальмарів.</p>
+      <p class="dyk__item">Детальною картою вкрито лише близько чверті океанського дна.</p>
+      <p class="dyk__item">Найглибшу рибу — рибу-равлика — зняли на відео на глибині 8336 м.</p>
+    <span class="dyk__bar"><i></i></span>
+  </section>
+  <div class="radar"><canvas id="radar" aria-hidden="true"></canvas><span>Сонар</span></div>
+</aside>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/frame.js"></script>
+</body>
+</html>

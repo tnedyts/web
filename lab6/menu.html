@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Меню — Безодня</title>
+<meta name="author" content="Прізвище Ім'я По батькові">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/frame.css">
+</head>
+<body data-frame="menu">
+<nav class="f-menu" aria-label="Головне меню">
+  <a class="f-menu__brand" href="home.html" target="content"><span class="sonar" aria-hidden="true"><i></i><i></i><i></i><b></b></span><span>Безодня</span></a>
+  <p class="f-menu__label">Розділи</p>
+  <ol>
+    <li><a href="home.html" target="content" data-page="home" class="is-active">Головна</a></li>
+    <li><a href="sunlight.html" target="content" data-page="zones">Занурення</a></li>
+    <li><a href="creatures.html" target="content" data-page="creatures">Мешканці</a></li>
+    <li><a href="explorers.html" target="content" data-page="explorers">Дослідники</a></li>
+    <li><a href="author.html" target="content" data-page="author">Про автора</a></li>
+  </ol>
+  <div class="gauge" aria-live="polite">
+    <div class="gauge__track"><span class="gauge__dot"></span><div class="gauge__ticks"></div></div>
+    <p class="gauge__value">0<small>м</small></p>
+    <p class="gauge__zone">Поверхня</p>
+  </div>
+</nav>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/frame.js"></script>
+</body>
+</html>
