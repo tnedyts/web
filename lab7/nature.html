@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Природа — Нескінченність</title>
+<meta name="description" content="Фрактали в природі: дерева, папороті, блискавки, узбережжя">
+<meta name="theme-color" content="#06050a">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>try{if(sessionStorage.getItem('iris'))document.documentElement.classList.add('iris-in')}catch(e){}</script>
+</head>
+<body class="">
+<!-- Лабораторна робота 7. Розміщення на вебсторінці графічних об'єктів. Тема: фрактали -->
+<div class="iris" aria-hidden="true"></div>
+<div class="spot" aria-hidden="true"></div>
+<header class="nav">
+  <a class="nav__logo" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset=".5" stop-color="#7cf3ff"/><stop offset="1" stop-color="#9c7bff"/></linearGradient></defs><path d="M20 3 L37 33 L3 33 Z M20 18 L28.5 33 L11.5 33 Z M11.5 18 L20 33 M28.5 18 L20 33 M11.5 18 L28.5 18" fill="none" stroke="url(#lg)" stroke-width="1.6"/></svg><span>Нескінченність</span></a>
+  <nav aria-label="Розділи"><ul><li><a href="index.html">Занурення</a></li><li><a href="gallery.html">Каталог</a></li><li><a href="math.html">Математика</a></li><li><a href="nature.html" class="is-active" aria-current="page">Природа</a></li><li><a href="author.html">Про сайт</a></li></ul></nav>
+  <button class="nav__burger" type="button" aria-label="Меню" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M1 5h16M1 13h16" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+<main>
+  <section class="page-head">
+    <span class="kicker">Фрактали навколо нас</span>
+    <h1>Природа</h1>
+    <p>Природа не будує прямих ліній — вона повторює. Дерево складається з маленьких дерев, хмара — з маленьких хмар.</p>
+  </section>
+  <section class="section">
+    <div class="duo">
+      <div class="panel"><canvas id="tree" style="aspect-ratio:3/4;cursor:ew-resize" aria-label="Фрактальне дерево, що росте" role="img"></canvas><p class="panel__cap">Дерево з 11 рівнів гілок. <b>Поведіть курсором</b> — подме вітер.</p></div>
+      <div class="panel"><canvas id="fern" style="aspect-ratio:3/4" aria-label="Папороть Барнслі, що домальовується точками" role="img"></canvas><p class="panel__cap">Папороть Барнслі: <b id="fernCount">0</b> точок</p></div>
+    </div>
+    <div class="cols">
+      <p>Ліве дерево задано одним правилом: «гілка ділиться на дві коротші під кутом». Повторіть його одинадцять разів — і отримаєте понад дві тисячі гілочок.</p>
+      <p>Праву папороть малюють чотири правила, які щоразу обираються навмання. Жодна точка не знає, що вона частина листка, — форма народжується сама.</p>
+    </div>
+  </section>
+  <section class="section">
+    <span class="kicker">Де шукати</span>
+    <h2 class="h2">Шість <span class="iri">фракталів</span> за вікном</h2>
+    <div class="cards">
+      <article class="card"><svg class="ico" viewBox="0 0 46 46" fill="none" stroke="url(#ig)" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset="1" stop-color="#7cf3ff"/></linearGradient></defs><circle cx="23" cy="23" r="17"/><circle cx="23" cy="23" r="7"/><circle cx="14" cy="17" r="4"/><circle cx="32" cy="17" r="4"/><circle cx="16" cy="31" r="4"/><circle cx="31" cy="30" r="4"/></svg><h3>Романеско</h3><p>Кожна «башточка» цієї капусти складається з менших башточок, закручених у спіралі Фібоначчі.</p></article>
+      <article class="card"><svg class="ico" viewBox="0 0 46 46" fill="none" stroke="url(#ig)" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset="1" stop-color="#7cf3ff"/></linearGradient></defs><path d="M26 3 L16 22 L24 22 L14 43 M16 22 L8 30 M24 22 L33 31 M20 33 L27 38"/></svg><h3>Блискавки й річки</h3><p>Розряд блискавки та русла річок розгалужуються однаково: кожна гілка ділиться на менші гілки.</p></article>
+      <article class="card"><svg class="ico" viewBox="0 0 46 46" fill="none" stroke="url(#ig)" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset="1" stop-color="#7cf3ff"/></linearGradient></defs><path d="M23 6 V20 M23 20 C14 24 10 32 10 40 M23 20 C32 24 36 32 36 40 M16 28 L12 33 M30 28 L34 33 M23 20 V32"/></svg><h3>Легені</h3><p>Бронхи галузяться понад двадцять разів. Завдяки цьому площа легень сягає десятків квадратних метрів.</p></article>
+      <article class="card"><svg class="ico" viewBox="0 0 46 46" fill="none" stroke="url(#ig)" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset="1" stop-color="#7cf3ff"/></linearGradient></defs><path d="M4 30 C8 26 10 32 14 28 C18 22 20 30 24 26 C28 20 31 28 35 24 C38 21 40 26 42 24"/><path d="M4 38 H42" stroke-dasharray="3 4"/></svg><h3>Узбережжя</h3><p>Що коротшою лінійкою міряти берег, то довшим він виходить: дрібні затоки ховають нові затоки.</p></article>
+      <article class="card"><svg class="ico" viewBox="0 0 46 46" fill="none" stroke="url(#ig)" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset="1" stop-color="#7cf3ff"/></linearGradient></defs><path d="M23 4 V42 M6 13 L40 33 M6 33 L40 13 M23 10 L19 6 M23 10 L27 6 M23 36 L19 40 M23 36 L27 40"/></svg><h3>Сніжинки</h3><p>Кристали льоду ростуть шестипроменево, і кожен промінь обростає меншими відгалуженнями.</p></article>
+      <article class="card"><svg class="ico" viewBox="0 0 46 46" fill="none" stroke="url(#ig)" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5fa2"/><stop offset="1" stop-color="#7cf3ff"/></linearGradient></defs><path d="M23 42 V24 M23 24 L13 14 M23 24 L33 14 M13 14 L8 6 M13 14 L18 6 M33 14 L28 6 M33 14 L38 6"/></svg><h3>Дерева</h3><p>Стовбур — гілка — гілочка: дерево повторює себе на кожному рівні, щоб зібрати якнайбільше світла.</p></article>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <hr class="iri-line" size="2" noshade>
+  <p class="footer__big iri" aria-hidden="true">∞ фрактали</p>
+  <div class="footer__row">
+    <p>© 2026 «Нескінченність» · Лабораторна робота №7 — графічні об'єкти на вебсторінці</p>
+    <p>Сайт створено: 12.10.2026</p>
+  </div>
+</footer>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/nature.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

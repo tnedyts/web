@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Походження — Зерно, журнал про каву</title>
+<meta name="description" content="Звідки походить кава: кавовий пояс, арабіка й робуста" />
+<meta name="theme-color" content="#F3EAD7" />
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script>try{if(sessionStorage.getItem('pour'))document.documentElement.classList.add('pour-in')}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 8. Макет на div, варіант 15:
+     [ Заголовок | Меню ] / [ Вміст | Додаткова секція ] / [ Нижній колонтитул ] -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <pattern id="dotI" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="2.3" fill="#2A1A12"/></pattern>
+  <pattern id="dotB" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="4" cy="4" r="2" fill="#2F4AB5"/></pattern>
+  <pattern id="dotO" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-20)"><circle cx="4" cy="4" r="2.4" fill="#FF5A1F"/></pattern>
+  <pattern id="lines" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="3" height="10" fill="#2A1A12"/></pattern>
+  <radialGradient id="fadeR"><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+  <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+  <mask id="mR"><rect width="100%" height="100%" fill="url(#fadeR)"/></mask>
+  <mask id="mL"><rect width="100%" height="100%" fill="url(#fadeL)"/></mask>
+</defs></svg>
+<div id="container">
+  <div id="header">
+    <p class="topline"><span>Журнал про каву</span><span>Випуск №8 · жовтень 2026</span><span>Ціна — одна чашка</span></p>
+    <a class="masthead" href="index.html" title="На головну"><h1 class="riso">Зерно</h1></a>
+    <p class="tagline">Незалежне видання для тих, хто прокидається заради кави.</p>
+    <p class="note" aria-hidden="true">свіжий випуск!<svg viewBox="0 0 70 40"><path d="M2 6 C20 30 40 36 64 30 M52 22 L64 30 L54 38"/></svg></p>
+  </div>
+  <div id="nav">
+    <div class="board__title"><h2>Меню</h2><span>сьогодні в номері</span></div>
+    <button class="menu-toggle" type="button" aria-expanded="false">Меню</button>
+    <ul>
+      <li><a href="index.html"><span class="item">Головна<span class="sub">тема номера</span></span><span class="dots"></span><span class="price">№ 01</span></a></li>
+      <li><a href="origins.html" class="active" aria-current="page"><span class="item">Походження<span class="sub">звідки кава</span></span><span class="dots"></span><span class="price">№ 02</span></a></li>
+      <li><a href="brewing.html"><span class="item">Заварювання<span class="sub">шість способів</span></span><span class="dots"></span><span class="price">№ 03</span></a></li>
+      <li><a href="roasting.html"><span class="item">Обсмаження<span class="sub">вогонь і зерно</span></span><span class="dots"></span><span class="price">№ 04</span></a></li>
+      <li><a href="author.html"><span class="item">Колофон<span class="sub">про сайт</span></span><span class="dots"></span><span class="price">№ 05</span></a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <span class="kicker">Географія</span>
+    <h2 class="title riso" data-text="Звідки кава">Звідки <em>кава</em></h2>
+    <p class="deck">Кава росте лише в тропіках — у «кавовому поясі» між тропіками Рака й Козерога.</p>
+    <div class="body">
+      <p class="drop">За легендою, кавові ягоди першим помітив ефіопський пастух Калді: його кози, поласувавши червоними плодами, ставали незвично бадьорими. Легенда легендою, але батьківщина арабіки справді — високогір'я Ефіопії.</p>
+      <p>У XV столітті каву вже вирощували в Ємені, а суфійські ченці пили її, щоб не спати під час нічних молитов. Через порт Мока кава потрапила до Османської імперії, а звідти — до Європи.</p>
+      <p>Українці теж мають свою кавову легенду: Юрій Кульчицький, родом з-під Самбора, після облоги Відня 1683 року нібито відкрив одну з перших віденських кав'ярень.</p>
+    </div>
+    <h3 class="riso" data-text="Арабіка чи робуста">Арабіка чи робуста</h3>
+    <table class="spec">
+      <caption>два головні види</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Арабіка</th><th scope="col">Робуста</th></tr></thead>
+      <tbody>
+        <tr><td>Частка у світі</td><td>≈ 60%</td><td>≈ 40%</td></tr>
+        <tr><td>Кофеїн</td><td>1,2–1,5%</td><td>2,2–2,7%</td></tr>
+        <tr><td>Висота</td><td>600–2000+ м</td><td>до 800 м</td></tr>
+        <tr><td>Смак</td><td>кислинка, фрукти, квіти</td><td>гірчинка, горіх, міцність</td></tr>
+      </tbody>
+    </table>
+    <h3 class="riso" data-text="П'ятірка лідерів">П'ятірка лідерів</h3>
+    <ol class="facts">
+      <li><b>Бразилія</b> — вирощує близько третини всієї кави світу.</li>
+      <li><b>В'єтнам</b> — друге місце, переважно робуста.</li>
+      <li><b>Колумбія</b> — славиться митою арабікою.</li>
+      <li><b>Індонезія</b> — кава з островів Суматра, Ява, Сулавесі.</li>
+      <li><b>Ефіопія</b> — найбільший виробник в Африці й батьківщина арабіки.</li>
+    </ol>
+    <a class="btn" href="brewing.html">Як заварити <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+  </div>
+  <div id="extra">
+    <div class="wall">
+      <figure class="poster poster--wide">
+        <span class="poster__label">Карта</span>
+        <svg class="art map" viewBox="0 0 720 360" role="img" aria-label="Кавовий пояс: країни між тропіками"><rect width="720" height="360" fill="#F3EAD7"/><line x1="0.0" y1="0" x2="0.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="60.0" y1="0" x2="60.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="120.0" y1="0" x2="120.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="180.0" y1="0" x2="180.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="240.0" y1="0" x2="240.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="300.0" y1="0" x2="300.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="360.0" y1="0" x2="360.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="420.0" y1="0" x2="420.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="480.0" y1="0" x2="480.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="540.0" y1="0" x2="540.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="600.0" y1="0" x2="600.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="660.0" y1="0" x2="660.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="720.0" y1="0" x2="720.0" y2="360" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="0" y1="300.0" x2="720" y2="300.0" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="0" y1="240.0" x2="720" y2="240.0" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="0" y1="180.0" x2="720" y2="180.0" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="0" y1="120.0" x2="720" y2="120.0" stroke="#2A1A12" stroke-width="1" opacity=".18"/><line x1="0" y1="60.0" x2="720" y2="60.0" stroke="#2A1A12" stroke-width="1" opacity=".18"/><rect x="0" y="133.1" width="720" height="93.8" fill="#FF5A1F" opacity=".9"/><rect x="0" y="133.1" width="720" height="93.8" fill="url(#dotB)" opacity=".35"/><line x1="0" y1="133.1" x2="720" y2="133.1" stroke="#2A1A12" stroke-width="2" stroke-dasharray="8 6"/><line x1="0" y1="226.9" x2="720" y2="226.9" stroke="#2A1A12" stroke-width="2" stroke-dasharray="8 6"/><line x1="0" y1="180.0" x2="720" y2="180.0" stroke="#F3EAD7" stroke-width="2"/><text x="712" y="125.1" text-anchor="end" class="mt">тропік Рака · 23,4° пн. ш.</text><text x="712" y="244.9" text-anchor="end" class="mt">тропік Козерога · 23,4° пд. ш.</text><text x="12" y="172.0" class="mt" style="fill:#F3EAD7">екватор</text><g class="mp" style="--d:0.00s"><circle cx="438.0" cy="164.0" r="6" fill="#2A1A12"/><circle cx="438.0" cy="164.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="450.0" y="170.0" text-anchor="start" class="mn">Ефіопія</text></g><g class="mp" style="--d:0.12s"><circle cx="450.0" cy="150.0" r="6" fill="#2A1A12"/><circle cx="450.0" cy="150.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="462.0" y="140.0" text-anchor="start" class="mn">Ємен</text></g><g class="mp" style="--d:0.24s"><circle cx="260.0" cy="208.0" r="6" fill="#2A1A12"/><circle cx="260.0" cy="208.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="272.0" y="230.0" text-anchor="start" class="mn">Бразилія</text></g><g class="mp" style="--d:0.36s"><circle cx="572.0" cy="152.0" r="6" fill="#2A1A12"/><circle cx="572.0" cy="152.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="584.0" y="142.0" text-anchor="start" class="mn">В'єтнам</text></g><g class="mp" style="--d:0.48s"><circle cx="212.0" cy="172.0" r="6" fill="#2A1A12"/><circle cx="212.0" cy="172.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="224.0" y="162.0" text-anchor="start" class="mn">Колумбія</text></g><g class="mp" style="--d:0.60s"><circle cx="586.0" cy="184.0" r="6" fill="#2A1A12"/><circle cx="586.0" cy="184.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="598.0" y="206.0" text-anchor="start" class="mn">Індонезія</text></g><g class="mp" style="--d:0.72s"><circle cx="434.0" cy="180.0" r="6" fill="#2A1A12"/><circle cx="434.0" cy="180.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="422.0" y="202.0" text-anchor="end" class="mn">Кенія</text></g><g class="mp" style="--d:0.84s"><circle cx="180.0" cy="150.0" r="6" fill="#2A1A12"/><circle cx="180.0" cy="150.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="168.0" y="140.0" text-anchor="end" class="mn">Гватемала</text></g><g class="mp" style="--d:0.96s"><circle cx="512.0" cy="156.0" r="6" fill="#2A1A12"/><circle cx="512.0" cy="156.0" r="12" fill="none" stroke="#2A1A12" stroke-width="2" class="ring"/><text x="502.0" y="142.0" text-anchor="end" class="mn">Індія</text></g></svg>
+        <figcaption class="poster__cap"><h4>Кавовий пояс</h4><p>Каві потрібні тепло без заморозків, рясні дощі й висота. Тому всі плантації лежать між 23,4° північної та південної широти.</p></figcaption>
+      </figure>
+      <figure class="poster poster--half">
+  <span class="poster__label">Ботаніка</span>
+  <svg class="art" viewBox="0 0 400 400" role="img" aria-label="Гілка кавового дерева з ягодами">
+  <rect width="400" height="400" fill="#F3EAD7"/>
+  <path d="M10 330 C120 280 220 240 390 120" stroke="#2A1A12" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <g fill="#2F4AB5" style="mix-blend-mode:multiply">
+    <ellipse cx="120" cy="230" rx="70" ry="26" transform="rotate(-50 120 230)"/>
+    <ellipse cx="250" cy="300" rx="80" ry="28" transform="rotate(30 250 300)"/>
+    <ellipse cx="300" cy="120" rx="76" ry="26" transform="rotate(-70 300 120)"/>
+    <ellipse cx="350" cy="230" rx="66" ry="24" transform="rotate(20 350 230)"/>
+  </g>
+  <g fill="url(#dotI)" opacity=".45"><ellipse cx="120" cy="230" rx="70" ry="26" transform="rotate(-50 120 230)"/><ellipse cx="250" cy="300" rx="80" ry="28" transform="rotate(30 250 300)"/></g>
+  <g>
+    <circle cx="170" cy="270" r="24" fill="#FF5A1F"/><circle cx="196" cy="252" r="22" fill="#FF5A1F"/><circle cx="210" cy="282" r="21" fill="#FF5A1F"/>
+    <circle cx="246" cy="222" r="22" fill="#FF5A1F"/><circle cx="268" cy="246" r="20" fill="#FF5A1F"/>
+    <circle cx="176" cy="276" r="24" fill="#2A1A12" opacity=".25" style="mix-blend-mode:multiply"/>
+    <circle cx="163" cy="262" r="6" fill="#F3EAD7"/><circle cx="190" cy="245" r="5" fill="#F3EAD7"/><circle cx="240" cy="215" r="5" fill="#F3EAD7"/>
+  </g>
+</svg>
+  <figcaption class="poster__cap"><h4>Кавова вишня</h4><p>Від цвітіння до стиглої ягоди минає 6–9 місяців. На одному кущі водночас бувають квіти, зелені й червоні ягоди.</p></figcaption>
+</figure>
+      <div class="poster poster--half poster--blue" style="padding:26px 22px">
+        <span class="ad-tag" style="color:#F3EAD7">Реклама</span>
+        <p class="hand" style="font-size:30px;margin:0 0 6px">субота · 12:00</p>
+        <h4 class="title" style="font-size:52px;color:#F3EAD7;margin:0 0 14px">Дегустація: Ефіопія <em style="color:#FF5A1F">проти</em> Колумбії</h4>
+        <p>Капінг двох мономсортів: учимося чути кислинку, солодкість і тіло напою.</p>
+        <p class="coupon__code" style="border-color:#F3EAD7">вхід — 1 чашка</p>
+      </div>
+      <div class="marquee poster--wide" style="grid-column:span 6" aria-hidden="true"><div class="marquee__track"><span>Ефіопія <i>✺</i></span><span>Ємен <i>✺</i></span><span>Бразилія <i>✺</i></span><span>Колумбія <i>✺</i></span><span>Кенія <i>✺</i></span><span>Гватемала <i>✺</i></span><span>Ефіопія <i>✺</i></span><span>Ємен <i>✺</i></span><span>Бразилія <i>✺</i></span><span>Колумбія <i>✺</i></span><span>Кенія <i>✺</i></span><span>Гватемала <i>✺</i></span></div></div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="receipt-wrap">
+      <div class="receipt">
+        <h3>Зерно</h3>
+        <p class="c">журнал про каву<br />ЧЕК № 0008 · каса 1</p>
+        <hr />
+        <p class="row"><span>Лабораторна робота</span><span>№8, варіант 15</span></p>
+        <p class="row"><span>Сторінка</span><span>Походження</span></p>
+        <p class="row"><span>Сайт створено</span><span>12.10.2026</span></p>
+        <hr />
+        <p class="row total"><span>РАЗОМ</span><span>4 кольори · 3 шрифти</span></p>
+        <div class="barcode" aria-hidden="true"></div>
+        <p class="c">2026-10-12 · 08:00 · <a href="index.html">повернутися на головну</a></p>
+        <p class="thanks">Дякуємо, приходьте ще!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cup" aria-hidden="true"><svg viewBox="0 0 48 48"><g class="steam" transform="translate(12 -6) scale(.12)" style="opacity:0;transition:opacity .4s"><path d="M20 120 C0 90 40 70 20 40"/><path d="M60 120 C40 90 80 70 60 40"/><path d="M100 120 C80 90 120 70 100 40"/></g>
+  <defs><clipPath id="cupClip"><path d="M8 14 L36 14 L33 40 L11 40 Z"/></clipPath></defs>
+  <rect id="cupFill" x="0" y="40" width="48" height="0" fill="#2A1A12" clip-path="url(#cupClip)"/>
+  <path d="M8 14 L36 14 L33 40 L11 40 Z" fill="none" stroke="#2A1A12" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M36 19 C44 19 44 31 34.5 31" fill="none" stroke="#2A1A12" stroke-width="2.5"/></svg></div>
+<div class="bean-cursor" aria-hidden="true"><svg viewBox="0 0 26 34"><ellipse cx="13" cy="17" rx="11" ry="15" fill="#2A1A12"/><path d="M13 3 C7 11 19 23 13 31" stroke="#FF5A1F" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+<div class="pour" aria-hidden="true"><svg viewBox="0 0 100 1000" preserveAspectRatio="none"><path class="w2" d="M0 30 L100 30 L100 1000 L0 1000 Z"/><path class="w1" d="M0 70 L100 70 L100 1000 L0 1000 Z"/></svg></div>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

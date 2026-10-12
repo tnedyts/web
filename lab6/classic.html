@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Безодня — класична версія на фреймах</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+</head>
+<!-- Варіант 3 на тегах frameset/frame:
+     cols: ліва колонка | центр | права колонка;
+     центр ділиться на rows: логотип | нижня частина;
+     нижня частина ділиться на cols: теми | вміст -->
+<frameset cols="16%,*,20%" border="4" bordercolor="#0b4f69" frameborder="1" framespacing="4">
+  <frame name="menu" src="menu.html" scrolling="auto" noresize="noresize" marginwidth="0" marginheight="0" />
+  <frameset rows="150,*">
+    <frame name="logo" src="logo.html" scrolling="no" noresize="noresize" marginwidth="0" marginheight="0" />
+    <frameset cols="28%,*">
+      <frame name="topics" src="topics.html" scrolling="auto" marginwidth="0" marginheight="0" />
+      <frame name="content" src="home.html" scrolling="yes" marginwidth="0" marginheight="0" />
+    </frameset>
+  </frameset>
+  <frame name="facts" src="facts.html" scrolling="auto" noresize="noresize" marginwidth="0" marginheight="0" />
+  <noframes>
+    <body>
+      <p>Ваш браузер не підтримує фрейми. Відкрийте <a href="home.html">головну сторінку</a> або <a href="index.html">сучасну версію сайту</a>.</p>
+    </body>
+  </noframes>
+</frameset>
+</html>

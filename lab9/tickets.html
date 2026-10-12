@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Квитки — Нічна хвиля</title>
+<meta name="description" content="Квитки на фестиваль «Нічна хвиля» (демо)">
+<meta name="theme-color" content="#0a0216">
+<meta property="og:title" content="Нічна хвиля — фестиваль синтвейву">
+<meta property="og:description" content="Квитки на фестиваль «Нічна хвиля» (демо)">
+<meta property="og:url" content="https://tnedyts.github.io/web/lab9/tickets.html">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Лабораторна робота 9. Вставлення додатків із зовнішніх джерел: карти Google, відео YouTube,
+     аудіо HTML5, кнопки соцмереж, інформери. Тема: вигаданий фестиваль синтвейву -->
+<div class="power" aria-hidden="true"><i></i></div>
+<div class="static" aria-hidden="true"><canvas></canvas><b>CH --</b></div>
+<div class="osd osd--tl" aria-hidden="true"><b>CH 04</b>КВИТКИ</div>
+<div class="osd osd--tc"><a href="index.html" title="На головну">НІЧНА <span>ХВИЛЯ</span></a></div>
+<div class="osd osd--tr"><span class="rec">●</span> PLAY ▶<br><span id="osdTime">SP 00:00:00</span><br><button class="tape-btn" type="button" aria-pressed="false" title="Увімкнути трек фестивалю"><span>▶ ТРЕК</span></button></div>
+<div class="osd osd--bl" aria-hidden="true" id="osdDate">ЖОВ 12 2026</div>
+<nav aria-label="Канали (розділи сайту)"><ul class="guide"><li><a href="index.html" data-ch="01"><b>01</b><span>Ефір</span></a></li><li><a href="lineup.html" data-ch="02"><b>02</b><span>Лайнап</span></a></li><li><a href="media.html" data-ch="03"><b>03</b><span>Медіа</span></a></li><li><a href="tickets.html" data-ch="04" class="is-on" aria-current="page"><b>04</b><span>Квитки</span></a></li><li><a href="author.html" data-ch="05"><b>05</b><span>Про сайт</span></a></li></ul></nav>
+<main id="main">
+<section class="section" style="padding-top:clamp(130px,18vh,190px)">
+  <span class="label">CH 04 · КВИТКИ</span>
+  <h1 class="h2 ab">Голографічні <em>квитки</em></h1>
+  <p class="lead">Поводьте курсором по квитку — голограма переливається, як на справжній касеті з магазину 1986 року. Це демонстрація: оплата не здійснюється й дані не збираються.</p>
+  <div class="tickets"><article class="ticket" data-tier="ОДИН ВЕЧІР" data-price="1 200 ₴"><p class="tier">КВИТОК НА НІЧ</p><h3>ОДИН ВЕЧІР</h3><ul><li>1 день на вибір</li><li>Усі три сцени</li><li>Аркада 80-х</li><li>Кінотеатр під небом</li></ul>
+      <p class="price">1 200<small> ГРН</small></p><button type="button">ОБРАТИ ▶</button></article><article class="ticket" data-tier="ТРИ НОЧІ" data-price="2 900 ₴"><p class="tier">АБОНЕМЕНТ</p><h3>ТРИ НОЧІ</h3><ul><li>Усі 3 дні фестивалю</li><li>Усі сцени й аркада</li><li>Браслет із неоновим світлом</li><li>Повторний вхід</li></ul>
+      <p class="price">2 900<small> ГРН</small></p><button type="button">ОБРАТИ ▶</button></article><article class="ticket" data-tier="НЕОН VIP" data-price="6 500 ₴"><p class="tier">ДЛЯ СВОЇХ</p><h3>НЕОН VIP</h3><ul><li>Усі 3 дні + ранній вхід</li><li>Зона біля головної сцени</li><li>Колекційна касета C-60</li><li>Лаунж із ретро-приставками</li></ul>
+      <p class="price">6 500<small> ГРН</small></p><button type="button">ОБРАТИ ▶</button></article></div>
+  <div class="stub" role="status" aria-live="polite">
+    КВИТОК ЗАРЕЗЕРВОВАНО (ДЕМО)<br>ТИП: <b id="stubTier">—</b><br>ЦІНА: <b id="stubPrice">—</b><br>НОМЕР: <b id="stubNo">—</b><br>15—17.08.2027 · КИЇВ · ВДНГ
+    <span class="code" aria-hidden="true"></span>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p class="pixel">© 2026 НІЧНА ХВИЛЯ · ЛАБОРАТОРНА РОБОТА №9</p>
+  <p>Сайт створено: 12.10.2026</p>
+  <p>Фестиваль і всі артисти вигадані для навчального сайту. Перемикайте канали клавішами <b>1–5</b>.</p>
+</footer>
+<audio id="track" preload="metadata">
+    <source src="media/nichna-khvylia.ogg" type="audio/ogg">
+    <source src="media/nichna-khvylia.mp3" type="audio/mpeg">
+    Ваш браузер не підтримує тег &lt;audio&gt;. <a href="media/nichna-khvylia.mp3">Завантажити трек</a>.
+</audio>
+<div class="flicker" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+<div class="bezel" aria-hidden="true"></div>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/tv.js"></script>
+</body>
+</html>

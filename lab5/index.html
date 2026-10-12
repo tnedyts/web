@@ -1,212 +1,242 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
+<!DOCTYPE html>
+<html lang="uk" class="no-js">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Інформаційний сайт про історію, напрями та застосування ШІ" />
-<meta name="keywords" content="штучний інтелект, ШІ, машинне навчання, нейронні мережі" />
-<meta name="author" content="Прізвище Ім'я По батькові" />
-<title>Що таке штучний інтелект — Світ штучного інтелекту</title>
-<link rel="icon" type="image/png" href="images/favicon.png" />
-<style type="text/css">
-@font-face {
-  font-family: "Unbounded";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200 900;
-  src: url("fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
-  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
-}
-@font-face {
-  font-family: "Unbounded";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200 900;
-  src: url("fonts/unbounded-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-@font-face {
-  font-family: "Onest";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
-  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
-}
-@font-face {
-  font-family: "Onest";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("fonts/onest-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-
-body {
-  margin: 0;
-  padding: 28px 20px;
-  font-family: "Onest", Verdana, sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
-  background-color: #F2F3F8;
-  color: #16173A;
-}
-h1, h2, h3 { font-family: "Unbounded", Georgia, serif; letter-spacing: -0.015em; line-height: 1.2; }
-h2 { font-size: 34px; font-weight: 700; margin: 0 0 18px; }
-h3 { font-size: 20px; font-weight: 600; margin: 36px 0 12px; }
-p { margin: 0 0 14px; hyphens: auto; }
-
-/* ---- таблиця-макет ---- */
-table.layout { max-width: 1240px; margin: 0 auto; border-collapse: separate; border-spacing: 0; }
-td.logo { border-radius: 28px 0 0 0; }
-td.title {
-  border-radius: 0 28px 0 0;
-  padding: 34px 40px 34px 8px;
-  background-image: url("images/matrix-dark.svg");
-  background-repeat: no-repeat;
-  background-position: right 28px center;
-  background-size: auto 112px;
-}
-td.title h1 { margin: 0 0 6px; color: #F2F3F8; font-size: 34px; font-weight: 700; }
-td.title h1, td.title span { position: relative; max-width: calc(100% - 470px); display: block; }
-td.title span { color: rgba(242, 243, 248, 0.7); font-size: 15px; }
-td.side { padding: 28px 18px; border-left: 1px solid rgba(22, 23, 58, 0.08); }
-td.main { background-color: #ffffff; border-right: 1px solid rgba(22, 23, 58, 0.08); }
-td.footer {
-  border-radius: 0 0 28px 28px;
-  padding: 18px 30px;
-  color: rgba(242, 243, 248, 0.75);
-  font-size: 14px;
-}
-td.footer a { color: #F2F3F8; }
-
-/* ---- меню ---- */
-table.menu { border-collapse: separate; border-spacing: 0 6px; }
-td.menu { border-radius: 12px; padding: 10px 16px; }
-td.menu a { color: #16173A; text-decoration: none; font-weight: 600; display: block; }
-td.menu:hover { background-color: rgba(59, 75, 245, 0.10); }
-td.menu.active { background-color: #3B4BF5; }
-td.menu.active a { color: #F2F3F8; }
-
-/* ---- таблиці з даними у вмісті ---- */
-td.main table {
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 1px solid rgba(22, 23, 58, 0.12);
-  border-radius: 18px;
-  overflow: hidden;
-  margin: 8px 0 18px;
-}
-td.main table th, td.main table td { border: 0; border-top: 1px solid rgba(22, 23, 58, 0.08); }
-td.main table tr:first-child th { border-top: 0; font-size: 14px; text-align: left; }
-td.main table th[colspan] { font-family: "Unbounded", Georgia, serif; font-size: 14px; font-weight: 600; color: #3B4BF5; }
-td.main table td[rowspan] { font-family: "Unbounded", Georgia, serif; font-size: 14px; color: #3B4BF5; }
-td.main caption {
-  caption-side: top;
-  text-align: left;
-  padding: 0 0 12px;
-  font-family: "Unbounded", Georgia, serif;
-  font-weight: 600;
-  font-size: 18px;
-}
-td.main caption b { font-weight: 600; }
-td.main table.tiles { border: 0; border-spacing: 12px; margin: 0 -12px; overflow: visible; }
-td.main table.tiles td { border: 0; border-radius: 18px; padding: 20px; }
-td.main table.tiles a { font-family: "Unbounded", Georgia, serif; font-size: 16px; text-decoration: none; }
-a { color: #3B4BF5; }
-
-@media (max-width: 760px) {
-  body { padding: 12px; }
-  td.title h1 { font-size: 24px; }
-  td.title { background-image: none; }
-  td.title h1, td.title span { max-width: none; }
-  td.logo img { width: 56px; height: 56px; }
-  td.side { padding: 16px 6px; }
-  h2 { font-size: 26px; }
-}
-
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Головна — Вершини</title>
+<meta name="description" content="Сайт про найвищі гори світу та українські Карпати">
+<meta name="theme-color" content="#0a0f24">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- Макет сторінки: таблиця 2 стовпці x 3 рядки -->
-<table class="layout" width="100%" align="center" border="0" cellpadding="0" cellspacing="0" summary="Макет сторінки">
+<div class="topo" aria-hidden="true"></div>
+<!-- Лабораторна робота 5. Макет сторінки — таблиця: шапка, меню, вміст + бічна панель, колонтитул -->
+<div class="curtain" aria-hidden="true">
+  <svg viewBox="0 0 1600 1300" preserveAspectRatio="none">
+    <path class="c2" d="M0 170 L120 110 L220 150 L360 30 L470 140 L600 80 L720 170 L860 10 L980 130 L1100 60 L1230 150 L1350 50 L1480 140 L1600 80 L1600 1300 L0 1300 Z"/>
+    <path d="M0 250 L140 180 L260 230 L400 110 L520 210 L650 150 L780 230 L900 90 L1030 200 L1160 130 L1290 220 L1420 120 L1600 190 L1600 1300 L0 1300 Z"/>
+  </svg>
+  <div class="curtain__label">Вершини</div>
+</div>
 
-<!-- Рядок 1: шапка (логотип + назва сайту) -->
-<tr>
-  <td class="logo" width="220" height="150" align="center" valign="middle" bgcolor="#16173A">
-    <a href="index.html"><img src="images/logo.png" alt="Логотип сайту" width="96" height="96" border="0" /></a>
-  </td>
-  <td class="title" valign="middle" bgcolor="#16173A">
-    <h1>Світ штучного інтелекту</h1>
-    <span>Інформаційний сайт про історію, напрями та застосування ШІ</span>
-  </td>
-</tr>
-
-<!-- Рядок 2: меню + основний вміст -->
-<tr>
-  <td class="side" width="220" valign="top" bgcolor="#F2F3F8">
-    <table class="menu" width="100%" border="0" cellpadding="0" cellspacing="0" summary="Меню сайту">
-      <tr><td class="menu active"><a href="index.html">Головна</a></td></tr>
-      <tr><td class="menu"><a href="history.html">Історія ШІ</a></td></tr>
-      <tr><td class="menu"><a href="directions.html">Напрями ШІ</a></td></tr>
-      <tr><td class="menu"><a href="application.html">Застосування</a></td></tr>
-      <tr><td class="menu"><a href="author.html">Про автора</a></td></tr>
-    </table>
-  </td>
-  <td class="main" valign="top" bgcolor="#ffffff">
-    <table width="100%" border="0" cellpadding="44" cellspacing="0" summary="Вміст сторінки" style="border:0;margin:0;border-radius:0">
-    <tr><td style="border:0">
-<h2>Що таке штучний інтелект</h2>
-<p align="justify"><b>Штучний інтелект</b> (ШІ) — галузь інформатики, яка створює комп'ютерні
-системи, здатні виконувати завдання, що зазвичай потребують людського інтелекту: розуміти мову,
-розпізнавати зображення, ухвалювати рішення та навчатися на досвіді.</p>
-<p align="justify">Ще кілька десятиліть тому ШІ був темою наукової фантастики. Сьогодні ж ми
-щодня користуємося ним: смартфон розпізнає обличчя власника, пошукова система розуміє запитання,
-написане звичайною мовою, а онлайн-перекладач за секунду перекладає сторінку тексту.</p>
-
-<table width="100%" border="1" cellpadding="8" cellspacing="0" summary="Порівняння видів ШІ">
-<caption><b>Види штучного інтелекту</b></caption>
-<tr bgcolor="#E3E6FB">
-  <th width="25%">Вид</th>
-  <th>Опис</th>
-  <th width="30%">Приклади</th>
-</tr>
-<tr valign="top">
-  <td nowrap="nowrap"><b>Вузький (слабкий) ШІ</b></td>
-  <td>Розв'язує одне конкретне завдання і не виходить за його межі.</td>
-  <td>голосові помічники, фільтри спаму, рекомендації фільмів</td>
-</tr>
-<tr valign="top">
-  <td nowrap="nowrap"><b>Загальний (сильний) ШІ</b></td>
-  <td>Гіпотетична система, що мислить на рівні людини в будь-якій сфері.</td>
-  <td>поки що не створено</td>
-</tr>
-<tr valign="top">
-  <td nowrap="nowrap"><b>Суперінтелект</b></td>
-  <td>Теоретичний ШІ, що перевершує людину в усіх інтелектуальних задачах.</td>
-  <td>предмет наукових дискусій</td>
-</tr>
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <colgroup><col><col class="layout__col-side"></colgroup>
+  <tr>
+    <td class="layout__header" colspan="2">
+    <div class="hero" data-seed="11">
+      <canvas class="hero__stars" aria-hidden="true"></canvas>
+      <div class="hero__sun" aria-hidden="true"></div>
+      <p class="hero__kicker">Ви на вершині світу</p>
+      <h1 class="hero__title">Вершини</h1>
+      <svg class="hero__layer hero__layer--1" data-layer="1" aria-hidden="true"></svg>
+      <svg class="hero__layer hero__layer--2" data-layer="2" aria-hidden="true"></svg>
+      <svg class="hero__layer hero__layer--3" data-layer="3" aria-hidden="true"></svg>
+      <svg class="hero__layer hero__layer--4" data-layer="4" aria-hidden="true"></svg>
+      <svg class="hero__layer hero__layer--5" data-layer="5" aria-hidden="true"></svg>
+      <div class="hero__fog hero__fog--a" aria-hidden="true"></div>
+      <div class="hero__fog hero__fog--b" aria-hidden="true"></div>
+      <canvas class="hero__snow" aria-hidden="true"></canvas>
+      <div class="hero__meta">
+        <a class="hero__scroll" href="#content"><i></i>Вершина Евересту</a>
+        <p class="hero__alt"><b>8 849 м</b>над рівнем моря</p>
+      </div>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" colspan="2">
+      <table class="menu" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="menu__logo"><a href="index.html" data-label="Вершини" title="На головну"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="28" cy="12" r="6" fill="#ffb86b"/><path d="M2 35 L15 11 L21 21 L25 16 L38 35 Z" fill="#f2f4fb"/><path d="M15 11 L19.5 19 L16.5 17.5 L13 21 Z" fill="#a9c8ff"/></svg><span>ВЕРШИНИ</span></a></td>
+          <td><a class="menu__link is-active" href="index.html" aria-current="page">Головна</a></td><td><a class="menu__link" href="peaks.html">Восьмитисячники</a></td><td><a class="menu__link" href="carpathians.html">Карпати</a></td><td><a class="menu__link" href="safety.html">Безпека</a></td><td><a class="menu__link" href="author.html">Про сайт</a></td>
+          <td class="menu__btn"><button class="menu__toggle" type="button" aria-expanded="false" aria-label="Меню"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M1 5h16M1 13h16" stroke="currentColor" stroke-width="1.6"/></svg></button></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__main" id="content" valign="top">
+      <table class="route" cellspacing="0" cellpadding="0" role="presentation">
+          <tr class="camp" data-alt="8849" data-name="Вершина">
+            <td class="camp__alt"><span class="camp__num">8 849</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Вершина</p>
+              <h2 class="camp__title">Вершина Евересту</h2>
+              <p class="camp__text">Найвища точка Землі. Тиск повітря — третина від рівня моря, вітер може сягати урагану. Тут не затримуються: кілька хвилин на фото — і вниз, поки вистачає сил і кисню.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="8790" data-name="Сходинка Гілларі">
+            <td class="camp__alt"><span class="camp__num">8 790</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Сходинка Гілларі</p>
+              <h2 class="camp__title">Сходинка Гілларі</h2>
+              <p class="camp__text">Скельний уступ майже під вершиною, названий на честь Едмунда Гілларі. Після землетрусу 2015 року він значною мірою обвалився, але назва лишилася.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="8400" data-name="Балкон">
+            <td class="camp__alt"><span class="camp__num">8 400</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Балкон</p>
+              <h2 class="camp__title">Балкон</h2>
+              <p class="camp__text">Невеликий майданчик на гребені, де змінюють кисневі балони й чекають світанку. Внизу — тіні сусідніх восьмитисячників.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="7950" data-name="Табір IV">
+            <td class="camp__alt"><span class="camp__num">7 950</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Табір IV</p>
+              <h2 class="camp__title">Південна сідловина</h2>
+              <p class="camp__text">Останній табір перед штурмом. На вершину виходять близько опівночі, щоб устигнути повернутися до вечора. Над головою — зона смерті.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="7470" data-name="Табір III">
+            <td class="camp__alt"><span class="camp__num">7 470</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Табір III</p>
+              <h2 class="camp__title">Схил Лхоцзе</h2>
+              <p class="camp__text">Намети, прив'язані до крижаної стіни. Від цього табору більшість альпіністів іде з кисневими масками.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="6400" data-name="Табір II">
+            <td class="camp__alt"><span class="camp__num">6 400</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Табір II</p>
+              <h2 class="camp__title">Західний цирк</h2>
+              <p class="camp__text">«Долина мовчання»: вдень сонце відбивається від снігу й тут спекотно, вночі — сильний мороз. Поки відпочиваєте, погляньте на сім вершин світу.</p>
+              <div class="table-wrap">
+          <table class="data" cellspacing="0" cellpadding="0">
+            <caption>Таблиця 1. Сім вершин світу</caption>
+            <thead>
+              <tr><th scope="col">Континент</th><th scope="col">Вершина</th><th scope="col">Висота</th><th scope="col">Країна</th></tr>
+            </thead>
+            <tbody>
+            <tr><td>Азія</td><td class="name">Еверест<small>Джомолунгма  Гімалаї</small></td><td class="num">8 849 м<span class="bar" style="--v:1.000"></span></td><td>Непал / Китай</td></tr>
+            <tr><td>Південна Америка</td><td class="name">Аконкагуа<small>Анди</small></td><td class="num">6 961 м<span class="bar" style="--v:0.787"></span></td><td>Аргентина</td></tr>
+            <tr><td>Північна Америка</td><td class="name">Деналі<small>Аляскинський хребет</small></td><td class="num">6 190 м<span class="bar" style="--v:0.700"></span></td><td>США</td></tr>
+            <tr><td>Африка</td><td class="name">Кіліманджаро<small>вулкан Кібо</small></td><td class="num">5 895 м<span class="bar" style="--v:0.666"></span></td><td>Танзанія</td></tr>
+            <tr><td rowspan="2" valign="middle">Європа</td><td class="name">Ельбрус<small>Кавказ</small></td><td class="num">5 642 м<span class="bar" style="--v:0.638"></span></td><td>Росія</td></tr>
+            <tr><td class="name">Монблан<small>Альпи</small></td><td class="num">4 808 м<span class="bar" style="--v:0.543"></span></td><td>Франція / Італія</td></tr>
+            <tr><td>Антарктида</td><td class="name">Масив Вінсон<small>гори Елсворт</small></td><td class="num">4 892 м<span class="bar" style="--v:0.553"></span></td><td>—</td></tr>
+            <tr><td rowspan="2" valign="middle">Австралія та Океанія</td><td class="name">Пунчак-Джая<small>острів Нова Гвінея</small></td><td class="num">4 884 м<span class="bar" style="--v:0.552"></span></td><td>Індонезія</td></tr>
+            <tr><td class="name">Костюшко<small>Австралійські Альпи</small></td><td class="num">2 228 м<span class="bar" style="--v:0.252"></span></td><td>Австралія</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="4" class="muted">Висоту Евересту — 8848,86&nbsp;м — спільно уточнили Непал і Китай у 2020 році.</td></tr>
+            </tfoot>
+          </table>
+        </div>
+            </td>
+          </tr>
+          <tr class="camp" data-alt="6065" data-name="Табір I">
+            <td class="camp__alt"><span class="camp__num">6 065</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Табір I</p>
+              <h2 class="camp__title">Над льодопадом</h2>
+              <p class="camp__text">Перший табір — на рівнині за льодопадом. Сюди піднімаються кілька разів, щоб тіло звикло до висоти.</p>
+              <table class="stats" role="presentation">
+          <tr>
+            <td><b><span class="count" data-to="8849">8 849</span><small>м</small></b><span>Еверест — найвища точка Землі</span></td>
+            <td><b><span class="count" data-to="2061">2 061</span><small>м</small></b><span>Говерла — найвища точка України</span></td>
+            <td><b><span class="count" data-to="14">14</span></b><span>вершин вищі за 8000 м</span></td>
+          </tr>
+        </table>
+            </td>
+          </tr>
+          <tr class="camp" data-alt="5600" data-name="Льодопад Кхумбу">
+            <td class="camp__alt"><span class="camp__num">5 600</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Льодопад Кхумбу</p>
+              <h2 class="camp__title">Льодопад Кхумбу</h2>
+              <p class="camp__text">Рухливий льодовик із тріщинами та брилами завбільшки з будинок. Через тріщини перекидають алюмінієві драбини, а йдуть тут удосвіта, поки лід міцніший.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="5364" data-name="Базовий табір">
+            <td class="camp__alt"><span class="camp__num">5 364</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Базовий табір</p>
+              <h2 class="camp__title">Базовий табір</h2>
+              <p class="camp__text">Наметове містечко на льодовику. Тут тижнями акліматизуються й чекають погодного вікна. Чому люди взагалі йдуть у гори?</p>
+              <table class="features" cellspacing="16" role="presentation">
+          <tr>
+            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(255,184,107,.5)"/><path d="M12 38 L24 18 L30 27 L34 22 L43 38 Z" fill="#f2f4fb"/><path d="M24 18 L27 23 L24.5 22 L22 25 Z" fill="#a9c8ff"/></svg><h3>Висота</h3><p>Кожна тисяча метрів забирає близько 6,5&nbsp;°C тепла і чимало кисню.</p></td>
+            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(255,143,143,.5)"/><path d="M20 40 V14" stroke="#f2f4fb" stroke-width="2"/><path d="M20 15 L36 19 L20 25 Z" fill="#ff8f8f"/></svg><h3>Виклик</h3><p>Сходження — це планування, витривалість і команда. Вершина — лише половина шляху.</p></td>
+            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(169,200,255,.5)"/><circle cx="27" cy="30" r="8" fill="#ffb86b"/><path d="M11 36 H43" stroke="#f2f4fb" stroke-width="2"/><path d="M27 14v5M15 21l3 3M39 21l-3 3" stroke="#ffb86b" stroke-width="2" stroke-linecap="round"/></svg><h3>Світанок</h3><p>Перші промені фарбують сніг у рожеве — це «альпійське сяйво».</p></td>
+          </tr>
+        </table>
+            </td>
+          </tr>
+          <tr class="camp" data-alt="3440" data-name="Намче-Базар">
+            <td class="camp__alt"><span class="camp__num">3 440</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Намче-Базар</p>
+              <h2 class="camp__title">Намче-Базар</h2>
+              <p class="camp__text">Столиця шерпів на крутому схилі. Тут роблять день відпочинку, щоб організм звик до висоти.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="2860" data-name="Лукла">
+            <td class="camp__alt"><span class="camp__num">2 860</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Лукла</p>
+              <h2 class="camp__title">Лукла — старт</h2>
+              <p class="camp__text">Аеропорт із короткою злітною смугою на схилі гори. Звідси починається пішохідний шлях до Евересту. <b>Гортайте вгору</b>, щоб піднятися.</p>
+              
+            </td>
+          </tr>
+        </table>
+        <p class="start-hint" aria-hidden="true">↑ гортайте вгору, щоб піднятися</p>
+    </td>
+    <td class="layout__side" valign="top" width="360">
+      <div class="side-sticky altimeter" aria-live="polite">
+        <table class="alt-panel" role="presentation">
+          <tr><td colspan="2"><p class="alt-k">Висота</p><p class="alt-big"><span id="altNow">2 860</span><small>м</small></p><p class="alt-name" id="altName">Лукла</p></td></tr>
+          <tr><td>Кисень</td><td><span class="meter"><i id="o2Bar"></i></span><b id="o2Out">71 %</b></td></tr>
+          <tr><td>Температура</td><td><b id="tOut">−3,6 °C</b></td></tr>
+          <tr><td>Вода кипить</td><td><b id="bOut">90 °C</b></td></tr>
+        </table>
+        <ol class="camps" id="campList"></ol>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__footer" colspan="2">
+      <table class="foot" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td>
+            <p class="foot__brand">Вер<span>шини</span></p>
+            <p class="muted">Сайт про найвищі гори світу та українські Карпати. Макет кожної сторінки зібрано з таблиць.</p>
+          </td>
+          <td>
+            <h4>Розділи</h4>
+            <ul>
+              <li><a href="index.html">Головна</a></li><li><a href="peaks.html">Восьмитисячники</a></li><li><a href="carpathians.html">Карпати</a></li><li><a href="safety.html">Безпека</a></li><li><a href="author.html">Про сайт</a></li>
+            </ul>
+          </td>
+          <td>
+            <h4>Про сайт</h4>
+            <p>Лабораторна робота №5<br>Структурування сторінок таблицями</p>
+            <p class="muted">Сайт створено: 12.10.2026</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="foot__bottom" colspan="3">© 2026 «Вершини». Усі гори на сторінках згенеровано програмно — щоразу з однаковим «зерном» випадковості.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
 
-<h3>Розділи сайту</h3>
-<table class="tiles" width="100%" border="0" cellpadding="6" cellspacing="12" summary="Розділи сайту">
-<tr valign="top">
-  <td width="33%" bgcolor="#F2F3F8"><a href="history.html"><b>Історія ШІ</b></a><br />Від перших моделей нейрона до сучасних мовних моделей.</td>
-  <td width="33%" bgcolor="#F2F3F8"><a href="directions.html"><b>Напрями ШІ</b></a><br />Машинне навчання, комп'ютерний зір, обробка мови та інше.</td>
-  <td width="33%" bgcolor="#F2F3F8"><a href="application.html"><b>Застосування</b></a><br />Як ШІ змінює медицину, транспорт, освіту та фінанси.</td>
-</tr>
-</table>
-    </td></tr>
-    </table>
-  </td>
-</tr>
-
-<!-- Рядок 3: нижній колонтитул -->
-<tr>
-  <td colspan="2" class="footer" height="60" bgcolor="#16173A">
-    &copy; 2026 Світ штучного інтелекту. Автор: <a href="author.html">Прізвище Ім'я По батькові</a>, група ____
-  </td>
-</tr>
-</table>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

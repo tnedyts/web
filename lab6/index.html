@@ -1,32 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
+<!DOCTYPE html>
+<html lang="uk">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="Інформаційний сайт про історію, напрями та застосування ШІ" />
-<meta name="author" content="Прізвище Ім'я По батькові" />
-<title>Світ штучного інтелекту</title>
-<link rel="icon" type="image/png" href="images/favicon.png" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Безодня — подорож у глибини океану</title>
+<meta name="description" content="Сайт на фреймах (варіант 3) про глибини Світового океану: зони глибин, мешканці, дослідники.">
+<meta name="theme-color" content="#021624">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/shell.css">
 </head>
-<!-- Варіант 3: ліва колонка | центр (верх + дві частини знизу) | права колонка -->
-<frameset cols="16%, *, 19%" border="0" frameborder="0" framespacing="0">
-  <!-- ліва колонка на всю висоту: головне меню -->
-  <frame src="menu.html" name="menu" scrolling="no" noresize="noresize" frameborder="0" marginwidth="0" marginheight="0" />
-  <!-- центральна частина: поділ по вертикалі -->
-  <frameset rows="150, *" border="0" frameborder="0" framespacing="0">
-    <!-- верхня смуга: логотип і назва сайту -->
-    <frame src="logo.html" name="logo" scrolling="no" noresize="noresize" frameborder="0" marginwidth="0" marginheight="0" />
-    <!-- нижня смуга: поділ по горизонталі на дві частини -->
-    <frameset cols="26%, *" border="0" frameborder="0" framespacing="0">
-      <frame src="topics.html" name="topics" scrolling="auto" frameborder="0" marginwidth="0" marginheight="0" />
-      <frame src="home.html" name="content" scrolling="yes" frameborder="0" marginwidth="0" marginheight="0" />
-    </frameset>
-  </frameset>
-  <!-- права колонка на всю висоту: цікаві факти -->
-  <frame src="facts.html" name="facts" scrolling="auto" frameborder="0" marginwidth="0" marginheight="0" />
-  <noframes>
-    <body>
-      <p>Ваш браузер не підтримує фрейми. Перейдіть на <a href="home.html">головну сторінку</a> сайту.</p>
-    </body>
-  </noframes>
-</frameset>
+<body>
+<!-- Лабораторна робота 6. Сайт на фреймах, варіант 3:
+     ліва колонка (menu) | центр: вгорі logo, внизу topics + content | права колонка (facts) -->
+<canvas id="ocean" aria-hidden="true"></canvas>
+<canvas id="life" aria-hidden="true"></canvas>
+
+<div class="shell">
+  <div class="pane pane--menu" data-name="menu"><iframe name="menu" src="menu.html" title="Меню сайту"></iframe></div>
+  <div class="pane pane--logo" data-name="logo"><iframe name="logo" src="logo.html" title="Логотип і прилади" scrolling="no"></iframe></div>
+  <div class="center">
+    <div class="pane" data-name="topics"><iframe name="topics" src="topics.html" title="Зони глибин"></iframe></div>
+    <div class="pane pane--content" data-name="content"><iframe name="content" src="home.html" title="Вміст сторінки"></iframe></div>
+  </div>
+  <div class="pane pane--facts" data-name="facts"><iframe name="facts" src="facts.html" title="Цікаві факти"></iframe></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<script src="js/ocean.js"></script>
+</body>
 </html>

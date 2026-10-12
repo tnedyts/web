@@ -1,223 +1,181 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
+<!DOCTYPE html>
+<html lang="uk" class="no-js">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Проста вебсторінка про штучний інтелект" />
-<meta name="keywords" content="штучний інтелект, ШІ, нейронні мережі, машинне навчання" />
-<meta name="author" content="Студент" />
-<title>Штучний інтелект — що це таке?</title>
-<link rel="icon" type="image/png" href="images/favicon.png" />
-<!-- Основні стилі сторінки -->
-<style type="text/css">
-@font-face {
-  font-family: "Unbounded";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200 900;
-  src: url("fonts/unbounded-cyrillic-wght-normal.woff2") format("woff2");
-  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
-}
-@font-face {
-  font-family: "Unbounded";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200 900;
-  src: url("fonts/unbounded-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-@font-face {
-  font-family: "Onest";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("fonts/onest-cyrillic-wght-normal.woff2") format("woff2");
-  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
-}
-@font-face {
-  font-family: "Onest";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("fonts/onest-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 800;
-  src: url("fonts/jetbrains-mono-cyrillic-wght-normal.woff2") format("woff2");
-  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 800;
-  src: url("fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-
-/* ---- Основні стилі сторінки ---- */
-html { background-color: #F2F3F8; }
-body {
-  margin: 0;
-  color: #16173A;
-  font-family: "Onest", Verdana, sans-serif;
-  font-size: 18px;
-  line-height: 1.65;
-}
-img.band { display: block; width: 100%; height: 150px; object-fit: cover; }
-.page { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
-.hero { padding: 56px 0 8px; }
-h1, h2, h3, h4, h5 { font-family: "Unbounded", Georgia, serif; line-height: 1.15; letter-spacing: -0.01em; }
-h1 { font-size: 64px; font-weight: 700; margin: 0 0 16px; letter-spacing: -0.03em; }
-h2 { font-size: 30px; font-weight: 600; margin: 56px 0 16px; }
-h3 { font-size: 21px; font-weight: 600; margin: 36px 0 10px; }
-h4 { font-size: 17px; font-weight: 600; margin: 28px 0 8px; }
-h5 { font-size: 14px; font-weight: 600; margin: 24px 0 4px; color: #3B4BF5; }
-p { margin: 0 0 16px; hyphens: auto; }
-hr { border: 0; border-top: 1px solid rgba(22, 23, 58, 0.18); margin: 40px auto; }
-strong, b { font-weight: 650; }
-code, tt, kbd, samp, var, pre { font-family: "JetBrains Mono", "Courier New", monospace; font-size: 0.86em; }
-var { font-style: italic; color: #3B4BF5; }
-code { background-color: rgba(59, 75, 245, 0.10); padding: 2px 6px; border-radius: 6px; }
-samp { color: #F2496B; }
-kbd {
-  border: 1px solid rgba(22, 23, 58, 0.25);
-  border-bottom-width: 3px;
-  border-radius: 7px;
-  padding: 1px 8px;
-  background-color: #ffffff;
-}
-pre {
-  background-color: #16173A;
-  color: #F2F3F8;
-  padding: 22px 26px;
-  border-radius: 18px;
-  overflow-x: auto;
-  line-height: 1.55;
-}
-.formula {
-  margin: 28px 0;
-  padding: 26px 20px;
-  border-radius: 18px;
-  background-color: #ffffff;
-  font-size: 20px;
-}
-blockquote {
-  margin: 28px 0;
-  padding: 4px 0 4px 26px;
-  border-left: 4px solid #F2496B;
-  font-family: "Unbounded", Georgia, serif;
-  font-size: 26px;
-  line-height: 1.35;
-}
-blockquote p { margin: 0; }
-cite { font-style: normal; font-weight: 600; color: #3B4BF5; }
-small { font-size: 0.82em; opacity: 0.75; }
-strike { text-decoration-color: #F2496B; text-decoration-thickness: 2px; }
-u { text-decoration-color: #3B4BF5; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.foot { padding-top: 8px; }
-@media (max-width: 640px) {
-  body { font-size: 16px; }
-  h1 { font-size: 40px; }
-  h2 { font-size: 24px; }
-  blockquote { font-size: 20px; }
-}
-
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Горизонт подій — падіння в чорну діру</title>
+<meta name="description" content="Інтерактивне падіння в надмасивну чорну діру Стрілець A*: прокручуйте сторінку — і наближайтеся до горизонту подій.">
+<meta name="keywords" content="чорна діра, горизонт подій, Стрілець A*, радіус Шварцшильда, сповільнення часу">
+<meta name="theme-color" content="#030305">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<basefont size="3" color="#16173A" face="Onest" />
 
-<!-- Декоративна «матриця ваг» нейромережі -->
-<img class="band" src="images/matrix.svg" alt="" />
+<!-- ============================================================
+     Лабораторна робота 4. Розробка простої вебсторінки.
+     Тема: падіння в чорну діру. Одна сторінка з тегами форматування:
+     b, strong, i, em, u, s, sup, sub, small, cite, code, samp, var,
+     kbd, blockquote, pre, h1–h5, hr, br, а також коментарі.
+     Прокручування сторінки = падіння камери до горизонту подій.
+     ============================================================ -->
 
-<div class="page">
-
-<!-- Заголовок сторінки -->
-<div class="hero">
-<h1 align="center">Штучний інтелект</h1>
-<center><font face="Onest" size="4" color="#3B4BF5"><i>Коротко про те, як машини вчаться думати</i></font></center>
+<!-- Екран завантаження -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__ring"></div>
+  <p class="loader__count"><span id="loaderCount">0</span><small>%</small></p>
+  <p class="loader__text">Розрахунок траєкторії падіння</p>
 </div>
-<hr align="center" width="100%" size="1" noshade="noshade" />
 
-<!-- Розділ 1 -->
-<h2>Що таке штучний інтелект?</h2>
-<p align="justify">
-<b>Штучний інтелект</b> (ШІ, англ. <i>Artificial Intelligence</i>, AI) — це галузь
-інформатики, що створює <strong>комп'ютерні системи, здатні виконувати завдання,
-які зазвичай потребують людського інтелекту</strong>: розпізнавати мову та зображення,
-перекладати тексти, ухвалювати рішення та навчатися на власному досвіді.
-</p>
-<p align="justify">
-Сам термін запропонував американський учений <em>Джон Маккарті</em>, готуючи
-літній семінар у Дартмутському коледжі, що відбувся у 1956 році. Саме цю подію вважають
-<u>офіційною датою народження ШІ</u> як наукового напряму.
-</p>
+<!-- Живий рендер чорної діри (js/blackhole.js) -->
+<canvas class="bh-canvas" id="bh" aria-hidden="true"></canvas>
+<div class="bh-fallback" aria-hidden="true"></div>
+<div class="flash" id="flash" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
 
-<h3>Слабкий і сильний ШІ</h3>
-<p align="left">
-Розрізняють <b>слабкий (вузький) ШІ</b>, який виконує одне конкретне завдання,
-і <b>сильний (загальний) ШІ</b>, що мав би мислити на рівні людини в будь-якій сфері.<br />
-Усі сучасні системи — від голосових помічників до чат-ботів — поки що належать до вузького ШІ.<br />
-Колись популярну думку <strike>«комп'ютер ніколи не обіграє людину в шахи»</strike>
-спростувала програма Deep Blue ще у 1997 році.
-</p>
-
-<!-- Розділ 2 -->
-<h2>Як працює штучний нейрон</h2>
-<p align="justify">
-Основою більшості сучасних систем ШІ є <b>штучні нейронні мережі</b>. Кожен нейрон
-отримує вхідні сигнали <var>x</var><sub>1</sub>, <var>x</var><sub>2</sub>, …, <var>x</var><sub>n</sub>,
-множить їх на ваги <var>w</var><sub>1</sub>, <var>w</var><sub>2</sub>, …, <var>w</var><sub>n</sub>,
-додає зміщення <var>b</var> і пропускає суму через функцію активації <var>f</var>:
-</p>
-<p class="formula" align="center">
-<big><tt>y = f(w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + … + w<sub>n</sub>x<sub>n</sub> + b)</tt></big>
-</p>
-<p align="justify">
-Великі мовні моделі містять сотні мільярдів таких параметрів — понад 10<sup>11</sup>.
-Для їх навчання потрібні тисячі графічних процесорів і величезні обсяги текстів.
-<small>(Для порівняння: мозок людини має близько 8,6·10<sup>10</sup> нейронів.)</small>
-</p>
-
-<h4>Приклад коду</h4>
-<p>Ось як можна описати один нейрон мовою Python (функція <code>neuron</code>):</p>
-<pre>
-import math
-
-def neuron(x, w, b):
-    s = sum(xi * wi for xi, wi in zip(x, w)) + b
-    return 1 / (1 + math.exp(-s))   # сигмоїда
-
-print(neuron([1.0, 0.5], [0.4, -0.2], 0.1))
-</pre>
-<p>
-Щоб запустити програму, наберіть у терміналі <kbd>python neuron.py</kbd> і натисніть <kbd>Enter</kbd>.
-Програма виведе приблизно таке: <samp>0.598687660112452</samp>
-</p>
-
-<h5>Примітка</h5>
-<p><small>Функція <code>math.exp</code> обчислює експоненту, а змінна <var>s</var> — зважену суму входів.</small></p>
-
-<hr align="left" width="40%" size="1" />
-
-<!-- Розділ 3: цитата -->
-<h2>Тест Тюрінга</h2>
-<p>У статті <cite>«Обчислювальні машини та розум»</cite> (1950) Алан Тюрінг поставив питання:</p>
-<blockquote>
-<p><i>«Пропоную розглянути питання: чи можуть машини мислити?»</i></p>
-</blockquote>
-<p align="justify">
-Він запропонував «гру в імітацію»: якщо людина-суддя, листуючись із машиною та людиною,
-не може надійно відрізнити, хто з них хто, — машину можна вважати «мислячою».
-</p>
-
-<hr align="center" width="100%" size="1" noshade="noshade" />
-<p class="foot" align="right"><font size="2" color="#3B4BF5">Сторінку створено в межах лабораторної роботи № 4</font></p>
+<!-- ===== HUD: прилади корабля ===== -->
+<div class="hud" aria-hidden="true">
+  <div class="hud__frame"><i></i><i></i><i></i><i></i></div>
+  <div class="hud__tl">
+    <p class="hud__k">ціль</p>
+    <p class="hud__v">Стрілець A*</p>
+    <p class="hud__s">4,3 млн M<sub>☉</sub> · R<sub>s</sub> ≈ 12,7 млн км</p>
+  </div>
+  <div class="hud__tr">
+    <p class="hud__k">фаза</p>
+    <p class="hud__v" id="hPhase">Далека орбіта</p>
+    <button class="hud__btn" id="diskBtn" type="button" aria-pressed="false">диск: обертається</button>
+  </div>
+  <div class="hud__bl">
+    <p class="hud__big"><span id="hR">60,0</span><small>R<sub>s</sub></small></p>
+    <p class="hud__row"><span>відстань</span><b id="hKm">762 млн км</b></p>
+    <p class="hud__row"><span>швидкість утечі</span><b id="hEsc">12,9 % c</b></p>
+    <p class="hud__row"><span>червоний зсув</span><b id="hZ">z = 0,008</b></p>
+    <p class="hud__row"><span>припливна сила, 2 м</span><b id="hTide">0 м/с²</b></p>
+  </div>
+  <div class="hud__br">
+    <p class="hud__k">годинники</p>
+    <p class="hud__clock"><span>ваш час</span><b id="hMine">00:00:00</b></p>
+    <p class="hud__clock hud__clock--earth"><span>час Землі</span><b id="hEarth">00:00:00</b></p>
+    <p class="hud__row"><span>сповільнення</span><b id="hDil">×1,008</b></p>
+  </div>
+  <ol class="hud__gauge" id="gauge"></ol>
+  <div class="hud__progress"><i id="hBar"></i></div>
 </div>
+
+<main id="voyage">
+
+  <!-- 0. Старт -->
+  <section class="station station--hero" data-r="60" data-phase="Далека орбіта">
+    <p class="kicker">Місія «Стрілець A*» · старт з орбіти 60 R<sub>s</sub></p>
+    <h1 class="hero__title"><span class="hero__line">Горизонт</span> <span class="hero__line hero__line--it">подій</span></h1>
+    <p class="lead">Ви — на борту зонда біля надмасивної чорної діри в центрі нашої Галактики. <em>Прокручуйте сторінку</em> — і зонд почне падати. Прилади покажуть, як змінюються простір і час.</p>
+    <p class="cue"><span></span>гортайте, щоб падати</p>
+  </section>
+
+  <!-- 1. Суть -->
+  <section class="station" data-r="40" data-phase="Підліт" data-x="-1">
+    <h2 class="st-title"><span class="st-no">01</span>Що таке чорна діра</h2>
+    <p class="st-big"><b>Чорна діра</b> — ділянка простору, де речовина стиснута так щільно, що її тяжіння не відпускає <strong>нічого</strong>, навіть світло.</p>
+    <p>Межу, з-за якої втеча неможлива, називають <i>горизонтом подій</i>. Це не поверхня, а <u>межа без вороття</u>: перетнути її можна, а вийти — ніколи. Для того, хто падає, це станеться за лічені миті; для спостерігача здалеку падіння триватиме <em>вічно</em>.</p>
+  </section>
+
+  <!-- 2. Формула -->
+  <section class="station" data-r="26" data-phase="Підліт" data-x="1">
+    <h2 class="st-title"><span class="st-no">02</span>Радіус Шварцшильда</h2>
+    <p class="formula" aria-label="R з індексом s дорівнює 2 G M поділити на c у квадраті"><var>R</var><sub>s</sub> = <span class="frac"><span>2<var>G</var><var>M</var></span><span><var>c</var><sup>2</sup></span></span></p>
+    <p><var>G</var> = 6,674·10<sup>−11</sup> м<sup>3</sup>/(кг·с<sup>2</sup>) · <var>c</var> = 2,998·10<sup>8</sup> м/с. Стиснувши будь-яке тіло до цього радіуса, отримаємо чорну діру: для Землі це <b>8,9 мм</b>, для Сонця — <b>2,95 км</b>.</p>
+    <div class="calc">
+      <label class="calc__label" for="massRange">Маса: <samp id="massOut">1 M☉</samp></label>
+      <input class="calc__range" id="massRange" type="range" min="0" max="1000" value="338">
+      <p class="calc__res">R<sub>s</sub> = <samp id="radiusOut">2,95 км</samp> · <span id="compareOut">як невелике місто</span></p>
+      <p class="calc__hint"><small>Клацніть на повзунок і натискайте <kbd>←</kbd> <kbd>→</kbd>.</small></p>
+    </div>
+  </section>
+
+  <!-- 3. Типи -->
+  <section class="station" data-r="16" data-phase="Зовнішній диск" data-x="-1">
+    <h2 class="st-title"><span class="st-no">03</span>Чотири розміри темряви</h2>
+    <div class="types">
+      <div><h3>Зоряні</h3><h5>3 – 100 M<sub>☉</sub></h5><p>Залишки масивних зір після вибуху наднової.</p></div>
+      <div><h3>Проміжні</h3><h5>10<sup>2</sup> – 10<sup>5</sup> M<sub>☉</sub></h5><p>Рідкісна «відсутня ланка» у щільних скупченнях.</p></div>
+      <div><h3>Надмасивні</h3><h5>10<sup>5</sup> – 10<sup>10</sup> M<sub>☉</sub></h5><p>Живуть у центрах галактик — як наша ціль.</p></div>
+      <div><h3>Первісні</h3><h5>гіпотетичні</h5><p>Могли з'явитися одразу після Великого вибуху.</p></div>
+    </div>
+  </section>
+
+  <!-- 4. Історія -->
+  <section class="station" data-r="10" data-phase="Акреційний диск" data-x="1">
+    <h2 class="st-title"><span class="st-no">04</span>Як ми їх знайшли</h2>
+    <ol class="years">
+      <li><h4>1783</h4><p>Джон Мічелл уявляє «темні зорі»</p></li>
+      <li><h4>1916</h4><p>Шварцшильд розв'язує рівняння Ейнштейна</p></li>
+      <li><h4>1939</h4><p>Оппенгеймер і Снайдер: безмежний колапс</p></li>
+      <li><h4>1967</h4><p>Джон Вілер популяризує назву «чорна діра»</p></li>
+      <li><h4>1974</h4><p>Гокінг: чорні діри випромінюють</p></li>
+      <li><h4>2015</h4><p>LIGO чує гравітаційні хвилі злиття</p></li>
+      <li><h4>2019</h4><p>Перше зображення тіні — M87*</p></li>
+      <li><h4>2022</h4><p>Знімок нашої цілі — Стрільця A*</p></li>
+    </ol>
+  </section>
+
+  <!-- 5. Диск -->
+  <section class="station" data-r="6" data-phase="Акреційний диск" data-x="-1">
+    <h2 class="st-title"><span class="st-no">05</span>Розжарений диск</h2>
+    <p class="st-big">Газ мчить довкола діри майже зі швидкістю світла й нагрівається до <b>мільйонів градусів</b>.</p>
+    <p>Подивіться на диск: одна його сторона <strong>яскравіша</strong>. Речовина там летить до вас, і світло підсилюється — це релятивістське <i>доплерівське підсилення</i>. А верхня дуга над тінню — це задня частина диска, світло від якої діра вигнула до вас.</p>
+  </section>
+
+  <!-- 6. ISCO і спагетифікація -->
+  <section class="station" data-r="3" data-phase="Остання стійка орбіта" data-x="1">
+    <h2 class="st-title"><span class="st-no">06</span>Остання стійка орбіта · 3 R<sub>s</sub></h2>
+    <p class="spaghetti" aria-label="Спагетифікація">Спагетифікація</p>
+    <p>Ближче за 3 R<sub>s</sub> по колу вже не втримаєшся. Біля <u>малої</u> чорної діри тяжіння біля ніг сильніше, ніж біля голови, — і тіло розтягує <s>як гуму</s> як спагеті. Але наша діра надмасивна: припливна сила тут мізерна (дивіться прилад унизу) — і ми живі.</p>
+  </section>
+
+  <!-- 7. Фотонна сфера -->
+  <section class="station" data-r="1.5" data-phase="Фотонна сфера" data-x="-1">
+    <h2 class="st-title"><span class="st-no">07</span>Фотонна сфера · 1,5 R<sub>s</sub></h2>
+    <p class="st-big">Тут навіть світло рухається по колу.</p>
+    <p>Промінь, випущений уздовж орбіти, обійде діру й повернеться до вас. Теоретично тут можна побачити <em>власну потилицю</em>. Годинник Землі вже біжить помітно швидше за ваш.</p>
+  </section>
+
+  <!-- 8. Міфи -->
+  <section class="station" data-r="1.08" data-phase="Межа горизонту" data-x="1">
+    <h2 class="st-title"><span class="st-no">08</span>Останні секунди: міфи</h2>
+    <ul class="myths">
+      <li><s>Чорна діра — космічний пилосос.</s> Здалеку вона тягне так само, як зоря тієї ж маси.</li>
+      <li><s>Це дірка в просторі.</s> Це найщільніше тіло у Всесвіті.</li>
+      <li><s>Чорні діри вічні.</s> Випромінювання Гокінга повільно їх випаровує: діра масою Сонця проживе ≈ 10<sup>67</sup> років.</li>
+      <li><s>Її неможливо побачити.</s> Ми бачимо її тінь на тлі розжареного газу.</li>
+    </ul>
+  </section>
+
+  <!-- 9. Після горизонту -->
+  <section class="station station--end" data-r="0.9" data-phase="Під горизонтом" id="end">
+    <h3 class="end__title">Ви перетнули <em>горизонт подій</em>.</h3>
+    <p class="end__sub">Жоден сигнал звідси вже не дійде до Землі. Але останні дані встигли передати:</p>
+<pre class="terminal" id="terminal"><code><span class="line"><span class="t-p">$</span> <kbd>probe --log --target "Sgr A*"</kbd></span>
+<span class="line"><samp><b class="t-ok">[ok]</b> старт: r = 60 R<sub>s</sub>, сповільнення часу ×1,008</samp></span>
+<span class="line"><samp><b class="t-ok">[ok]</b> ISCO пройдено: r = 3 R<sub>s</sub></samp></span>
+<span class="line"><samp><b class="t-ok">[ok]</b> фотонна сфера: r = 1,5 R<sub>s</sub></samp></span>
+<span class="line"><samp><b class="t-w">[!!]</b> <var>r</var> &lt; R<sub>s</sub> — зв'язок втрачено</samp></span>
+<span class="line"><span class="t-p">$</span> <span class="t-caret"></span></span></code></pre>
+    <blockquote class="end__quote"><p>Чорні діри не такі вже й чорні.</p><footer>— <cite>Стівен Гокінг</cite></footer></blockquote>
+    <hr class="rule" size="1" noshade>
+    <p class="end__foot"><small>© 2026 «Горизонт подій» · Лабораторна робота №4<br>Чорна діра — живий рендер WebGL із гравітаційним лінзуванням променів.</small></p>
+    <a class="again" href="#top" id="again">↺ Повернутися на орбіту</a>
+  </section>
+
+</main>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/blackhole.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

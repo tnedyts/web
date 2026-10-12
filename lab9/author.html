@@ -1,62 +1,66 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" lang="uk">
+<html lang="uk" class="no-js">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Про автора — Світ штучного інтелекту</title>
-<meta name="description" content="Інформаційний сайт про історію, напрями та застосування ШІ" />
-<meta name="keywords" content="штучний інтелект, ШІ, машинне навчання, нейронні мережі" />
-<meta name="author" content="Прізвище Ім'я По батькові" />
-<link rel="icon" type="image/png" href="images/favicon.png" />
-<link type="text/css" media="all" rel="stylesheet" href="css/main.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Про сайт — Нічна хвиля</title>
+<meta name="description" content="Про сайт і лабораторну роботу">
+<meta name="theme-color" content="#0a0216">
+<meta property="og:title" content="Нічна хвиля — фестиваль синтвейву">
+<meta property="og:description" content="Про сайт і лабораторну роботу">
+<meta property="og:url" content="https://tnedyts.github.io/web/lab9/author.html">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="container">
-  <div id="header">
-    <a href="index.html" title="На головну"><img src="images/logo.png" alt="Логотип" width="56" height="56" /></a>
-    <h1><a href="index.html">Світ штучного інтелекту</a></h1>
-    <span>Інформаційний сайт про історію, напрями та застосування ШІ</span>
+<!-- Лабораторна робота 9. Вставлення додатків із зовнішніх джерел: карти Google, відео YouTube,
+     аудіо HTML5, кнопки соцмереж, інформери. Тема: вигаданий фестиваль синтвейву -->
+<div class="power" aria-hidden="true"><i></i></div>
+<div class="static" aria-hidden="true"><canvas></canvas><b>CH --</b></div>
+<div class="osd osd--tl" aria-hidden="true"><b>CH 05</b>ПРО САЙТ</div>
+<div class="osd osd--tc"><a href="index.html" title="На головну">НІЧНА <span>ХВИЛЯ</span></a></div>
+<div class="osd osd--tr"><span class="rec">●</span> PLAY ▶<br><span id="osdTime">SP 00:00:00</span><br><button class="tape-btn" type="button" aria-pressed="false" title="Увімкнути трек фестивалю"><span>▶ ТРЕК</span></button></div>
+<div class="osd osd--bl" aria-hidden="true" id="osdDate">ЖОВ 12 2026</div>
+<nav aria-label="Канали (розділи сайту)"><ul class="guide"><li><a href="index.html" data-ch="01"><b>01</b><span>Ефір</span></a></li><li><a href="lineup.html" data-ch="02"><b>02</b><span>Лайнап</span></a></li><li><a href="media.html" data-ch="03"><b>03</b><span>Медіа</span></a></li><li><a href="tickets.html" data-ch="04"><b>04</b><span>Квитки</span></a></li><li><a href="author.html" data-ch="05" class="is-on" aria-current="page"><b>05</b><span>Про сайт</span></a></li></ul></nav>
+<main id="main">
+<section class="credits" aria-label="Фінальні титри: інформація про сайт">
+  <div class="credits__roll">
+    <p class="label">CH 05 · ПРО САЙТ</p>
+    <h1 class="h2 ab">Нічна <em>хвиля</em></h1>
+    <dl><dt>ЛАБОРАТОРНА РОБОТА</dt><dd>№9 · Вставлення додатків із зовнішніх джерел</dd><dt>КАРТИ</dt><dd>Google Maps — мітка, супутник, маршрут, панорама</dd><dt>ВІДЕО</dt><dd>YouTube — фрагмент і субтитри через параметри</dd><dt>АУДІО</dt><dd>HTML5 &lt;audio&gt; · OGG + MP3 · трек «Нічна хвиля»</dd><dt>ІНФОРМЕРИ</dt><dd>Open-Meteo · НБУ · wttr.in</dd><dt>СОЦМЕРЕЖІ</dt><dd>Facebook · X · Telegram · LinkedIn · Pinterest</dd><dt>ГРАФІКА</dt><dd>WebGL-шейдер траси · canvas-візуалізатор</dd><dt>АНІМАЦІЯ</dt><dd>GSAP · ScrollTrigger · Lenis</dd><dt>ШРИФТИ</dt><dd>Russo One · Exo 2 · Press Start 2P</dd><dt>ДАТА СТВОРЕННЯ</dt><dd>12.10.2026</dd><dt>ПОДЯКА</dt><dd>Усім, хто досі зберігає касети</dd></dl>
+    <p class="end">КІНЕЦЬ<br>· · ·<br>ПЕРЕМОТАЙТЕ КАСЕТУ НА ПОЧАТОК</p>
   </div>
-  <div id="nav">
-    <ul>
-      <li><a href="index.html">Головна</a></li>
-      <li><a href="history.html">Історія ШІ</a></li>
-      <li><a href="directions.html">Напрями ШІ</a></li>
-      <li><a href="application.html">Застосування</a></li>
-      <li><a href="gallery.html">Галерея</a></li>
-      <li><a href="media.html">Мультимедіа</a></li>
-      <li><a href="author.html" class="active">Про автора</a></li>
-    </ul>
-  </div>
-  <div id="content">
-<h2>Про автора сайту</h2>
-<dl class="about">
-  <dt>ПІБ</dt><dd>Прізвище Ім'я По батькові</dd>
-  <dt>Група</dt><dd>група ____</dd>
-  <dt>Дисципліна</dt><dd>Вебтехнології та вебдизайн</dd>
-  <dt>GitHub</dt><dd><a href="https://github.com/tnedyts">github.com/tnedyts</a></dd>
-</dl>
-<p>Цей сайт створено в межах лабораторних робіт з вебпрограмування. Тему штучного інтелекту
-обрано тому, що вона стрімко розвивається і вже впливає на кожну професію, зокрема й на
-роботу веброзробника.</p>
-  </div>
-  <div id="sidebar">
-    <div class="promo">
-      <h3>Нове в галереї</h3>
-      <img src="images/thumbs/01-neural-network.jpg" alt="Нове в галереї" width="360" height="240" />
-      <p>12 наочних візуалізацій того, як працює штучний інтелект.</p>
-      <a href="gallery.html">Переглянути</a>
-    </div>
-    <div class="fact">
-      <h3 title="Цікавий факт про ШІ">Чи знаєте ви?</h3>
-      <p>МЕСМ, створена в Києві 1951 року, займала цілу кімнату і виконувала близько 3000 операцій за хвилину.</p>
-    </div>
-  </div>
-  <div id="footer">
-    <p><a href="index.html">Головна</a> — <a href="gallery.html">Галерея</a> — <a href="author.html">Про автора</a></p>
-    <p>&copy; Світ штучного інтелекту. Автор: Прізвище Ім'я По батькові, група ____. Контакти: <a href="https://github.com/tnedyts">github.com/tnedyts</a>.
-    Дата створення сайту: 12.10.2026</p>
-  </div>
-</div>
+  <div class="credits__ctrl"><button class="tape-btn" type="button">❚❚ ПАУЗА</button></div>
+</section>
+<section class="section">
+  <span class="label">ДАНІ САЙТУ</span>
+  <h2 class="h2 ab">Без <em>титрів</em></h2>
+  <table class="tt">
+    <tbody>
+      <tr><th scope="row">Робота</th><td>Лабораторна №9 — вставлення додатків із зовнішніх джерел</td></tr>
+      <tr><th scope="row">Створено</th><td>12.10.2026</td></tr>
+    </tbody>
+  </table>
+  <div class="cta" style="justify-content:flex-start"><a class="btn" href="index.html"><span>На головну (CH 01)</span></a></div>
+</section>
+</main>
+<footer class="footer">
+  <p class="pixel">© 2026 НІЧНА ХВИЛЯ · ЛАБОРАТОРНА РОБОТА №9</p>
+  <p>Сайт створено: 12.10.2026</p>
+  <p>Фестиваль і всі артисти вигадані для навчального сайту. Перемикайте канали клавішами <b>1–5</b>.</p>
+</footer>
+<audio id="track" preload="metadata">
+    <source src="media/nichna-khvylia.ogg" type="audio/ogg">
+    <source src="media/nichna-khvylia.mp3" type="audio/mpeg">
+    Ваш браузер не підтримує тег &lt;audio&gt;. <a href="media/nichna-khvylia.mp3">Завантажити трек</a>.
+</audio>
+<div class="flicker" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+<div class="bezel" aria-hidden="true"></div>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/tv.js"></script>
 </body>
 </html>
