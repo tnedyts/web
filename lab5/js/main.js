@@ -5,6 +5,74 @@
   var doc = document.documentElement;
   doc.classList.remove('no-js');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Топографічні горизонталі на тлі (безшовна плитка) ---------- */
+  (function topo() {
+    var el = document.querySelector('.topo');
+    if (!el) return;
+    var T = 960;
+    var G = 6;
+    var n = T / G;
+    var rnd = rng(1234);
+    var waves = [];
+    for (var k = 0; k < 14; k++) {
+      waves.push({ fx: Math.round(rnd() * 6) - 3 || 1, fy: Math.round(rnd() * 6) - 3 || 2, a: 0.4 + rnd() * (k < 4 ? 1.2 : 0.5), p: rnd() * 6.283 });
+    }
+    function f(x, y) {
+      var v = 0;
+      for (var i = 0; i < waves.length; i++) { var w = waves[i]; v += w.a * Math.sin(6.283 * (w.fx * x + w.fy * y) / T + w.p); }
+      return v;
+    }
+    var field = new Float32Array((n + 1) * (n + 1));
+    var mn = 1e9;
+    var mx = -1e9;
+    for (var j = 0; j <= n; j++) for (var i = 0; i <= n; i++) { var v = f(i * G, j * G); field[j * (n + 1) + i] = v; if (v < mn) mn = v; if (v > mx) mx = v; }
+    var c = document.createElement('canvas');
+    c.width = c.height = T;
+    var x = c.getContext('2d');
+    var L = 26;
+    for (var l = 1; l < L; l++) {
+      var iso = mn + (mx - mn) * l / L;
+      var major = l % 5 === 0;
+      x.strokeStyle = major ? 'rgba(169,200,255,.16)' : 'rgba(169,200,255,.075)';
+      x.lineWidth = major ? 1.4 : 0.9;
+      x.beginPath();
+      for (j = 0; j < n; j++) {
+        for (i = 0; i < n; i++) {
+          var a = field[j * (n + 1) + i];
+          var b = field[j * (n + 1) + i + 1];
+          var cc = field[(j + 1) * (n + 1) + i + 1];
+          var d = field[(j + 1) * (n + 1) + i];
+          var idx = (a > iso ? 8 : 0) | (b > iso ? 4 : 0) | (cc > iso ? 2 : 0) | (d > iso ? 1 : 0);
+          if (idx === 0 || idx === 15) continue;
+          var X = i * G;
+          var Y = j * G;
+          var pt = function (p, q, x1, y1, x2, y2) { var t = (iso - p) / (q - p); return [x1 + (x2 - x1) * t, y1 + (y2 - y1) * t]; };
+          var top = pt(a, b, X, Y, X + G, Y);
+          var right = pt(b, cc, X + G, Y, X + G, Y + G);
+          var bottom = pt(d, cc, X, Y + G, X + G, Y + G);
+          var left = pt(a, d, X, Y, X, Y + G);
+          var segs = { 1: [left, bottom], 2: [bottom, right], 3: [left, right], 4: [top, right], 5: [left, top, bottom, right], 6: [top, bottom], 7: [left, top], 8: [left, top], 9: [top, bottom], 10: [left, bottom, top, right], 11: [top, right], 12: [left, right], 13: [bottom, right], 14: [left, bottom] }[idx];
+          for (var sgi = 0; sgi < segs.length; sgi += 2) { x.moveTo(segs[sgi][0], segs[sgi][1]); x.lineTo(segs[sgi + 1][0], segs[sgi + 1][1]); }
+        }
+      }
+      x.stroke();
+    }
+    el.style.backgroundImage = 'url(' + c.toDataURL() + ')';
+    el.style.backgroundSize = T + 'px ' + T + 'px';
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { el.style.backgroundPosition = '0 ' + (-window.scrollY * 0.22).toFixed(1) + 'px'; ticking = false; });
+    }, { passive: true });
+  })();
+
+  var route = document.querySelector('table.route');
+  if (route) {
+    doc.classList.add('climb');
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  }
   var hasGsap = typeof window.gsap !== 'undefined';
   if (hasGsap) gsap.registerPlugin(ScrollTrigger);
   else {
@@ -456,13 +524,24 @@
   var curtain = document.querySelector('.curtain');
   var cSvg = curtain ? curtain.querySelector('svg') : null;
   var cLabel = curtain ? curtain.querySelector('.curtain__label') : null;
+  function toBottom() {
+    /* старт — у таборі Лукла: останній рядок маршруту по центру екрана */
+    var rows = route.querySelectorAll('tr.camp');
+    var lastRow = rows[rows.length - 1];
+    var r = lastRow.getBoundingClientRect();
+    var y = Math.max(0, r.top + window.scrollY + Math.min(r.height / 2, window.innerHeight * 0.35) - window.innerHeight / 2);
+    window.scrollTo(0, y);
+    if (window.__lenis) window.__lenis.scrollTo(y, { immediate: true, force: true });
+  }
   function reveal() {
-    if (!curtain) { intro(); return; }
+    if (route) { toBottom(); setTimeout(toBottom, 60); }
+    var start = route ? climbStart : intro;
+    if (!curtain) { start(); return; }
     gsap.timeline()
       .set(cSvg, { yPercent: 0 })
       .to(cLabel, { opacity: 0, y: -30, duration: 0.4, ease: 'power2.in' }, 0)
       .to(cSvg, { yPercent: 100, duration: reduce ? 0.01 : 1.2, ease: 'expo.inOut' }, 0.1)
-      .call(intro, null, 0.55);
+      .call(start, null, 0.55);
   }
   if (curtain) {
     document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
@@ -567,5 +646,142 @@
     });
   }
 
+
+  /* ---------- Сходження: висота залежить від прокручування (знизу вгору) ---------- */
+  function climbStart() {
+    var hint = document.querySelector('.start-hint');
+    var camps = Array.prototype.slice.call(route.querySelectorAll('tr.camp'));
+    var list = document.getElementById('campList');
+    var out = {
+      now: document.getElementById('altNow'), name: document.getElementById('altName'),
+      o2b: document.getElementById('o2Bar'), o2: document.getElementById('o2Out'),
+      t: document.getElementById('tOut'), b: document.getElementById('bOut')
+    };
+    var centers = [];
+    function measure() { centers = camps.map(function (tr) { var r = tr.getBoundingClientRect(); return r.top + window.scrollY + Math.min(r.height / 2, window.innerHeight * 0.35); }); }
+    measure();
+    window.addEventListener('resize', measure);
+    window.addEventListener('load', measure);
+    var lis = camps.map(function (tr, i) {
+      var li = document.createElement('li');
+      li.innerHTML = '<span>' + tr.getAttribute('data-name') + '</span><span>' + Number(tr.getAttribute('data-alt')).toLocaleString('uk-UA') + '</span>';
+      li.addEventListener('click', function () {
+        measure();
+        var y = centers[i] - window.innerHeight / 2;
+        if (window.__lenis) window.__lenis.scrollTo(y, { duration: 2.2 });
+        else window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+      list.appendChild(li);
+      return li;
+    });
+    /* альпініст на лінії маршруту */
+    var climber = document.createElement('div');
+    climber.className = 'climber';
+    climber.innerHTML = '<svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="13" fill="#0a0f24" stroke="#ffb86b" stroke-width="2"/><circle cx="15" cy="9" r="2.6" fill="#f2f4fb"/><path d="M15 12 L14 18 L11 23 M14 18 L17 23 M14 13 L19 16 M14 13 L10 16 M19 10 L21 24" stroke="#f2f4fb" stroke-width="1.8" fill="none" stroke-linecap="round"/><rect x="15" y="12" width="4" height="5" rx="1" fill="#ffb86b"/></svg>';
+    document.body.appendChild(climber);
+    /* сніг, що густішає з висотою */
+    var sn = document.createElement('canvas');
+    sn.className = 'snowfall';
+    sn.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(sn);
+    var sx = sn.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function ssize() { sn.width = window.innerWidth * dpr; sn.height = window.innerHeight * dpr; }
+    ssize();
+    window.addEventListener('resize', ssize);
+    var flakes = [];
+    for (var k = 0; k < 260; k++) flakes.push({ x: Math.random(), y: Math.random(), z: Math.random(), ph: Math.random() * 6.28 });
+
+    var wind0 = 0;
+    var shown = 2860;
+    var last = -1;
+    var lo = [20, 32, 69];
+    var hi = [3, 4, 11];
+    (function loop(now) {
+      requestAnimationFrame(loop);
+      var y = window.scrollY + window.innerHeight / 2;
+      var h;
+      if (y <= centers[0]) h = 8849;
+      else if (y >= centers[centers.length - 1]) h = +camps[camps.length - 1].getAttribute('data-alt');
+      else {
+        for (var i = 0; i < centers.length - 1; i++) {
+          if (y >= centers[i] && y < centers[i + 1]) {
+            var t = (y - centers[i]) / (centers[i + 1] - centers[i]);
+            var a0 = +camps[i].getAttribute('data-alt');
+            var a1 = +camps[i + 1].getAttribute('data-alt');
+            h = a0 + (a1 - a0) * t;
+            break;
+          }
+        }
+      }
+      shown += (h - shown) * 0.12;
+      var hv = Math.round(shown);
+      if (hv !== last) {
+        last = hv;
+        out.now.textContent = hv.toLocaleString('uk-UA');
+        var o2 = Math.exp(-hv / 8434) * 100;
+        out.o2.textContent = Math.round(o2) + ' %';
+        out.o2b.style.transform = 'scaleX(' + (o2 / 100) + ')';
+        var tc = 15 - 6.5 * hv / 1000;
+        out.t.textContent = (tc > 0 ? '+' : '−') + Math.abs(tc).toFixed(1).replace('.', ',') + ' °C';
+        out.b.textContent = Math.round(100 - hv / 300) + ' °C';
+        var near = 0;
+        var best = 1e9;
+        camps.forEach(function (tr, j) { var d = Math.abs(centers[j] - y); if (d < best) { best = d; near = j; } });
+        camps.forEach(function (tr, j) { tr.classList.toggle('is-here', j === near); });
+        lis.forEach(function (li, j) { li.classList.toggle('is-on', j === near); });
+        out.name.textContent = hv > 8800 ? 'Вершина світу' : camps[near].getAttribute('data-name');
+        var k2 = Math.max(0, Math.min(1, (hv - 2860) / (8849 - 2860)));
+        document.body.style.backgroundColor = 'rgb(' + lo.map(function (c, m) { return Math.round(c + (hi[m] - c) * k2); }).join(',') + ')';
+        if (hint && window.scrollY < document.documentElement.scrollHeight - window.innerHeight * 1.6) hint.classList.add('is-gone');
+      }
+      /* позиція альпініста */
+      var td = camps[0].querySelector('td.camp__alt');
+      var rr = td.getBoundingClientRect();
+      climber.style.left = (rr.right - 1) + 'px';
+      climber.style.top = (window.innerHeight / 2) + 'px';
+      /* сніг */
+      var dens = Math.max(0, Math.min(1, (shown - 3000) / 5800));
+      sx.clearRect(0, 0, sn.width, sn.height);
+      if (reduce || dens <= 0.02) return;
+      var count = Math.round(flakes.length * dens);
+      var wind = 0.4 + dens * 3.2 + wind0;
+      sx.fillStyle = '#fff';
+      for (var f = 0; f < count; f++) {
+        var fl = flakes[f];
+        fl.y += (0.0012 + fl.z * 0.0026);
+        fl.x += (wind * (0.4 + fl.z) * 0.0009) + Math.sin(now / 900 + fl.ph) * 0.0004;
+        if (fl.y > 1.02) { fl.y = -0.02; fl.x = Math.random(); }
+        if (fl.x > 1.02) fl.x = -0.02;
+        if (fl.x < -0.02) fl.x = 1.02;
+        sx.globalAlpha = (0.25 + fl.z * 0.6) * Math.min(1, dens * 1.4);
+        sx.beginPath();
+        sx.arc(fl.x * sn.width, fl.y * sn.height, (0.6 + fl.z * 2.2) * dpr, 0, 6.283);
+        sx.fill();
+      }
+      sx.globalAlpha = 1;
+    })(0);
+    window.addEventListener('pointermove', function (e) { wind0 = (e.clientX / window.innerWidth - 0.5) * 2; }, { passive: true });
+
+    /* вершина: заголовок і прапор з'являються, коли ви дійшли до верху */
+    if (hero) {
+      var flag = document.createElement('div');
+      flag.className = 'summit-flag';
+      flag.setAttribute('aria-hidden', 'true');
+      flag.innerHTML = '<svg viewBox="0 0 70 90"><path d="M4 90 V6" stroke="#f2f4fb" stroke-width="3"/><path class="cloth" d="M5 8 L62 14 L56 30 L64 44 L5 40 Z" fill="#ffb86b"/><path class="cloth" d="M5 22 L40 25" stroke="#ff8f8f" stroke-width="5"/></svg>';
+      hero.appendChild(flag);
+      var done = false;
+      ScrollTrigger.create({
+        trigger: hero, start: 'bottom 55%',
+        onLeaveBack: function () {
+          if (done) return;
+          done = true;
+          intro();
+          gsap.to(flag, { scaleY: 1, duration: 1.2, ease: 'elastic.out(1, .5)', delay: 0.8 });
+        }
+      });
+    }
+    measure();
+  }
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
 })();

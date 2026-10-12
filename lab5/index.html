@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="topo" aria-hidden="true"></div>
 <!-- Лабораторна робота 5. Макет сторінки — таблиця: шапка, меню, вміст + бічна панель, колонтитул -->
 <div class="curtain" aria-hidden="true">
   <svg viewBox="0 0 1600 1300" preserveAspectRatio="none">
@@ -28,7 +29,7 @@
     <div class="hero" data-seed="11">
       <canvas class="hero__stars" aria-hidden="true"></canvas>
       <div class="hero__sun" aria-hidden="true"></div>
-      <p class="hero__kicker">Гори, що кличуть</p>
+      <p class="hero__kicker">Ви на вершині світу</p>
       <h1 class="hero__title">Вершини</h1>
       <svg class="hero__layer hero__layer--1" data-layer="1" aria-hidden="true"></svg>
       <svg class="hero__layer hero__layer--2" data-layer="2" aria-hidden="true"></svg>
@@ -39,8 +40,8 @@
       <div class="hero__fog hero__fog--b" aria-hidden="true"></div>
       <canvas class="hero__snow" aria-hidden="true"></canvas>
       <div class="hero__meta">
-        <a class="hero__scroll" href="#content"><i></i>Гортайте вниз</a>
-        <p class="hero__alt"><b>8 849 м</b>Еверест</p>
+        <a class="hero__scroll" href="#content"><i></i>Вершина Евересту</a>
+        <p class="hero__alt"><b>8 849 м</b>над рівнем моря</p>
       </div>
     </div>
     </td>
@@ -58,39 +59,59 @@
   </tr>
   <tr>
     <td class="layout__main" id="content" valign="top">
-      <div class="block">
-        <span class="kicker">Вступ</span>
-        <h2 class="h2">Чому люди <em>йдуть</em> у гори</h2>
-        <p class="lead" data-reveal>Гори та нагір'я займають близько чверті суходолу Землі. Тут народжуються ріки,
-        живе кожен десятий мешканець планети, а над хмарами відкриваються краєвиди, яких не побачиш більше ніде.</p>
-        <table class="features" cellspacing="16" role="presentation">
-          <tr>
-            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(255,184,107,.5)"/><path d="M12 38 L24 18 L30 27 L34 22 L43 38 Z" fill="#f2f4fb"/><path d="M24 18 L27 23 L24.5 22 L22 25 Z" fill="#a9c8ff"/></svg><h3>Висота</h3><p>Чим вище, тим холодніше й тим менше кисню. Кожна тисяча метрів забирає близько 6,5&nbsp;°C тепла.</p></td>
-            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(255,143,143,.5)"/><path d="M20 40 V14" stroke="#f2f4fb" stroke-width="2"/><path d="M20 15 L36 19 L20 25 Z" fill="#ff8f8f"/></svg><h3>Виклик</h3><p>Сходження — це планування, витривалість і командна робота. Вершина — лише половина шляху: треба ще повернутися.</p></td>
-            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(169,200,255,.5)"/><circle cx="27" cy="30" r="8" fill="#ffb86b"/><path d="M11 36 H43" stroke="#f2f4fb" stroke-width="2"/><path d="M27 14v5M15 21l3 3M39 21l-3 3" stroke="#ffb86b" stroke-width="2" stroke-linecap="round"/></svg><h3>Світанок</h3><p>Схід сонця над хмарами — винагорода за нічний вихід. Перші промені фарбують сніг у рожеве — це «альпійське сяйво».</p></td>
+      <table class="route" cellspacing="0" cellpadding="0" role="presentation">
+          <tr class="camp" data-alt="8849" data-name="Вершина">
+            <td class="camp__alt"><span class="camp__num">8 849</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Вершина</p>
+              <h2 class="camp__title">Вершина Евересту</h2>
+              <p class="camp__text">Найвища точка Землі. Тиск повітря — третина від рівня моря, вітер може сягати урагану. Тут не затримуються: кілька хвилин на фото — і вниз, поки вистачає сил і кисню.</p>
+              
+            </td>
           </tr>
-        </table>
-      </div>
-
-      <div class="block">
-        <span class="kicker">У цифрах</span>
-        <h2 class="h2">Планета <em>вертикалей</em></h2>
-        <table class="stats" role="presentation">
-          <tr>
-            <td><b><span class="count" data-to="8849">8 849</span><small>м</small></b><span>висота Евересту — найвищої точки Землі</span></td>
-            <td><b><span class="count" data-to="2061">2 061</span><small>м</small></b><span>висота Говерли — найвищої точки України</span></td>
-            <td><b><span class="count" data-to="14">14</span></b><span>вершин на планеті вищі за 8000 метрів</span></td>
-            <td><b><span class="count" data-to="6">6</span></b><span>вершин України вищі за 2000 метрів — усі в Чорногорі</span></td>
+          <tr class="camp" data-alt="8790" data-name="Сходинка Гілларі">
+            <td class="camp__alt"><span class="camp__num">8 790</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Сходинка Гілларі</p>
+              <h2 class="camp__title">Сходинка Гілларі</h2>
+              <p class="camp__text">Скельний уступ майже під вершиною, названий на честь Едмунда Гілларі. Після землетрусу 2015 року він значною мірою обвалився, але назва лишилася.</p>
+              
+            </td>
           </tr>
-        </table>
-      </div>
-
-      <div class="block">
-        <span class="kicker">Сім вершин</span>
-        <h2 class="h2">Найвищі точки <em>континентів</em></h2>
-        <p class="muted" data-reveal>«Сім вершин» — виклик, який альпіністи кидають самі собі: піднятися на найвищу гору кожної частини світу.
-        Для Європи та для Австралії з Океанією існує по дві версії списку, тому ці континенти займають у таблиці по два рядки.</p>
-        <div class="table-wrap">
+          <tr class="camp" data-alt="8400" data-name="Балкон">
+            <td class="camp__alt"><span class="camp__num">8 400</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Балкон</p>
+              <h2 class="camp__title">Балкон</h2>
+              <p class="camp__text">Невеликий майданчик на гребені, де змінюють кисневі балони й чекають світанку. Внизу — тіні сусідніх восьмитисячників.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="7950" data-name="Табір IV">
+            <td class="camp__alt"><span class="camp__num">7 950</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Табір IV</p>
+              <h2 class="camp__title">Південна сідловина</h2>
+              <p class="camp__text">Останній табір перед штурмом. На вершину виходять близько опівночі, щоб устигнути повернутися до вечора. Над головою — зона смерті.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="7470" data-name="Табір III">
+            <td class="camp__alt"><span class="camp__num">7 470</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Табір III</p>
+              <h2 class="camp__title">Схил Лхоцзе</h2>
+              <p class="camp__text">Намети, прив'язані до крижаної стіни. Від цього табору більшість альпіністів іде з кисневими масками.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="6400" data-name="Табір II">
+            <td class="camp__alt"><span class="camp__num">6 400</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Табір II</p>
+              <h2 class="camp__title">Західний цирк</h2>
+              <p class="camp__text">«Долина мовчання»: вдень сонце відбивається від снігу й тут спекотно, вночі — сильний мороз. Поки відпочиваєте, погляньте на сім вершин світу.</p>
+              <div class="table-wrap">
           <table class="data" cellspacing="0" cellpadding="0">
             <caption>Таблиця 1. Сім вершин світу</caption>
             <thead>
@@ -112,29 +133,77 @@
             </tfoot>
           </table>
         </div>
-        <a class="btn" href="peaks.html" data-label="8000+">До восьмитисячників <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
-      </div>
+            </td>
+          </tr>
+          <tr class="camp" data-alt="6065" data-name="Табір I">
+            <td class="camp__alt"><span class="camp__num">6 065</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Табір I</p>
+              <h2 class="camp__title">Над льодопадом</h2>
+              <p class="camp__text">Перший табір — на рівнині за льодопадом. Сюди піднімаються кілька разів, щоб тіло звикло до висоти.</p>
+              <table class="stats" role="presentation">
+          <tr>
+            <td><b><span class="count" data-to="8849">8 849</span><small>м</small></b><span>Еверест — найвища точка Землі</span></td>
+            <td><b><span class="count" data-to="2061">2 061</span><small>м</small></b><span>Говерла — найвища точка України</span></td>
+            <td><b><span class="count" data-to="14">14</span></b><span>вершин вищі за 8000 м</span></td>
+          </tr>
+        </table>
+            </td>
+          </tr>
+          <tr class="camp" data-alt="5600" data-name="Льодопад Кхумбу">
+            <td class="camp__alt"><span class="camp__num">5 600</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Льодопад Кхумбу</p>
+              <h2 class="camp__title">Льодопад Кхумбу</h2>
+              <p class="camp__text">Рухливий льодовик із тріщинами та брилами завбільшки з будинок. Через тріщини перекидають алюмінієві драбини, а йдуть тут удосвіта, поки лід міцніший.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="5364" data-name="Базовий табір">
+            <td class="camp__alt"><span class="camp__num">5 364</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Базовий табір</p>
+              <h2 class="camp__title">Базовий табір</h2>
+              <p class="camp__text">Наметове містечко на льодовику. Тут тижнями акліматизуються й чекають погодного вікна. Чому люди взагалі йдуть у гори?</p>
+              <table class="features" cellspacing="16" role="presentation">
+          <tr>
+            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(255,184,107,.5)"/><path d="M12 38 L24 18 L30 27 L34 22 L43 38 Z" fill="#f2f4fb"/><path d="M24 18 L27 23 L24.5 22 L22 25 Z" fill="#a9c8ff"/></svg><h3>Висота</h3><p>Кожна тисяча метрів забирає близько 6,5&nbsp;°C тепла і чимало кисню.</p></td>
+            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(255,143,143,.5)"/><path d="M20 40 V14" stroke="#f2f4fb" stroke-width="2"/><path d="M20 15 L36 19 L20 25 Z" fill="#ff8f8f"/></svg><h3>Виклик</h3><p>Сходження — це планування, витривалість і команда. Вершина — лише половина шляху.</p></td>
+            <td><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="26" fill="none" stroke="rgba(169,200,255,.5)"/><circle cx="27" cy="30" r="8" fill="#ffb86b"/><path d="M11 36 H43" stroke="#f2f4fb" stroke-width="2"/><path d="M27 14v5M15 21l3 3M39 21l-3 3" stroke="#ffb86b" stroke-width="2" stroke-linecap="round"/></svg><h3>Світанок</h3><p>Перші промені фарбують сніг у рожеве — це «альпійське сяйво».</p></td>
+          </tr>
+        </table>
+            </td>
+          </tr>
+          <tr class="camp" data-alt="3440" data-name="Намче-Базар">
+            <td class="camp__alt"><span class="camp__num">3 440</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Намче-Базар</p>
+              <h2 class="camp__title">Намче-Базар</h2>
+              <p class="camp__text">Столиця шерпів на крутому схилі. Тут роблять день відпочинку, щоб організм звик до висоти.</p>
+              
+            </td>
+          </tr>
+          <tr class="camp" data-alt="2860" data-name="Лукла">
+            <td class="camp__alt"><span class="camp__num">2 860</span><small>м</small></td>
+            <td class="camp__body">
+              <p class="camp__name">Лукла</p>
+              <h2 class="camp__title">Лукла — старт</h2>
+              <p class="camp__text">Аеропорт із короткою злітною смугою на схилі гори. Звідси починається пішохідний шлях до Евересту. <b>Гортайте вгору</b>, щоб піднятися.</p>
+              
+            </td>
+          </tr>
+        </table>
+        <p class="start-hint" aria-hidden="true">↑ гортайте вгору, щоб піднятися</p>
     </td>
     <td class="layout__side" valign="top" width="360">
-      <div class="side-sticky">
-        <div class="side-card">
-          <div class="art" data-art="5"></div>
-          <h3>Вершина дня: Говерла</h3>
-          <table class="facts" role="presentation">
-            <tr><td>Висота</td><td>2061 м</td></tr>
-            <tr><td>Хребет</td><td>Чорногора</td></tr>
-            <tr><td>Підйом від Заросляка</td><td>≈ 2–3 год</td></tr>
-            <tr><td>Найкращий сезон</td><td>липень–вересень</td></tr>
-          </table>
-        </div>
-        <div class="side-card quote">
-          <p>Тому що вона існує.</p>
-          <cite>Джордж Меллорі, 1923 — на питання, навіщо йти на Еверест</cite>
-        </div>
-        <div class="side-card">
-          <h3>Порада</h3>
-          <p>Виходьте на маршрут рано-вранці: у горах після обіду частіше збираються грози, а спуск у темряві — небезпечний.</p>
-        </div>
+      <div class="side-sticky altimeter" aria-live="polite">
+        <table class="alt-panel" role="presentation">
+          <tr><td colspan="2"><p class="alt-k">Висота</p><p class="alt-big"><span id="altNow">2 860</span><small>м</small></p><p class="alt-name" id="altName">Лукла</p></td></tr>
+          <tr><td>Кисень</td><td><span class="meter"><i id="o2Bar"></i></span><b id="o2Out">71 %</b></td></tr>
+          <tr><td>Температура</td><td><b id="tOut">−3,6 °C</b></td></tr>
+          <tr><td>Вода кипить</td><td><b id="bOut">90 °C</b></td></tr>
+        </table>
+        <ol class="camps" id="campList"></ol>
       </div>
     </td>
   </tr>
