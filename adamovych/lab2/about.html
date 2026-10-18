@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk" data-blog="dvi-pedali" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Про блог — Дві педалі</title>
+<meta name="description" content="Про блог «Дві педалі» і його автора.">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#1d2327">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var t=JSON.parse(localStorage.getItem('dvi-pedali:theme'));if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 2. Створення й ведення блогу.
+     Блог «Дві педалі»: стрічка записів з рубриками й пошуком, сторінки записів
+     з коментарями й вподобайками, редактор нових записів (зберігаються в браузері). -->
+<a class="skip" href="#main">Перейти до вмісту</a>
+<header class="site-head">
+  <div class="site-head__in">
+    <a class="logo" href="index.html"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="32" r="9" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="36" cy="32" r="9" fill="none" stroke="currentColor" stroke-width="4"/><path d="M12 32 L22 16 L32 16 L36 32 M22 16 L27 32 L12 32 M30 12 h6" fill="none" stroke="#ff6b2c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Дві педалі<small>велоблог</small></span></a>
+    <nav class="site-nav" aria-label="Головне меню"><a href="index.html">Стрічка</a><a href="index.html#rubrics">Рубрики</a><a href="about.html" class="is-active" aria-current="page">Про блог</a><a href="write.html">Написати запис</a></nav>
+    <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Нічна тема"><span aria-hidden="true"></span></button>
+  </div>
+</header>
+<span hidden data-cat-name="tips">Поради</span><span hidden data-cat-name="routes">Маршрути</span><span hidden data-cat-name="tech">Техніка</span><span hidden data-cat-name="diary">Щоденник</span>
+<main id="main">
+<section class="page-head">
+  <h1>Про блог</h1>
+  <p>«Дві педалі»&nbsp;&mdash; особистий блог про велосипед як спосіб відпочинку, подорожей і руху.</p>
+</section>
+<div class="about">
+  <div class="about__card reveal"><svg class="avatar" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="60" fill="#1f8a8a"/><circle cx="60" cy="52" r="24" fill="#e8b48a"/><path d="M34 46 q26 -40 52 0 z" fill="#ff6b2c"/><path d="M22 112 q38 -48 76 0" fill="#1d2327"/></svg><h2>Вадим Адамович</h2><p>Студент, автор блогу. Катаюся третій сезон, люблю довгі маршрути Поділлям, шахи і хорошу піцу після поїздки.</p></div>
+  <div class="about__text reveal">
+    <h2>Для кого цей блог</h2>
+    <ul>
+      <li><strong>Для новачків</strong>, які тільки обирають перший велосипед і не знають, з чого почати.</li>
+      <li><strong>Для тих, хто вже катається</strong> і шукає нові маршрути на вихідні.</li>
+      <li><strong>Для «технарів»</strong>, яким цікаво самостійно доглядати за велосипедом.</li>
+    </ul>
+    <h2>Рубрики</h2>
+    <table class="tbl"><caption>Про що тут пишу</caption><thead><tr><th scope="col">Рубрика</th><th scope="col">Про що</th></tr></thead><tbody>
+      <tr><th scope="row">Поради</th><td>вибір велосипеда, спорядження, безпека</td></tr>
+      <tr><th scope="row">Маршрути</th><td>поїздки вихідного дня з описом і профілем висот</td></tr>
+      <tr><th scope="row">Техніка</th><td>догляд і дрібний ремонт своїми руками</td></tr>
+      <tr><th scope="row">Щоденник</th><td>особисті історії та досягнення</td></tr>
+    </tbody></table>
+    <h2>Як це зроблено</h2>
+    <p>Блог створено вручну на HTML, CSS і JavaScript і розміщено на GitHub Pages. Коментарі, вподобайки й нові записи з редактора зберігаються у вашому браузері, тому сайт працює без сервера й бази даних.</p>
+  </div>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="site-foot__in">
+    <p class="site-foot__name"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="32" r="9" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="36" cy="32" r="9" fill="none" stroke="currentColor" stroke-width="4"/><path d="M12 32 L22 16 L32 16 L36 32 M22 16 L27 32 L12 32 M30 12 h6" fill="none" stroke="#ff6b2c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Дві педалі</span></p>
+    <p>Їдьте в шоломі й будьте помітними на дорозі.<br>Навчальний блог, лабораторна робота №&nbsp;2. Автор: Вадим Адамович, 2026.</p>
+    <p class="site-foot__links"><a href="index.html">Стрічка</a> <a href="about.html">Про блог</a> <a href="write.html">Написати запис</a></p>
+  </div>
+</footer>
+<script src="js/blog.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

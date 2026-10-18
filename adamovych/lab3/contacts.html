@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk" data-site="gambit">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакти — Гамбіт</title>
+<meta name="description" content="Приходьте на гру чи заняття або напишіть нам&nbsp;&mdash; відповімо протягом дня.">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#10302a">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var s=JSON.parse(localStorage.getItem('gambit:settings'));if(s&&s.accent)document.documentElement.style.setProperty('--accent',s.accent);}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 3. Створення сайту з системою керування вмістом.
+     Сайт «Гамбіт»: слайдер, новини, календар подій, галерея, карта, форма зв’язку
+     і панель керування (admin.html), через яку змінюється вміст сайту. -->
+<a class="skip" href="#main">Перейти до вмісту</a>
+<div class="banner" data-banner hidden><p data-banner-text></p><button type="button" data-banner-close aria-label="Закрити оголошення">&times;</button></div>
+<header class="site-head">
+  <div class="site-head__in">
+    <a class="logo" href="index.html"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10302a"/><text x="24" y="26" font-family="Chess Glyphs" font-size="34" text-anchor="middle" dominant-baseline="central" fill="#d9a441">&#9822;</text></svg><span>Гамбіт<small>шаховий клуб і школа</small></span></a>
+    <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="site-nav"><span></span><span class="sr">Меню</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Головне меню"><a href="index.html">Головна</a><a href="news.html">Новини</a><a href="events.html">Календар</a><a href="gallery.html">Галерея</a><a href="training.html">Навчання</a><a href="contacts.html" aria-current="page">Контакти</a></nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="page-head__in">
+    <p class="kicker">Як нас знайти</p>
+    <h1>Контакти</h1>
+    <p>Приходьте на гру чи заняття або напишіть нам&nbsp;&mdash; відповімо протягом дня.</p>
+  </div>
+  <p class="page-head__art" aria-hidden="true">&#9822;</p>
+</section>
+<section class="section">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <h2>Чекаємо на вас</h2>
+      <dl class="info">
+        <div><dt>Адреса</dt><dd>м. Кам’янець-Подільський, вул. Шахова, 7 (умовна адреса)</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+380671234567">+380 (67) 123-45-67</a></dd></div>
+        <div><dt>Пошта</dt><dd><a href="mailto:gambit.club@example.com">gambit.club@example.com</a></dd></div>
+      </dl>
+      <table class="hours"><caption>Графік роботи</caption><tbody><tr><th scope="row">Понеділок&nbsp;&ndash; п’ятниця</th><td>15:00&ndash;21:00</td></tr><tr><th scope="row">Субота</th><td>10:00&ndash;18:00</td></tr><tr><th scope="row">Неділя</th><td>вихідний</td></tr></tbody></table>
+    </div>
+    <form class="form contact-form reveal" data-contact novalidate>
+      <h2>Написати нам</h2>
+      <p><label for="f-name">Ім’я</label><input id="f-name" name="name" type="text" autocomplete="name" required><span class="err">Вкажіть ім’я</span></p>
+      <p><label for="f-contact">Телефон</label><input id="f-contact" name="contact" type="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required><span class="err">Вкажіть телефон у форматі +380…</span></p>
+      <p><label for="f-topic">Тема</label><select id="f-topic" name="topic"><option value="school">Запис до шахової школи</option><option value="tour">Реєстрація на турнір</option><option value="other">Інше запитання</option></select></p>
+      <p><label for="f-msg">Повідомлення</label><textarea id="f-msg" name="message" rows="5" required></textarea><span class="err">Напишіть кілька слів</span></p>
+      <p class="check-line"><label><input type="checkbox" name="agree" required> Погоджуюся на обробку моїх даних для відповіді</label><span class="err">Потрібна ваша згода</span></p>
+      <p><button class="btn" type="submit">Надіслати</button></p>
+      <p class="form__msg" role="status"></p>
+    </form>
+  </div>
+  <div class="wrap">
+    <div class="map reveal">
+      <iframe title="Карта: шаховий клуб «Гамбіт», Кам’янець-Подільський" src="https://www.openstreetmap.org/export/embed.html?bbox=26.5665%2C48.6705%2C26.5845%2C48.6785&amp;layer=mapnik&amp;marker=48.6745%2C26.5755" loading="lazy"></iframe>
+      <p class="map__note">Позначка на карті показує умовне розташування клубу в центрі міста. <a href="https://www.openstreetmap.org/?mlat=48.6745&amp;mlon=26.5755#map=17/48.6745/26.5755" target="_blank" rel="noopener">Відкрити більшу карту</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="site-foot__in">
+    <div>
+      <p class="site-foot__name"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10302a"/><text x="24" y="26" font-family="Chess Glyphs" font-size="34" text-anchor="middle" dominant-baseline="central" fill="#d9a441">&#9822;</text></svg><span>Гамбіт</span></p>
+      <p>Шаховий клуб і школа для дітей та дорослих. Граємо, вчимося, перемагаємо.</p>
+    </div>
+    <div>
+      <p class="foot__h">Контакти</p>
+      <p>м. Кам’янець-Подільський, вул. Шахова, 7 (умовна адреса)<br><a href="tel:+380671234567">+380 (67) 123-45-67</a><br><a href="mailto:gambit.club@example.com">gambit.club@example.com</a></p>
+    </div>
+    <div>
+      <p class="foot__h">Сайт</p>
+      <p class="site-foot__links"><a href="index.html">Головна</a><a href="news.html">Новини</a><a href="events.html">Календар</a><a href="gallery.html">Галерея</a><a href="training.html">Навчання</a><a href="contacts.html">Контакти</a><a href="admin.html">Панель керування</a></p>
+    </div>
+  </div>
+  <p class="site-foot__copy">Навчальний проєкт, лабораторна робота №&nbsp;3. Автор: Вадим Адамович, 2026. Назва, адреса й контакти умовні.</p>
+</footer>
+<dialog class="lightbox" data-lightbox aria-label="Перегляд зображення">
+  <div class="lightbox__stage"></div>
+  <p class="lightbox__cap"></p>
+  <p class="lightbox__count"></p>
+  <button type="button" class="lightbox__btn lightbox__btn--close" data-lb-close aria-label="Закрити">&times;</button>
+  <button type="button" class="lightbox__btn lightbox__btn--prev" data-lb-prev aria-label="Попереднє зображення">&#8249;</button>
+  <button type="button" class="lightbox__btn lightbox__btn--next" data-lb-next aria-label="Наступне зображення">&#8250;</button>
+</dialog>
+<script src="js/data.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

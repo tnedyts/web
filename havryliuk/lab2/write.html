@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk" data-blog="murchyk" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новий запис — Мурчик і я</title>
+<meta name="description" content="Редактор нових записів блогу.">
+<meta name="author" content="Юлія Гаврилюк">
+<meta name="theme-color" content="#5b2a4e">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var t=JSON.parse(localStorage.getItem('murchyk:theme'));if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 2. Створення й ведення блогу.
+     Блог «Мурчик і я»: стрічка записів з рубриками й пошуком, сторінки записів
+     з коментарями й вподобайками, редактор нових записів (зберігаються в браузері). -->
+<a class="skip" href="#main">Перейти до вмісту</a>
+<header class="site-head">
+  <div class="site-head__in">
+    <a class="logo" href="index.html"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 V18 L13 6 L20 15 H28 L35 6 L40 18 V40 Z" fill="#f29a4a"/><circle cx="18" cy="24" r="3" fill="#2b1d24"/><circle cx="30" cy="24" r="3" fill="#2b1d24"/><path d="M21 31 h6 l-3 3 z" fill="#e8747a"/><path d="M14 40 q10 -8 20 0" fill="#ffe0bf"/></svg><span>Мурчик і я<small>блог про життя з котом</small></span></a>
+    <nav class="site-nav" aria-label="Головне меню"><a href="index.html">Стрічка</a><a href="index.html#rubrics">Рубрики</a><a href="about.html">Про блог</a><a href="write.html" class="is-active" aria-current="page">Написати запис</a></nav>
+    <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Нічна тема"><span aria-hidden="true"></span></button>
+  </div>
+</header>
+<span hidden data-cat-name="life">Котяче життя</span><span hidden data-cat-name="food">Харчування</span><span hidden data-cat-name="play">Ігри</span><span hidden data-cat-name="health">Здоров’я</span>
+<main id="main">
+<section class="page-head">
+  <h1>Новий запис</h1>
+  <p>Напишіть власний запис для блогу. Він збережеться у вашому браузері й з’явиться на початку стрічки. Чернетка зберігається автоматично.</p>
+</section>
+<div class="writer">
+  <form class="form writer__form" data-write novalidate>
+    <p><label for="w-title">Назва запису</label><input id="w-title" name="title" type="text" maxlength="90" required placeholder="Наприклад: Як Мурчик познайомився з пилососом"></p>
+    <div class="writer__row">
+      <p><label for="w-cat">Рубрика</label><select id="w-cat" name="cat"><option value="life">Котяче життя</option><option value="food">Харчування</option><option value="play">Ігри</option><option value="health">Здоров’я</option></select></p>
+      <p><label for="w-cover">Обкладинка</label><select id="w-cover" name="cover"><option value="peach">Персикова</option><option value="mint">М’ятна</option><option value="plum">Слива</option><option value="sky">Небо</option></select></p>
+    </div>
+    <div class="writer__tools" role="group" aria-label="Форматування">
+      <button type="button" data-insert="\n\n## Підзаголовок\n\n">Підзаголовок</button>
+      <button type="button" data-insert="**жирний текст**">Жирний</button>
+      <button type="button" data-insert="*курсив*">Курсив</button>
+      <button type="button" data-insert="\n\n- перший пункт\n- другий пункт\n\n">Список</button>
+    </div>
+    <p><label for="w-text">Текст <small>(символів: <span data-chars>0</span>)</small></label><textarea id="w-text" name="text" rows="14" required placeholder="Абзаци розділяйте порожнім рядком. ## — підзаголовок, - — пункт списку, **текст** — жирний."></textarea></p>
+    <p><button class="btn" type="submit">Опублікувати</button> <span class="form__msg" role="status"></span></p>
+  </form>
+  <section class="writer__preview" aria-label="Попередній перегляд">
+    <p class="writer__label">Попередній перегляд</p>
+    <div class="post__cover cover cover--peach" data-preview-cover></div>
+    <h2 data-preview-title>Назва запису</h2>
+    <div class="post__body post__body--preview" data-preview></div>
+  </section>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="site-foot__in">
+    <p class="site-foot__name"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 V18 L13 6 L20 15 H28 L35 6 L40 18 V40 Z" fill="#f29a4a"/><circle cx="18" cy="24" r="3" fill="#2b1d24"/><circle cx="30" cy="24" r="3" fill="#2b1d24"/><path d="M21 31 h6 l-3 3 z" fill="#e8747a"/><path d="M14 40 q10 -8 20 0" fill="#ffe0bf"/></svg><span>Мурчик і я</span></p>
+    <p>Не купуйте&nbsp;&mdash; прихистіть! У притулках чекають на дім.<br>Навчальний блог, лабораторна робота №&nbsp;2. Автор: Юлія Гаврилюк, 2026.</p>
+    <p class="site-foot__links"><a href="index.html">Стрічка</a> <a href="about.html">Про блог</a> <a href="write.html">Написати запис</a></p>
+  </div>
+</footer>
+<script src="js/blog.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

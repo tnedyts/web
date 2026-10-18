@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk" data-site="pivonia">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Панель керування — Півонія</title>
+<meta name="description" content="Панель керування вмістом сайту.">
+<meta name="author" content="Юлія Гаврилюк">
+<meta name="theme-color" content="#7a2048">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var s=JSON.parse(localStorage.getItem('pivonia:settings'));if(s&&s.accent)document.documentElement.style.setProperty('--accent',s.accent);}catch(e){}</script>
+</head>
+<body class="admin-body">
+<!-- Лабораторна робота 3. Панель керування вмістом сайту «Півонія». -->
+<div class="admin" data-admin>
+  <section class="login" data-login>
+    <form class="login__box" novalidate>
+      <a class="logo logo--admin" href="index.html"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#7a2048"/><g transform="translate(0 2)"><ellipse cx="31.1" cy="20.0" rx="7.2" ry="5.5" transform="rotate(0 31.1 20.0)" fill="#e86f8e"/><ellipse cx="29.1" cy="24.6" rx="7.2" ry="5.5" transform="rotate(45 29.1 24.6)" fill="#e86f8e"/><ellipse cx="24.0" cy="26.5" rx="7.2" ry="5.5" transform="rotate(90 24.0 26.5)" fill="#e86f8e"/><ellipse cx="18.9" cy="24.6" rx="7.2" ry="5.5" transform="rotate(135 18.9 24.6)" fill="#e86f8e"/><ellipse cx="16.9" cy="20.0" rx="7.2" ry="5.5" transform="rotate(180 16.9 20.0)" fill="#e86f8e"/><ellipse cx="18.9" cy="15.4" rx="7.2" ry="5.5" transform="rotate(225 18.9 15.4)" fill="#e86f8e"/><ellipse cx="24.0" cy="13.5" rx="7.2" ry="5.5" transform="rotate(270 24.0 13.5)" fill="#e86f8e"/><ellipse cx="29.1" cy="15.4" rx="7.2" ry="5.5" transform="rotate(315 29.1 15.4)" fill="#e86f8e"/><ellipse cx="27.1" cy="20.8" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="24.7" cy="22.8" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="21.6" cy="21.9" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="20.9" cy="19.2" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="23.3" cy="17.2" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="26.4" cy="18.1" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><circle cx="24" cy="20" r="2.3" fill="#e86f8e" opacity=".7"/></g><path d="M0 0 q6.0 -3.6 12 0 q-6.0 3.6 -12 0z" fill="#9bb59a" transform="translate(14 38) rotate(-30)"/><path d="M0 0 q6.0 -3.6 12 0 q-6.0 3.6 -12 0z" fill="#9bb59a" transform="translate(34 38) rotate(210)"/></svg><span>Півонія<small>панель керування</small></span></a>
+      <h1>Вхід до панелі</h1>
+      <p><label for="l-user">Логін</label><input id="l-user" name="user" type="text" autocomplete="username" required></p>
+      <p><label for="l-pass">Пароль</label><input id="l-pass" name="pass" type="password" autocomplete="current-password" required></p>
+      <p><button class="btn btn--wide" type="submit">Увійти</button></p>
+      <p class="form__msg" role="status"></p>
+      <p class="login__hint">Навчальна демонстрація: логін <code>admin</code>, пароль <code>pivonia2026</code>. Вхід перевіряється у браузері, справжнього захисту тут немає.</p>
+      <p><a href="index.html">&larr; Повернутися на сайт</a></p>
+    </form>
+  </section>
+  <div class="panel" data-panel hidden>
+    <aside class="panel__side">
+      <a class="logo logo--admin" href="index.html"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#7a2048"/><g transform="translate(0 2)"><ellipse cx="31.1" cy="20.0" rx="7.2" ry="5.5" transform="rotate(0 31.1 20.0)" fill="#e86f8e"/><ellipse cx="29.1" cy="24.6" rx="7.2" ry="5.5" transform="rotate(45 29.1 24.6)" fill="#e86f8e"/><ellipse cx="24.0" cy="26.5" rx="7.2" ry="5.5" transform="rotate(90 24.0 26.5)" fill="#e86f8e"/><ellipse cx="18.9" cy="24.6" rx="7.2" ry="5.5" transform="rotate(135 18.9 24.6)" fill="#e86f8e"/><ellipse cx="16.9" cy="20.0" rx="7.2" ry="5.5" transform="rotate(180 16.9 20.0)" fill="#e86f8e"/><ellipse cx="18.9" cy="15.4" rx="7.2" ry="5.5" transform="rotate(225 18.9 15.4)" fill="#e86f8e"/><ellipse cx="24.0" cy="13.5" rx="7.2" ry="5.5" transform="rotate(270 24.0 13.5)" fill="#e86f8e"/><ellipse cx="29.1" cy="15.4" rx="7.2" ry="5.5" transform="rotate(315 29.1 15.4)" fill="#e86f8e"/><ellipse cx="27.1" cy="20.8" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="24.7" cy="22.8" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="21.6" cy="21.9" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="20.9" cy="19.2" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="23.3" cy="17.2" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><ellipse cx="26.4" cy="18.1" rx="4.2" ry="3.2" fill="#f7b6c6" opacity=".9"/><circle cx="24" cy="20" r="2.3" fill="#e86f8e" opacity=".7"/></g><path d="M0 0 q6.0 -3.6 12 0 q-6.0 3.6 -12 0z" fill="#9bb59a" transform="translate(14 38) rotate(-30)"/><path d="M0 0 q6.0 -3.6 12 0 q-6.0 3.6 -12 0z" fill="#9bb59a" transform="translate(34 38) rotate(210)"/></svg><span>Півонія<small>панель керування</small></span></a>
+      <nav class="panel__nav" aria-label="Розділи панелі"><button type="button" data-tab="dash"><span aria-hidden="true">&#9632;</span> <span class="lbl">Консоль</span></button><button type="button" data-tab="news"><span aria-hidden="true">&#9998;</span> <span class="lbl">Новини</span></button><button type="button" data-tab="events"><span aria-hidden="true">&#128197;</span> <span class="lbl">Події</span></button><button type="button" data-tab="messages"><span aria-hidden="true">&#9993;</span> <span class="lbl">Повідомлення</span> <b class="badge" data-unread-badge hidden>0</b></button><button type="button" data-tab="look"><span aria-hidden="true">&#9881;</span> <span class="lbl">Налаштування</span></button></nav>
+      <p class="panel__side-foot"><a href="index.html">&#8599; Переглянути сайт</a><button type="button" class="link-btn" data-logout>Вийти</button></p>
+    </aside>
+    <main class="panel__main" id="main">
+      <header class="panel__top"><h1 data-pane-title>Консоль</h1><p>Ви увійшли як <b>admin</b></p></header>
+      <section data-pane="dash">
+        <h2 class="sr">Огляд</h2>
+        <div class="stat-grid">
+          <div class="stat"><b data-stat="news">0</b><span>новин</span></div>
+          <div class="stat"><b data-stat="events">0</b><span>подій у календарі</span></div>
+          <div class="stat"><b data-stat="gallery">0</b><span>зображень у галереї</span></div>
+          <div class="stat stat--accent"><b data-stat="unread">0</b><span>непрочитаних повідомлень (усього: <i data-stat="messages">0</i>)</span></div>
+        </div>
+        <div class="panel-grid">
+          <form class="card-box form" data-add-news novalidate>
+            <h2>Швидка новина</h2>
+            <p><label for="q-title">Заголовок</label><input id="q-title" name="title" type="text" maxlength="90"></p>
+            <p><label for="q-text">Текст</label><textarea id="q-text" name="text" rows="4"></textarea></p>
+            <p><button class="btn" type="submit">Опублікувати</button></p>
+          </form>
+          <div class="card-box">
+            <h2>Останні зміни</h2>
+            <ul class="recent" data-recent></ul>
+            <h2>Швидкі дії</h2>
+            <p class="quick"><button type="button" class="btn btn--ghost btn--small" data-goto="events">Додати подію</button> <button type="button" class="btn btn--ghost btn--small" data-goto="messages">Відкрити пошту</button> <button type="button" class="btn btn--ghost btn--small" data-goto="look">Змінити вигляд</button></p>
+          </div>
+        </div>
+      </section>
+      <section data-pane="news" hidden>
+        <form class="card-box form form--row" data-add-news novalidate>
+          <h2>Нова новина</h2>
+          <p><label for="n-title">Заголовок</label><input id="n-title" name="title" type="text" maxlength="90"></p>
+          <p><label for="n-cat">Рубрика</label><select id="n-cat" name="cat"><option value="studio">Студія</option><option value="workshops">Майстер-класи</option><option value="tips">Поради флориста</option></select></p>
+          <p><label for="n-date">Дата</label><input id="n-date" name="date" type="date"></p>
+          <p class="full"><label for="n-text">Текст</label><textarea id="n-text" name="text" rows="4"></textarea></p>
+          <p><button class="btn" type="submit">Опублікувати</button></p>
+        </form>
+        <div class="card-box"><div class="scroll"><table class="admin-table"><caption>Усі новини сайту</caption><thead><tr><th scope="col">Заголовок</th><th scope="col">Рубрика</th><th scope="col">Дата</th><th scope="col">Стан</th><th scope="col">Дія</th></tr></thead><tbody data-news-table></tbody></table></div></div>
+      </section>
+      <section data-pane="events" hidden>
+        <form class="card-box form form--row" data-add-event novalidate>
+          <h2>Нова подія</h2>
+          <p><label for="e-title">Назва</label><input id="e-title" name="title" type="text" maxlength="80"></p>
+          <p><label for="e-type">Тип</label><select id="e-type" name="type"><option value="workshop">Майстер-клас</option><option value="talk">Лекція</option><option value="fair">Ярмарок</option><option value="sale">Акція</option></select></p>
+          <p><label for="e-date">Дата</label><input id="e-date" name="date" type="date"></p>
+          <p><label for="e-time">Час</label><input id="e-time" name="time" type="time" value="18:00"></p>
+          <p><label for="e-place">Місце</label><input id="e-place" name="place" type="text" value="студія"></p>
+          <p class="full"><label for="e-text">Опис</label><textarea id="e-text" name="text" rows="3"></textarea></p>
+          <p><button class="btn" type="submit">Додати в календар</button></p>
+        </form>
+        <div class="card-box"><div class="scroll"><table class="admin-table"><caption>Календар подій</caption><thead><tr><th scope="col">Дата</th><th scope="col">Подія</th><th scope="col">Тип</th><th scope="col">Дія</th></tr></thead><tbody data-events-table></tbody></table></div></div>
+      </section>
+      <section data-pane="messages" hidden>
+        <h2 class="sr">Повідомлення з форми</h2>
+        <ul class="inbox" data-inbox></ul>
+      </section>
+      <section data-pane="look" hidden>
+        <form class="card-box form" data-settings>
+          <h2>Вигляд сайту</h2>
+          <fieldset class="swatches"><legend>Акцентний колір</legend><label class="swatch"><input type="radio" name="accent" value="#c8436f"><span style="--c:#c8436f"></span>Півонія</label><label class="swatch"><input type="radio" name="accent" value="#5f8a5c"><span style="--c:#5f8a5c"></span>Шавлія</label><label class="swatch"><input type="radio" name="accent" value="#7a5ab0"><span style="--c:#7a5ab0"></span>Лаванда</label><label class="swatch"><input type="radio" name="accent" value="#b0703a"><span style="--c:#b0703a"></span>Карамель</label></fieldset>
+          <fieldset><legend>Оголошення вгорі сайту</legend>
+            <p class="check-line"><label><input type="checkbox" name="bannerOn"> Показувати оголошення</label></p>
+            <p><label for="s-banner">Текст оголошення</label><input id="s-banner" name="bannerText" type="text" maxlength="140"></p>
+          </fieldset>
+          <fieldset><legend>Слайдер на головній</legend>
+            <p class="check-line"><label><input type="checkbox" name="autoplay"> Автоматична прокрутка</label></p>
+            <p><label for="s-int">Інтервал</label><select id="s-int" name="interval"><option value="4000">4 секунди</option><option value="6000">6 секунд</option><option value="9000">9 секунд</option></select></p>
+          </fieldset>
+          <p><button class="btn" type="submit">Зберегти зміни</button> <button class="btn btn--danger" type="button" data-reset>Скинути всі зміни</button></p>
+        </form>
+      </section>
+    </main>
+  </div>
+  <p class="toast" data-toast role="status"></p>
+</div>
+<script src="js/data.js"></script>
+<script src="js/cms.js"></script>
+</body>
+</html>
