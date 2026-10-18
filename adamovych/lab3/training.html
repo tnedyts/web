@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk" data-site="gambit">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шахова школа — Гамбіт</title>
+<meta name="description" content="Групи для дітей і дорослих, розклад, вартість і наші тренери.">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#10302a">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var s=JSON.parse(localStorage.getItem('gambit:settings'));if(s&&s.accent)document.documentElement.style.setProperty('--accent',s.accent);}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 3. Створення сайту з системою керування вмістом.
+     Сайт «Гамбіт»: слайдер, новини, календар подій, галерея, карта, форма зв’язку
+     і панель керування (admin.html), через яку змінюється вміст сайту. -->
+<a class="skip" href="#main">Перейти до вмісту</a>
+<div class="banner" data-banner hidden><p data-banner-text></p><button type="button" data-banner-close aria-label="Закрити оголошення">&times;</button></div>
+<header class="site-head">
+  <div class="site-head__in">
+    <a class="logo" href="index.html"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10302a"/><text x="24" y="26" font-family="Chess Glyphs" font-size="34" text-anchor="middle" dominant-baseline="central" fill="#d9a441">&#9822;</text></svg><span>Гамбіт<small>шаховий клуб і школа</small></span></a>
+    <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="site-nav"><span></span><span class="sr">Меню</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Головне меню"><a href="index.html">Головна</a><a href="news.html">Новини</a><a href="events.html">Календар</a><a href="gallery.html">Галерея</a><a href="training.html" aria-current="page">Навчання</a><a href="contacts.html">Контакти</a></nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="page-head__in">
+    <p class="kicker">Навчання</p>
+    <h1>Шахова школа</h1>
+    <p>Групи для дітей і дорослих, розклад, вартість і наші тренери.</p>
+  </div>
+  <p class="page-head__art" aria-hidden="true">&#9822;</p>
+</section><section class="section">
+  <div class="wrap">
+    <div class="section__head"><h2>Групи й розклад</h2></div>
+    <div class="scroll reveal"><table class="price-table">
+      <caption>Розклад шахової школи на 2026/27 навчальний рік</caption>
+      <thead><tr><th scope="col">Група</th><th scope="col">Вік і рівень</th><th scope="col">Дні</th><th scope="col">Час</th><th scope="col">Вартість на місяць</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">«Пішачок»</th><td>6&ndash;8 років, з нуля</td><td>вт, чт</td><td>16:00&ndash;17:00</td><td>800 грн</td></tr>
+        <tr><th scope="row">«Кінь»</th><td>9&ndash;12 років, знають правила</td><td>пн, ср</td><td>16:30&ndash;18:00</td><td>900 грн</td></tr>
+        <tr><th scope="row">«Тура»</th><td>12+ років, турнірна підготовка</td><td>вт, пт</td><td>18:00&ndash;19:30</td><td>1000 грн</td></tr>
+        <tr><th scope="row">Дорослі</th><td>16+ років, будь-який рівень</td><td>пн, ср</td><td>19:00&ndash;20:30</td><td>1000 грн</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="5">Перше заняття безкоштовне. Для братів і сестер&nbsp;&mdash; знижка 15&nbsp;%.</td></tr></tfoot>
+    </table></div>
+  </div>
+</section>
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section__head"><h2>Тренери</h2></div>
+    <div class="coaches">
+      <article class="coach reveal"><p class="coach__ava" aria-hidden="true">&#9818;</p><h3>Ігор Мельник</h3><p class="coach__role">кандидат у майстри спорту, старший тренер</p><p>Понад 15 років навчає дітей. Його учні неодноразово ставали призерами обласних змагань.</p></article>
+      <article class="coach reveal"><p class="coach__ava" aria-hidden="true">&#9819;</p><h3>Наталія Бондар</h3><p class="coach__role">кандидат у майстри спорту</p><p>Веде групи для наймолодших. Вміє пояснити складне через ігри й казки.</p></article>
+      <article class="coach reveal"><p class="coach__ava" aria-hidden="true">&#9821;</p><h3>Олег Ткачук</h3><p class="coach__role">перший розряд, тренер групи дорослих</p><p>Інженер, який повернувся до шахів у 30 років і знає, як навчати дорослих.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap narrow">
+    <div class="section__head"><h2>Часті запитання</h2></div>
+    <details class="faq reveal"><summary>Чи потрібно вміти грати, щоб записатися?</summary><p>Ні. Групи «Пішачок» і «Дорослі» починають з правил гри.</p></details>
+    <details class="faq reveal"><summary>Що взяти на перше заняття?</summary><p>Лише гарний настрій. Дошки, фігури й зошити з задачами є в клубі.</p></details>
+    <details class="faq reveal"><summary>Чи можна грати в турнірах, якщо я не навчаюся в школі?</summary><p>Так, клубні турніри відкриті для всіх охочих. Реєстрація&nbsp;&mdash; через форму на сторінці контактів.</p></details>
+    <details class="faq reveal"><summary>Як дізнатися про нові події?</summary><p>Стежте за сторінками «Новини» і «Календар»: адміністратор клубу оновлює їх через панель керування.</p></details>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="site-foot__in">
+    <div>
+      <p class="site-foot__name"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10302a"/><text x="24" y="26" font-family="Chess Glyphs" font-size="34" text-anchor="middle" dominant-baseline="central" fill="#d9a441">&#9822;</text></svg><span>Гамбіт</span></p>
+      <p>Шаховий клуб і школа для дітей та дорослих. Граємо, вчимося, перемагаємо.</p>
+    </div>
+    <div>
+      <p class="foot__h">Контакти</p>
+      <p>м. Кам’янець-Подільський, вул. Шахова, 7 (умовна адреса)<br><a href="tel:+380671234567">+380 (67) 123-45-67</a><br><a href="mailto:gambit.club@example.com">gambit.club@example.com</a></p>
+    </div>
+    <div>
+      <p class="foot__h">Сайт</p>
+      <p class="site-foot__links"><a href="index.html">Головна</a><a href="news.html">Новини</a><a href="events.html">Календар</a><a href="gallery.html">Галерея</a><a href="training.html">Навчання</a><a href="contacts.html">Контакти</a><a href="admin.html">Панель керування</a></p>
+    </div>
+  </div>
+  <p class="site-foot__copy">Навчальний проєкт, лабораторна робота №&nbsp;3. Автор: Вадим Адамович, 2026. Назва, адреса й контакти умовні.</p>
+</footer>
+<dialog class="lightbox" data-lightbox aria-label="Перегляд зображення">
+  <div class="lightbox__stage"></div>
+  <p class="lightbox__cap"></p>
+  <p class="lightbox__count"></p>
+  <button type="button" class="lightbox__btn lightbox__btn--close" data-lb-close aria-label="Закрити">&times;</button>
+  <button type="button" class="lightbox__btn lightbox__btn--prev" data-lb-prev aria-label="Попереднє зображення">&#8249;</button>
+  <button type="button" class="lightbox__btn lightbox__btn--next" data-lb-next aria-label="Наступне зображення">&#8250;</button>
+</dialog>
+<script src="js/data.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

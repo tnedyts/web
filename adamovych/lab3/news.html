@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk" data-site="gambit">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новини — Гамбіт</title>
+<meta name="description" content="Результати турнірів, новини шахової школи й життя клубу.">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#10302a">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var s=JSON.parse(localStorage.getItem('gambit:settings'));if(s&&s.accent)document.documentElement.style.setProperty('--accent',s.accent);}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 3. Створення сайту з системою керування вмістом.
+     Сайт «Гамбіт»: слайдер, новини, календар подій, галерея, карта, форма зв’язку
+     і панель керування (admin.html), через яку змінюється вміст сайту. -->
+<a class="skip" href="#main">Перейти до вмісту</a>
+<div class="banner" data-banner hidden><p data-banner-text></p><button type="button" data-banner-close aria-label="Закрити оголошення">&times;</button></div>
+<header class="site-head">
+  <div class="site-head__in">
+    <a class="logo" href="index.html"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10302a"/><text x="24" y="26" font-family="Chess Glyphs" font-size="34" text-anchor="middle" dominant-baseline="central" fill="#d9a441">&#9822;</text></svg><span>Гамбіт<small>шаховий клуб і школа</small></span></a>
+    <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="site-nav"><span></span><span class="sr">Меню</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Головне меню"><a href="index.html">Головна</a><a href="news.html" aria-current="page">Новини</a><a href="events.html">Календар</a><a href="gallery.html">Галерея</a><a href="training.html">Навчання</a><a href="contacts.html">Контакти</a></nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="page-head__in">
+    <p class="kicker">Що відбувається</p>
+    <h1>Новини</h1>
+    <p>Результати турнірів, новини шахової школи й життя клубу.</p>
+  </div>
+  <p class="page-head__art" aria-hidden="true">&#9822;</p>
+</section>
+<section class="section">
+  <div class="wrap narrow">
+    <div class="chips" role="group" aria-label="Рубрики новин"><button type="button" data-nfilter="all" aria-pressed="true">Усі</button><button type="button" data-nfilter="club" aria-pressed="false">Життя клубу</button><button type="button" data-nfilter="tour" aria-pressed="false">Турніри</button><button type="button" data-nfilter="school" aria-pressed="false">Школа</button></div>
+    <h2 class="sr">Стрічка новин</h2>
+    <div class="news-list" data-news-list>
+      <article class="news-item reveal" data-cat="tour">
+      <p class="news-item__meta"><span class="tag">Турніри</span><time datetime="2026-10-14">14 жовтня 2026</time></p>
+      <h3 class="news-item__title">Підсумки жовтневого бліц-турніру</h3>
+      <p>У турнірі зіграли 28 шахістів. Перше місце з результатом 8 очок з 9 посів Андрій Коваль, друге й третє поділили Олена Савчук та Максим Ліщук.</p><p>Дякуємо всім учасникам! Наступний бліц-турнір відбудеться в листопаді.</p>
+    </article><article class="news-item reveal" data-cat="school">
+      <p class="news-item__meta"><span class="tag">Школа</span><time datetime="2026-10-06">6 жовтня 2026</time></p>
+      <h3 class="news-item__title">Відкрито набір до групи для дорослих</h3>
+      <p>Для тих, хто давно хотів навчитися грати або повернутися до шахів, запускаємо вечірню групу для дорослих. Заняття двічі на тиждень, перше&nbsp;&mdash; безкоштовне.</p>
+    </article><article class="news-item reveal" data-cat="club">
+      <p class="news-item__meta"><span class="tag">Життя клубу</span><time datetime="2026-09-29">29 вересня 2026</time></p>
+      <h3 class="news-item__title">Клуб отримав нові шахові годинники</h3>
+      <p>Завдяки внескам членів клубу ми придбали десять нових електронних годинників. Тепер усі турніри можна проводити з додаванням часу на кожен хід.</p>
+    </article><article class="news-item reveal" data-cat="tour">
+      <p class="news-item__meta"><span class="tag">Турніри</span><time datetime="2026-09-20">20 вересня 2026</time></p>
+      <h3 class="news-item__title">Юні шахісти привезли медалі з обласних змагань</h3>
+      <p>Учні шахової школи виступили на обласному дитячому турнірі: дві срібні та одна бронзова медаль у різних вікових групах. Вітаємо спортсменів і тренерів!</p>
+    </article><article class="news-item reveal" data-cat="school">
+      <p class="news-item__meta"><span class="tag">Школа</span><time datetime="2026-09-08">8 вересня 2026</time></p>
+      <h3 class="news-item__title">Розклад занять на новий навчальний рік</h3>
+      <p>Оприлюднили розклад груп на 2026/27 навчальний рік. Ознайомитися з ним можна на сторінці «Навчання», а записатися&nbsp;&mdash; через форму на сторінці контактів.</p>
+    </article><article class="news-item reveal" data-cat="club">
+      <p class="news-item__meta"><span class="tag">Життя клубу</span><time datetime="2026-09-01">1 вересня 2026</time></p>
+      <h3 class="news-item__title">Клуб відкриває новий сезон</h3>
+      <p>Після літньої перерви клуб знову працює за звичайним графіком. Чекаємо на всіх, хто любить шахи, а новачків&nbsp;&mdash; особливо!</p>
+    </article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="site-foot__in">
+    <div>
+      <p class="site-foot__name"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10302a"/><text x="24" y="26" font-family="Chess Glyphs" font-size="34" text-anchor="middle" dominant-baseline="central" fill="#d9a441">&#9822;</text></svg><span>Гамбіт</span></p>
+      <p>Шаховий клуб і школа для дітей та дорослих. Граємо, вчимося, перемагаємо.</p>
+    </div>
+    <div>
+      <p class="foot__h">Контакти</p>
+      <p>м. Кам’янець-Подільський, вул. Шахова, 7 (умовна адреса)<br><a href="tel:+380671234567">+380 (67) 123-45-67</a><br><a href="mailto:gambit.club@example.com">gambit.club@example.com</a></p>
+    </div>
+    <div>
+      <p class="foot__h">Сайт</p>
+      <p class="site-foot__links"><a href="index.html">Головна</a><a href="news.html">Новини</a><a href="events.html">Календар</a><a href="gallery.html">Галерея</a><a href="training.html">Навчання</a><a href="contacts.html">Контакти</a><a href="admin.html">Панель керування</a></p>
+    </div>
+  </div>
+  <p class="site-foot__copy">Навчальний проєкт, лабораторна робота №&nbsp;3. Автор: Вадим Адамович, 2026. Назва, адреса й контакти умовні.</p>
+</footer>
+<dialog class="lightbox" data-lightbox aria-label="Перегляд зображення">
+  <div class="lightbox__stage"></div>
+  <p class="lightbox__cap"></p>
+  <p class="lightbox__count"></p>
+  <button type="button" class="lightbox__btn lightbox__btn--close" data-lb-close aria-label="Закрити">&times;</button>
+  <button type="button" class="lightbox__btn lightbox__btn--prev" data-lb-prev aria-label="Попереднє зображення">&#8249;</button>
+  <button type="button" class="lightbox__btn lightbox__btn--next" data-lb-next aria-label="Наступне зображення">&#8250;</button>
+</dialog>
+<script src="js/data.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
