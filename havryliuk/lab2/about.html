@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk" data-blog="murchyk" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Про блог — Мурчик і я</title>
+<meta name="description" content="Про блог «Мурчик і я» і його автора.">
+<meta name="author" content="Юлія Гаврилюк">
+<meta name="theme-color" content="#5b2a4e">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var t=JSON.parse(localStorage.getItem('murchyk:theme'));if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<!-- Лабораторна робота 2. Створення й ведення блогу.
+     Блог «Мурчик і я»: стрічка записів з рубриками й пошуком, сторінки записів
+     з коментарями й вподобайками, редактор нових записів (зберігаються в браузері). -->
+<a class="skip" href="#main">Перейти до вмісту</a>
+<header class="site-head">
+  <div class="site-head__in">
+    <a class="logo" href="index.html"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 V18 L13 6 L20 15 H28 L35 6 L40 18 V40 Z" fill="#f29a4a"/><circle cx="18" cy="24" r="3" fill="#2b1d24"/><circle cx="30" cy="24" r="3" fill="#2b1d24"/><path d="M21 31 h6 l-3 3 z" fill="#e8747a"/><path d="M14 40 q10 -8 20 0" fill="#ffe0bf"/></svg><span>Мурчик і я<small>блог про життя з котом</small></span></a>
+    <nav class="site-nav" aria-label="Головне меню"><a href="index.html">Стрічка</a><a href="index.html#rubrics">Рубрики</a><a href="about.html" class="is-active" aria-current="page">Про блог</a><a href="write.html">Написати запис</a></nav>
+    <button class="theme-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Нічна тема"><span aria-hidden="true"></span></button>
+  </div>
+</header>
+<span hidden data-cat-name="life">Котяче життя</span><span hidden data-cat-name="food">Харчування</span><span hidden data-cat-name="play">Ігри</span><span hidden data-cat-name="health">Здоров’я</span>
+<main id="main">
+<section class="page-head">
+  <h1>Про блог</h1>
+  <p>«Мурчик і я»&nbsp;&mdash; блог про моє хобі: життя з котом, саморобні іграшки, котячу поведінку і корисні поради для нових власників.</p>
+</section>
+<div class="about">
+  <div class="about__card reveal"><svg class="avatar" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="60" fill="#ffe3d3"/><path d="M26 112 q34 -46 68 0" fill="#5b2a4e"/><circle cx="60" cy="54" r="24" fill="#f1c7a6"/><path d="M34 60 q-4 -40 26 -40 q30 0 26 40 q-6 -24 -26 -26 q-20 2 -26 26z" fill="#6b3a2a"/><path d="M80 88 l10 -14 l6 12 z M96 86 l4 -14 l8 12 z" fill="#f29a4a"/><ellipse cx="96" cy="96" rx="16" ry="12" fill="#f29a4a"/></svg><h2>Юлія Гаврилюк</h2><p>Студентка, авторка блогу. Люблю кімнатні рослини, вишивку і, звісно, свого рудого кота.</p></div>
+  <div class="about__text reveal">
+    <h2>Знайомтеся: Мурчик</h2>
+    <dl class="cat-card">
+      <div><dt>Порода</dt><dd>безпородний рудий красень</dd></div>
+      <div><dt>Звідки</dt><dd>з міського притулку для тварин</dd></div>
+      <div><dt>Вік</dt><dd>2 роки</dd></div>
+      <div><dt>Улюблене</dt><dd>коробки, підвіконня і вудка з пір’ям</dd></div>
+      <div><dt>Не любить</dt><dd>пилосос і закриті двері</dd></div>
+    </dl>
+    <h2>Про що тут пишу</h2>
+    <table class="tbl"><caption>Рубрики блогу</caption><thead><tr><th scope="col">Рубрика</th><th scope="col">Про що</th></tr></thead><tbody>
+      <tr><th scope="row">Котяче життя</th><td>поведінка, адаптація, котяча мова</td></tr>
+      <tr><th scope="row">Харчування</th><td>корм, вода, небезпечні продукти</td></tr>
+      <tr><th scope="row">Ігри</th><td>іграшки своїми руками, прогулянки</td></tr>
+      <tr><th scope="row">Здоров’я</th><td>щеплення, ветеринар, догляд</td></tr>
+    </tbody></table>
+    <h2>Як це зроблено</h2>
+    <p>Блог створено вручну на HTML, CSS і JavaScript і розміщено на GitHub Pages. Коментарі, вподобайки й нові записи зберігаються у вашому браузері, тому сайт працює без сервера й бази даних.</p>
+    <p class="note note--tip"><span class="note__label">Порада</span> Хочете кота? Зазирніть до найближчого притулку: там чекають на дім сотні чудових тварин.</p>
+  </div>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="site-foot__in">
+    <p class="site-foot__name"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 V18 L13 6 L20 15 H28 L35 6 L40 18 V40 Z" fill="#f29a4a"/><circle cx="18" cy="24" r="3" fill="#2b1d24"/><circle cx="30" cy="24" r="3" fill="#2b1d24"/><path d="M21 31 h6 l-3 3 z" fill="#e8747a"/><path d="M14 40 q10 -8 20 0" fill="#ffe0bf"/></svg><span>Мурчик і я</span></p>
+    <p>Не купуйте&nbsp;&mdash; прихистіть! У притулках чекають на дім.<br>Навчальний блог, лабораторна робота №&nbsp;2. Автор: Юлія Гаврилюк, 2026.</p>
+    <p class="site-foot__links"><a href="index.html">Стрічка</a> <a href="about.html">Про блог</a> <a href="write.html">Написати запис</a></p>
+  </div>
+</footer>
+<script src="js/blog.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
