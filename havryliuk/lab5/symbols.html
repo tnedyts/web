@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Символи — Вишита сторінка</title>
+<meta name="description" content="Значення символів української вишивки: ромб, восьмикутна зірка, дерево життя.">
+<meta name="author" content="Юлія Гаврилюк">
+<meta name="theme-color" content="#f7f3ec">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця з трьох колонок:
+       рядок 1: шапка з орнаментом (colspan="3")
+       рядок 2: вертикальне меню (rowspan="2") | банер сторінки (colspan="2")
+       рядок 3: основний вміст | бічна панель
+       рядок 4: підвал (colspan="3")
+     Усі орнаменти малює сценарій js/main.js на canvas «хрестиком».
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="3">
+      <canvas class="band" data-band="head" aria-hidden="true"></canvas>
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__logo"><a href="index.html"><canvas class="logo-stitch" width="48" height="48" aria-hidden="true"></canvas><span>Вишита сторінка</span></a></td>
+          <td class="head__day" align="right">До Дня вишиванки: <b data-days>&hellip;</b></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" rowspan="2" valign="top" width="210">
+      <nav aria-label="Розділи сайту">
+        <table class="nav" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+            <tr><td><a class="nav__link" href="index.html"><span class="nav__num">І</span>Головна</a></td></tr>
+            <tr><td><a class="nav__link" href="regions.html"><span class="nav__num">ІІ</span>Регіони</a></td></tr>
+            <tr><td><a class="nav__link is-active" href="symbols.html" aria-current="page"><span class="nav__num">ІІІ</span>Символи</a></td></tr>
+            <tr><td><a class="nav__link" href="gallery.html"><span class="nav__num">IV</span>Галерея</a></td></tr>
+            <tr><td><a class="nav__link" href="author.html"><span class="nav__num">V</span>Авторка</a></td></tr>
+        </table>
+      </nav>
+      <canvas class="nav__thread" data-band="side" aria-hidden="true"></canvas>
+    </td>
+    <td class="layout__hero" colspan="2" valign="top">
+      <table class="hero" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="hero__text" valign="middle">
+            <p class="hero__kicker">Розділ ІІІ</p>
+            <h1>Азбука <em>символів</em></h1>
+            <p class="hero__lead">Орнамент&nbsp;&mdash; це не просто прикраса. Кожен знак мав значення, а разом вони складалися в побажання: щастя, здоров&rsquo;я, багатого врожаю.</p>
+          </td>
+          <td class="hero__art" valign="middle" width="44%"><canvas class="hero-band" id="symbolsBand" width="560" height="320" aria-hidden="true"></canvas></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <h2>Шість знаків</h2>
+        <table class="symbols" width="100%" cellspacing="14" cellpadding="0" role="presentation">
+            <tr><td class="sym" valign="top" width="33%"><canvas class="mini mini--sym" data-motif="rhomb" data-palette="kyiv" width="200" height="140" aria-hidden="true"></canvas><h3>Ромб</h3><p>Один з найдавніших знаків. Ромб з крапкою всередині традиційно тлумачать як засіяне поле і символ родючості.</p></td><td class="sym" valign="top" width="33%"><canvas class="mini mini--sym" data-motif="star" data-palette="kyiv" width="200" height="140" aria-hidden="true"></canvas><h3>Восьмикутна зірка</h3><p>Її ще називають &laquo;ружею&raquo;. Символ сонця, світла і гармонії світу.</p></td><td class="sym" valign="top" width="33%"><canvas class="mini mini--sym" data-motif="tree" data-palette="kyiv" width="200" height="140" aria-hidden="true"></canvas><h3>Дерево життя</h3><p>Зв&rsquo;язок поколінь: коріння&nbsp;&mdash; предки, гілки&nbsp;&mdash; нащадки. Часто з&rsquo;являється на весільних рушниках.</p></td></tr>
+            <tr><td class="sym" valign="top" width="33%"><canvas class="mini mini--sym" data-motif="cross" data-palette="kyiv" width="200" height="140" aria-hidden="true"></canvas><h3>Хрест</h3><p>Оберіг і знак чотирьох сторін світу. Його вишивали на комірах і манжетах.</p></td><td class="sym" valign="top" width="33%"><canvas class="mini mini--sym" data-motif="wave" data-palette="kyiv" width="200" height="140" aria-hidden="true"></canvas><h3>Безконечник</h3><p>Хвиляста лінія без початку й кінця&nbsp;&mdash; нескінченність життя і вода, що дає життя.</p></td><td class="sym" valign="top" width="33%"><canvas class="mini mini--sym" data-motif="horns" data-palette="kyiv" width="200" height="140" aria-hidden="true"></canvas><h3>Баранячі роги</h3><p>Знак сили, мужності й достатку. Часто трапляється в чоловічих сорочках.</p></td></tr>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Де розміщували вишивку</h2>
+        <table class="parts" width="100%" cellspacing="0" cellpadding="12">
+          <caption>Таблиця 2. Частини сорочки та їхнє оздоблення</caption>
+          <thead><tr><th scope="col">Частина</th><th scope="col">Оздоблення</th><th scope="col">Навіщо</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Комір</th><td>вузька смуга орнаменту</td><td rowspan="3" valign="middle" class="parts__why">вишивка на краях одягу вважалася оберегом: вона &laquo;замикала&raquo; отвори</td></tr>
+            <tr><th scope="row">Манжети</th><td>смуга, часто з хрестами</td></tr>
+            <tr><th scope="row">Пазуха</th><td>вертикальна смуга на грудях</td></tr>
+            <tr><th scope="row">Рукави</th><td>найбагатша частина: широкі поперечні смуги або суцільний візерунок</td><td>рукави найпомітніші&nbsp;&mdash; саме за ними впізнавали регіон</td></tr>
+            <tr><th scope="row">Поділ</th><td>смуга внизу сорочки</td><td>завершувала композицію</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </td>
+    <td class="layout__side" valign="top" width="300">
+<div class="card reveal">
+        <p class="card__label">Мова кольору</p>
+        <table class="colors" width="100%" cellspacing="0" cellpadding="6">
+          <tr><td width="28"><span class="sw" style="background:#c3202f"></span></td><td><b>червоний</b>&nbsp;&mdash; любов, життя, оберіг</td></tr>
+          <tr><td><span class="sw" style="background:#1b1b1b"></span></td><td><b>чорний</b>&nbsp;&mdash; земля, мудрість, пам&rsquo;ять</td></tr>
+          <tr><td><span class="sw sw--w"></span></td><td><b>білий</b>&nbsp;&mdash; чистота, світло</td></tr>
+          <tr><td><span class="sw" style="background:#f2c230"></span></td><td><b>жовтий</b>&nbsp;&mdash; сонце, достаток</td></tr>
+          <tr><td><span class="sw" style="background:#2e7d4f"></span></td><td><b>зелений</b>&nbsp;&mdash; весна, молодість</td></tr>
+        </table>
+        <p class="note">Тлумачення кольорів і символів&nbsp;&mdash; народна традиція, у різних селах вона могла відрізнятися.</p>
+      </div>
+      <div class="card card--day reveal">
+        <p class="card__label">День вишиванки</p>
+        <p class="card__big" data-days-big>&hellip;</p>
+        <p>Свято відзначають щороку в <b>третій четвер травня</b>. Його започаткувала у 2006 році студентка Чернівецького університету Леся Воронюк.</p>
+        <p class="card__date" data-day-date></p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="3">
+      <canvas class="band" data-band="foot" aria-hidden="true"></canvas>
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td valign="top"><p class="foot__title">Вишита сторінка</p><p>Навчальний сайт про українську вишивку.<br>Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="top" align="right"><p>Авторка: <a href="author.html">Юлія Гаврилюк</a></p><p><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div class="lightbox" id="lightbox" hidden>
+  <figure><canvas id="lbCanvas" width="900" height="600"></canvas><figcaption id="lbCap"></figcaption></figure>
+  <button type="button" class="lightbox__close" aria-label="Закрити">&times;</button>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

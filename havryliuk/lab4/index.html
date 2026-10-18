@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зелений підвіконник — кімнатні рослини</title>
+<meta name="description" content="Як живуть кімнатні рослини, які з них найневибагливіші, куди їх поставити і як доглядати в різні пори року.">
+<meta name="keywords" content="кімнатні рослини, догляд за рослинами, фотосинтез, полив, монстера, сансевієрія, заміокулькас">
+<meta name="author" content="Юлія Гаврилюк">
+<meta name="theme-color" content="#f5efe3">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 4. Розробка простої вебсторінки.
+     Тема: кімнатні рослини. Ілюстрації рослин малює сценарій
+     js/main.js (SVG), текст оформлено тегами форматування:
+     h1–h5, p, br, hr, b, strong, i, em, u, s, ins, mark, small,
+     sub, sup, q, cite, blockquote, code, kbd, var, samp, pre.
+     ============================================================ -->
+
+<header class="nav">
+  <a class="logo" href="#top">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V14" stroke="currentColor" stroke-width="2" fill="none"/><path d="M16 15C16 8 21 4 28 4c0 7-5 11-12 11zM16 19C16 13 12 9 5 9c0 6 4 10 11 10z" fill="currentColor"/></svg>
+    Зелений підвіконник
+  </a>
+  <nav aria-label="Розділи">
+    <a href="#life">Як вони живуть</a>
+    <a href="#plants">Вісім рослин</a>
+    <a href="#window">Вікно</a>
+    <a href="#seasons">Сезони</a>
+    <a href="#myths">Міфи</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ===== Перший екран ===== -->
+  <section class="hero">
+    <div class="hero__copy">
+      <p class="hero__kicker">Посібник для початківців</p>
+      <h1>Зелений<br><em>підвіконник</em></h1>
+      <p class="hero__lead">
+        Рослини в квартирі&nbsp;&mdash; це не <s>складно</s> і не <s>дорого</s>.
+        Достатньо розуміти, <b>звідки</b> родом ваша рослина, і створити їй
+        умови, <em>схожі на рідні</em>. На цій сторінці&nbsp;&mdash; вісім
+        невибагливих видів, правила поливу та календар догляду.
+      </p>
+      <a class="btn" href="#plants">Обрати рослину</a>
+    </div>
+    <div class="hero__art">
+      <svg class="plant plant--hero" data-plant="monstera" data-pot="#c8643b" viewBox="0 0 200 240" role="img" aria-label="Монстера в теракотовому горщику"></svg>
+      <span class="hero__badge"><b>8</b> рослин,<br>що пробачають помилки</span>
+    </div>
+    <div class="floaters" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== 1. Як рослина живе ===== -->
+  <section class="section" id="life">
+    <div class="section__head reveal">
+      <p class="section__num">01</p>
+      <h2>Як живе рослина</h2>
+    </div>
+
+    <div class="photo">
+      <div class="photo__text reveal">
+        <p>
+          Кожен зелений листок&nbsp;&mdash; маленька фабрика. Зелений пігмент
+          <i>хлорофіл</i> уловлює світло, і з його енергією рослина перетворює
+          вуглекислий газ і воду на цукор&nbsp;&mdash; глюкозу. Цей процес
+          називається <b>фотосинтезом</b>, а &laquo;побічний продукт&raquo;
+          фабрики&nbsp;&mdash; кисень, яким ми дихаємо.
+        </p>
+        <p class="formula">
+          6CO<sub>2</sub> + 6H<sub>2</sub>O <span class="formula__arrow">&rarr;<small>світло</small></span> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>
+        </p>
+        <h3>Що з цього випливає для догляду</h3>
+        <ul class="ticks">
+          <li><strong>Світло</strong>&nbsp;&mdash; це їжа. Без нього не допоможуть ні добрива, ні полив.</li>
+          <li><strong>Корені дихають.</strong> У постійно мокрій землі їм бракує повітря, і вони загнивають.</li>
+          <li><strong>Листя випаровує воду</strong>, тому влітку і біля батареї полив потрібен частіше.</li>
+        </ul>
+      </div>
+      <figure class="diagram reveal">
+        <svg viewBox="0 0 400 320" role="img" aria-label="Схема фотосинтезу: світло, вуглекислий газ і вода входять у листок, виходять кисень і глюкоза">
+          <defs>
+            <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9a8"/><stop offset="1" stop-color="#f4b63f"/></radialGradient>
+            <linearGradient id="leafG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fae5b"/><stop offset="1" stop-color="#2f6b3a"/></linearGradient>
+          </defs>
+          <g class="d-sun"><circle cx="60" cy="60" r="34" fill="url(#sun)"/>
+            <g stroke="#f4b63f" stroke-width="3" stroke-linecap="round"><path d="M60 10v-6M60 116v-6M10 60H4M116 60h-6M25 25l-4-4M95 95l4 4M25 95l-4 4M95 25l4-4"/></g></g>
+          <g class="d-rays" stroke="#f4b63f" stroke-width="2" stroke-dasharray="6 8"><path d="M95 80 L190 140"/><path d="M80 98 L170 165"/></g>
+          <path class="d-leaf" d="M110 250 C130 140 250 90 350 110 C330 220 230 280 110 250 Z" fill="url(#leafG)"/>
+          <path d="M110 250 C190 200 270 150 350 110" stroke="#cfe6b8" stroke-width="2" fill="none"/>
+          <path d="M175 210 l25 -45 M215 185 l30 -45 M255 160 l25 -35 M180 205 l50 10 M225 180 l55 8" stroke="#cfe6b8" stroke-width="1.2" fill="none" opacity=".8"/>
+          <g class="d-co2"><circle cx="0" cy="0" r="9"/><circle cx="0" cy="0" r="7"/><circle cx="0" cy="0" r="8"/></g>
+          <g class="d-o2"><circle cx="0" cy="0" r="7"/><circle cx="0" cy="0" r="9"/><circle cx="0" cy="0" r="6"/></g>
+          <g class="d-h2o"><path d="M0 -9 C5 -2 7 2 7 5 A7 7 0 0 1 -7 5 C-7 2 -5 -2 0 -9Z"/><path d="M0 -9 C5 -2 7 2 7 5 A7 7 0 0 1 -7 5 C-7 2 -5 -2 0 -9Z"/></g>
+          <text x="20" y="215" class="d-label">CO<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+          <text x="352" y="62" class="d-label">O<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+          <text x="155" y="306" class="d-label">H<tspan baseline-shift="sub" font-size="11">2</tspan>O</text>
+        </svg>
+        <figcaption>Світло, вуглекислий газ і вода входять у листок, кисень виходить.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 2. Вісім рослин ===== -->
+  <section class="section section--tint" id="plants">
+    <div class="section__head reveal">
+      <p class="section__num">02</p>
+      <h2>Вісім рослин для новачка</h2>
+    </div>
+    <p class="section__intro reveal">
+      Усі вони витримують сухе повітря квартири, пропущений полив і не надто
+      яскраве вікно. Крапки показують складність догляду: <span class="dots" role="img" style="--n:1" aria-label="1 з 3"></span>&nbsp;&mdash;
+      просто, <span class="dots" role="img" style="--n:3" aria-label="3 з 3"></span>&nbsp;&mdash; потребує уваги.
+    </p>
+
+    <div class="cards">
+      <article class="card reveal">
+        <svg class="plant" data-plant="sansevieria" data-pot="#e9e2d3" viewBox="0 0 200 240" aria-hidden="true"></svg>
+        <h3>Сансевієрія</h3>
+        <h4 class="card__sub"><i>Sansevieria trifasciata</i> &middot; тропічна Африка</h4>
+        <p>Тверде вертикальне листя запасає воду, тож рослина спокійно переживе відпустку господарів. Поливати&nbsp;&mdash; <u>коли земля повністю суха</u>.</p>
+        <p class="card__meta"><span>&#9728; будь-яке світло</span><span class="dots" style="--n:1"></span></p>
+      </article>
+      <article class="card reveal">
+        <svg class="plant" data-plant="zamioculcas" data-pot="#1f3d2b" viewBox="0 0 200 240" aria-hidden="true"></svg>
+        <h3>Заміокулькас</h3>
+        <h4 class="card__sub"><i>Zamioculcas zamiifolia</i> &middot; Східна Африка</h4>
+        <p>Глянцеве листя на товстих стеблах і бульби під землею, що зберігають воду. Росте навіть у <em>глибині кімнати</em>.</p>
+        <p class="card__meta"><span>&#9729; тінь і півтінь</span><span class="dots" style="--n:1"></span></p>
+      </article>
+      <article class="card reveal">
+        <svg class="plant" data-plant="pothos" data-pot="#d9a441" viewBox="0 0 200 240" aria-hidden="true"></svg>
+        <h3>Епіпремнум</h3>
+        <h4 class="card__sub"><i>Epipremnum aureum</i> &middot; острови Тихого океану</h4>
+        <p>Ліана з листям-сердечками. Пагони можна пускати з полиці або підв&rsquo;язувати до опори. Легко розмножується живцями у воді.</p>
+        <p class="card__meta"><span>&#9729; півтінь</span><span class="dots" style="--n:1"></span></p>
+      </article>
+      <article class="card reveal">
+        <svg class="plant" data-plant="chlorophytum" data-pot="#8fb3c9" viewBox="0 0 200 240" aria-hidden="true"></svg>
+        <h3>Хлорофітум</h3>
+        <h4 class="card__sub"><i>Chlorophytum comosum</i> &middot; Південна Африка</h4>
+        <p>Пучок дугоподібного листя з білою смужкою. На довгих вусах з&rsquo;являються &laquo;дітки&raquo;, які легко вкорінюються.</p>
+        <p class="card__meta"><span>&#9728; світло, без полудневого сонця</span><span class="dots" style="--n:1"></span></p>
+      </article>
+      <article class="card reveal">
+        <svg class="plant" data-plant="spathiphyllum" data-pot="#f2ede2" viewBox="0 0 200 240" aria-hidden="true"></svg>
+        <h3>Спатифілум</h3>
+        <h4 class="card__sub"><i>Spathiphyllum</i> &middot; тропічна Америка</h4>
+        <p>Сам підказує, коли його полити: листя <i>опускається</i>, а через годину після поливу знову піднімається. Біле &laquo;вітрило&raquo;&nbsp;&mdash; видозмінений лист.</p>
+        <p class="card__meta"><span>&#9729; півтінь</span><span class="dots" style="--n:2"></span></p>
+      </article>
+      <article class="card reveal">
+        <svg class="plant" data-plant="monstera" data-pot="#c8643b" viewBox="0 0 200 240" aria-hidden="true"></svg>
+        <h3>Монстера</h3>
+        <h4 class="card__sub"><i>Monstera deliciosa</i> &middot; Центральна Америка</h4>
+        <p>Отвори в листі з&rsquo;являються з віком і на хорошому світлі. Повітряні корені не обрізають&nbsp;&mdash; їх направляють у землю чи на опору.</p>
+        <p class="card__meta"><span>&#9728; яскраве розсіяне</span><span class="dots" style="--n:2"></span></p>
+      </article>
+      <article class="card reveal">
+        <svg class="plant" data-plant="ficus" data-pot="#6d5a4b" viewBox="0 0 200 240" aria-hidden="true"></svg>
+        <h3>Фікус Бенджаміна</h3>
+        <h4 class="card__sub"><i>Ficus benjamina</i> &middot; Південно-Східна Азія</h4>
+        <p>Маленьке деревце з дрібним листям. Не любить переїздів: після перестановки може скинути частину листя, але згодом відновлюється.</p>
+        <p class="card__meta"><span>&#9728; яскраве світло</span><span class="dots" style="--n:3"></span></p>
+      </article>
+      <article class="card reveal">
+        <svg class="plant" data-plant="aloe" data-pot="#b9c7a5" viewBox="0 0 200 240" aria-hidden="true"></svg>
+        <h3>Алое вера</h3>
+        <h4 class="card__sub"><i>Aloe vera</i> &middot; Аравійський півострів</h4>
+        <p>Сукулент: м&rsquo;ясисте листя із зубчиками накопичує воду. Любить сонце, пухкий ґрунт і <strong>рідкісний</strong> полив.</p>
+        <p class="card__meta"><span>&#9728; пряме сонце</span><span class="dots" style="--n:1"></span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 3. Вікно ===== -->
+  <section class="section" id="window">
+    <div class="section__head reveal">
+      <p class="section__num">03</p>
+      <h2>Яке у вас вікно?</h2>
+    </div>
+    <div class="compass-wrap">
+      <div class="compass reveal">
+        <div class="compass__rose" aria-hidden="true"><span class="compass__needle"></span></div>
+        <div class="compass__btns" role="group" aria-label="Сторона світу">
+          <button type="button" class="cbtn cbtn--n" data-dir="n" aria-pressed="false">Північ</button>
+          <button type="button" class="cbtn cbtn--e" data-dir="e" aria-pressed="false">Схід</button>
+          <button type="button" class="cbtn cbtn--s" data-dir="s" aria-pressed="true">Південь</button>
+          <button type="button" class="cbtn cbtn--w" data-dir="w" aria-pressed="false">Захід</button>
+        </div>
+      </div>
+      <div class="advice reveal" aria-live="polite">
+        <h3 id="dirTitle">Південне вікно</h3>
+        <p class="advice__meter"><span id="dirMeter" style="--v:1"></span></p>
+        <p id="dirText">Найбільше світла і пряме сонце майже весь день. Улітку тропічні рослини краще відсунути від скла або притінити тюлем.</p>
+        <p class="advice__label">Добре почуватимуться:</p>
+        <ul class="chips" id="dirPlants"></ul>
+      </div>
+    </div>
+    <aside class="tip reveal">
+      <h4>Як виміряти світло</h4>
+      <h5>Освітленість у люксах</h5>
+      <p>
+        Освітленість вимірюють у люксах: <var>E</var> = <var>&Phi;</var> / <var>S</var>, де
+        <var>&Phi;</var>&nbsp;&mdash; світловий потік (лм), а <var>S</var>&nbsp;&mdash; площа (м<sup>2</sup>).
+        Біля південного вікна в ясний день буває понад <b>10&nbsp;000&nbsp;лк</b>,
+        а в глибині кімнати&nbsp;&mdash; лише кілька сотень. Безкоштовні застосунки-люксметри
+        для смартфона показують приблизне значення: наприклад, <samp>Освітленість: 1250 lx</samp>.
+      </p>
+    </aside>
+  </section>
+
+  <!-- ===== 4. Сезони ===== -->
+  <section class="section section--tint" id="seasons">
+    <div class="section__head reveal">
+      <p class="section__num">04</p>
+      <h2>Календар догляду</h2>
+    </div>
+    <div class="seasons reveal">
+      <div class="seasons__tabs" role="group" aria-label="Пора року">
+        <button type="button" aria-pressed="true" data-season="0">Весна</button>
+        <button type="button" aria-pressed="false" data-season="1">Літо</button>
+        <button type="button" aria-pressed="false" data-season="2">Осінь</button>
+        <button type="button" aria-pressed="false" data-season="3">Зима</button>
+      </div>
+      <div class="seasons__panel">
+        <article class="season is-active" data-panel="0">
+          <h3>Весна&nbsp;&mdash; прокидання</h3>
+          <p>День довшає, рослини починають активно рости. <b>Найкращий час для пересадки</b>: новий горщик беруть лише на 2&ndash;3&nbsp;см ширший за старий.</p>
+          <p>Поступово збільшуйте полив і раз на 2&ndash;3 тижні додавайте добриво.</p>
+        </article>
+        <article class="season" data-panel="1">
+          <h3>Літо&nbsp;&mdash; ріст</h3>
+          <p>Земля висихає швидше, тому полив <em>частішає</em>. Перевіряйте ґрунт пальцем: суха на 2&nbsp;см&nbsp;&mdash; пора поливати.</p>
+          <p>Захищайте ніжне листя від полудневого сонця за склом: воно може отримати опіки.</p>
+        </article>
+        <article class="season" data-panel="2">
+          <h3>Осінь&nbsp;&mdash; уповільнення</h3>
+          <p>Світла меншає. <b>Поступово зменшуйте полив</b> і припиніть підживлення до весни.</p>
+          <p>Переставте світлолюбні рослини ближче до вікна, а перед початком опалення перевірте, чи нема шкідників.</p>
+        </article>
+        <article class="season" data-panel="3">
+          <h3>Зима&nbsp;&mdash; спокій</h3>
+          <p>Більшість рослин майже не росте. Поливайте <u>рідко</u> і теплою водою, тримайте горщики подалі від батарей.</p>
+          <p>Раз на місяць протирайте листя вологою ганчіркою: пил забирає частину світла.</p>
+        </article>
+      </div>
+    </div>
+
+    <figure class="schedule reveal">
+      <figcaption>Орієнтовний графік поливу влітку</figcaption>
+<pre>Рослина          Пн  Вт  Ср  Чт  Пт  Сб  Нд
+───────────────  ──  ──  ──  ──  ──  ──  ──
+Спатифілум       ●          ●          ●
+Монстера         ●              ●
+Хлорофітум           ●              ●
+Епіпремнум               ●
+Заміокулькас                         ●
+Сансевієрія      раз на 2–3 тижні
+Алое вера        раз на 2–3 тижні</pre>
+    </figure>
+  </section>
+
+  <!-- ===== 5. Міфи ===== -->
+  <section class="section" id="myths">
+    <div class="section__head reveal">
+      <p class="section__num">05</p>
+      <h2>Міфи та помилки</h2>
+    </div>
+    <div class="myths">
+      <article class="myth reveal">
+        <h3 class="myth__label">Міф</h3>
+        <p><s>Що частіше поливаєш, то краще рослині.</s></p>
+        <p><ins>Найчастіше кімнатні рослини гинуть саме від <b>переливу</b>: корені без повітря загнивають.</ins></p>
+      </article>
+      <article class="myth reveal">
+        <h3 class="myth__label">Міф</h3>
+        <p><s>Кілька вазонів очистять повітря в усій квартирі.</s></p>
+        <p><ins>Дослідження показали: щоб зрівнятися зі звичайним провітрюванням, потрібні <mark>сотні рослин</mark> на кожну кімнату. Відчиняйте вікно!</ins></p>
+      </article>
+      <article class="myth reveal">
+        <h3 class="myth__label">Міф</h3>
+        <p><s>Великий горщик&nbsp;&mdash; на виріст&nbsp;&mdash; це добре.</s></p>
+        <p><ins>Зайва земля довго стоїть мокрою. Горщик збільшують поступово, і в ньому обов&rsquo;язково має бути <strong>отвір для стоку</strong>.</ins></p>
+      </article>
+    </div>
+
+    <blockquote class="quote reveal">
+      <p>Яке коріння, таке й насіння.</p>
+      <footer>&mdash; <cite>українське народне прислів&rsquo;я</cite></footer>
+    </blockquote>
+  </section>
+</main>
+
+<footer class="footer">
+  <svg class="plant plant--small" data-plant="pothos" data-pot="#c8643b" viewBox="0 0 200 240" aria-hidden="true"></svg>
+  <p>
+    &laquo;Зелений підвіконник&raquo;&nbsp;&mdash; навчальна вебсторінка,<br>
+    лабораторна робота №&nbsp;4. Автор: Юлія Гаврилюк, 2026.
+  </p>
+  <p><small>Порада: натисніть <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>D</kbd>, щоб додати сторінку в закладки, а <kbd>Home</kbd>&nbsp;&mdash; щоб повернутися нагору.</small></p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Пам’ятки — Левове місто</title>
+<meta name="description" content="Головні пам’ятки Львова: Ринок, Оперний театр, собори, Високий замок, Личаківський цвинтар.">
+<meta name="author" content="Олександр Дидюк">
+<meta name="theme-color" content="#1f3b34">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('lviv-night')==='1')document.documentElement.classList.add('night');}catch(e){}</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця 2 x 5:
+       1) шапка із силуетом міста (colspan="2")
+       2) меню навігації (colspan="2")
+       3) вступ сторінки (colspan="2")
+       4) бічна панель ЛІВОРУЧ | основний вміст
+       5) підвал (colspan="2")
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="2">
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__brand" valign="top">
+            <a class="brand" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40c0-8 4-12 10-13l-4-9c-1-3 1-6 4-6 2 0 3 1 4 3 1-4 4-6 8-5 3 1 4 5 2 8l-5 6c4 2 7 7 7 16z" fill="currentColor"/></svg><span>Левове місто<small>путівник Львовом</small></span></a>
+          </td>
+          <td class="head__tools" align="right" valign="top">
+            <button class="daynight" type="button" id="dayNight" aria-pressed="false"><span class="daynight__icon" aria-hidden="true"></span><span class="daynight__txt">Ніч</span></button>
+          </td>
+        </tr>
+      </table>
+      <svg class="skyline" id="skyline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Силует старого Львова з вежею Ратуші"></svg>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" colspan="2">
+      <table class="nav" cellspacing="0" cellpadding="0" role="presentation"><tr><td><a class="nav__link" href="index.html">Головна</a></td><td><a class="nav__link" href="history.html">Історія</a></td><td><a class="nav__link is-active" href="sights.html" aria-current="page">Пам&rsquo;ятки</a></td><td><a class="nav__link" href="taste.html">Смаки Львова</a></td><td><a class="nav__link" href="author.html">Автор</a></td></tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__intro" colspan="2">
+      <table class="intro" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="intro__k" valign="top" width="300"><p class="kicker">Пам&rsquo;ятки</p></td>
+          <td valign="top"><h1>Вісім адрес <em>Старого міста</em></h1><p class="lead">Маршрут на один день: від площі Ринок до Високого замку і Личакова.</p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__side" valign="top" width="300">
+<div class="panel reveal" id="sightCard">
+        <p class="panel__title">Обрана пам&rsquo;ятка</p>
+        <p class="sight-card__n" id="scN">1</p>
+        <p class="sight-card__t" id="scT">Площа Ринок і Ратуша</p>
+        <p id="scD">Наведіть курсор на позначку на схемі.</p>
+      </div>
+      <div class="panel panel--note reveal">
+        <p class="panel__title">Порада мандрівнику</p>
+        <p>У Львові часто йде дощ, тож парасолька&nbsp;&mdash; найкращий сувенір, який варто мати з собою. Бруківка в центрі слизька: зручне взуття важливіше за красиве.</p>
+      </div>
+    </td>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <h2>Схема центру</h2>
+        <p class="hint">Наведіть курсор на номер на схемі або на рядок таблиці&nbsp;&mdash; вони підсвітяться разом.</p>
+        <svg class="map" id="map" viewBox="0 0 600 400" role="img" aria-label="Спрощена схема центру Львова з позначками пам&rsquo;яток">
+          <rect width="600" height="400" rx="18" class="map__bg"/>
+          <path class="map__park" d="M380 20 C450 10 520 30 560 70 C570 110 520 130 470 120 C420 110 390 80 380 20Z"/>
+          <path class="map__park" d="M500 210 C560 200 590 240 590 300 C560 330 520 320 500 290Z"/>
+          <path class="map__road" d="M20 300 L180 300 L230 250 L330 250 L420 240 L590 250"/>
+          <path class="map__road" d="M200 380 L200 300 M210 300 C230 260 240 220 260 200 L300 150 L330 90"/>
+          <path class="map__road map__road--minor" d="M240 170 L400 170 M260 230 L400 230 M260 170 L260 240 M400 170 L400 240 M300 120 L440 140 L470 200"/>
+          <rect class="map__square" x="285" y="175" width="60" height="50" rx="4"/>
+          <text class="map__label" x="315" y="205" text-anchor="middle">Ринок</text>
+          <text class="map__label" x="505" y="44" text-anchor="middle">Замкова гора</text>
+          <text class="map__label" x="30" y="326">проспект Свободи</text>
+          <g class="pin" data-pin="1" transform="translate(312 200)" tabindex="0" role="button" aria-label="Площа Ринок і Ратуша"><circle r="15"/><text y="5" text-anchor="middle">1</text></g>
+          <g class="pin" data-pin="2" transform="translate(204 292)" tabindex="0" role="button" aria-label="Оперний театр"><circle r="15"/><text y="5" text-anchor="middle">2</text></g>
+          <g class="pin" data-pin="3" transform="translate(264 224)" tabindex="0" role="button" aria-label="Латинський кафедральний собор"><circle r="15"/><text y="5" text-anchor="middle">3</text></g>
+          <g class="pin" data-pin="4" transform="translate(282 144)" tabindex="0" role="button" aria-label="Вірменський собор"><circle r="15"/><text y="5" text-anchor="middle">4</text></g>
+          <g class="pin" data-pin="5" transform="translate(372 160)" tabindex="0" role="button" aria-label="Домініканський собор"><circle r="15"/><text y="5" text-anchor="middle">5</text></g>
+          <g class="pin" data-pin="6" transform="translate(444 72)" tabindex="0" role="button" aria-label="Високий замок"><circle r="15"/><text y="5" text-anchor="middle">6</text></g>
+          <g class="pin" data-pin="7" transform="translate(396 240)" tabindex="0" role="button" aria-label="Порохова вежа"><circle r="15"/><text y="5" text-anchor="middle">7</text></g>
+          <g class="pin" data-pin="8" transform="translate(552 256)" tabindex="0" role="button" aria-label="Личаківський цвинтар"><circle r="15"/><text y="5" text-anchor="middle">8</text></g>
+        </svg>
+        <p class="note">Схема спрощена й не відображає точного масштабу.</p>
+      </section>
+
+      <section class="block reveal">
+        <table class="sights" width="100%" cellspacing="0" cellpadding="12">
+          <caption>Таблиця 3. Вісім місць, які варто побачити</caption>
+          <thead><tr><th scope="col" width="44">№</th><th scope="col">Пам&rsquo;ятка</th><th scope="col">Час</th><th scope="col">Що цікавого</th></tr></thead>
+          <tbody>
+          <tr class="sight" id="s1" data-pin="1"><td class="sight__n">1</td><th scope="row">Площа Ринок і Ратуша</th><td class="sight__y">XIV ст.; ратуша 1827&ndash;1835</td><td>Головна площа, оточена кам&rsquo;яницями різних епох. На вежу ратуші заввишки 65&nbsp;м ведуть понад 400 сходинок.</td></tr>
+          <tr class="sight" id="s2" data-pin="2"><td class="sight__n">2</td><th scope="row">Оперний театр</th><td class="sight__y">1897&ndash;1900</td><td>Архітектор Зигмунт Горголевський. Фасад прикрашають скульптури, а завіса &laquo;Парнас&raquo; є відомим твором живопису.</td></tr>
+          <tr class="sight" id="s3" data-pin="3"><td class="sight__n">3</td><th scope="row">Латинський кафедральний собор</th><td class="sight__y">XIV&ndash;XV ст.</td><td>Готичний собор біля площі Ринок, поруч із ним&nbsp;&mdash; каплиця Боїмів з дивовижним кам&rsquo;яним різьбленням.</td></tr>
+          <tr class="sight" id="s4" data-pin="4"><td class="sight__n">4</td><th scope="row">Вірменський собор</th><td class="sight__y">1363</td><td>Одна з найдавніших споруд міста, всередині&nbsp;&mdash; розписи ХХ століття Яна Генрика Розена.</td></tr>
+          <tr class="sight" id="s5" data-pin="5"><td class="sight__n">5</td><th scope="row">Домініканський собор</th><td class="sight__y">1749&ndash;1764</td><td>Барокова святиня з великим куполом, видима з багатьох вулиць центру.</td></tr>
+          <tr class="sight" id="s6" data-pin="6"><td class="sight__n">6</td><th scope="row">Високий замок</th><td class="sight__y">парк на Замковій горі</td><td>Від укріплень залишилися фрагменти мурів, а з оглядового майданчика на висоті 413&nbsp;м видно все місто.</td></tr>
+          <tr class="sight" id="s7" data-pin="7"><td class="sight__n">7</td><th scope="row">Порохова вежа</th><td class="sight__y">1554&ndash;1556</td><td>Частина давніх оборонних мурів, де колись зберігали порох.</td></tr>
+          <tr class="sight" id="s8" data-pin="8"><td class="sight__n">8</td><th scope="row">Личаківський цвинтар</th><td class="sight__y">з 1786 року</td><td>Музей-заповідник просто неба: тут поховано Івана Франка, Соломію Крушельницьку, Маркіяна Шашкевича.</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="4">Більшість пам&rsquo;яток Старого міста розташовані за 5&ndash;15 хвилин пішки одна від одної.</td></tr></tfoot>
+        </table>
+      </section>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="2">
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td valign="top"><p class="foot__title">Левове місто</p><p>Навчальний сайт-путівник. Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="top" align="center"><p class="foot__clock">Ратуша показує <b data-clock>--:--</b></p></td>
+          <td valign="top" align="right"><p>Автор: <a href="author.html">Олександр Дидюк</a></p><p><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<script src="js/main.js"></script>
+</body>
+</html>

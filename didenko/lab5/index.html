@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Головна — Країна вранішнього сонця</title>
+<meta name="description" content="Сайт про Японію: міста, культура, кухня та пори року.">
+<meta name="author" content="Ярослав Діденко">
+<meta name="theme-color" content="#f7f4ee">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var s=localStorage.getItem('nihon-season');if(s)document.documentElement.setAttribute('data-season',s);}catch(e){}</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця з ТРЬОХ колонок:
+       1) шапка з меню (colspan="3")
+       2) банер сторінки (colspan="3")
+       3) ліва панель «Розмовник» | основний вміст | права панель
+       4) підвал (colspan="3")
+     ============================================================ -->
+<div class="petals" aria-hidden="true"></div>
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="3">
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__brand"><a class="brand" href="index.html"><span class="brand__sun" aria-hidden="true"></span><span>Країна вранішнього сонця<small><span lang="ja">日本</span> &middot; Ніппон</small></span></a></td>
+          <td class="head__nav" align="right"><nav aria-label="Розділи"><table class="nav" cellspacing="0" cellpadding="0" role="presentation"><tr><td><a class="nav__link is-active" href="index.html" aria-current="page"><span class="nav__k" lang="ja" aria-hidden="true">家</span>Головна</a></td><td><a class="nav__link" href="cities.html"><span class="nav__k" lang="ja" aria-hidden="true">街</span>Міста</a></td><td><a class="nav__link" href="culture.html"><span class="nav__k" lang="ja" aria-hidden="true">文</span>Культура</a></td><td><a class="nav__link" href="food.html"><span class="nav__k" lang="ja" aria-hidden="true">食</span>Кухня</a></td><td><a class="nav__link" href="author.html"><span class="nav__k" lang="ja" aria-hidden="true">人</span>Автор</a></td></tr></table></nav></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__hero" colspan="3">
+      <table class="hero" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="hero__text" valign="middle"><p class="hero__kicker">Подорож у Японію</p><h1>Країна <em>вранішнього сонця</em></h1><p class="hero__lead">Сакура й неонові вулиці, тихі храми і поїзди, що мчать понад 300 км/год. Оберіть пору року праворуч&nbsp;&mdash; і сайт зміниться разом із нею.</p></td>
+          <td class="hero__kanji" valign="middle" width="140" lang="ja" aria-hidden="true">日本</td>
+        </tr>
+      </table>
+      <svg class="scene" id="scene" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sky-a"/><stop offset="1" class="sky-b"/></linearGradient>
+            <linearGradient id="fujiG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5d6f8f"/><stop offset="1" stop-color="#2f3c58"/></linearGradient>
+          </defs>
+          <rect width="1200" height="420" fill="url(#skyG)"/>
+          <circle class="sun" cx="860" cy="150" r="90"/>
+          <g class="layer" data-depth="0.15"><path d="M330 420 L560 150 Q600 118 640 150 L870 420 Z" fill="url(#fujiG)"/><path class="snow" d="M516 202 L560 150 Q600 118 640 150 L684 202 L662 196 L644 214 L622 194 L600 216 L578 194 L556 214 L538 196 Z"/></g>
+          <g class="layer" data-depth="0.3"><path class="hill hill--1" d="M0 420 L0 330 Q150 270 300 320 T620 300 T900 330 T1200 290 L1200 420Z"/></g>
+          <g class="layer mist" data-depth="0.4"><ellipse cx="300" cy="330" rx="260" ry="22"/><ellipse cx="900" cy="350" rx="300" ry="20"/></g>
+          <g class="layer" data-depth="0.55"><path class="hill hill--2" d="M0 420 L0 370 Q200 330 420 365 T800 360 T1200 350 L1200 420Z"/>
+            <g class="torii" transform="translate(150 255)"><rect x="0" y="0" width="120" height="12" rx="4"/><rect x="8" y="22" width="104" height="8"/><rect x="18" y="12" width="12" height="110"/><rect x="90" y="12" width="12" height="110"/><rect x="54" y="20" width="12" height="12"/></g>
+            <g class="pagoda" transform="translate(1000 220)"><path d="M0 40h60l-10-12H10z M6 70h48l-9-11H15z M12 98h36l-8-10H20z M18 124h24l-6-9H24z" /><rect x="22" y="40" width="16" height="110"/><rect x="28" y="0" width="4" height="30"/></g>
+          </g>
+        </svg>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__left" valign="top" width="250">
+<div class="panel reveal">
+        <p class="panel__title">Розмовник</p>
+        <table class="phrases" width="100%" cellspacing="0" cellpadding="0">
+          <tr><td><button type="button" class="say" data-say="こんにちは" aria-label="Прослухати: Добрий день"><span class="say__ja" lang="ja">こんにちは</span><span class="say__tr">коннічіва</span><span class="say__ua">Добрий день</span></button></td></tr>
+          <tr><td><button type="button" class="say" data-say="ありがとう" aria-label="Прослухати: Дякую"><span class="say__ja" lang="ja">ありがとう</span><span class="say__tr">аріґато</span><span class="say__ua">Дякую</span></button></td></tr>
+          <tr><td><button type="button" class="say" data-say="すみません" aria-label="Прослухати: Вибачте"><span class="say__ja" lang="ja">すみません</span><span class="say__tr">сумімасен</span><span class="say__ua">Вибачте</span></button></td></tr>
+          <tr><td><button type="button" class="say" data-say="はい" aria-label="Прослухати: Так / ні"><span class="say__ja" lang="ja">はい / いいえ</span><span class="say__tr">хай / ііе</span><span class="say__ua">Так / ні</span></button></td></tr>
+          <tr><td><button type="button" class="say" data-say="いただきます" aria-label="Прослухати: Смачного (перед їжею)"><span class="say__ja" lang="ja">いただきます</span><span class="say__tr">ітадакімасу</span><span class="say__ua">Смачного (перед їжею)</span></button></td></tr>
+          <tr><td><button type="button" class="say" data-say="さようなら" aria-label="Прослухати: До побачення"><span class="say__ja" lang="ja">さようなら</span><span class="say__tr">сайонара</span><span class="say__ua">До побачення</span></button></td></tr>
+        </table>
+        <p class="panel__note">Натисніть на фразу, щоб почути вимову (якщо браузер підтримує синтез мовлення).</p>
+      </div>
+    </td>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <h2>Острови, де сходить сонце</h2>
+        <p>Японія&nbsp;&mdash; острівна держава на сході Азії. Її назва японською, <span lang="ja">日本</span> (Ніхон або Ніппон), означає &laquo;початок сонця&raquo;: для давніх сусідів на материку острови лежали на сході&nbsp;&mdash; там, де сходить сонце. Звідси й поетична назва&nbsp;&mdash; Країна вранішнього сонця.</p>
+        <p>Країна розташована на чотирьох великих островах&nbsp;&mdash; Хонсю, Хоккайдо, Кюсю і Сікоку&nbsp;&mdash; та тисячах малих. Тут поряд живуть найсучасніші технології і традиції, яким сотні років.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2>Японія в чотири пори року</h2>
+        <table class="seasons-table" width="100%" cellspacing="0" cellpadding="14">
+          <caption>Таблиця 1. Що побачити в різні сезони (натисніть на рядок)</caption>
+          <thead><tr><th scope="col">Сезон</th><th scope="col">Місяці</th><th scope="col">Подія</th></tr></thead>
+          <tbody>
+            <tr data-season="spring"><th scope="row"><span lang="ja">春</span> Весна</th><td>березень&ndash;травень</td><td><b>Ханамі</b>&nbsp;&mdash; милування цвітом сакури. У Токіо дерева зазвичай квітнуть наприкінці березня&nbsp;&mdash; на початку квітня.</td></tr>
+            <tr data-season="summer"><th scope="row"><span lang="ja">夏</span> Літо</th><td>червень&ndash;серпень</td><td>Сезон дощів, а потім&nbsp;&mdash; літні фестивалі <b>мацурі</b> і феєрверки над річками.</td></tr>
+            <tr data-season="autumn"><th scope="row"><span lang="ja">秋</span> Осінь</th><td>вересень&ndash;листопад</td><td><b>Момідзі-ґарі</b>&nbsp;&mdash; прогулянки серед червоних кленів, особливо красиві в Кіото.</td></tr>
+            <tr data-season="winter"><th scope="row"><span lang="ja">冬</span> Зима</th><td>грудень&ndash;лютий</td><td>Сніговий фестиваль у Саппоро та гарячі джерела <b>онсен</b>.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Цифри, що дивують</h2>
+        <table class="nums" width="100%" cellspacing="14" cellpadding="0" role="presentation">
+          <tr>
+            <td class="num" valign="top" width="33%"><b data-to="1964">1964</b><span>рік запуску першого швидкісного поїзда Сінкансен</span></td>
+            <td class="num" valign="top" width="33%"><b data-to="320">320</b><span>км/год&nbsp;&mdash; швидкість найшвидших Сінкансенів</span></td>
+            <td class="num" valign="top" width="33%"><b data-to="3776">3776</b><span>метрів заввишки гора Фудзі</span></td>
+          </tr>
+        </table>
+      </section>
+    </td>
+    <td class="layout__right" valign="top" width="270">
+<div class="panel reveal">
+        <p class="panel__title">Пора року на сайті</p>
+        <p class="seasons" role="group" aria-label="Пора року">
+          <button type="button" data-season="spring"><span lang="ja">春</span>весна</button>
+          <button type="button" data-season="summer"><span lang="ja">夏</span>літо</button>
+          <button type="button" data-season="autumn"><span lang="ja">秋</span>осінь</button>
+          <button type="button" data-season="winter"><span lang="ja">冬</span>зима</button>
+        </p>
+      </div>
+      <div class="panel reveal">
+        <p class="panel__title">Коротко</p>
+        <table class="facts" width="100%" cellspacing="0" cellpadding="7">
+          <tr><th scope="row">Столиця</th><td>Токіо</td></tr>
+          <tr><th scope="row">Населення</th><td>&asymp;&nbsp;<span data-to="124">124</span>&nbsp;млн</td></tr>
+          <tr><th scope="row">Префектур</th><td><span data-to="47">47</span></td></tr>
+          <tr><th scope="row">Фудзі</th><td><span data-to="3776">3776</span>&nbsp;м</td></tr>
+          <tr><th scope="row">Валюта</th><td>єна (¥)</td></tr>
+          <tr><th scope="row">Мова</th><td>японська</td></tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="3">
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td valign="middle" width="90"><span class="hanko" lang="ja" aria-hidden="true">日本</span></td>
+          <td valign="middle"><p class="foot__title">Країна вранішнього сонця</p><p>Навчальний сайт про Японію. Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="middle" align="right"><p>Автор: <a href="author.html">Ярослав Діденко</a></p><p><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<script src="js/main.js"></script>
+</body>
+</html>
