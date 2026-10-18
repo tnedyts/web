@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гра королів — усе про шахи</title>
+<meta name="description" content="Історія шахів, фігури та їхня цінність, шахова нотація, великі чемпіони і легендарна «Оперна партія» Пола Морфі.">
+<meta name="keywords" content="шахи, історія шахів, шахові фігури, нотація, чемпіони світу, Морфі, Оперна партія">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#14110f">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 4. Розробка простої вебсторінки.
+     Тема: шахи. Одна сторінка, де використано теги форматування
+     тексту: h1–h5, p, br, hr, b, strong, i, em, u, s, mark, small,
+     sup, sub, cite, q, blockquote, code, kbd, var, samp, pre, abbr.
+     ============================================================ -->
+
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<header class="top">
+  <a class="brand" href="#start"><span class="brand__glyph" aria-hidden="true">&#9818;</span>Гра королів</a>
+  <nav class="top__nav" aria-label="Розділи сторінки">
+    <a href="#history">Історія</a>
+    <a href="#pieces">Фігури</a>
+    <a href="#notation">Нотація</a>
+    <a href="#knight">Хід конем</a>
+    <a href="#champions">Чемпіони</a>
+  </nav>
+</header>
+
+<main id="start">
+
+  <!-- ===== Перший екран: дошка розігрує «Оперну партію» ===== -->
+  <section class="hero">
+    <div class="hero__text">
+      <p class="eyebrow">Париж, 1858 рік &middot; Італійська опера</p>
+      <h1 class="hero__title">Гра <em>королів</em></h1>
+      <p class="hero__lead">
+        Шістдесят чотири клітинки, тридцять дві фігури і&nbsp;понад
+        <b>півтори тисячі років</b> історії. На дошці&nbsp;&mdash; партія, яку
+        <strong>Пол Морфі</strong> зіграв просто в театральній ложі під час
+        оперної вистави. Сімнадцять ходів, жертва ферзя і&nbsp;мат.
+      </p>
+      <div class="hero__actions">
+        <a class="btn" href="#history">Почати читати</a>
+        <button class="btn btn--ghost" type="button" id="replay">Розіграти знову</button>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="board-wrap">
+        <div class="board" id="board" role="img" aria-label="Шахівниця, на якій автоматично розігрується Оперна партія"></div>
+        <div class="files" aria-hidden="true"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span></div>
+        <div class="ranks" aria-hidden="true"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+      </div>
+      <div class="score">
+        <p class="score__move"><span id="moveNo">0.</span> <code id="moveSan">&hellip;</code></p>
+        <p class="score__note" id="moveNote">Білі: Пол Морфі. Чорні: герцог Брауншвейзький і граф Ізуар.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 1. Історія ===== -->
+  <section class="chapter" id="history">
+    <header class="chapter__head reveal">
+      <span class="chapter__num">01</span>
+      <h2>Звідки взялися шахи</h2>
+    </header>
+
+    <div class="timeline">
+      <article class="era reveal">
+        <h3>Чатуранга</h3>
+        <h4>Індія, близько VI століття</h4>
+        <p>
+          Найдавнішим предком шахів вважають індійську гру <i>чатуранга</i>.
+          Назва означає &laquo;чотири частини війська&raquo;: <b>піхоту</b>,
+          <b>кінноту</b>, <b>слонів</b> і <b>колісниці</b>. Саме з них
+          згодом виросли пішаки, коні, слони та тури.
+        </p>
+      </article>
+      <article class="era reveal">
+        <h3>Шатрандж</h3>
+        <h4>Персія та арабський світ, VII&ndash;X століття</h4>
+        <p>
+          Перси переймають гру і дають їй слово, що живе досі:
+          <q>шах</q>&nbsp;&mdash; &laquo;цар&raquo;. Вигук <q>шах мат</q>
+          перекладають як &laquo;цар безпорадний&raquo;. Ферзь у той час був
+          <s>найсильнішою</s> однією з найслабших фігур і ходив лише на одну
+          клітинку по діагоналі.
+        </p>
+      </article>
+      <article class="era reveal">
+        <h3>Шахи королеви</h3>
+        <h4>Європа, кінець XV століття</h4>
+        <p>
+          В Іспанії та Італії ферзь раптом отримує право ходити на будь-яку
+          відстань, а слон&nbsp;&mdash; по всій діагоналі. Гра стає
+          <em>набагато</em> швидшою і гострішою. Сучасники називали її
+          <i>&laquo;шахами шаленої королеви&raquo;</i>.
+        </p>
+      </article>
+      <article class="era reveal">
+        <h3>Перший чемпіон</h3>
+        <h4>США, 1886 рік</h4>
+        <p>
+          <b>Вільгельм Стейніц</b> перемагає Йоганна Цукерторта і стає першим
+          офіційним <u>чемпіоном світу</u>. Відтоді титул передають лише в
+          матчі між чемпіоном і претендентом.
+        </p>
+      </article>
+      <article class="era reveal">
+        <h3>Людина проти машини</h3>
+        <h4>Нью-Йорк, 1997 рік</h4>
+        <p>
+          Суперкомп&rsquo;ютер <abbr title="International Business Machines">IBM</abbr>
+          <b>Deep Blue</b> виграє матч у Гаррі Каспарова з рахунком
+          3&frac12;&nbsp;:&nbsp;2&frac12;. А у 2017 році програма AlphaZero за
+          кілька годин сама навчилася грати сильніше за будь-яку людину.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ===== 2. Фігури ===== -->
+  <section class="chapter" id="pieces">
+    <header class="chapter__head reveal">
+      <span class="chapter__num">02</span>
+      <h2>Фігури та їхня цінність</h2>
+    </header>
+    <p class="chapter__intro reveal">
+      У шахістів є проста шкала: пішак коштує <b>1</b> одиницю, і всі інші
+      фігури порівнюють з ним. Числа умовні, але добре допомагають вирішити,
+      чи варто міняти фігури. Наведіть курсор на картку, щоб перевернути її.
+    </p>
+
+    <div class="pieces">
+      <article class="piece reveal" tabindex="0">
+        <div class="piece__inner">
+          <div class="piece__face">
+            <span class="piece__glyph" aria-hidden="true">&#9817;</span>
+            <h3>Пішак</h3>
+            <p class="piece__value">1</p>
+          </div>
+          <div class="piece__back">
+            <h4>Пішак</h4>
+            <p>Ходить уперед на одну клітинку, з початкової позиції&nbsp;&mdash; на дві. Б&rsquo;є навскіс. Дійшовши до останньої горизонталі, <strong>перетворюється</strong> на будь-яку фігуру.</p>
+          </div>
+        </div>
+      </article>
+      <article class="piece reveal" tabindex="0">
+        <div class="piece__inner">
+          <div class="piece__face">
+            <span class="piece__glyph" aria-hidden="true">&#9816;</span>
+            <h3>Кінь</h3>
+            <p class="piece__value">3</p>
+          </div>
+          <div class="piece__back">
+            <h4>Кінь</h4>
+            <p>Ходить літерою&nbsp;&laquo;Г&raquo;: дві клітинки в один бік і одну вбік. Єдина фігура, що <em>перестрибує</em> через інші.</p>
+          </div>
+        </div>
+      </article>
+      <article class="piece reveal" tabindex="0">
+        <div class="piece__inner">
+          <div class="piece__face">
+            <span class="piece__glyph" aria-hidden="true">&#9815;</span>
+            <h3>Слон</h3>
+            <p class="piece__value">3</p>
+          </div>
+          <div class="piece__back">
+            <h4>Слон</h4>
+            <p>Ходить по діагоналі на будь-яку відстань і <u>ніколи не змінює колір</u> клітинок, на яких стоїть.</p>
+          </div>
+        </div>
+      </article>
+      <article class="piece reveal" tabindex="0">
+        <div class="piece__inner">
+          <div class="piece__face">
+            <span class="piece__glyph" aria-hidden="true">&#9814;</span>
+            <h3>Тура</h3>
+            <p class="piece__value">5</p>
+          </div>
+          <div class="piece__back">
+            <h4>Тура</h4>
+            <p>Ходить по вертикалях і горизонталях. Разом із королем бере участь у <b>рокіровці</b>&nbsp;&mdash; єдиному ході, коли рухаються дві фігури одразу.</p>
+          </div>
+        </div>
+      </article>
+      <article class="piece reveal" tabindex="0">
+        <div class="piece__inner">
+          <div class="piece__face">
+            <span class="piece__glyph" aria-hidden="true">&#9813;</span>
+            <h3>Ферзь</h3>
+            <p class="piece__value">9</p>
+          </div>
+          <div class="piece__back">
+            <h4>Ферзь</h4>
+            <p>Поєднує ходи тури й слона. <strong>Найсильніша фігура</strong> на дошці, тому жертва ферзя завжди&nbsp;&mdash; подія.</p>
+          </div>
+        </div>
+      </article>
+      <article class="piece reveal" tabindex="0">
+        <div class="piece__inner">
+          <div class="piece__face">
+            <span class="piece__glyph" aria-hidden="true">&#9812;</span>
+            <h3>Король</h3>
+            <p class="piece__value">&infin;</p>
+          </div>
+          <div class="piece__back">
+            <h4>Король</h4>
+            <p>Ходить на одну клітинку в будь-який бік. Його не можна обміняти чи віддати: якщо королю оголошено мат, партію <em>програно</em>.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <aside class="note reveal">
+      <h4>Задача про зерна</h4>
+      <p>
+        За легендою, винахідник шахів попросив у правителя нагороду: одне
+        зерно пшениці на першу клітинку, два&nbsp;&mdash; на другу, чотири&nbsp;&mdash;
+        на третю і так далі. Кількість зерен на клітинці з номером
+        <var>n</var> дорівнює 2<sup><var>n</var>&minus;1</sup>, а всього на
+        дошці:
+      </p>
+      <p class="formula">
+        <var>S</var><sub>64</sub> = 1 + 2 + 2<sup>2</sup> + &hellip; + 2<sup>63</sup> = 2<sup>64</sup> &minus; 1
+      </p>
+      <h5>Скільки це зерен?</h5>
+      <p class="grains">
+        <span class="grains__count" id="grains">0</span>
+        <small>зерен&nbsp;&mdash; це більше, ніж людство зібрало пшениці за всю свою історію</small>
+      </p>
+      <div class="mini-board" id="grainBoard" aria-hidden="true"></div>
+    </aside>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ===== 3. Нотація ===== -->
+  <section class="chapter" id="notation">
+    <header class="chapter__head reveal">
+      <span class="chapter__num">03</span>
+      <h2>Як записують партію</h2>
+    </header>
+
+    <div class="split">
+      <div class="reveal">
+        <p>
+          Кожна клітинка має адресу: літера вертикалі (<code>a</code>&ndash;<code>h</code>)
+          і номер горизонталі (<code>1</code>&ndash;<code>8</code>). Хід записують
+          літерою фігури та клітинкою, куди вона пішла. Пішака позначають лише
+          клітинкою.
+        </p>
+        <h3>Позначення в міжнародній нотації</h3>
+        <ul class="legend">
+          <li><code>K</code>&nbsp;&mdash; король, <code>Q</code>&nbsp;&mdash; ферзь, <code>R</code>&nbsp;&mdash; тура</li>
+          <li><code>B</code>&nbsp;&mdash; слон, <code>N</code>&nbsp;&mdash; кінь</li>
+          <li><code>x</code>&nbsp;&mdash; взяття, <code>+</code>&nbsp;&mdash; шах, <code>#</code>&nbsp;&mdash; мат</li>
+          <li><code>O-O</code>&nbsp;&mdash; коротка рокіровка, <code>O-O-O</code>&nbsp;&mdash; довга</li>
+          <li><code>!</code>&nbsp;&mdash; сильний хід, <code>?</code>&nbsp;&mdash; помилка</li>
+        </ul>
+        <p>
+          Партії зберігають у текстовому форматі
+          <abbr title="Portable Game Notation">PGN</abbr>. У будь-якій шаховій
+          програмі можна натиснути <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>V</kbd>,
+          вставити запис і переглянути партію хід за ходом, а
+          клавішами <kbd>&larr;</kbd> і <kbd>&rarr;</kbd> гортати ходи.
+        </p>
+      </div>
+
+      <figure class="pgn reveal">
+        <figcaption>Оперна партія у форматі PGN</figcaption>
+<pre><samp>[Event "Паризька опера"]
+[Date  "1858.??.??"]
+[White "Пол Морфі"]
+[Black "Герцог Брауншвейзький, граф Ізуар"]
+[Result "1-0"]
+
+ 1. e4 e5     2. Nf3 d6     3. d4 Bg4
+ 4. dxe5 Bxf3 5. Qxf3 dxe5  6. Bc4 Nf6
+ 7. Qb3 Qe7   8. Nc3 c6     9. Bg5 b5
+10. Nxb5 cxb5 11. Bxb5+ Nbd7
+12. O-O-O Rd8 13. Rxd7 Rxd7 14. Rd1 Qe6
+15. Bxd7+ Nxd7 16. Qb8+! Nxb8
+17. Rd8#  1-0</samp></pre>
+      </figure>
+    </div>
+
+    <blockquote class="quote reveal">
+      <p>Шахи, як і любов, як і музика, мають здатність робити людей щасливими.</p>
+      <footer>&mdash; Зігберт Тарраш, <cite>передмова до книги &laquo;Триста шахових партій&raquo;</cite></footer>
+    </blockquote>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ===== 4. Хід конем ===== -->
+  <section class="chapter" id="knight">
+    <header class="chapter__head reveal">
+      <span class="chapter__num">04</span>
+      <h2>Хід конем</h2>
+    </header>
+    <div class="split split--rev">
+      <div class="reveal">
+        <p>
+          Чи може кінь обійти <b>всі 64 клітинки</b>, не ставши на жодну
+          двічі? Може&nbsp;&mdash; таку задачу досліджував ще
+          <b>Леонард Ейлер</b> у 1759 році. Простий спосіб знайти маршрут
+          запропонував <i>Г.&nbsp;К.&nbsp;Варнсдорф</i> у 1823 році:
+        </p>
+        <blockquote class="rule">
+          <p>Завжди ходи туди, звідки в коня буде <em>найменше</em> подальших ходів.</p>
+        </blockquote>
+        <p>
+          Дошка поруч щоразу шукає маршрут за цим правилом з нової, випадкової
+          клітинки. Лічильник показує номер ходу:
+          <var>k</var>&nbsp;=&nbsp;<output id="tourStep">1</output>&nbsp;/&nbsp;64.
+        </p>
+        <p><small>Порада: натисніть на будь-яку клітинку дошки, щоб почати обхід саме з неї.</small></p>
+      </div>
+      <div class="tour reveal">
+        <canvas id="tour" width="560" height="560" aria-label="Анімація обходу дошки конем"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ===== 5. Чемпіони ===== -->
+  <section class="chapter" id="champions">
+    <header class="chapter__head reveal">
+      <span class="chapter__num">05</span>
+      <h2>Чемпіони, що змінили гру</h2>
+    </header>
+
+    <ol class="champs">
+      <li class="champ reveal"><span class="champ__year">1886</span><h3>Вільгельм Стейніц</h3><p>Перший офіційний чемпіон світу, автор ідеї <i>позиційної гри</i>: накопичувати дрібні переваги, а не кидатися в атаку.</p></li>
+      <li class="champ reveal"><span class="champ__year">1894</span><h3>Емануїл Ласкер</h3><p>Утримував титул <b>27 років</b>&nbsp;&mdash; рекорд, який досі ніхто не побив.</p></li>
+      <li class="champ reveal"><span class="champ__year">1921</span><h3>Хосе Рауль Капабланка</h3><p>Кубинець, якого називали &laquo;шаховою машиною&raquo; за бездоганну техніку в ендшпілі.</p></li>
+      <li class="champ reveal"><span class="champ__year">1972</span><h3>Роберт Фішер</h3><p>Виграв у Рейк&rsquo;явіку &laquo;матч століття&raquo; і зробив шахи новинами першої шпальти.</p></li>
+      <li class="champ reveal"><span class="champ__year">1985</span><h3>Гаррі Каспаров</h3><p>У 22 роки став наймолодшим чемпіоном світу на той час і понад двадцять років очолював світовий рейтинг.</p></li>
+      <li class="champ reveal"><span class="champ__year">2013</span><h3>Магнус Карлсен</h3><p>Норвежець з найвищим рейтингом в історії&nbsp;&mdash; <b>2882</b> пункти у 2014 році.</p></li>
+      <li class="champ reveal"><span class="champ__year">2024</span><h3>Гукеш Доммараджу</h3><p>Індієць, що у <b>18 років</b> став наймолодшим чемпіоном світу в історії.</p></li>
+    </ol>
+
+    <article class="ua reveal">
+      <h3>Українська школа</h3>
+      <p>
+        <b>Руслан Пономарьов</b> у 2002 році став чемпіоном світу
+        <abbr title="Міжнародна шахова федерація">ФІДЕ</abbr> у 18 років.
+        <b>Марія Музичук</b> здобула титул чемпіонки світу у 2015 році, а
+        її сестра <b>Ганна Музичук</b> &mdash; чемпіонка світу зі швидких шахів
+        і бліцу. Чоловіча збірна України двічі вигравала Всесвітню шахову
+        олімпіаду: у <mark>2004</mark> і <mark>2010</mark> роках, жіноча&nbsp;&mdash;
+        у 2006 і 2022 роках.
+      </p>
+    </article>
+
+    <blockquote class="quote reveal">
+      <p>Щоб покращити свою гру, насамперед вивчайте ендшпіль.</p>
+      <footer>&mdash; <cite>Хосе Рауль Капабланка</cite>, третій чемпіон світу</footer>
+    </blockquote>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="foot__glyphs" aria-hidden="true">&#9812; &#9813; &#9814; &#9815; &#9816; &#9817;</p>
+  <p>
+    &laquo;Гра королів&raquo;&nbsp;&mdash; навчальна сторінка з лабораторної роботи&nbsp;№&nbsp;4.<br>
+    Автор: Вадим Адамович, 2026.
+  </p>
+  <p><small>Сторінка створена засобами HTML і CSS, анімація&nbsp;&mdash; на JavaScript.</small></p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

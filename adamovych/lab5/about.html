@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Про нас — піцерія «Скибка»</title>
+<meta name="description" content="Історія піцерії «Скибка», команда та відгуки гостей.">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#e2412b">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця 2 x 5:
+       1) шапка (colspan="2")      2) меню (colspan="2")
+       3) банер сторінки (colspan="2")
+       4) основний вміст | бічна панель
+       5) підвал (colspan="2")
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="2">
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__logo"><a href="index.html"><svg class="pizza pizza--logo" data-kind="pepperoni" data-seed="3" viewBox="0 0 200 200" aria-hidden="true"></svg><span>Скибка<small>піцерія</small></span></a></td>
+          <td class="head__slogan">Тісто на заквасці, піч на 400&nbsp;&deg;C<br><b>щодня з 10:00 до 22:00</b></td>
+          <td class="head__cart" align="right"><a class="cart-btn" href="delivery.html#order" aria-label="Кошик"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.6" fill="currentColor"/><circle cx="17" cy="20" r="1.6" fill="currentColor"/></svg><span class="cart-btn__sum" data-cart-sum>0&nbsp;грн</span><span class="cart-btn__count" data-cart-count>0</span></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" colspan="2">
+      <table class="nav" cellspacing="0" cellpadding="0" role="presentation">
+        <tr><td><a class="nav__link" href="index.html">Головна</a></td><td><a class="nav__link" href="menu.html">Меню</a></td><td><a class="nav__link" href="delivery.html">Доставка</a></td><td><a class="nav__link is-active" href="about.html" aria-current="page">Про нас</a></td><td><a class="nav__link" href="author.html">Автор</a></td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__hero" colspan="2">
+      <table class="banner" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="banner__text" valign="middle">
+            <p class="banner__kicker">Про нас</p>
+            <h1>Маленька піцерія <em>з&nbsp;великою піччю</em></h1>
+            <p class="banner__lead">Ми почали з однієї печі й трьох рецептів. Сьогодні в меню вісім піц, а тісто так само місимо вручну.</p>
+          </td>
+          <td class="banner__art" valign="middle" width="40%"><div class="stats-art"><p><b data-to="7">0</b><span>років разом</span></p><p><b data-to="120">0</b><span>піц на день</span></p><p><b data-to="8">0</b><span>рецептів</span></p></div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <h2>Наша історія</h2>
+        <table class="story" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+          <tr><td class="story__year" valign="top" width="120">2019</td><td class="story__text">Відкриваємо кухню на 20 квадратних метрів і першу піч. У меню&nbsp;&mdash; Маргарита, Пепероні та Чотири сири.</td></tr>
+          <tr><td class="story__year" valign="top">2021</td><td class="story__text">Запускаємо власну доставку і переходимо на тісто на заквасці з 48-годинним бродінням.</td></tr>
+          <tr><td class="story__year" valign="top">2023</td><td class="story__text">З&rsquo;являються авторські піци, серед яких наша гордість&nbsp;&mdash; Карпатська з бринзою.</td></tr>
+          <tr><td class="story__year" valign="top">2026</td><td class="story__text">Новий зал на 40 місць і відкрита кухня, де видно, як народжується піца.</td></tr>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Команда</h2>
+        <table class="team" width="100%" cellspacing="14" cellpadding="0" role="presentation">
+          <tr>
+            <td class="person" align="center" valign="top" width="25%"><span class="avatar" style="--h:12">ОМ</span><h3>Олена</h3><p>шеф-піцайоло</p></td>
+            <td class="person" align="center" valign="top" width="25%"><span class="avatar" style="--h:140">АК</span><h3>Андрій</h3><p>майстер печі</p></td>
+            <td class="person" align="center" valign="top" width="25%"><span class="avatar" style="--h:40">ІС</span><h3>Ірина</h3><p>адміністраторка</p></td>
+            <td class="person" align="center" valign="top" width="25%"><span class="avatar" style="--h:200">ДП</span><h3>Денис</h3><p>кур&rsquo;єр</p></td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Відгуки гостей</h2>
+        <div class="reviews" data-reviews>
+          <table class="review is-active" width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td class="review__stars" width="130">&#9733;&#9733;&#9733;&#9733;&#9733;</td><td><p>&laquo;Найкраща Пепероні в місті, а борт&nbsp;&mdash; як хмаринка!&raquo;</p><p class="review__who">Марта, постійна гостя</p></td></tr></table>
+          <table class="review" width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td class="review__stars" width="130">&#9733;&#9733;&#9733;&#9733;&#9733;</td><td><p>&laquo;Замовляли на день народження п&rsquo;ять піц&nbsp;&mdash; привезли гарячими за 35 хвилин.&raquo;</p><p class="review__who">Богдан</p></td></tr></table>
+          <table class="review" width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td class="review__stars" width="130">&#9733;&#9733;&#9733;&#9733;&#9734;</td><td><p>&laquo;Карпатська з бринзою&nbsp;&mdash; несподівано і дуже смачно. Хочеться ще гострішої версії.&raquo;</p><p class="review__who">Софія</p></td></tr></table>
+          <p class="reviews__nav"><button type="button" data-prev aria-label="Попередній відгук">&larr;</button> <button type="button" data-next aria-label="Наступний відгук">&rarr;</button></p>
+        </div>
+      </section>
+    </td>
+    <td class="layout__side" valign="top" width="330">
+<div class="side-card side-card--day reveal">
+        <p class="side-card__label">Піца дня</p>
+        <svg class="pizza pizza--spin" data-kind="karpatska" data-seed="21" viewBox="0 0 200 200" aria-hidden="true"></svg>
+        <h3>Карпатська</h3>
+        <p>Бринза, печериці, копчена ковбаса, цибуля.</p>
+        <p class="price"><s>265 грн</s> <b>215 грн</b></p>
+        <p class="countdown">До кінця акції: <time data-countdown>00:00:00</time></p>
+      </div>
+      <div class="side-card side-card--quote reveal">
+        <p class="handwrite">&laquo;Хороша піца&nbsp;&mdash; це простий рецепт і багато терпіння&raquo;</p>
+        <p class="side-card__sign">&mdash; Олена, шеф</p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="2">
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="foot__brand" valign="top"><p class="foot__logo">Скибка</p><p>Умовна піцерія, вигадана для навчального сайту. Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="top"><p class="foot__h">Розділи</p><p><a href="index.html">Головна</a><br><a href="menu.html">Меню</a><br><a href="delivery.html">Доставка</a><br><a href="about.html">Про нас</a><br><a href="author.html">Автор</a></p></td>
+          <td valign="top"><p class="foot__h">Години роботи</p><p>Пн&ndash;Чт: 10:00&ndash;22:00<br>Пт&ndash;Сб: 10:00&ndash;23:00<br>Нд: 11:00&ndash;22:00</p></td>
+          <td valign="top"><p class="foot__h">Автор сайту</p><p><a href="author.html">Вадим Адамович</a></p><p class="foot__up"><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<script src="js/main.js"></script>
+</body>
+</html>

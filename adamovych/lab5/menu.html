@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Меню — піцерія «Скибка»</title>
+<meta name="description" content="Меню піцерії «Скибка»: класичні й авторські піци, напої, ціни для 30 і 40 см.">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#e2412b">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця 2 x 5:
+       1) шапка (colspan="2")      2) меню (colspan="2")
+       3) банер сторінки (colspan="2")
+       4) основний вміст | бічна панель
+       5) підвал (colspan="2")
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="2">
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__logo"><a href="index.html"><svg class="pizza pizza--logo" data-kind="pepperoni" data-seed="3" viewBox="0 0 200 200" aria-hidden="true"></svg><span>Скибка<small>піцерія</small></span></a></td>
+          <td class="head__slogan">Тісто на заквасці, піч на 400&nbsp;&deg;C<br><b>щодня з 10:00 до 22:00</b></td>
+          <td class="head__cart" align="right"><a class="cart-btn" href="delivery.html#order" aria-label="Кошик"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.6" fill="currentColor"/><circle cx="17" cy="20" r="1.6" fill="currentColor"/></svg><span class="cart-btn__sum" data-cart-sum>0&nbsp;грн</span><span class="cart-btn__count" data-cart-count>0</span></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" colspan="2">
+      <table class="nav" cellspacing="0" cellpadding="0" role="presentation">
+        <tr><td><a class="nav__link" href="index.html">Головна</a></td><td><a class="nav__link is-active" href="menu.html" aria-current="page">Меню</a></td><td><a class="nav__link" href="delivery.html">Доставка</a></td><td><a class="nav__link" href="about.html">Про нас</a></td><td><a class="nav__link" href="author.html">Автор</a></td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__hero" colspan="2">
+      <table class="banner" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="banner__text" valign="middle">
+            <p class="banner__kicker">Меню</p>
+            <h1>Обирайте <em>свою</em> скибку</h1>
+            <p class="banner__lead">Перемикайте розмір, фільтруйте категорії і додавайте піцу в кошик. Ціни вказано в гривнях.</p>
+          </td>
+          <td class="banner__art" valign="middle" width="40%"><div class="banner__pizzas"><svg class="pizza pizza--float" data-kind="veggie" data-seed="4" viewBox="0 0 200 200" aria-hidden="true"></svg><svg class="pizza pizza--float" data-kind="cheese" data-seed="6" viewBox="0 0 200 200" aria-hidden="true"></svg></div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <table class="toolbar" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+          <tr>
+            <td class="filters">
+              <button type="button" class="chip is-on" data-filter="all">Усі</button>
+              <button type="button" class="chip" data-filter="classic">Класичні</button>
+              <button type="button" class="chip" data-filter="author">Авторські</button>
+              <button type="button" class="chip" data-filter="drinks">Напої</button>
+            </td>
+            <td class="size" align="right">
+              <span class="size__label">Розмір:</span>
+              <button type="button" class="size__btn is-on" data-size="30">30 см</button><button type="button" class="size__btn" data-size="40">40 см</button>
+            </td>
+          </tr>
+        </table>
+
+        <table class="menu" width="100%" cellspacing="0" cellpadding="10">
+          <caption>Меню піцерії &laquo;Скибка&raquo;</caption>
+          <thead>
+            <tr><th scope="col" width="40">Категорія</th><th scope="col" colspan="2">Страва та склад</th><th scope="col">Вага / об&rsquo;єм</th><th scope="col">Ціна</th><th scope="col"><span class="sr">Додати</span></th></tr>
+          </thead>
+          <tbody data-cat="classic">
+            <tr>
+              <th class="menu__cat" rowspan="4" scope="rowgroup"><span>Класичні</span></th><td class="menu__img" width="96"><svg class="pizza" data-kind="margherita" data-seed="63" viewBox="0 0 200 200" aria-hidden="true"></svg></td>
+              <td class="menu__name"><b>Маргарита</b><br><small>томатний соус, моцарела, свіжий базилік, оливкова олія</small></td>
+              <td class="menu__w" align="center">450&nbsp;г</td>
+              <td class="menu__price" align="right" data-p30="185" data-p40="255"><span>185</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Маргарита" aria-label="Додати Маргарита в кошик">+</button></td>
+            </tr>
+            <tr>
+              <td class="menu__img" width="96"><svg class="pizza" data-kind="pepperoni" data-seed="57" viewBox="0 0 200 200" aria-hidden="true"></svg></td>
+              <td class="menu__name"><b>Пепероні</b><br><small>томатний соус, моцарела, гостра ковбаса пепероні</small></td>
+              <td class="menu__w" align="center">520&nbsp;г</td>
+              <td class="menu__price" align="right" data-p30="215" data-p40="295"><span>215</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Пепероні" aria-label="Додати Пепероні в кошик">+</button></td>
+            </tr>
+            <tr>
+              <td class="menu__img" width="96"><svg class="pizza" data-kind="cheese" data-seed="79" viewBox="0 0 200 200" aria-hidden="true"></svg></td>
+              <td class="menu__name"><b>Чотири сири</b><br><small>вершковий соус, моцарела, пармезан, горгонзола, гауда</small></td>
+              <td class="menu__w" align="center">500&nbsp;г</td>
+              <td class="menu__price" align="right" data-p30="245" data-p40="335"><span>245</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Чотири сири" aria-label="Додати Чотири сири в кошик">+</button></td>
+            </tr>
+            <tr>
+              <td class="menu__img" width="96"><svg class="pizza" data-kind="hawaii" data-seed="66" viewBox="0 0 200 200" aria-hidden="true"></svg></td>
+              <td class="menu__name"><b>Гавайська</b><br><small>томатний соус, моцарела, шинка, ананас</small></td>
+              <td class="menu__w" align="center">540&nbsp;г</td>
+              <td class="menu__price" align="right" data-p30="225" data-p40="305"><span>225</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Гавайська" aria-label="Додати Гавайська в кошик">+</button></td>
+            </tr>
+          </tbody>
+          <tbody data-cat="author">
+            <tr>
+              <th class="menu__cat" rowspan="4" scope="rowgroup"><span>Авторські</span></th><td class="menu__img" width="96"><svg class="pizza" data-kind="skybka" data-seed="56" viewBox="0 0 200 200" aria-hidden="true"></svg></td>
+              <td class="menu__name"><b>«Скибка»</b><br><small>вершковий соус, моцарела, бекон, печериці, червона цибуля</small></td>
+              <td class="menu__w" align="center">560&nbsp;г</td>
+              <td class="menu__price" align="right" data-p30="255" data-p40="345"><span>255</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="«Скибка»" aria-label="Додати «Скибка» в кошик">+</button></td>
+            </tr>
+            <tr>
+              <td class="menu__img" width="96"><svg class="pizza" data-kind="karpatska" data-seed="71" viewBox="0 0 200 200" aria-hidden="true"></svg></td>
+              <td class="menu__name"><b>Карпатська</b><br><small>томатний соус, бринза, печериці, копчена ковбаса, цибуля</small></td>
+              <td class="menu__w" align="center">580&nbsp;г</td>
+              <td class="menu__price" align="right" data-p30="265" data-p40="355"><span>265</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Карпатська" aria-label="Додати Карпатська в кошик">+</button></td>
+            </tr>
+            <tr>
+              <td class="menu__img" width="96"><svg class="pizza" data-kind="veggie" data-seed="51" viewBox="0 0 200 200" aria-hidden="true"></svg></td>
+              <td class="menu__name"><b>Городня</b><br><small>томатний соус, моцарела, перець, томати, маслини, кукурудза</small></td>
+              <td class="menu__w" align="center">520&nbsp;г</td>
+              <td class="menu__price" align="right" data-p30="205" data-p40="285"><span>205</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Городня" aria-label="Додати Городня в кошик">+</button></td>
+            </tr>
+            <tr>
+              <td class="menu__img" width="96"><svg class="pizza" data-kind="bbq" data-seed="52" viewBox="0 0 200 200" aria-hidden="true"></svg></td>
+              <td class="menu__name"><b>Барбекю</b><br><small>соус барбекю, моцарела, курка, бекон, цибуля</small></td>
+              <td class="menu__w" align="center">570&nbsp;г</td>
+              <td class="menu__price" align="right" data-p30="265" data-p40="359"><span>265</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Барбекю" aria-label="Додати Барбекю в кошик">+</button></td>
+            </tr>
+          </tbody>
+          <tbody data-cat="drinks">
+            <tr>
+              <th class="menu__cat" rowspan="3" scope="rowgroup"><span>Напої</span></th><td class="menu__img menu__img--drink" width="96"><span class="drink" aria-hidden="true"></span></td>
+              <td class="menu__name"><b>Лимонад домашній</b><br><small>м&rsquo;ята, лайм, імбир</small></td>
+              <td class="menu__w" align="center">0,5 л</td>
+              <td class="menu__price" align="right" data-p30="65" data-p40="65"><span>65</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Лимонад домашній" aria-label="Додати Лимонад домашній в кошик">+</button></td>
+            </tr>
+            <tr>
+              <td class="menu__img menu__img--drink" width="96"><span class="drink" aria-hidden="true"></span></td>
+              <td class="menu__name"><b>Узвар</b><br><small>яблука, груші, сливи</small></td>
+              <td class="menu__w" align="center">0,5 л</td>
+              <td class="menu__price" align="right" data-p30="45" data-p40="45"><span>45</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Узвар" aria-label="Додати Узвар в кошик">+</button></td>
+            </tr>
+            <tr>
+              <td class="menu__img menu__img--drink" width="96"><span class="drink" aria-hidden="true"></span></td>
+              <td class="menu__name"><b>Американо</b><br><small>арабіка 100%</small></td>
+              <td class="menu__w" align="center">0,25 л</td>
+              <td class="menu__price" align="right" data-p30="50" data-p40="50"><span>50</span>&nbsp;грн</td>
+              <td class="menu__add" align="center"><button class="add" type="button" data-name="Американо" aria-label="Додати Американо в кошик">+</button></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="6">Вага вказана для піци 30&nbsp;см. Піца 40&nbsp;см важить приблизно в 1,7 раза більше.</td></tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Додатки до піци</h2>
+        <table class="extras" width="100%" cellspacing="10" cellpadding="12">
+          <tr>
+            <td><b>Сирний борт</b><br><small>+45 грн</small></td>
+            <td><b>Подвійна моцарела</b><br><small>+40 грн</small></td>
+            <td><b>Халапеньо</b><br><small>+25 грн</small></td>
+            <td><b>Соус часниковий</b><br><small>+20 грн</small></td>
+          </tr>
+        </table>
+      </section>
+    </td>
+    <td class="layout__side" valign="top" width="330">
+<div class="side-card side-card--cart reveal" id="cartBox">
+        <p class="side-card__label">Ваше замовлення</p>
+        <table class="cart" width="100%" cellspacing="0" cellpadding="6">
+          <tbody data-cart-rows><tr><td class="cart__empty" colspan="3">Кошик поки порожній</td></tr></tbody>
+          <tfoot><tr><th scope="row" align="left">Разом</th><td align="right" data-cart-sum>0&nbsp;грн</td><td></td></tr></tfoot>
+        </table>
+        <p class="cart__actions"><a class="btn btn--small" href="delivery.html#order">Оформити</a> <button class="link-btn" type="button" data-cart-clear>Очистити</button></p>
+      </div>
+      <div class="side-card side-card--day reveal">
+        <p class="side-card__label">Піца дня</p>
+        <svg class="pizza pizza--spin" data-kind="karpatska" data-seed="21" viewBox="0 0 200 200" aria-hidden="true"></svg>
+        <h3>Карпатська</h3>
+        <p>Бринза, печериці, копчена ковбаса, цибуля.</p>
+        <p class="price"><s>265 грн</s> <b>215 грн</b></p>
+        <p class="countdown">До кінця акції: <time data-countdown>00:00:00</time></p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="2">
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="foot__brand" valign="top"><p class="foot__logo">Скибка</p><p>Умовна піцерія, вигадана для навчального сайту. Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="top"><p class="foot__h">Розділи</p><p><a href="index.html">Головна</a><br><a href="menu.html">Меню</a><br><a href="delivery.html">Доставка</a><br><a href="about.html">Про нас</a><br><a href="author.html">Автор</a></p></td>
+          <td valign="top"><p class="foot__h">Години роботи</p><p>Пн&ndash;Чт: 10:00&ndash;22:00<br>Пт&ndash;Сб: 10:00&ndash;23:00<br>Нд: 11:00&ndash;22:00</p></td>
+          <td valign="top"><p class="foot__h">Автор сайту</p><p><a href="author.html">Вадим Адамович</a></p><p class="foot__up"><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<script src="js/main.js"></script>
+</body>
+</html>

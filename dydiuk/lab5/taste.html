@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Смаки Львова — Левове місто</title>
+<meta name="description" content="Кав’ярні, сирник по-львівськи, шоколад і галицькі пляцки.">
+<meta name="author" content="Олександр Дидюк">
+<meta name="theme-color" content="#1f3b34">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('lviv-night')==='1')document.documentElement.classList.add('night');}catch(e){}</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця 2 x 5:
+       1) шапка із силуетом міста (colspan="2")
+       2) меню навігації (colspan="2")
+       3) вступ сторінки (colspan="2")
+       4) бічна панель ЛІВОРУЧ | основний вміст
+       5) підвал (colspan="2")
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="2">
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__brand" valign="top">
+            <a class="brand" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40c0-8 4-12 10-13l-4-9c-1-3 1-6 4-6 2 0 3 1 4 3 1-4 4-6 8-5 3 1 4 5 2 8l-5 6c4 2 7 7 7 16z" fill="currentColor"/></svg><span>Левове місто<small>путівник Львовом</small></span></a>
+          </td>
+          <td class="head__tools" align="right" valign="top">
+            <button class="daynight" type="button" id="dayNight" aria-pressed="false"><span class="daynight__icon" aria-hidden="true"></span><span class="daynight__txt">Ніч</span></button>
+          </td>
+        </tr>
+      </table>
+      <svg class="skyline" id="skyline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Силует старого Львова з вежею Ратуші"></svg>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" colspan="2">
+      <table class="nav" cellspacing="0" cellpadding="0" role="presentation"><tr><td><a class="nav__link" href="index.html">Головна</a></td><td><a class="nav__link" href="history.html">Історія</a></td><td><a class="nav__link" href="sights.html">Пам&rsquo;ятки</a></td><td><a class="nav__link is-active" href="taste.html" aria-current="page">Смаки Львова</a></td><td><a class="nav__link" href="author.html">Автор</a></td></tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__intro" colspan="2">
+      <table class="intro" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="intro__k" valign="top" width="300"><p class="kicker">Смаки</p></td>
+          <td valign="top"><h1>Місто, що <em>пахне кавою</em></h1><p class="lead">Львівська кухня поєднує галицькі, польські, австрійські, єврейські та вірменські традиції.</p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__side" valign="top" width="300">
+<div class="panel panel--note reveal">
+        <p class="panel__title">Цікаво</p>
+        <p>Львівська пивоварня працює з 1715 року&nbsp;&mdash; це одна з найстаріших броварень в Україні. Поруч із нею відкрито музей пивоваріння.</p>
+      </div>
+      <div class="panel reveal">
+        <p class="panel__title">Львів у цифрах</p>
+        <table class="facts" width="100%" cellspacing="0" cellpadding="8">
+          <tr><th scope="row">Перша згадка</th><td><span data-to="1256">1256</span></td></tr>
+          <tr><th scope="row">Магдебурзьке право</th><td><span data-to="1356">1356</span></td></tr>
+          <tr><th scope="row">Вежа Ратуші</th><td><span data-to="65">65</span>&nbsp;м</td></tr>
+          <tr><th scope="row">Замкова гора</th><td><span data-to="413">413</span>&nbsp;м</td></tr>
+          <tr><th scope="row">У списку ЮНЕСКО</th><td>з <span data-to="1998">1998</span></td></tr>
+        </table>
+      </div>
+    </td>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <h2>Що скуштувати</h2>
+        <table class="taste" width="100%" cellspacing="0" cellpadding="12">
+          <caption>Таблиця 4. Гастрономічна карта</caption>
+          <thead><tr><th scope="col">Страва чи напій</th><th scope="col">Що це</th><th scope="col">Порада</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Кава</th><td>Місто славиться кав&rsquo;ярнями. За легендою, уродженець Галичини Юрій Кульчицький у 1680-х відкрив одну з перших кав&rsquo;ярень у Відні.</td><td rowspan="2" valign="middle" class="taste__tip">найкраще разом, у старій кав&rsquo;ярні на бічній вуличці</td></tr>
+            <tr><th scope="row">Сирник по-львівськи</th><td>Ніжна запіканка з сиру, часто з родзинками й шоколадною глазур&rsquo;ю.</td></tr>
+            <tr><th scope="row">Шоколад</th><td>Цукерки й гарячий шоколад ручної роботи.</td><td>спробуйте з перцем чилі</td></tr>
+            <tr><th scope="row">Пляцки</th><td>Галицькі пироги-торти: &laquo;Захер&raquo;, маковий, &laquo;Пані Валевська&raquo;.</td><td>беріть шматочок до кави</td></tr>
+            <tr><th scope="row">Банош</th><td>Кукурудзяна каша на сметані, що прийшла з Карпат.</td><td>смакує з бринзою, грибами і шкварками</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Який ви львівський десерт?</h2>
+        <table class="quiz" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+          <tr>
+            <td class="quiz__q" valign="top" id="quiz">
+              <p class="quiz__step" id="qStep">Питання 1 з 3</p>
+              <p class="quiz__text" id="qText"></p>
+              <p class="quiz__opts" id="qOpts"></p>
+            </td>
+            <td class="quiz__res" valign="middle" width="40%" id="qRes"><svg class="cup" viewBox="0 0 120 120" aria-hidden="true"><path class="steam" d="M45 30c-6-8 6-12 0-20M60 30c-6-8 6-12 0-20M75 30c-6-8 6-12 0-20"/><path d="M25 40h70v28c0 18-14 32-32 32h-6c-18 0-32-14-32-32z" class="cup__body"/><path d="M95 50h6c8 0 8 18 0 18h-8" class="cup__handle"/><ellipse cx="60" cy="108" rx="44" ry="6" class="cup__plate"/></svg><p id="qResult">Дайте відповіді&nbsp;&mdash; і дізнаєтеся.</p></td>
+          </tr>
+        </table>
+      </section>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="2">
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td valign="top"><p class="foot__title">Левове місто</p><p>Навчальний сайт-путівник. Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="top" align="center"><p class="foot__clock">Ратуша показує <b data-clock>--:--</b></p></td>
+          <td valign="top" align="right"><p>Автор: <a href="author.html">Олександр Дидюк</a></p><p><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<script src="js/main.js"></script>
+</body>
+</html>

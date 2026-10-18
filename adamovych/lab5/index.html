@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Головна — піцерія «Скибка»</title>
+<meta name="description" content="Умовна піцерія «Скибка»: піца на заквасці з дров’яної печі та доставка.">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#e2412b">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця 2 x 5:
+       1) шапка (colspan="2")      2) меню (colspan="2")
+       3) банер сторінки (colspan="2")
+       4) основний вміст | бічна панель
+       5) підвал (colspan="2")
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="2">
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__logo"><a href="index.html"><svg class="pizza pizza--logo" data-kind="pepperoni" data-seed="3" viewBox="0 0 200 200" aria-hidden="true"></svg><span>Скибка<small>піцерія</small></span></a></td>
+          <td class="head__slogan">Тісто на заквасці, піч на 400&nbsp;&deg;C<br><b>щодня з 10:00 до 22:00</b></td>
+          <td class="head__cart" align="right"><a class="cart-btn" href="delivery.html#order" aria-label="Кошик"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.6" fill="currentColor"/><circle cx="17" cy="20" r="1.6" fill="currentColor"/></svg><span class="cart-btn__sum" data-cart-sum>0&nbsp;грн</span><span class="cart-btn__count" data-cart-count>0</span></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" colspan="2">
+      <table class="nav" cellspacing="0" cellpadding="0" role="presentation">
+        <tr><td><a class="nav__link is-active" href="index.html" aria-current="page">Головна</a></td><td><a class="nav__link" href="menu.html">Меню</a></td><td><a class="nav__link" href="delivery.html">Доставка</a></td><td><a class="nav__link" href="about.html">Про нас</a></td><td><a class="nav__link" href="author.html">Автор</a></td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__hero" colspan="2">
+      <table class="banner" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="banner__text" valign="middle">
+            <p class="banner__kicker">Кам&rsquo;янець-Подільський &middot; з 2019 року</p>
+            <h1>Піца, яку <em>хочеться ділити</em></h1>
+            <p class="banner__lead">Тісто визріває 48 годин, сир тягнеться, а скоринка хрумтить. Печемо при 400&nbsp;&deg;C рівно 90 секунд і привозимо гарячою.</p>
+            <p class="banner__cta"><a class="btn" href="menu.html">Обрати піцу</a> <a class="btn btn--ghost" href="delivery.html">Умови доставки</a></p>
+          </td>
+          <td class="banner__art" valign="middle" width="40%"><div class="hero-pizza"><svg class="pizza pizza--hero" data-kind="pepperoni" data-seed="9" viewBox="0 0 200 200" role="img" aria-label="Піца пепероні"></svg><span class="hero-pizza__tag">90 секунд у печі</span></div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <h2>Чому &laquo;Скибка&raquo;</h2>
+        <table class="features" width="100%" cellspacing="16" cellpadding="0" role="presentation">
+          <tr>
+            <td class="feature" valign="top" width="33%">
+              <span class="feature__icon" aria-hidden="true">48</span>
+              <h3>годин бродіння</h3>
+              <p>Тісто на власній заквасці довго визріває в холоді, тому воно легке й не важкує після вечері.</p>
+            </td>
+            <td class="feature" valign="top" width="33%">
+              <span class="feature__icon" aria-hidden="true">400&deg;</span>
+              <h3>у дров&rsquo;яній печі</h3>
+              <p>Висока температура запікає піцу за півтори хвилини: борт стає пухким, а начинка лишається соковитою.</p>
+            </td>
+            <td class="feature" valign="top" width="33%">
+              <span class="feature__icon" aria-hidden="true">40&prime;</span>
+              <h3>хвилин на доставку</h3>
+              <p>Термосумки тримають тепло, а кур&rsquo;єр везе піцу рівно&nbsp;&mdash; без перекошеної начинки.</p>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Найпопулярніші</h2>
+        <table class="popular" width="100%" cellspacing="0" cellpadding="0">
+          <caption>Топ-3 за минулий місяць</caption>
+          <tr>
+            <td class="pop" align="center" valign="top">
+              <svg class="pizza pizza--tilt" data-kind="pepperoni" data-seed="14" viewBox="0 0 200 200" aria-hidden="true"></svg>
+              <h3>Пепероні</h3><p class="pop__price">від 215 грн</p>
+              <p><button class="add btn btn--small" type="button" data-name="Пепероні" data-price="215">У кошик</button></p>
+            </td>
+            <td class="pop" align="center" valign="top">
+              <svg class="pizza pizza--tilt" data-kind="skybka" data-seed="5" viewBox="0 0 200 200" aria-hidden="true"></svg>
+              <h3>&laquo;Скибка&raquo;</h3><p class="pop__price">від 255 грн</p>
+              <p><button class="add btn btn--small" type="button" data-name="«Скибка»" data-price="255">У кошик</button></p>
+            </td>
+            <td class="pop" align="center" valign="top">
+              <svg class="pizza pizza--tilt" data-kind="margherita" data-seed="8" viewBox="0 0 200 200" aria-hidden="true"></svg>
+              <h3>Маргарита</h3><p class="pop__price">від 185 грн</p>
+              <p><button class="add btn btn--small" type="button" data-name="Маргарита" data-price="185">У кошик</button></p>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Як ми готуємо</h2>
+        <table class="steps" width="100%" cellspacing="0" cellpadding="14">
+          <caption>Від борошна до коробки</caption>
+          <thead><tr><th scope="col">Етап</th><th scope="col">Що відбувається</th><th scope="col">Час</th></tr></thead>
+          <tbody>
+            <tr><td class="steps__n">1</td><td><b>Замішування.</b> Італійське борошно &laquo;00&raquo;, вода, сіль і закваска.</td><td class="steps__t">15 хв</td></tr>
+            <tr><td class="steps__n">2</td><td><b>Бродіння.</b> Тісто відпочиває в холодильній камері при +4&nbsp;&deg;C.</td><td class="steps__t">48 год</td></tr>
+            <tr><td class="steps__n">3</td><td><b>Формування.</b> Коржі розтягують руками, без качалки, щоб зберегти повітря в борті.</td><td class="steps__t">1 хв</td></tr>
+            <tr><td class="steps__n">4</td><td><b>Випікання.</b> Піца потрапляє в піч на камінь, розігрітий до 400&nbsp;&deg;C.</td><td class="steps__t">90 с</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="3">Разом від замовлення до виходу з кухні&nbsp;&mdash; близько 12 хвилин.</td></tr></tfoot>
+        </table>
+      </section>
+    </td>
+    <td class="layout__side" valign="top" width="330">
+<div class="side-card side-card--day reveal">
+        <p class="side-card__label">Піца дня</p>
+        <svg class="pizza pizza--spin" data-kind="karpatska" data-seed="21" viewBox="0 0 200 200" aria-hidden="true"></svg>
+        <h3>Карпатська</h3>
+        <p>Бринза, печериці, копчена ковбаса, цибуля.</p>
+        <p class="price"><s>265 грн</s> <b>215 грн</b></p>
+        <p class="countdown">До кінця акції: <time data-countdown>00:00:00</time></p>
+      </div>
+      <div class="side-card reveal">
+        <table class="hours" width="100%" cellspacing="0" cellpadding="8">
+        <caption>Графік роботи</caption>
+        <tr><th scope="row">Понеділок</th><td rowspan="4" class="hours__time" valign="middle">10:00&ndash;22:00</td></tr>
+        <tr><th scope="row">Вівторок</th></tr>
+        <tr><th scope="row">Середа</th></tr>
+        <tr><th scope="row">Четвер</th></tr>
+        <tr><th scope="row">П&rsquo;ятниця</th><td rowspan="2" class="hours__time hours__time--late" valign="middle">10:00&ndash;23:00</td></tr>
+        <tr><th scope="row">Субота</th></tr>
+        <tr><th scope="row">Неділя</th><td class="hours__time" valign="middle">11:00&ndash;22:00</td></tr>
+      </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="2">
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="foot__brand" valign="top"><p class="foot__logo">Скибка</p><p>Умовна піцерія, вигадана для навчального сайту. Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="top"><p class="foot__h">Розділи</p><p><a href="index.html">Головна</a><br><a href="menu.html">Меню</a><br><a href="delivery.html">Доставка</a><br><a href="about.html">Про нас</a><br><a href="author.html">Автор</a></p></td>
+          <td valign="top"><p class="foot__h">Години роботи</p><p>Пн&ndash;Чт: 10:00&ndash;22:00<br>Пт&ndash;Сб: 10:00&ndash;23:00<br>Нд: 11:00&ndash;22:00</p></td>
+          <td valign="top"><p class="foot__h">Автор сайту</p><p><a href="author.html">Вадим Адамович</a></p><p class="foot__up"><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<script src="js/main.js"></script>
+</body>
+</html>

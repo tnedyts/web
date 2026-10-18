@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Крила — коротка історія авіації</title>
+<meta name="description" content="Від планерів Лілієнталя і братів Райт до «Мрії» та Concorde: ключові події історії авіації і пояснення, чому літак тримається в повітрі.">
+<meta name="keywords" content="історія авіації, брати Райт, Сікорський, Антонов, Мрія, Concorde, підйомна сила">
+<meta name="author" content="Максим Вознюк">
+<meta name="theme-color" content="#0a2540">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 4. Розробка простої вебсторінки.
+     Тема: історія авіації. Сторінка оформлена як технічне
+     креслення (blueprint). Використано теги форматування:
+     h1–h5, p, br, hr, b, strong, i, em, u, s, mark, small, sup,
+     sub, abbr, cite, blockquote, code, samp, kbd, var, pre.
+     ============================================================ -->
+
+<header class="head">
+  <a class="head__logo" href="#top">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 22l14-3 8-13h4l-4 13 10 2v3l-10 2 4 12h-4l-8-12-14-2z" fill="currentColor"/></svg>
+    <span>КРИЛА</span>
+  </a>
+  <p class="head__meta">Аркуш <span id="sheet">1</span> / 6</p>
+</header>
+
+<main id="top">
+  <!-- ===== Перший екран: креслення Flyer ===== -->
+  <section class="hero" data-sheet="1">
+    <div class="hero__text">
+      <p class="stamp">Креслення № 1903-12-17</p>
+      <h1>Крила</h1>
+      <p class="hero__sub">Коротка історія авіації: <b>120 років</b> від дванадцяти секунд над піщаними дюнами до літаків, що перевозять сотні тонн вантажу.</p>
+      <p class="hero__hint"><small>Натисніть <kbd>Пробіл</kbd>, щоб літачок зробив &laquo;бочку&raquo;.</small></p>
+    </div>
+
+    <svg class="flyer" viewBox="0 0 1000 420" role="img" aria-label="Креслення літака Flyer братів Райт, вигляд спереду">
+      <g class="draw">
+        <rect x="80" y="110" width="840" height="14" rx="7"/>
+        <rect x="80" y="250" width="840" height="14" rx="7"/>
+        <path d="M120 124v126M220 124v126M320 124v126M420 124v126M580 124v126M680 124v126M780 124v126M880 124v126"/>
+        <path d="M120 124L220 250M220 124L120 250M220 124L320 250M320 124L220 250M680 124L780 250M780 124L680 250M780 124L880 250M880 124L780 250" class="thin"/>
+        <ellipse cx="350" cy="187" rx="18" ry="62"/>
+        <ellipse cx="650" cy="187" rx="18" ry="62"/>
+        <path d="M350 125v124M650 125v124" class="thin"/>
+        <path d="M440 264v40h120v-40M470 304v60M530 304v60M420 364h160" />
+        <path d="M480 232h40l10 18h-60z"/>
+        <circle cx="500" cy="220" r="10"/>
+        <path d="M380 60h240M400 60v50M600 60v50" />
+        <rect x="390" y="44" width="220" height="16" rx="8"/>
+      </g>
+      <g class="dims">
+        <path d="M80 330v60M920 330v60M80 380h840" class="dim"/>
+        <path d="M80 380l14-6v12zM920 380l-14-6v12z" class="arrow"/>
+        <text x="500" y="370" text-anchor="middle">розмах крила 12,3 м</text>
+        <path d="M960 110h30M960 264h30M980 110v154" class="dim"/>
+        <text x="975" y="195" text-anchor="middle" transform="rotate(-90 975 195)">1,9 м</text>
+        <text x="20" y="30">FLYER I · ВИГЛЯД СПЕРЕДУ</text>
+      </g>
+    </svg>
+
+    <svg class="sky" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
+      <path id="route" d="M-60 520 C 200 420, 380 560, 600 380 S 1000 120, 1260 160" class="route"/>
+    </svg>
+    <div class="jet" aria-hidden="true">
+      <svg viewBox="0 0 40 40"><path d="M2 20l14-3 8-13h4l-4 13 10 2v2l-10 2 4 13h-4l-8-13-14-3z" fill="#fff"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== 1. Мрія про політ ===== -->
+  <section class="sheet" data-sheet="2" id="dream">
+    <header class="sheet__head reveal">
+      <p class="sheet__no">Аркуш 2</p>
+      <h2>Мрія про політ</h2>
+    </header>
+    <div class="timeline">
+      <article class="event reveal">
+        <p class="event__year">~1490</p>
+        <h3>Леонардо да Вінчі</h3>
+        <p>Італійський митець і винахідник малює <i>орнітоптер</i>&nbsp;&mdash; апарат з крилами, що махають, як у птаха, і гвинт, схожий на майбутній гелікоптер. Збудувати їх у ті часи було неможливо: людині <s>досить сили м&rsquo;язів</s> бракує сили м&rsquo;язів, щоб махати крилами.</p>
+      </article>
+      <article class="event reveal">
+        <p class="event__year">1783</p>
+        <h3>Брати Монгольф&rsquo;є</h3>
+        <p>У Франції піднімається в небо повітряна куля з гарячим повітрям. <b>21&nbsp;листопада 1783&nbsp;року</b> на ній уперше літають люди&nbsp;&mdash; Пілатр де Розьє та маркіз д&rsquo;Арланд.</p>
+      </article>
+      <article class="event reveal">
+        <p class="event__year">1891</p>
+        <h3>Отто Лілієнталь</h3>
+        <p>Німецький інженер здійснює близько двох тисяч польотів на власних <em>планерах</em> і ретельно записує результати. Його таблиці згодом вивчатимуть брати Райт.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 2. Брати Райт ===== -->
+  <section class="sheet" data-sheet="3" id="wright">
+    <header class="sheet__head reveal">
+      <p class="sheet__no">Аркуш 3</p>
+      <h2>17 грудня 1903 року</h2>
+    </header>
+    <div class="split">
+      <div class="reveal">
+        <p>
+          Біля містечка Кітті-Хок у США брати <b>Орвілл і Вілбур Райт</b>
+          піднімають у повітря <strong>перший керований літак з двигуном</strong>.
+          Двигун потужністю близько 12 кінських сил вони сконструювали самі
+          разом з механіком Чарлі Тейлором.
+        </p>
+        <p>
+          Перший політ тривав лише <mark>12 секунд</mark>, а літак пролетів
+          36,5&nbsp;м&nbsp;&mdash; менше, ніж розмах крила
+          лайнера Boeing&nbsp;747. Того ж дня брати злетіли ще тричі.
+        </p>
+        <blockquote class="quote">
+          <p>Літати можна без двигуна, але не без знань і вміння.</p>
+          <footer>&mdash; <cite>Вілбур Райт</cite></footer>
+        </blockquote>
+      </div>
+      <figure class="log reveal">
+        <figcaption>Журнал польотів, 17.12.1903</figcaption>
+<pre>
+ №  ПІЛОТ    ЧАС     ВІДСТАНЬ
+ ─  ───────  ──────  ────────
+ 1  Орвілл   12 с     36,5 м
+ 2  Вілбур   12 с       53 м
+ 3  Орвілл   15 с       61 м
+ 4  Вілбур   59 с      260 м
+</pre>
+        <p class="log__note"><small>Четвертий політ закінчився жорсткою посадкою, а потім порив вітру перекинув і пошкодив апарат. Більше Flyer&nbsp;I не літав.</small></p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 3. Як літає літак ===== -->
+  <section class="sheet" data-sheet="4" id="lift">
+    <header class="sheet__head reveal">
+      <p class="sheet__no">Аркуш 4</p>
+      <h2>Чому літак не падає</h2>
+    </header>
+    <div class="split">
+      <div class="reveal">
+        <p>На літак у польоті діють чотири сили:</p>
+        <ul class="forces">
+          <li><b>підйомна сила</b> &uarr;&nbsp;&mdash; створює крило;</li>
+          <li><b>вага</b> &darr;&nbsp;&mdash; тягне до землі;</li>
+          <li><b>тяга</b> &rarr;&nbsp;&mdash; дає двигун;</li>
+          <li><b>опір</b> &larr;&nbsp;&mdash; повітря гальмує рух.</li>
+        </ul>
+        <p>Підйомну силу обчислюють за формулою:</p>
+        <p class="formula"><var>L</var> = <var>C</var><sub>L</sub> &middot; <var>&rho;</var><var>v</var><sup>2</sup> / 2 &middot; <var>S</var></p>
+        <p>
+          де <var>C</var><sub>L</sub>&nbsp;&mdash; коефіцієнт підйомної сили (залежить від
+          кута атаки), <var>&rho;</var>&nbsp;&mdash; густина повітря (біля землі
+          &asymp;&nbsp;1,225&nbsp;кг/м<sup>3</sup>), <var>v</var>&nbsp;&mdash; швидкість,
+          <var>S</var>&nbsp;&mdash; площа крила. Швидкість стоїть у квадраті:
+          удвічі швидше&nbsp;&mdash; <u>учетверо</u> більша підйомна сила.
+        </p>
+      </div>
+      <div class="sim reveal">
+        <h3 class="sim__title">Симулятор зльоту</h3>
+        <p class="sim__about"><small>Легкий літак: маса 1000&nbsp;кг, площа крила 16,2&nbsp;м<sup>2</sup>.</small></p>
+        <div class="sim__view">
+          <div class="sim__ground"></div>
+          <div class="sim__plane" id="simPlane">
+            <svg viewBox="0 0 120 50" aria-hidden="true"><path d="M8 30h80l20-8c6-2 8 4 2 7l-14 7H18z" fill="#eaf4ff"/><path d="M40 30l14-20h10l-6 20z" fill="#9cc7f5"/><path d="M8 30l-4-16h8l10 16z" fill="#9cc7f5"/><circle cx="96" cy="26" r="2.5" fill="#0a2540"/></svg>
+          </div>
+          <div class="sim__bars">
+            <span class="bar bar--lift" id="barLift"></span>
+            <span class="bar bar--weight"></span>
+          </div>
+        </div>
+        <label class="ctrl">Швидкість <var>v</var>: <b class="out-val" id="vOut">80</b>&nbsp;км/год
+          <input type="range" id="vIn" min="0" max="200" value="80">
+        </label>
+        <label class="ctrl">Кут атаки <var>&alpha;</var>: <b class="out-val" id="aOut">6</b>&deg;
+          <input type="range" id="aIn" min="0" max="20" value="6">
+        </label>
+        <p class="sim__status" id="simStatus">&hellip;</p>
+        <p class="sim__nums"><samp id="simNums"></samp></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Великі імена ===== -->
+  <section class="sheet" data-sheet="5" id="names">
+    <header class="sheet__head reveal">
+      <p class="sheet__no">Аркуш 5</p>
+      <h2>Українські крила</h2>
+    </header>
+    <div class="cards">
+      <article class="card reveal">
+        <h3>Ігор Сікорський</h3>
+        <h4 class="card__sub">1889, Київ &mdash; 1972, США</h4>
+        <p>У 1913 році збудував <b>&laquo;Руський витязь&raquo;</b>&nbsp;&mdash; перший у світі чотиримоторний літак, а згодом бомбардувальник і пасажирський літак <b>&laquo;Ілля Муромець&raquo;</b>. Емігрувавши до США, створив гелікоптер <abbr title="Vought-Sikorsky">VS</abbr>-300, що вперше злетів у <b>1939</b> році.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Олег Антонов</h3>
+        <h4 class="card__sub">1906&ndash;1984 &middot; конструкторське бюро в Києві</h4>
+        <p>Генеральний конструктор київського конструкторського бюро. Під його керівництвом створено &laquo;кукурудзник&raquo; Ан-2, що вперше злетів у 1947 році, транспортні Ан-12, Ан-22 &laquo;Антей&raquo; та Ан-124 &laquo;Руслан&raquo;.</p>
+      </article>
+      <article class="card card--wide reveal">
+        <div>
+          <h3>Ан-225 &laquo;Мрія&raquo;</h3>
+          <h4 class="card__sub">Перший політ: 21 грудня 1988 року</h4>
+          <p>Найбільший і найпідйомніший літак, що будь-коли літав. Шість двигунів Д-18Т, розмах крила понад 88&nbsp;метрів, максимальна злітна маса&nbsp;&mdash; <b>640 тонн</b>. Літак встановив понад 200 світових рекордів. У лютому 2022 року &laquo;Мрію&raquo; знищили російські окупанти в аеропорту Гостомель.</p>
+        </div>
+        <dl class="specs">
+          <div><dt>Розмах крила</dt><dd><span data-to="88.4">0</span> м</dd></div>
+          <div><dt>Довжина</dt><dd><span data-to="84">0</span> м</dd></div>
+          <div><dt>Двигунів</dt><dd><span data-to="6">0</span></dd></div>
+          <div><dt>Злітна маса</dt><dd><span data-to="640">0</span> т</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 5. Реактивна ера ===== -->
+  <section class="sheet" data-sheet="6" id="jet">
+    <header class="sheet__head reveal">
+      <p class="sheet__no">Аркуш 6</p>
+      <h2>Реактивна ера</h2>
+    </header>
+    <div class="timeline timeline--row">
+      <article class="event reveal"><p class="event__year">1939</p><h3>He 178</h3><p>27 серпня в Німеччині вперше злітає літак з турбореактивним двигуном.</p></article>
+      <article class="event reveal"><p class="event__year">1952</p><h3>Comet</h3><p>Британський de Havilland Comet відкриває перші регулярні рейси реактивних пасажирських літаків.</p></article>
+      <article class="event reveal"><p class="event__year">1969</p><h3>Boeing 747</h3><p>Перший широкофюзеляжний лайнер, &laquo;Джамбо&raquo;, бере на борт понад 400 пасажирів.</p></article>
+      <article class="event reveal"><p class="event__year">1969</p><h3>Concorde</h3><p>Надзвуковий лайнер летить зі швидкістю близько 2,04&nbsp;Маха&nbsp;&mdash; понад 2100&nbsp;км/год. Літав до 2003 року.</p></article>
+    </div>
+
+    <aside class="metar reveal">
+      <h3 class="metar__title">Мова авіації</h3>
+      <p>Пілоти отримують погоду аеропорту у вигляді коротких повідомлень <abbr title="METeorological Aerodrome Report">METAR</abbr>. Ось як може виглядати повідомлення для Борисполя (код <code>UKBB</code>):</p>
+      <p class="metar__msg"><samp>UKBB 181030Z 27008KT 9999 FEW030 12/05 Q1018</samp></p>
+      <h4>Як прочитати</h4>
+      <h5>Розшифровка повідомлення</h5>
+      <p><small>Читається так: 18-го числа о 10:30 за всесвітнім часом вітер західний (270&deg;), 8 вузлів, видимість 10&nbsp;км і більше, нечисленні хмари на висоті 3000 футів, температура +12&nbsp;&deg;C, точка роси +5&nbsp;&deg;C, тиск 1018&nbsp;гПа.</small></p>
+    </aside>
+  </section>
+</main>
+
+<hr class="rule">
+
+<footer class="foot">
+  <p class="foot__title">КРИЛА</p>
+  <p>Навчальна вебсторінка з лабораторної роботи №&nbsp;4.<br>Автор: Максим Вознюк, 2026.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

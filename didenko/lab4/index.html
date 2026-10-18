@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мережа мереж — історія Інтернету</title>
+<meta name="description" content="Як з'явився Інтернет: від ARPANET і першої електронної пошти до вебу, пошуковиків і смартфонів. Як працюють пакети, IP-адреси та HTTP.">
+<meta name="keywords" content="історія Інтернету, ARPANET, World Wide Web, Тім Бернерс-Лі, TCP/IP, HTTP, DNS, пакети">
+<meta name="author" content="Ярослав Діденко">
+<meta name="theme-color" content="#f4f1ea">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 4. Розробка простої вебсторінки.
+     Тема: історія Інтернету. Перший екран — жива мережа на canvas,
+     вікна в стилі старих операційних систем можна перетягувати.
+     Теги форматування: h1–h5, p, br, hr, b, strong, i, em, u, s,
+     mark, small, sup, sub, abbr, q, cite, blockquote, code, kbd,
+     var, samp, pre.
+     ============================================================ -->
+
+<header class="menu">
+  <a class="menu__logo" href="#top"><span class="led"></span>мережа_мереж</a>
+  <nav aria-label="Розділи">
+    <a href="#history">Історія</a>
+    <a href="#packets">Пакети</a>
+    <a href="#protocols">Протоколи</a>
+    <a href="#numbers">Цифри</a>
+    <a href="#safe">Безпека</a>
+  </nav>
+  <span class="menu__clock" id="clock">00:00</span>
+</header>
+
+<main id="top">
+  <!-- ===== Перший екран ===== -->
+  <section class="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="hero__copy">
+      <p class="hero__kicker">29.10.1969 &rarr; сьогодні</p>
+      <h1>Мережа<br>мереж</h1>
+      <p class="hero__lead">
+        Інтернет&nbsp;&mdash; це не одна мережа, а <b>мільйони мереж</b>, що
+        домовилися говорити однією мовою. Рухайте мишею: кожен вузол
+        передає <em>пакети</em> сусідам, як справжні маршрутизатори.
+      </p>
+      <a class="btn" href="#history">Почати подорож &darr;</a>
+    </div>
+
+    <div class="win win--a" data-drag>
+      <div class="win__bar"><span>readme.txt</span><i></i></div>
+      <div class="win__body"><p>Перше повідомлення мережею ARPANET мало бути словом <code>LOGIN</code>. Система &laquo;впала&raquo; після двох літер, тож першим словом Інтернету стало <q>LO</q>.</p></div>
+    </div>
+    <div class="win win--b" data-drag>
+      <div class="win__bar"><span>dial-up.exe</span><i></i></div>
+      <div class="win__body">
+        <p class="modem">Підключення&hellip; <span id="baud">0</span>&nbsp;біт/с</p>
+        <p class="progress"><span></span></p>
+        <p><small>Вікна можна перетягувати за заголовок.</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 1. Історія ===== -->
+  <section class="part" id="history">
+    <h2 class="reveal">Історія в дванадцяти вікнах</h2>
+    <div class="history">
+      <article class="card reveal"><div class="card__bar">1969</div><div class="card__body">
+        <h3>ARPANET</h3>
+        <p>Мережу на замовлення Міністерства оборони США з&rsquo;єднує чотири університетські комп&rsquo;ютери. 29&nbsp;жовтня з <abbr title="Каліфорнійський університет у Лос-Анджелесі">UCLA</abbr> до Стенфордського дослідницького інституту надіслано перше повідомлення.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">1971</div><div class="card__body">
+        <h3>Електронна пошта</h3>
+        <p>Рей Томлінсон надсилає перший лист між різними комп&rsquo;ютерами і обирає символ <code>@</code>, щоб відділити ім&rsquo;я користувача від назви комп&rsquo;ютера.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">1983</div><div class="card__body">
+        <h3>TCP/IP</h3>
+        <p><b>1&nbsp;січня 1983&nbsp;року</b> ARPANET переходить на протоколи <abbr title="Transmission Control Protocol / Internet Protocol">TCP/IP</abbr>. Цю дату часто називають днем народження Інтернету.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">1989</div><div class="card__body">
+        <h3>Всесвітня павутина</h3>
+        <p>Тім Бернерс-Лі в <abbr title="Європейська організація з ядерних досліджень">CERN</abbr> пропонує систему документів, пов&rsquo;язаних гіперпосиланнями. Він придумав <i>HTML</i>, <i>HTTP</i> і <i>URL</i>.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">1991</div><div class="card__body">
+        <h3>Перший сайт</h3>
+        <p>Сторінка <u>info.cern.ch</u> пояснювала, що таке веб і як створити власну сторінку. Вона працює й досі.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">1992</div><div class="card__body">
+        <h3>Домен .ua</h3>
+        <p><b>1&nbsp;грудня 1992&nbsp;року</b> зареєстровано український національний домен верхнього рівня <code>.ua</code>&nbsp;&mdash; того ж дня, коли Україна відзначила першу річницю референдуму про незалежність.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">1993</div><div class="card__body">
+        <h3>Браузер Mosaic</h3>
+        <p>Перший популярний браузер, що показував <em>картинки поруч із текстом</em>. Після нього веб став цікавим не лише науковцям.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">1998</div><div class="card__body">
+        <h3>Google</h3>
+        <p>Ларрі Пейдж і Сергій Брін засновують компанію, яка змінила пошук: сторінки впорядковують за тим, скільки інших сайтів на них посилаються.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">2001</div><div class="card__body">
+        <h3>Вікіпедія</h3>
+        <p>Енциклопедія, яку пише будь-хто. Українська Вікіпедія з&rsquo;явилася 2004&nbsp;року і нині має понад мільйон статей.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">2005</div><div class="card__body">
+        <h3>YouTube</h3>
+        <p>Перше відео&nbsp;&mdash; 19-секундне <q>Me at the zoo</q>&nbsp;&mdash; завантажено 23&nbsp;квітня 2005&nbsp;року. Тепер щохвилини на сайт додають сотні годин відео.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">2007</div><div class="card__body">
+        <h3>iPhone</h3>
+        <p>Смартфон із сенсорним екраном і повноцінним браузером. Інтернет переїжджає <s>зі столу</s> в кишеню.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">2019+</div><div class="card__body">
+        <h3>5G і супутники</h3>
+        <p>Мобільні мережі п&rsquo;ятого покоління та супутниковий Інтернет приносять зв&rsquo;язок туди, де ніколи не було кабелю.</p>
+      </div></article>
+    </div>
+  </section>
+
+  <!-- ===== 2. Пакети ===== -->
+  <section class="part part--dark" id="packets">
+    <h2 class="reveal">Як подорожують дані</h2>
+    <div class="split">
+      <div class="reveal">
+        <p>
+          Інтернет не передає повідомлення цілим. Його ріжуть на маленькі
+          шматочки&nbsp;&mdash; <b>пакети</b>. Кожен пакет має адресу
+          одержувача та свій номер і йде <em>власним маршрутом</em>:
+          якщо якийсь вузол перевантажений, маршрутизатори пошлють пакет в
+          обхід.
+        </p>
+        <p>
+          Пакети можуть прийти в іншому порядку&nbsp;&mdash; протокол
+          <abbr title="Transmission Control Protocol">TCP</abbr> на стороні
+          одержувача складе їх за номерами і попросить надіслати ще раз ті,
+          що загубилися.
+        </p>
+        <p><small>Спробуйте: напишіть повідомлення і натисніть <kbd>Enter</kbd>.</small></p>
+      </div>
+      <div class="lab reveal">
+        <form class="lab__form" id="sendForm">
+          <label for="msg">Повідомлення</label>
+          <div class="lab__row">
+            <input id="msg" type="text" maxlength="36" value="Привіт від Ярослава!" autocomplete="off">
+            <button type="submit">Надіслати</button>
+          </div>
+        </form>
+        <div class="lab__net" id="lane">
+          <span class="node node--a">ПК</span>
+          <span class="node node--r1">R1</span>
+          <span class="node node--r2">R2</span>
+          <span class="node node--r3">R3</span>
+          <span class="node node--b">Сервер</span>
+        </div>
+        <p class="lab__out">Отримано: <samp id="received">&mdash;</samp></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Протоколи ===== -->
+  <section class="part" id="protocols">
+    <h2 class="reveal">Адреси та протоколи</h2>
+    <div class="grid3">
+      <article class="card reveal"><div class="card__bar">IP-адреса</div><div class="card__body">
+        <p>Кожен пристрій у мережі має адресу. Стара версія <b>IPv4</b> записується чотирма числами, наприклад <code>192.168.0.1</code>. Таких адрес лише 2<sup>32</sup>&nbsp;&asymp;&nbsp;4,3&nbsp;млрд&nbsp;&mdash; і вони вже скінчилися.</p>
+        <p>Нова <b>IPv6</b> дає 2<sup>128</sup>&nbsp;&asymp;&nbsp;3,4&middot;10<sup>38</sup> адрес: вистачить кожній піщинці на Землі.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">DNS</div><div class="card__body">
+        <p>Людям зручніше пам&rsquo;ятати імена, а комп&rsquo;ютерам&nbsp;&mdash; числа. Служба <abbr title="Domain Name System">DNS</abbr> працює як телефонна книга: перетворює ім&rsquo;я <code>wikipedia.org</code> на IP-адресу сервера.</p>
+        <p>Перевірити можна командою <kbd>ping wikipedia.org</kbd> у терміналі.</p>
+      </div></article>
+      <article class="card reveal"><div class="card__bar">Швидкість</div><div class="card__body">
+        <p>Швидкість вимірюють у бітах за секунду. Час завантаження файлу:</p>
+        <p class="eq"><var>t</var> = <var>V</var> / <var>v</var></p>
+        <p>Фільм на 4&nbsp;ГБ (32&nbsp;000&nbsp;Мбіт) через модем 56&nbsp;кбіт/с завантажувався б <mark>понад шість діб</mark>, а через 100&nbsp;Мбіт/с&nbsp;&mdash; близько п&rsquo;яти хвилин.</p>
+      </div></article>
+    </div>
+
+    <div class="http reveal">
+      <div>
+        <h3>Розмова браузера із сервером</h3>
+        <p>
+          Коли ви відкриваєте сайт, браузер надсилає <b>HTTP-запит</b>, а
+          сервер відповідає кодом стану і вмістом сторінки. Побачити ці
+          розмови можна в інструментах розробника: <kbd>F12</kbd>&nbsp;&rarr;
+          вкладка <q>Network</q>.
+        </p>
+        <ul class="codes">
+          <li><code>200</code> OK&nbsp;&mdash; усе гаразд</li>
+          <li><code>301</code>&nbsp;&mdash; сторінку перенесено</li>
+          <li><code>404</code> Not Found&nbsp;&mdash; сторінку не знайдено</li>
+          <li><code>500</code>&nbsp;&mdash; помилка на сервері</li>
+        </ul>
+      </div>
+      <figure class="term">
+        <figcaption>запит і відповідь</figcaption>
+<pre><samp><span class="req">GET /index.html HTTP/1.1
+Host: www.example.com
+Accept-Language: uk</span>
+
+<span class="res">HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8</span>
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt; ...</samp></pre>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 4. Цифри ===== -->
+  <section class="part part--accent" id="numbers">
+    <h2 class="reveal">Інтернет у цифрах</h2>
+    <div class="stats">
+      <div class="stat reveal"><p class="stat__n"><span data-to="5.5">0</span>&nbsp;млрд</p><p>людей користувалися Інтернетом у 2024&nbsp;році<sup>*</sup></p></div>
+      <div class="stat reveal"><p class="stat__n"><span data-to="68">0</span>%</p><p>населення Землі&nbsp;&mdash; онлайн<sup>*</sup></p></div>
+      <div class="stat reveal"><p class="stat__n"><span data-to="1969">0</span></p><p>рік першого повідомлення в мережі</p></div>
+      <div class="stat reveal"><p class="stat__n">10<sup>38</sup></p><p>порядок кількості адрес IPv6</p></div>
+    </div>
+    <p class="note reveal"><small><sup>*</sup> Оцінка Міжнародного союзу електрозв&rsquo;язку (<abbr title="International Telecommunication Union">ITU</abbr>).</small></p>
+  </section>
+
+  <!-- ===== 5. Безпека ===== -->
+  <section class="part" id="safe">
+    <h2 class="reveal">Цифрова гігієна</h2>
+    <ol class="rules">
+      <li class="reveal"><b>Різні паролі</b> для різних сайтів. Запам&rsquo;ятати їх допоможе менеджер паролів.</li>
+      <li class="reveal">Увімкніть <strong>двофакторну автентифікацію</strong>: навіть викрадений пароль тоді не відкриє акаунт.</li>
+      <li class="reveal">Перевіряйте адресу: <code>https://</code> і правильне ім&rsquo;я сайту. <s>mybank-bonus.top</s> &ne; справжній сайт банку.</li>
+      <li class="reveal">Не відкривайте вкладення від незнайомців і <u>не повідомляйте коди з SMS</u> нікому.</li>
+      <li class="reveal">Оновлюйте систему й браузер: оновлення закривають уразливості.</li>
+    </ol>
+
+    <blockquote class="quote reveal">
+      <p>This is for everyone.<br><span>Це для всіх.</span></p>
+      <footer>&mdash; <cite>Тім Бернерс-Лі</cite>, повідомлення під час відкриття Олімпійських ігор у Лондоні, 2012</footer>
+    </blockquote>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>&laquo;Мережа мереж&raquo;&nbsp;&mdash; навчальна вебсторінка з лабораторної роботи №&nbsp;4.<br>Автор: Ярослав Діденко, 2026.</p>
+  <p><small>Час перебування на сторінці: <samp id="uptime">0 с</samp></small></p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

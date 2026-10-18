@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Доставка — піцерія «Скибка»</title>
+<meta name="description" content="Зони, час і вартість доставки піци «Скибка», оформлення замовлення.">
+<meta name="author" content="Вадим Адамович">
+<meta name="theme-color" content="#e2412b">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця 2 x 5:
+       1) шапка (colspan="2")      2) меню (colspan="2")
+       3) банер сторінки (colspan="2")
+       4) основний вміст | бічна панель
+       5) підвал (colspan="2")
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="2">
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__logo"><a href="index.html"><svg class="pizza pizza--logo" data-kind="pepperoni" data-seed="3" viewBox="0 0 200 200" aria-hidden="true"></svg><span>Скибка<small>піцерія</small></span></a></td>
+          <td class="head__slogan">Тісто на заквасці, піч на 400&nbsp;&deg;C<br><b>щодня з 10:00 до 22:00</b></td>
+          <td class="head__cart" align="right"><a class="cart-btn" href="delivery.html#order" aria-label="Кошик"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.6" fill="currentColor"/><circle cx="17" cy="20" r="1.6" fill="currentColor"/></svg><span class="cart-btn__sum" data-cart-sum>0&nbsp;грн</span><span class="cart-btn__count" data-cart-count>0</span></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" colspan="2">
+      <table class="nav" cellspacing="0" cellpadding="0" role="presentation">
+        <tr><td><a class="nav__link" href="index.html">Головна</a></td><td><a class="nav__link" href="menu.html">Меню</a></td><td><a class="nav__link is-active" href="delivery.html" aria-current="page">Доставка</a></td><td><a class="nav__link" href="about.html">Про нас</a></td><td><a class="nav__link" href="author.html">Автор</a></td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__hero" colspan="2">
+      <table class="banner" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="banner__text" valign="middle">
+            <p class="banner__kicker">Доставка</p>
+            <h1>Гаряча піца <em>за 40 хвилин</em></h1>
+            <p class="banner__lead">Привозимо щодня з 10:00 до закриття. Оберіть свою зону в таблиці нижче, щоб дізнатися вартість і час.</p>
+          </td>
+          <td class="banner__art" valign="middle" width="40%"><div class="scooter" aria-hidden="true"><svg viewBox="0 0 220 140"><g class="scooter__body"><rect x="96" y="22" width="56" height="44" rx="6" fill="#e2412b"/><text x="124" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#fff6e9">СКИБКА</text><path d="M40 98h90l20-30h22" stroke="#2b1d16" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 98l-14-34h-14" stroke="#2b1d16" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="174" cy="66" r="7" fill="#ffd166"/></g><g class="scooter__wheel"><circle cx="48" cy="108" r="20" fill="#2b1d16"/><circle cx="48" cy="108" r="8" fill="#fff6e9"/></g><g class="scooter__wheel scooter__wheel--b"><circle cx="168" cy="108" r="20" fill="#2b1d16"/><circle cx="168" cy="108" r="8" fill="#fff6e9"/></g></svg><span class="road"></span></div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <h2>Зони доставки</h2>
+        <table class="zones" width="100%" cellspacing="0" cellpadding="12">
+          <caption>Вартість і час доставки</caption>
+          <thead>
+            <tr><th scope="col" rowspan="2">Зона</th><th scope="col" rowspan="2">Райони міста</th><th scope="col" colspan="2">Умови</th></tr>
+            <tr><th scope="col">Час</th><th scope="col">Вартість</th></tr>
+          </thead>
+          <tbody>
+            <tr data-zone="0"><td><span class="zone-dot zone-dot--1"></span>Зелена</td><td>Старе місто, Польські фільварки</td><td>25&ndash;35 хв</td><td rowspan="2" class="zones__free" valign="middle">40 грн<br><small>безкоштовно від 400 грн</small></td></tr>
+            <tr data-zone="1"><td><span class="zone-dot zone-dot--2"></span>Жовта</td><td>Руські фільварки, Новий план</td><td>30&ndash;40 хв</td></tr>
+            <tr data-zone="2"><td><span class="zone-dot zone-dot--3"></span>Червона</td><td>Підзамче, Карвасари</td><td>40&ndash;60 хв</td><td>60 грн<br><small>безкоштовно від 700 грн</small></td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="4">За межами зон доставка можлива за домовленістю. Самовивіз&nbsp;&mdash; знижка 10%.</td></tr></tfoot>
+        </table>
+      </section>
+
+      <section class="block reveal" id="order">
+        <h2>Оформлення замовлення</h2>
+        <form class="order" id="orderForm" novalidate>
+          <table class="order__grid" width="100%" cellspacing="0" cellpadding="8" role="presentation">
+            <tr>
+              <td width="50%"><label for="oName">Ім&rsquo;я</label><input id="oName" name="name" type="text" autocomplete="given-name" required placeholder="Як до вас звертатися?"></td>
+              <td width="50%"><label for="oZone">Зона доставки</label>
+                <select id="oZone" name="zone"><option value="0">Зелена</option><option value="1">Жовта</option><option value="2">Червона</option><option value="pickup">Самовивіз (−10%)</option></select></td>
+            </tr>
+            <tr>
+              <td colspan="2"><label for="oAddr">Адреса</label><input id="oAddr" name="address" type="text" autocomplete="address-line1" placeholder="Вулиця, будинок, квартира"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <table class="summary" width="100%" cellspacing="0" cellpadding="6">
+                  <tr><th scope="row" align="left">Страви в кошику</th><td align="right" data-cart-sum>0&nbsp;грн</td></tr>
+                  <tr><th scope="row" align="left">Доставка</th><td align="right" id="sumDelivery">0&nbsp;грн</td></tr>
+                  <tr class="summary__total"><th scope="row" align="left">До сплати</th><td align="right" id="sumTotal">0&nbsp;грн</td></tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><button class="btn" type="submit">Підтвердити замовлення</button> <span class="order__msg" id="orderMsg" role="status"></span></td>
+            </tr>
+          </table>
+        </form>
+        <p class="note">Сайт навчальний: замовлення нікуди не надсилається.</p>
+      </section>
+    </td>
+    <td class="layout__side" valign="top" width="330">
+<div class="side-card side-card--cart reveal" id="cartBox">
+        <p class="side-card__label">Ваше замовлення</p>
+        <table class="cart" width="100%" cellspacing="0" cellpadding="6">
+          <tbody data-cart-rows><tr><td class="cart__empty" colspan="3">Кошик поки порожній</td></tr></tbody>
+          <tfoot><tr><th scope="row" align="left">Разом</th><td align="right" data-cart-sum>0&nbsp;грн</td><td></td></tr></tfoot>
+        </table>
+        <p class="cart__actions"><a class="btn btn--small" href="delivery.html#order">Оформити</a> <button class="link-btn" type="button" data-cart-clear>Очистити</button></p>
+      </div>
+      <div class="side-card reveal">
+        <table class="hours" width="100%" cellspacing="0" cellpadding="8">
+        <caption>Графік роботи</caption>
+        <tr><th scope="row">Понеділок</th><td rowspan="4" class="hours__time" valign="middle">10:00&ndash;22:00</td></tr>
+        <tr><th scope="row">Вівторок</th></tr>
+        <tr><th scope="row">Середа</th></tr>
+        <tr><th scope="row">Четвер</th></tr>
+        <tr><th scope="row">П&rsquo;ятниця</th><td rowspan="2" class="hours__time hours__time--late" valign="middle">10:00&ndash;23:00</td></tr>
+        <tr><th scope="row">Субота</th></tr>
+        <tr><th scope="row">Неділя</th><td class="hours__time" valign="middle">11:00&ndash;22:00</td></tr>
+      </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="2">
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="foot__brand" valign="top"><p class="foot__logo">Скибка</p><p>Умовна піцерія, вигадана для навчального сайту. Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="top"><p class="foot__h">Розділи</p><p><a href="index.html">Головна</a><br><a href="menu.html">Меню</a><br><a href="delivery.html">Доставка</a><br><a href="about.html">Про нас</a><br><a href="author.html">Автор</a></p></td>
+          <td valign="top"><p class="foot__h">Години роботи</p><p>Пн&ndash;Чт: 10:00&ndash;22:00<br>Пт&ndash;Сб: 10:00&ndash;23:00<br>Нд: 11:00&ndash;22:00</p></td>
+          <td valign="top"><p class="foot__h">Автор сайту</p><p><a href="author.html">Вадим Адамович</a></p><p class="foot__up"><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python з нуля — перші кроки в програмуванні</title>
+<meta name="description" content="Вступ до мови Python для початківців: встановлення, перша програма, змінні, умови, цикли, функції та вікторина «Що виведе код?».">
+<meta name="keywords" content="Python, програмування, для початківців, змінні, цикли, функції, print, input">
+<meta name="author" content="Олександр Дидюк">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 4. Розробка простої вебсторінки.
+     Тема: мова програмування Python для початківців.
+     Теги форматування: h1–h5, p, br, hr, b, strong, i, em, u, s,
+     mark, small, sup, sub, abbr, q, cite, blockquote, code, kbd,
+     var, samp, pre, а також HTML-коментарі.
+     ============================================================ -->
+
+<div class="glow" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="bar__logo" href="#top"><span class="prompt">&gt;&gt;&gt;</span> python<span class="caret">_</span></a>
+  <nav class="bar__nav" aria-label="Розділи">
+    <a href="#why">01 Чому Python</a>
+    <a href="#install">02 Встановлення</a>
+    <a href="#basics">03 Основи</a>
+    <a href="#loops">04 Цикли</a>
+    <a href="#quiz">05 Вікторина</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- ===== Перший екран ===== -->
+  <section class="hero">
+    <div class="hero__copy">
+      <p class="tag"><span class="dot"></span> Курс для тих, хто ніколи не програмував</p>
+      <h1>Python<br><span class="grad">з нуля</span></h1>
+      <p class="hero__lead">
+        Мова, якою пишуть сайти, ботів, ігри, нейромережі й наукові
+        розрахунки. Код на Python читається майже як англійський текст,
+        тому це <b>найкращий старт</b> для новачка. Відкрийте термінал&nbsp;&mdash;
+        і за десять хвилин ваша перша програма вже працюватиме.
+      </p>
+      <p class="hero__actions">
+        <a class="btn" href="#install">Почати</a>
+        <a class="btn btn--line" href="#quiz">Перевірити себе</a>
+      </p>
+    </div>
+
+    <div class="term" role="region" aria-label="Термінал, у якому друкується код">
+      <div class="term__head"><i></i><i></i><i></i><span>hello.py &mdash; термінал</span></div>
+      <pre class="term__body" id="typer" aria-live="off"></pre>
+    </div>
+  </section>
+
+  <!-- ===== 1. Чому Python ===== -->
+  <section class="block" id="why">
+    <h2 class="reveal"><span class="num">01</span> Чому саме Python</h2>
+    <div class="facts">
+      <article class="fact reveal">
+        <p class="fact__big" data-count="1991">1991</p>
+        <h3 class="fact__label">рік першого випуску</h3>
+        <p>Мову створив нідерландський програміст <b>Гвідо ван Россум</b>. Назва походить не від змії, а від британського комедійного шоу <i>&laquo;Monty Python&rsquo;s Flying Circus&raquo;</i>.</p>
+      </article>
+      <article class="fact reveal">
+        <p class="fact__big" data-count="2008">2008</p>
+        <h3 class="fact__label">вийшов Python&nbsp;3</h3>
+        <p>Третя версія виправила давні недоліки мови. Підтримку <s>Python&nbsp;2</s> припинили 1&nbsp;січня 2020&nbsp;року, тож сьогодні вчать лише Python&nbsp;3.</p>
+      </article>
+      <article class="fact reveal">
+        <p class="fact__big">№&nbsp;1</p>
+        <h3 class="fact__label">у рейтингах популярності</h3>
+        <p>За індексом <abbr title="The Importance of Being Earnest — рейтинг популярності мов програмування">TIOBE</abbr> Python з 2021&nbsp;року утримує перше місце серед мов програмування.</p>
+      </article>
+    </div>
+    <div class="uses reveal">
+      <h3>Де використовують Python</h3>
+      <ul>
+        <li><b>Вебсайти</b> &mdash; фреймворки Django і Flask</li>
+        <li><b>Аналіз даних</b> &mdash; бібліотеки pandas, NumPy, Matplotlib</li>
+        <li><b>Штучний інтелект</b> &mdash; PyTorch, TensorFlow, scikit-learn</li>
+        <li><b>Автоматизація</b> &mdash; скрипти, що перейменовують файли чи надсилають листи</li>
+        <li><b>Ігри та боти</b> &mdash; Pygame, бібліотеки для Telegram</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 2. Встановлення ===== -->
+  <section class="block" id="install">
+    <h2 class="reveal"><span class="num">02</span> Встановлення за три кроки</h2>
+    <ol class="steps">
+      <li class="step reveal">
+        <h3>Завантажте інсталятор</h3>
+        <p>Відкрийте сайт <u>python.org</u>, розділ <q>Downloads</q>, і завантажте останню версію Python&nbsp;3 для своєї системи.</p>
+      </li>
+      <li class="step reveal">
+        <h3>Поставте позначку PATH</h3>
+        <p>У першому вікні інсталятора <strong>обов&rsquo;язково</strong> позначте пункт <q>Add python.exe to PATH</q>, інакше команда <code>python</code> у терміналі не працюватиме.</p>
+      </li>
+      <li class="step reveal">
+        <h3>Перевірте результат</h3>
+        <p>Натисніть <kbd>Win</kbd>&nbsp;+&nbsp;<kbd>R</kbd>, введіть <kbd>cmd</kbd> і <kbd>Enter</kbd>. У терміналі виконайте команду:</p>
+        <pre class="code code--sm"><code>python --version</code></pre>
+        <p>Має з&rsquo;явитися щось на зразок <samp>Python 3.14.0</samp> (номер версії може відрізнятися).</p>
+      </li>
+    </ol>
+    <p class="hint reveal">
+      <small>Писати код можна у вбудованому редакторі <b>IDLE</b> (запуск програми&nbsp;&mdash; <kbd>F5</kbd>)
+      або у <b>Visual Studio Code</b> з розширенням Python. Зупинити програму, що &laquo;зависла&raquo;,
+      допоможе <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>C</kbd>.</small>
+    </p>
+  </section>
+
+  <!-- ===== 3. Основи ===== -->
+  <section class="block" id="basics">
+    <h2 class="reveal"><span class="num">03</span> Перша програма та змінні</h2>
+
+    <div class="pair reveal">
+      <div>
+        <h3>Привіт, світ!</h3>
+        <p>
+          Функція <code>print()</code> виводить текст на екран, а
+          <code>input()</code> читає те, що ввів користувач. Рядки
+          тексту беруть у лапки, а коментарі починаються зі знака
+          <code>#</code>&nbsp;&mdash; Python їх ігнорує.
+        </p>
+        <p>
+          <em>Змінна</em>&nbsp;&mdash; це підписана &laquo;коробка&raquo;, у яку
+          кладуть значення. У прикладі змінна <var>name</var> зберігає
+          ім&rsquo;я, а <var>age</var>&nbsp;&mdash; число.
+        </p>
+      </div>
+      <figure class="code-card">
+        <figcaption>hello.py <button class="copy" type="button">Копіювати</button></figcaption>
+<pre class="code"><code><span class="c"># Моя перша програма</span>
+<span class="f">print</span>(<span class="s">"Привіт, світ!"</span>)
+
+name = <span class="f">input</span>(<span class="s">"Як тебе звати? "</span>)
+age = <span class="n">17</span>
+<span class="f">print</span>(<span class="s">f"Радий знайомству, </span>{name}<span class="s">!"</span>)
+<span class="f">print</span>(<span class="s">f"Через рік тобі буде </span>{age + <span class="n">1</span>}<span class="s">"</span>)</code></pre>
+        <p class="out">Результат:<br><samp>Привіт, світ!<br>Як тебе звати? Олександр<br>Радий знайомству, Олександр!<br>Через рік тобі буде 18</samp></p>
+      </figure>
+    </div>
+
+    <h3 class="reveal">Основні типи даних</h3>
+    <div class="types">
+      <div class="type reveal"><h4><code>int</code></h4><p>ціле число</p><samp>42, -7, 0</samp></div>
+      <div class="type reveal"><h4><code>float</code></h4><p>дробове число</p><samp>3.14, 2.5e3</samp></div>
+      <div class="type reveal"><h4><code>str</code></h4><p>рядок тексту</p><samp>"Київ"</samp></div>
+      <div class="type reveal"><h4><code>bool</code></h4><p>логічне значення</p><samp>True, False</samp></div>
+      <div class="type reveal"><h4><code>list</code></h4><p>список</p><samp>[1, 2, 3]</samp></div>
+      <div class="type reveal"><h4><code>dict</code></h4><p>словник</p><samp>{"ua": 380}</samp></div>
+    </div>
+
+    <div class="pair pair--rev reveal">
+      <figure class="code-card">
+        <figcaption>quadratic.py <button class="copy" type="button">Копіювати</button></figcaption>
+<pre class="code"><code><span class="k">import</span> math
+
+a, b, c = <span class="n">1</span>, <span class="n">-3</span>, <span class="n">2</span>
+d = b ** <span class="n">2</span> - <span class="n">4</span> * a * c   <span class="c"># дискримінант</span>
+
+<span class="k">if</span> d &gt; <span class="n">0</span>:
+    x1 = (-b + math.<span class="f">sqrt</span>(d)) / (<span class="n">2</span> * a)
+    x2 = (-b - math.<span class="f">sqrt</span>(d)) / (<span class="n">2</span> * a)
+    <span class="f">print</span>(<span class="s">"Два корені:"</span>, x1, x2)
+<span class="k">elif</span> d == <span class="n">0</span>:
+    <span class="f">print</span>(<span class="s">"Один корінь:"</span>, -b / (<span class="n">2</span> * a))
+<span class="k">else</span>:
+    <span class="f">print</span>(<span class="s">"Дійсних коренів немає"</span>)</code></pre>
+        <p class="out">Результат: <samp>Два корені: 2.0 1.0</samp></p>
+      </figure>
+      <div>
+        <h3>Умови: квадратне рівняння</h3>
+        <p>
+          Розв&rsquo;яжемо рівняння <var>a</var><var>x</var><sup>2</sup> + <var>b</var><var>x</var> + <var>c</var> = 0.
+          Спочатку обчислюємо дискримінант:
+        </p>
+        <p class="math"><var>D</var> = <var>b</var><sup>2</sup> &minus; 4<var>a</var><var>c</var></p>
+        <p>Якщо <var>D</var> &gt; 0, рівняння має два корені:</p>
+        <p class="math"><var>x</var><sub>1,2</sub> = (&minus;<var>b</var> &plusmn; &radic;<var>D</var>) / 2<var>a</var></p>
+        <p>
+          У Python степінь записують двома зірочками: <code>b ** 2</code>,
+          а розгалуження&nbsp;&mdash; словами <code>if</code>, <code>elif</code>
+          і <code>else</code>. <mark>Відступи обов&rsquo;язкові!</mark> Саме
+          чотири пробіли показують, які рядки належать до умови.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Цикли ===== -->
+  <section class="block" id="loops">
+    <h2 class="reveal"><span class="num">04</span> Цикли та функції</h2>
+    <div class="pair reveal">
+      <div>
+        <h3>Цикл <code>for</code> наживо</h3>
+        <p>
+          Цикл повторює дію потрібну кількість разів. Функція
+          <code>range(<var>n</var>)</code> видає числа від 0 до
+          <var>n</var>&nbsp;&minus;&nbsp;1. Пересуньте повзунок&nbsp;&mdash;
+          і програма праворуч &laquo;виконається&raquo; знову.
+        </p>
+        <label class="range">
+          <span><var>n</var> = <b class="out-val" id="nOut">5</b></span>
+          <input type="range" id="nRange" min="1" max="9" value="5">
+        </label>
+        <p>Символ, з якого будуємо ялинку:</p>
+        <p class="chars">
+          <button type="button" class="chip is-on" data-ch="*">*</button>
+          <button type="button" class="chip" data-ch="#">#</button>
+          <button type="button" class="chip" data-ch="@">@</button>
+          <button type="button" class="chip" data-ch="▲">▲</button>
+        </p>
+      </div>
+      <figure class="code-card">
+        <figcaption>tree.py</figcaption>
+<pre class="code"><code>n = <span class="n" id="nCode">5</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="f">range</span>(n):
+    <span class="f">print</span>(<span class="s">" "</span> * (n - i - <span class="n">1</span>) + <span class="s" id="chCode">"*"</span> * (<span class="n">2</span> * i + <span class="n">1</span>))</code></pre>
+        <pre class="out out--tree"><samp id="tree"></samp></pre>
+      </figure>
+    </div>
+
+    <div class="pair pair--rev reveal">
+      <figure class="code-card">
+        <figcaption>functions.py <button class="copy" type="button">Копіювати</button></figcaption>
+<pre class="code"><code><span class="k">def</span> <span class="f">factorial</span>(n):
+    <span class="s">"""Повертає n! = 1 · 2 · … · n"""</span>
+    result = <span class="n">1</span>
+    <span class="k">for</span> k <span class="k">in</span> <span class="f">range</span>(<span class="n">2</span>, n + <span class="n">1</span>):
+        result *= k
+    <span class="k">return</span> result
+
+<span class="k">for</span> n <span class="k">in</span> [<span class="n">5</span>, <span class="n">10</span>, <span class="n">20</span>]:
+    <span class="f">print</span>(n, <span class="f">factorial</span>(n))</code></pre>
+        <p class="out">Результат:<br><samp>5 120<br>10 3628800<br>20 2432902008176640000</samp></p>
+      </figure>
+      <div>
+        <h3>Власні функції</h3>
+        <p>
+          Функцію оголошують словом <code>def</code>. Вона отримує
+          аргументи, щось обчислює і повертає результат через
+          <code>return</code>. Один раз написана функція може
+          викликатися скільки завгодно разів.
+        </p>
+        <p>
+          Зверніть увагу: 20! &asymp; 2,43&middot;10<sup>18</sup>, а Python
+          спокійно працює з такими числами&nbsp;&mdash; цілі числа в ньому
+          <i>не мають верхньої межі</i>, на відміну від багатьох інших мов.
+        </p>
+      </div>
+    </div>
+
+    <blockquote class="zen reveal">
+      <p>
+        Красиве краще, ніж потворне.<br>
+        Явне краще, ніж неявне.<br>
+        Просте краще, ніж складне.<br>
+        Читабельність має значення.
+      </p>
+      <footer>&mdash; Тім Пітерс, <cite>&laquo;Дзен Python&raquo; (PEP&nbsp;20)</cite>. Повний текст покаже команда <code>import this</code>.</footer>
+    </blockquote>
+  </section>
+
+  <hr class="sep">
+
+  <!-- ===== 5. Вікторина ===== -->
+  <section class="block" id="quiz">
+    <h2 class="reveal"><span class="num">05</span> Що виведе код?</h2>
+    <p class="reveal">Подумайте, а потім натисніть на картку, щоб побачити відповідь. Рахунок: <b><output id="score">0</output> / 5</b> переглянуто.</p>
+    <div class="quiz">
+      <button class="q reveal" type="button">
+        <span class="q__code"><code>print(2 ** 10)</code></span>
+        <span class="q__ans"><samp>1024</samp><small>2<sup>10</sup> = 1024. Два знаки <code>**</code> означають піднесення до степеня.</small></span>
+      </button>
+      <button class="q reveal" type="button">
+        <span class="q__code"><code>print(7 // 2, 7 % 2)</code></span>
+        <span class="q__ans"><samp>3 1</samp><small><code>//</code>&nbsp;&mdash; ціла частина від ділення, <code>%</code>&nbsp;&mdash; остача.</small></span>
+      </button>
+      <button class="q reveal" type="button">
+        <span class="q__code"><code>print("ha" * 3)</code></span>
+        <span class="q__ans"><samp>hahaha</samp><small>Рядок можна &laquo;помножити&raquo; на число&nbsp;&mdash; він повториться.</small></span>
+      </button>
+      <button class="q reveal" type="button">
+        <span class="q__code"><code>print(len("Україна"))</code></span>
+        <span class="q__ans"><samp>7</samp><small>Функція <code>len()</code> рахує символи в рядку.</small></span>
+      </button>
+      <button class="q reveal" type="button">
+        <span class="q__code"><code>print(0.1 + 0.2 == 0.3)</code></span>
+        <span class="q__ans"><samp>False</samp><small>Дробові числа зберігаються у двійковому вигляді з похибкою: 0.1 + 0.2 = 0.30000000000000004.</small></span>
+      </button>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <pre class="foot__code" aria-hidden="true">&gt;&gt;&gt; <span class="f">print</span>(<span class="s">"До зустрічі!"</span>)</pre>
+  <p>&laquo;Python з нуля&raquo;&nbsp;&mdash; вебсторінка з лабораторної роботи №&nbsp;4.<br>Автор: Олександр Дидюк, 2026.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

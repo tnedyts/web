@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Головна — Читальня української класики</title>
+<meta name="description" content="Електронна бібліотека української класичної літератури: каталог, письменники, цитати.">
+<meta name="author" content="Максим Вознюк">
+<meta name="theme-color" content="#2a1d16">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця з двох колонок:
+       1) шапка: назва + меню-«полиця» з корінцями книжок (colspan="2")
+       2) заголовок сторінки (colspan="2")
+       3) основний вміст | бічна панель
+       4) підвал (colspan="2")
+     Меню — вкладена таблиця, кожен пункт — корінець книжки.
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="2">
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__brand" valign="bottom">
+            <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">Ч</span><span>Читальня<small>українська класика онлайн</small></span></a>
+          </td>
+          <td class="head__shelf" valign="bottom" align="right">
+            <nav aria-label="Розділи сайту">
+              <table class="shelf" cellspacing="0" cellpadding="0" role="presentation"><tr><td class="spine-cell" valign="bottom"><a class="spine is-active" href="index.html" style="--c:#7a2e2e;--h:118px" aria-current="page"><span>Головна</span></a></td><td class="spine-cell" valign="bottom"><a class="spine" href="catalog.html" style="--c:#2f4f6b;--h:135px"><span>Каталог</span></a></td><td class="spine-cell" valign="bottom"><a class="spine" href="authors.html" style="--c:#3f5e3a;--h:118px"><span>Письменники</span></a></td><td class="spine-cell" valign="bottom"><a class="spine" href="quotes.html" style="--c:#7a5a22;--h:135px"><span>Цитати</span></a></td><td class="spine-cell" valign="bottom"><a class="spine" href="author.html" style="--c:#4b3a5e;--h:118px"><span>Автор сайту</span></a></td></tr></table>
+            </nav>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__hero" colspan="2">
+      <table class="hero" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td valign="bottom"><p class="hero__kicker">Електронна бібліотека</p><h1>Читальня <em>української класики</em></h1><p class="hero__lead">Дев&rsquo;ятнадцять творів, вісім письменників і понад століття літератури&nbsp;&mdash; на одній полиці.</p></td>
+          <td class="hero__extra" valign="bottom" align="right" width="40%"><div class="open-book" aria-hidden="true"><div class="open-book__page open-book__page--l"></div><div class="open-book__page open-book__page--r"><span class="flip"></span><span class="flip"></span><span class="flip"></span></div></div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <h2>Ласкаво просимо до читальні</h2>
+        <p>&laquo;Читальня&raquo;&nbsp;&mdash; це добірка творів української класичної літератури від &laquo;Енеїди&raquo; Котляревського до &laquo;Лісової пісні&raquo; Лесі Українки. Тут можна знайти книжку за автором, роком чи жанром, дізнатися про письменників і перегорнути найвідоміші цитати.</p>
+        <table class="stats" width="100%" cellspacing="14" cellpadding="0" role="presentation">
+          <tr>
+            <td class="stat" width="33%"><b data-to="19">0</b><span>творів у каталозі</span></td>
+            <td class="stat" width="33%"><b data-to="8">0</b><span>письменників</span></td>
+            <td class="stat" width="33%"><b data-to="113">0</b><span>років між першою і останньою книгою</span></td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Нові надходження на полицю</h2>
+        <p class="hint">Натисніть на обкладинку, щоб розгорнути книжку.</p>
+        <div class="covers"><button type="button" class="cover cover--shelf" data-book="0" style="--i:0" aria-label="Енеїда"></button><button type="button" class="cover cover--shelf" data-book="1" style="--i:1" aria-label="Наталка Полтавка"></button><button type="button" class="cover cover--shelf" data-book="2" style="--i:2" aria-label="Конотопська відьма"></button><button type="button" class="cover cover--shelf" data-book="3" style="--i:3" aria-label="Маруся"></button><button type="button" class="cover cover--shelf" data-book="4" style="--i:4" aria-label="Кобзар"></button><button type="button" class="cover cover--shelf" data-book="5" style="--i:5" aria-label="Гайдамаки"></button><button type="button" class="cover cover--shelf" data-book="6" style="--i:6" aria-label="Чорна рада"></button><button type="button" class="cover cover--shelf" data-book="7" style="--i:7" aria-label="Інститутка"></button></div>
+      </section>
+
+      <section class="block reveal">
+        <h2>Правила читальні</h2>
+        <table class="rules" width="100%" cellspacing="0" cellpadding="12">
+          <caption>Таблиця 1. Як користуватися сайтом</caption>
+          <thead><tr><th scope="col" width="60">№</th><th scope="col">Що зробити</th><th scope="col">Де</th></tr></thead>
+          <tbody>
+            <tr><td class="rules__n">1</td><td>Знайти твір за назвою чи автором</td><td rowspan="2" valign="middle" class="rules__where"><a href="catalog.html">Каталог</a></td></tr>
+            <tr><td class="rules__n">2</td><td>Відсортувати за роком або жанром</td></tr>
+            <tr><td class="rules__n">3</td><td>Дізнатися про життя письменника</td><td><a href="authors.html">Письменники</a></td></tr>
+            <tr><td class="rules__n">4</td><td>Перегорнути крилаті рядки</td><td><a href="quotes.html">Цитати</a></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </td>
+    <td class="layout__side" valign="top" width="320">
+<div class="side-card reveal">
+        <p class="side-card__label">Книга дня</p>
+        <button type="button" class="cover cover--big" id="bookOfDay" aria-label="Відкрити книгу дня"></button>
+        <p class="bod__title" id="bodTitle"></p>
+        <p class="bod__author" id="bodAuthor"></p>
+      </div>
+      <div class="side-card side-card--dark reveal">
+        <p class="side-card__label">Читацький щоденник</p>
+        <p>Позначайте прочитані книжки в каталозі&nbsp;&mdash; сайт запам&rsquo;ятає їх у вашому браузері.</p>
+        <p class="progress"><span id="readBar"></span></p>
+        <p class="progress__txt">Прочитано: <b id="readCount">0</b> з <b>19</b></p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="2">
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td valign="top"><p class="foot__title">Читальня</p><p>Навчальний сайт. Лабораторна робота №&nbsp;5, 2026.<br>Твори класиків, які давно перейшли в суспільне надбання.</p></td>
+          <td valign="top" align="right"><p>Автор сайту: <a href="author.html">Максим Вознюк</a></p><p><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div class="modal" id="bookModal" hidden>
+  <div class="modal__book" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="modal__cover" id="mCover"><span id="mCoverTitle"></span></div>
+    <div class="modal__page">
+      <p class="modal__author" id="mAuthor"></p>
+      <h2 id="mTitle"></h2>
+      <p class="modal__meta" id="mMeta"></p>
+      <p id="mText"></p>
+      <button type="button" class="btn" data-close>Закрити книгу</button>
+    </div>
+  </div>
+</div>
+<script>window.BOOKS = [{"t": "Енеїда", "a": "Іван Котляревський", "y": 1798, "g": "поема", "d": "Перша книга нової української літератури: бурлескна переробка поеми Вергілія, де троянці стають козаками."}, {"t": "Наталка Полтавка", "a": "Іван Котляревський", "y": 1819, "g": "п&rsquo;єса", "d": "Ліричне оповідання про вірне кохання Наталки і Петра, сповнене пісень."}, {"t": "Конотопська відьма", "a": "Григорій Квітка-Основ&rsquo;яненко", "y": 1833, "g": "повість", "d": "Сатирична повість про сотника Забрьоху, який намагається знайти відьом, щоб покласти край посусі."}, {"t": "Маруся", "a": "Григорій Квітка-Основ&rsquo;яненко", "y": 1834, "g": "повість", "d": "Сентиментальна історія дівчини Марусі та її коханого Василя."}, {"t": "Кобзар", "a": "Тарас Шевченко", "y": 1840, "g": "збірка поезій", "d": "Перше видання збірки, з якої почалася слава поета. Назва стала символом усієї його творчості."}, {"t": "Гайдамаки", "a": "Тарас Шевченко", "y": 1841, "g": "поема", "d": "Історико-героїчна поема про Коліївщину 1768 року."}, {"t": "Чорна рада", "a": "Пантелеймон Куліш", "y": 1857, "g": "роман", "d": "Перший український історичний роман: події Чорної ради 1663 року."}, {"t": "Інститутка", "a": "Марко Вовчок", "y": 1862, "g": "повість", "d": "Розповідь кріпачки про жорстоку пані, яка щойно закінчила інститут шляхетних дівчат."}, {"t": "Кайдашева сім&rsquo;я", "a": "Іван Нечуй-Левицький", "y": 1879, "g": "повість", "d": "Гумористична повість про сварки двох братів, їхніх дружин і батьків через грушу та межу."}, {"t": "Хіба ревуть воли, як ясла повні?", "a": "Панас Мирний", "y": 1880, "g": "роман", "d": "Соціально-психологічний роман про Чіпку Варениченка, написаний разом з Іваном Біликом."}, {"t": "Захар Беркут", "a": "Іван Франко", "y": 1883, "g": "повість", "d": "Історична повість про громаду карпатського села Тухля, що боронить свою землю від монголів."}, {"t": "Мартин Боруля", "a": "Іван Карпенко-Карий", "y": 1886, "g": "комедія", "d": "Комедія про багатого селянина, що понад усе мріє довести своє дворянське походження."}, {"t": "Царівна", "a": "Ольга Кобилянська", "y": 1896, "g": "роман", "d": "Роман про сильну духом жінку, яка шукає свій шлях і щастя."}, {"t": "Новина", "a": "Василь Стефаник", "y": 1899, "g": "новела", "d": "Коротка й страшна у своїй правдивості новела про трагедію бідної родини."}, {"t": "Земля", "a": "Ольга Кобилянська", "y": 1902, "g": "повість", "d": "Повість про любов до землі, яка штовхає людину до злочину."}, {"t": "Мойсей", "a": "Іван Франко", "y": 1905, "g": "поема", "d": "Філософська поема про пророка, який веде народ до обіцяної землі."}, {"t": "Intermezzo", "a": "Михайло Коцюбинський", "y": 1908, "g": "новела", "d": "Імпресіоністична новела про втомленого письменника, який відпочиває серед природи."}, {"t": "Лісова пісня", "a": "Леся Українка", "y": 1911, "g": "драма-феєрія", "d": "Поетична драма про лісову мавку та її кохання до людини, Лукаша."}, {"t": "Тіні забутих предків", "a": "Михайло Коцюбинський", "y": 1911, "g": "повість", "d": "Гуцульська легенда про Івана та Марічку, написана після подорожі до Криворівні."}];</script>
+<script src="js/main.js"></script>
+</body>
+</html>

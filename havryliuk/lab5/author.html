@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Авторка — Вишита сторінка</title>
+<meta name="description" content="Сторінка авторки сайту «Вишита сторінка».">
+<meta name="author" content="Юлія Гаврилюк">
+<meta name="theme-color" content="#f7f3ec">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!-- ============================================================
+     Лабораторна робота 5. Структурування вебсторінок за допомогою таблиць.
+     Каркас сторінки — таблиця з трьох колонок:
+       рядок 1: шапка з орнаментом (colspan="3")
+       рядок 2: вертикальне меню (rowspan="2") | банер сторінки (colspan="2")
+       рядок 3: основний вміст | бічна панель
+       рядок 4: підвал (colspan="3")
+     Усі орнаменти малює сценарій js/main.js на canvas «хрестиком».
+     ============================================================ -->
+<table class="layout" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+  <tr>
+    <td class="layout__head" colspan="3">
+      <canvas class="band" data-band="head" aria-hidden="true"></canvas>
+      <table class="head" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="head__logo"><a href="index.html"><canvas class="logo-stitch" width="48" height="48" aria-hidden="true"></canvas><span>Вишита сторінка</span></a></td>
+          <td class="head__day" align="right">До Дня вишиванки: <b data-days>&hellip;</b></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__nav" rowspan="2" valign="top" width="210">
+      <nav aria-label="Розділи сайту">
+        <table class="nav" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+            <tr><td><a class="nav__link" href="index.html"><span class="nav__num">І</span>Головна</a></td></tr>
+            <tr><td><a class="nav__link" href="regions.html"><span class="nav__num">ІІ</span>Регіони</a></td></tr>
+            <tr><td><a class="nav__link" href="symbols.html"><span class="nav__num">ІІІ</span>Символи</a></td></tr>
+            <tr><td><a class="nav__link" href="gallery.html"><span class="nav__num">IV</span>Галерея</a></td></tr>
+            <tr><td><a class="nav__link is-active" href="author.html" aria-current="page"><span class="nav__num">V</span>Авторка</a></td></tr>
+        </table>
+      </nav>
+      <canvas class="nav__thread" data-band="side" aria-hidden="true"></canvas>
+    </td>
+    <td class="layout__hero" colspan="2" valign="top">
+      <table class="hero" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td class="hero__text" valign="middle">
+            <p class="hero__kicker">Розділ V</p>
+            <h1>Про <em>авторку</em></h1>
+            <p class="hero__lead">Хто створив &laquo;Вишиту сторінку&raquo; і як побудовано її табличний макет.</p>
+          </td>
+          <td class="hero__art" valign="middle" width="44%"><canvas class="hero-stitch hero-stitch--small" id="authorStitch" width="360" height="360" aria-hidden="true"></canvas></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__main" valign="top">
+      <section class="block reveal">
+        <table class="profile" width="100%" cellspacing="0" cellpadding="14">
+          <caption>Картка авторки</caption>
+          <tr><th scope="row" width="190">Авторка</th><td><b>Юлія Гаврилюк</b></td></tr>
+          <tr><th scope="row">Роль</th><td>студентка, дизайн і верстка сайту</td></tr>
+          <tr><th scope="row">Захоплення</th><td>народне мистецтво, кімнатні рослини, малювання</td></tr>
+          <tr><th scope="row">Інші роботи</th><td><a href="../lab4/index.html">&laquo;Зелений підвіконник&raquo;&nbsp;&mdash; сторінка про кімнатні рослини (лабораторна робота №&nbsp;4)</a></td></tr>
+        </table>
+      </section>
+
+      <section class="block reveal">
+        <h2>Як зроблено сайт</h2>
+        <p>Макет кожної сторінки&nbsp;&mdash; таблиця з трьох колонок і чотирьох рядків. Вертикальне меню ліворуч займає два рядки завдяки атрибуту <code>rowspan="2"</code>, а шапка і підвал розтягнуті на всі три колонки атрибутом <code>colspan="3"</code>.</p>
+        <p>Усі візерунки на сайті не є фотографіями: їх малює сценарій на JavaScript в елементах <code>&lt;canvas&gt;</code>, стібок за стібком, за правилами симетрії.</p>
+        <table class="scheme" width="100%" cellspacing="4" cellpadding="10">
+          <caption>Схема каркаса сторінки</caption>
+          <tr><td colspan="3" class="scheme__a">Шапка з орнаментом &middot; <code>colspan="3"</code></td></tr>
+          <tr><td rowspan="2" class="scheme__b" width="22%">Меню<br><code>rowspan="2"</code></td><td colspan="2" class="scheme__c">Банер сторінки &middot; <code>colspan="2"</code></td></tr>
+          <tr><td class="scheme__d">Основний вміст</td><td class="scheme__e" width="26%">Бічна панель</td></tr>
+          <tr><td colspan="3" class="scheme__a">Підвал &middot; <code>colspan="3"</code></td></tr>
+        </table>
+      </section>
+    </td>
+    <td class="layout__side" valign="top" width="300">
+<div class="card reveal">
+        <p class="card__label">Сторінки сайту</p>
+        <table class="sitemap" width="100%" cellspacing="0" cellpadding="7">
+          <tr><td>index.html</td><td>Головна</td></tr>
+          <tr><td>regions.html</td><td>Регіони</td></tr>
+          <tr><td>symbols.html</td><td>Символи</td></tr>
+          <tr><td>gallery.html</td><td>Галерея</td></tr>
+          <tr><td>author.html</td><td>Авторка</td></tr>
+        </table>
+      </div>
+      <div class="card card--day reveal">
+        <p class="card__label">День вишиванки</p>
+        <p class="card__big" data-days-big>&hellip;</p>
+        <p>Свято відзначають щороку в <b>третій четвер травня</b>. Його започаткувала у 2006 році студентка Чернівецького університету Леся Воронюк.</p>
+        <p class="card__date" data-day-date></p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="layout__foot" colspan="3">
+      <canvas class="band" data-band="foot" aria-hidden="true"></canvas>
+      <table class="foot" width="100%" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>
+          <td valign="top"><p class="foot__title">Вишита сторінка</p><p>Навчальний сайт про українську вишивку.<br>Лабораторна робота №&nbsp;5, 2026.</p></td>
+          <td valign="top" align="right"><p>Авторка: <a href="author.html">Юлія Гаврилюк</a></p><p><a href="#" data-top>Нагору &uarr;</a></p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div class="lightbox" id="lightbox" hidden>
+  <figure><canvas id="lbCanvas" width="900" height="600"></canvas><figcaption id="lbCap"></figcaption></figure>
+  <button type="button" class="lightbox__close" aria-label="Закрити">&times;</button>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
