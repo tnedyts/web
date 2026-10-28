@@ -135,7 +135,7 @@
     if (!SHOT && !REDUCED) setInterval(function () { show(si + 1); }, 4800);
   }
   var gc = $('#grain');
-  if (gc && !SHOT && !REDUCED) {
+  if (gc && gc.getContext && !SHOT && !REDUCED) {
     var gx = gc.getContext('2d');
     gc.width = 240; gc.height = 320;
     var img = gx.createImageData(240, 320), fr = 0;
