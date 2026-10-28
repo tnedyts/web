@@ -91,3 +91,22 @@
 * Коментарі, нові записи та зміни з панелі зберігаються в браузері (localStorage), тому їх бачить лише той, хто їх зробив.
 * Усі сторінки перевірено валідатором W3C. Помилок немає ні у валідаторі, ні в консолі браузера.
 * Звіти лежать у `reports/Прізвище_Ім’я/` (`ЛР2_Блог_*.docx`, `ЛР3_CMS_*.docx`).
+
+
+---
+
+# Лабораторні 1–3 та 6–9 — п’ять студентів
+
+Сайти лежать у папках `прізвище/labN/`, звіти Word (без титульної сторінки) — у `reports/Прізвище_Ім’я/`.
+
+| Студент | ЛР1–3 | ЛР6 — фрейми | ЛР7 — фотогалерея | ЛР8 — CSS-макет на div | ЛР9 — зовнішні додатки |
+|---|---|---|---|---|---|
+| Вадим Адамович | [ЛР2](https://tnedyts.github.io/web/adamovych/lab2/) · [ЛР3](https://tnedyts.github.io/web/adamovych/lab3/) | [Берегові вогні](https://tnedyts.github.io/web/adamovych/lab6/) | [Берегові вогні + галерея](https://tnedyts.github.io/web/adamovych/lab7/) | [Глина](https://tnedyts.github.io/web/adamovych/lab8/) | [Фортеця над Смотричем](https://tnedyts.github.io/web/adamovych/lab9/) |
+| Юлія Гаврилюк | [ЛР2](https://tnedyts.github.io/web/havryliuk/lab2/) · [ЛР3](https://tnedyts.github.io/web/havryliuk/lab3/) | [Колесо року](https://tnedyts.github.io/web/havryliuk/lab6/) | [Колесо року + галерея](https://tnedyts.github.io/web/havryliuk/lab7/) | [Медова долина](https://tnedyts.github.io/web/havryliuk/lab8/) | [Писанкова скарбниця](https://tnedyts.github.io/web/havryliuk/lab9/) |
+| Максим Вознюк | [ЛР1](https://tnedyts.github.io/web/vozniuk/lab1/) · [ЛР2](https://tnedyts.github.io/web/vozniuk/lab2/) · [ЛР3](https://tnedyts.github.io/web/vozniuk/lab3/) | [Вогняні гори](https://tnedyts.github.io/web/vozniuk/lab6/) | [Вогняні гори + галерея](https://tnedyts.github.io/web/vozniuk/lab7/) | [Оберт](https://tnedyts.github.io/web/vozniuk/lab8/) | [Ложа](https://tnedyts.github.io/web/vozniuk/lab9/) |
+| Олександр Дидюк | [ЛР1](https://tnedyts.github.io/web/dydiuk/lab1/) · [ЛР2](https://tnedyts.github.io/web/dydiuk/lab2/) · [ЛР3](https://tnedyts.github.io/web/dydiuk/lab3/) | [Північне сяйво](https://tnedyts.github.io/web/dydiuk/lab6/) | [Північне сяйво + галерея](https://tnedyts.github.io/web/dydiuk/lab7/) | [Механіка часу](https://tnedyts.github.io/web/dydiuk/lab8/) | [Вершина](https://tnedyts.github.io/web/dydiuk/lab9/) |
+| Ярослав Діденко | [ЛР1](https://tnedyts.github.io/web/didenko/lab1/) · [ЛР2](https://tnedyts.github.io/web/didenko/lab2/) · [ЛР3](https://tnedyts.github.io/web/didenko/lab3/) | [Піщані моря](https://tnedyts.github.io/web/didenko/lab6/) | [Піщані моря + галерея](https://tnedyts.github.io/web/didenko/lab7/) | [Журавлик](https://tnedyts.github.io/web/didenko/lab8/) | [Софіївка](https://tnedyts.github.io/web/didenko/lab9/) |
+
+Варіанти: Адамович — 1 (ЛР6 схема 1, ЛР8 варіант 1), Гаврилюк — 4 (ЛР6 схема 1, ЛР8 варіант 4), Вознюк — 3 (схема 3, варіант 3), Дидюк і Діденко — 6 (схема 3, варіант 6). У методичці ЛР6 лише три схеми, тому номер варіанта береться циклічно.
+
+Зображення галерей ЛР7 (12 × JPEG 1920×1080) — власна процедурна графіка; треки ЛР9 синтезовано програмно. У звітах ЛР9 жовтим позначено місця для скріншотів карт, YouTube Studio та інформерів, які треба зробити на опублікованому сайті (у пісочниці під час підготовки не було доступу до зовнішніх сервісів).

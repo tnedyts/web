@@ -22,8 +22,8 @@ var pl=document.querySelector('.player');
 if(pl){var a=pl.querySelector('audio'),cv=pl.querySelector('canvas'),g=cv.getContext('2d'),an=null,data=null,raf;
  function size(){cv.width=cv.clientWidth*2;cv.height=cv.clientHeight*2}size();addEventListener('resize',size);
  function draw(){var W=cv.width,H=cv.height,N=48;g.clearRect(0,0,W,H);var t=a.currentTime;
-  if(an){an.getByteFrequencyData(data)}
-  for(var i=0;i<N;i++){var v=an?data[Math.floor(i*data.length/N/1.6)]/255:(a.paused?.12+.3*Math.abs(Math.sin(i*.55))*Math.abs(Math.cos(i*.21)):.25+.25*Math.abs(Math.sin(t*3+i*.5))*Math.abs(Math.cos(t*1.3+i*.2)));
+  var live=false;if(an){an.getByteFrequencyData(data);for(var j=0;j<data.length;j++)if(data[j]>0){live=true;break}}
+  for(var i=0;i<N;i++){var v=live?data[Math.floor(i*data.length/N/1.6)]/255:(a.paused?.12+.3*Math.abs(Math.sin(i*.55))*Math.abs(Math.cos(i*.21)):.25+.25*Math.abs(Math.sin(t*3+i*.5))*Math.abs(Math.cos(t*1.3+i*.2)));
    var h=Math.max(4,v*H),x=i*W/N;g.fillStyle=getComputedStyle(pl).getPropertyValue('--bar')||'#fff';g.globalAlpha=.35+v*.65;g.fillRect(x+2,H-h,W/N-4,h)}
   g.globalAlpha=1;raf=requestAnimationFrame(draw)}
  a.addEventListener('play',function(){pl.classList.add('playing');
