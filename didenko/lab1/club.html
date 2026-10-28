@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ігровий клуб у Житомирі — Кидай кубик</title>
+<meta name="description" content="Ігрові вечори клубу «Кидай кубик» у Житомирі: розклад, фотогалерея та рейтинг гравців.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="club">
+<div id="preloader" aria-hidden="true"><div class="pl-cube"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div><span>Кидаємо кубик…</span></div>
+<header class="header">
+  <div class="wrap hd">
+    <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Головна</a><a href="catalog.html" data-p="catalog">Каталог</a><a href="rules.html" data-p="rules">Правила</a><a href="club.html" data-p="club">Клуб</a><a href="author.html" data-p="author">Автор</a></nav>
+    <a class="wish-link" href="catalog.html?wish=1" title="Мій список бажань" aria-label="Мій список бажань"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="currentColor"/></svg><em id="wishN">0</em></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="phead-bg" aria-hidden="true"></div>
+  <div class="wrap phead-in">
+    <div>
+      <nav class="crumbs" aria-label="Навігація"><a href="index.html">Головна</a><span>/</span><span>Клуб</span></nav>
+      <span class="eyebrow reveal">Клуб у Житомирі</span>
+      <h1 class="reveal" style="--i:1">Ігрові вечори «Кидай кубик»</h1>
+      <p class="lead reveal" style="--i:2">Щотижня збираємося в антикафе «Фішка» на Великій Бердичівській: новачки, сім’ї, затяті стратеги. Обирайте вечір у розкладі й записуйтеся — місця за столами обмежені.</p>
+    </div>
+    <div class="phead-art reveal" style="--i:2" data-art="club"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="club-info">
+      <div class="ci reveal"><span class="ci-ico">📍</span><b>Де</b><p>Антикафе «Фішка», вул. Велика Бердичівська, 18, Житомир</p></div>
+      <div class="ci reveal" style="--i:1"><span class="ci-ico">🕡</span><b>Коли</b><p>Пт 18:30 — відкритий вечір, Нд 12:00 — сімейний, раз на місяць — турнір</p></div>
+      <div class="ci reveal" style="--i:2"><span class="ci-ico">🎟</span><b>Скільки</b><p>Вхід вільний, оплата лише часу в антикафе — 60 грн/год з чаєм і печивом</p></div>
+      <div class="ci reveal" style="--i:3"><span class="ci-ico">🧑‍🏫</span><b>Новачкам</b><p>Кожну гру пояснює ведучий. Можна прийти без досвіду і без компанії</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section sched-sec">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Розклад</span><h2>Найближчі вечори</h2><p>Натисніть «Записатися», щоб забронювати місце. Запис зберігається у вашому браузері — ви побачите його й наступного разу.</p></div>
+    <div class="sched" id="schedule"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow">Фотогалерея</span><h2>Як це виглядає</h2><p>Замість фото — ілюстрації наших вечорів. Натисніть, щоб збільшити.</p></div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section class="section rating-sec">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow">Сезон осінь-2026</span><h2>Рейтинг гравців клубу</h2><p>Очки нараховуються за перемоги на відкритих вечорах і турнірах: 3 за перемогу, 1 за участь.</p></div>
+    <div class="podium" id="podium"></div>
+    <div class="rating reveal" id="rating"></div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="f-dice" aria-hidden="true"></div>
+  <div class="wrap f-grid">
+    <div>
+      <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+      <p>Особистий проєкт про хобі, яке збирає друзів за одним столом: огляди, правила простими словами й ігрові вечори в Житомирі.</p>
+    </div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Головна</a></li><li><a href="catalog.html">Каталог</a></li><li><a href="rules.html">Правила</a></li><li><a href="club.html">Клуб</a></li><li><a href="author.html">Автор</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Україна</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li><a href="author.html#contact">Написати автору</a></li></ul></div>
+    <div><h4>Кинь кубик</h4><button class="f-roll" id="footRoll" type="button" aria-label="Кинути кубик">⚄</button><p class="small" id="footMsg">Натисни — і отримай пораду на вечір.</p></div>
+  </div>
+  <div class="wrap f-bottom"><span>© 2026 Ярослав Діденко · Кидай кубик</span><span>Зроблено вручну: HTML, CSS, JS і трохи удачі 🎲</span></div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Перегляд фото"><button class="lb-x" aria-label="Закрити">×</button><button class="lb-prev" aria-label="Попереднє">‹</button><figure><div class="lb-img"></div><figcaption class="lb-cap"></figcaption></figure><button class="lb-next" aria-label="Наступне">›</button></div>
+<script src="js/data.js"></script>
+<script src="js/art.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

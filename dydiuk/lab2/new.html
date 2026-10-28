@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новий запис — Зоряний щоденник</title>
+<meta name="description" content="Редактор нового запису блогу «Зоряний щоденник».">
+<meta name="author" content="Олександр Дидюк">
+<meta name="theme-color" content="#04050e">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>(function(){try{if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot')}catch(e){}})();</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="new">
+<div class="preloader" aria-hidden="true"><div class="orb"><i></i></div></div>
+<canvas id="sky" aria-hidden="true"></canvas><div class="nebula" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Зоряний щоденник — головна"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="lg" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#fff3cf"/><stop offset=".5" stop-color="#ffc861"/><stop offset="1" stop-color="#ff7a45"/></radialGradient></defs>
+<circle cx="20" cy="20" r="10" fill="url(#lg)"/><g class="ring"><ellipse cx="20" cy="20" rx="18" ry="5.5" fill="none" stroke="#8b7dff" stroke-width="2" transform="rotate(-20 20 20)"/></g><circle cx="34" cy="8" r="1.6" fill="#7dd3fc"/></svg><span>Зоряний <b>щоденник</b></span></a>
+    <nav class="nav" id="nav" aria-label="Меню"><a href="index.html">Стрічка</a><a href="archive.html">Архів</a><a href="about.html">Про блог</a><a class="write active" href="new.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Новий запис</a></nav>
+    <button class="burger" aria-label="Меню" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="top">
+<section class="section" style="padding-bottom:30px">
+  <div class="wrap">
+    <span class="kicker reveal">Редактор</span>
+    <h1 class="reveal" data-d="1" style="font-size:clamp(38px,5.4vw,70px);margin:16px 0 14px">Новий <span class="grad">запис</span></h1>
+    <p class="muted reveal" data-d="2" style="max-width:62ch;font-size:18px">Напишіть власну нотатку про спостереження. Запис збережеться у вашому браузері (localStorage) і одразу з’явиться у стрічці з позначкою «Мій запис».</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="wrap editor">
+    <form class="panel" id="editor" novalidate>
+      <div class="field"><label for="e-title">Заголовок *</label><input id="e-title" name="title" maxlength="120" placeholder="Наприклад: Місяць у бінокль: перша ніч"><span class="err">Заголовок — щонайменше 6 символів</span></div>
+      <div class="two">
+        <div class="field"><label for="e-cat">Рубрика *</label><select id="e-cat" name="cat"></select><span class="err">Оберіть рубрику</span></div>
+        <div class="field"><label for="e-tags">Теги (через кому)</label><input id="e-tags" name="tags" placeholder="Місяць, бінокль"></div>
+      </div>
+      <div class="field"><label for="e-excerpt">Короткий опис</label><input id="e-excerpt" name="excerpt" maxlength="220" placeholder="Одне-два речення для картки в стрічці"></div>
+      <div class="field"><label>Обкладинка</label><div class="covers"><label title="jupiter"><input type="radio" name="cover" value="img/covers/jupiter.svg" checked><img src="img/covers/jupiter.svg" alt="Обкладинка jupiter"></label><label title="meteors"><input type="radio" name="cover" value="img/covers/meteors.svg"><img src="img/covers/meteors.svg" alt="Обкладинка meteors"></label><label title="telescope"><input type="radio" name="cover" value="img/covers/telescope.svg"><img src="img/covers/telescope.svg" alt="Обкладинка telescope"></label><label title="artemis"><input type="radio" name="cover" value="img/covers/artemis.svg"><img src="img/covers/artemis.svg" alt="Обкладинка artemis"></label><label title="blackhole"><input type="radio" name="cover" value="img/covers/blackhole.svg"><img src="img/covers/blackhole.svg" alt="Обкладинка blackhole"></label><label title="orion"><input type="radio" name="cover" value="img/covers/orion.svg"><img src="img/covers/orion.svg" alt="Обкладинка orion"></label><label title="lightpoll"><input type="radio" name="cover" value="img/covers/lightpoll.svg"><img src="img/covers/lightpoll.svg" alt="Обкладинка lightpoll"></label><label title="andromeda"><input type="radio" name="cover" value="img/covers/andromeda.svg"><img src="img/covers/andromeda.svg" alt="Обкладинка andromeda"></label><label title="juice"><input type="radio" name="cover" value="img/covers/juice.svg"><img src="img/covers/juice.svg" alt="Обкладинка juice"></label><label title="saturn"><input type="radio" name="cover" value="img/covers/saturn.svg"><img src="img/covers/saturn.svg" alt="Обкладинка saturn"></label></div></div>
+      <div class="field"><label for="e-body">Текст запису *</label>
+        <div class="toolbar-md"><button type="button" data-ins="## ">## Підзаголовок</button><button type="button" data-ins="> ">&gt; Цитата</button><button type="button" data-ins="- ">- Список</button><button type="button" data-wrap="**">**жирний**</button></div>
+        <textarea id="e-body" name="body" rows="14" placeholder="Порожній рядок — новий абзац.&#10;## Підзаголовок&#10;> Цитата&#10;- пункт списку"></textarea>
+        <span class="err">Текст — щонайменше 80 символів</span><span class="hint" id="wc">0 слів · ~1 хв читання</span></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-gold" type="submit">Опублікувати <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="btn btn-ghost" type="button" id="draftBtn">Зберегти чернетку</button><button class="btn btn-ghost" type="button" id="clearBtn">Очистити</button></div>
+    </form>
+    <div>
+      <div class="panel preview"><div class="ph"><span>Попередній перегляд</span><span id="pvDate"></span></div><div class="pv-cover"><img id="pvCover" src="img/covers/jupiter.svg" alt=""></div><div class="pv-body"><span class="kicker" id="pvCat">Спостереження</span><h2 id="pvTitle">Ваш заголовок</h2><div class="content" id="pvContent"><p class="muted">Тут з’явиться текст запису…</p></div></div></div>
+      <div class="panel my-posts" style="margin-top:24px"><div class="ph" style="padding:14px 20px;border-bottom:1px solid var(--line);font:400 12px var(--mono);color:var(--mute)">Мої записи</div><div id="myPosts"></div></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div><a class="logo" href="index.html" style="margin-bottom:14px"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="lg" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#fff3cf"/><stop offset=".5" stop-color="#ffc861"/><stop offset="1" stop-color="#ff7a45"/></radialGradient></defs>
+<circle cx="20" cy="20" r="10" fill="url(#lg)"/><g class="ring"><ellipse cx="20" cy="20" rx="18" ry="5.5" fill="none" stroke="#8b7dff" stroke-width="2" transform="rotate(-20 20 20)"/></g><circle cx="34" cy="8" r="1.6" fill="#7dd3fc"/></svg><span>Зоряний <b>щоденник</b></span></a>
+        <p>Особистий блог астронома-аматора Олександра Дидюка: спостереження, техніка, космічні місії та трохи філософії під зоряним небом.</p></div>
+      <div><h4>Блог</h4><a href="index.html">Стрічка записів</a><a href="archive.html">Архів</a><a href="new.html">Новий запис</a><a href="about.html">Про блог і автора</a></div>
+      <div><h4>Рубрики</h4><a href="index.html?cat=obs#feed">Спостереження</a><a href="index.html?cat=tech#feed">Техніка</a><a href="index.html?cat=space#feed">Космонавтика</a><a href="index.html?cat=astro#feed">Астрофізика</a></div>
+      <div><h4>Зв’язок</h4><a href="mailto:oleksandr.dydiuk@gmail.com">oleksandr.dydiuk@gmail.com</a><a href="about.html#map">Рівне, Україна</a><a href="about.html">@dydiuk.stargazer</a></div>
+    </div>
+    <div class="f-bottom"><span>© 2026 Олександр Дидюк — «Зоряний щоденник»</span><span>Ясного неба! ✦ <a href="#top" style="display:inline;color:var(--gold)">Нагору ↑</a></span></div>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/posts.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

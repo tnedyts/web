@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Смерекова Хата — еко-готель у Карпатах</title>
+<meta name="description" content="Еко-готель «Смерекова Хата» в Яблуниці: номери і шале, чани на дровах, екскурсії, гуцульська кухня та бронювання онлайн.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home" class="over-hero">
+<div id="preloader" aria-hidden="true"><div class="pl-in"><svg class="pl-tree" viewBox="0 0 60 80"><path class="pl-p" d="M30 4 L42 24 H36 L48 42 H40 L54 62 H6 L20 42 H12 L24 24 H18Z"/><path class="pl-p" d="M30 62 V76"/></svg><span class="pl-name">Смерекова Хата</span></div></div>
+<a class="skip" href="#main">До вмісту</a>
+<header class="header">
+  <div class="wrap hd">
+    <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#0f3b2e" stroke="#c9a46a" stroke-width="1.5"/><path d="M6 34 L17 22 L23 28 L31 17 L42 34Z" fill="#1d5a45"/><path d="M31 17 L34.5 22 L31 21 L28.5 22.5Z" fill="#f6efe3"/><path d="M24 9 L29 17 H26.5 L31 24 H27.5 L32 31 H16 L20.5 24 H17 L21.5 17 H19Z" fill="#c9a46a"/><rect x="23" y="31" width="2" height="4" fill="#c9a46a"/><path d="M8 35 H40" stroke="#c9a46a" stroke-width="1.2"/></svg><span><b data-cms="site.name">Смерекова Хата</b><small data-cms="site.tagline">еко-готель у Карпатах</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"></nav>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="hero-slider" id="slider" aria-roledescription="carousel" aria-label="Головний слайдер"></section>
+
+<section class="quick wrap">
+  <form class="quick-book reveal" id="quickBook">
+    <label><span>Заїзд</span><input type="date" name="from" required></label>
+    <label><span>Виїзд</span><input type="date" name="to" required></label>
+    <label><span>Гості</span><select name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+    <button class="btn btn-gold" type="submit">Перевірити дати <span class="arr-r">→</span></button>
+  </form>
+</section>
+
+<section class="section intro">
+  <div class="wrap intro-grid">
+    <div class="intro-txt">
+      <span class="script reveal">Ласкаво просимо до Яблуниці</span>
+      <h2 class="reveal" style="--i:1" data-cms="home.introTitle">Дім, збудований із карпатської смереки</h2>
+      <p class="reveal lead" style="--i:2" data-cms="home.introText"></p>
+      <ul class="ticks reveal" style="--i:3"><li>Власне гірське джерело й сонячна станція</li><li>Сніданок із фермерських продуктів у вартості</li><li>6 км до Буковеля, 40 хв до Говерли</li></ul>
+      <div class="sign reveal" style="--i:4"><span class="script">Родина Палійчуків</span><small>власники та господарі</small></div>
+    </div>
+    <div class="intro-art reveal" style="--i:1" id="introArt"></div>
+  </div>
+</section>
+
+<section class="stats-band">
+  <div class="wrap stats" id="stats"></div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-row"><div class="sec-head reveal"><span class="script">Номери та шале</span><h2>Тепло живого дерева</h2><p>Від затишного стандарту для двох до окремого шале з власним чаном. Усі номери — з ліжниками ручної роботи та видом на ліс чи гори.</p></div><a class="btn btn-line-dark reveal" href="rooms.html">Усі номери →</a></div>
+    <div class="rooms-grid" id="homeRooms"></div>
+  </div>
+</section>
+
+<section class="section exp-band">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="script">Чим зайнятися</span><h2>Карпати на смак, дотик і подих</h2><p>Гаряча вода з травами, стежки до полонин і вечері біля печі — усе, заради чого варто вимкнути телефон.</p></div>
+    <div class="exp-grid" id="homeExp"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="script">Галерея</span><h2>Пори року в Смерековій Хаті</h2><p>Натисніть на фото, щоб відкрити його у повному розмірі.</p></div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section class="section events-band">
+  <div class="wrap events-grid">
+    <div>
+      <div class="sec-head reveal"><span class="script">Календар подій</span><h2>Що відбувається цього сезону</h2><p>Вечори казок, дегустації сирів, майстер-класи й новорічна ніч у горах. Оберіть день із позначкою.</p></div>
+      <div class="cal-list" id="calList"></div>
+    </div>
+    <div class="cal-card reveal" style="--i:1" id="cal"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-row"><div class="sec-head reveal"><span class="script">Новини</span><h2>Свіжі новини з гір</h2></div><a class="btn btn-line-dark reveal" href="news.html">Усі новини →</a></div>
+    <div class="news-grid" id="homeNews"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-bg" data-scene="winter" data-seed="11" data-label="Зимові Карпати" data-par=".12"></div>
+  <div class="cta-shade"></div>
+  <canvas class="snow" data-auto aria-hidden="true"></canvas>
+  <div class="wrap cta-in reveal">
+    <span class="script">Новорічні дати вже бронюють</span>
+    <h2>Зустріньте зиму там, де пахне смерекою</h2>
+    <p>Залиште заявку зараз — і ми притримаємо для вас номер на 24 години без передоплати.</p>
+    <a class="btn btn-gold" href="rooms.html#booking">Забронювати номер</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <svg class="f-mount" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 V80 L90 50 L170 70 L260 20 L360 66 L450 40 L560 78 L660 30 L760 64 L860 10 L980 60 L1080 36 L1190 72 L1300 34 L1440 64 V120Z" fill="#0b2e24"/><path d="M0 120 V96 L140 76 L260 92 L400 70 L540 96 L700 74 L860 98 L1020 72 L1180 94 L1320 78 L1440 92 V120Z" fill="#08241c"/></svg>
+  <div class="wrap f-grid">
+    <div class="f-about">
+      <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#0f3b2e" stroke="#c9a46a" stroke-width="1.5"/><path d="M6 34 L17 22 L23 28 L31 17 L42 34Z" fill="#1d5a45"/><path d="M31 17 L34.5 22 L31 21 L28.5 22.5Z" fill="#f6efe3"/><path d="M24 9 L29 17 H26.5 L31 24 H27.5 L32 31 H16 L20.5 24 H17 L21.5 17 H19Z" fill="#c9a46a"/><rect x="23" y="31" width="2" height="4" fill="#c9a46a"/><path d="M8 35 H40" stroke="#c9a46a" stroke-width="1.2"/></svg><span><b data-cms="site.name">Смерекова Хата</b><small data-cms="site.tagline">еко-готель у Карпатах</small></span></a>
+      <p>Родинний еко-готель у Яблуниці: дерев’яні шале, чани на дровах, гуцульська кухня і тиша смерекового лісу.</p>
+      <div class="f-social"><a href="contacts.html" aria-label="Написати нам"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a><a href="news.html" aria-label="Події"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8"/></svg></a><a href="rooms.html#booking" aria-label="Бронювання"><svg viewBox="0 0 24 24"><path d="M3 20V10l9-6 9 6v10z M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></div>
+    </div>
+    <div><h4>Меню</h4><ul id="fmenu"></ul></div>
+    <div><h4>Контакти</h4><ul class="f-contacts"><li><a class="f-phone" href="tel:+380671234567">+380 67 123 45 67</a></li><li><a class="f-mail" href="mailto:hello.smerekova@gmail.com">hello.smerekova@gmail.com</a></li><li data-cms="site.address">с. Яблуниця, Івано-Франківська обл.</li></ul></div>
+    <div><h4>Заїзд / виїзд</h4><p class="f-time"><b data-cms="site.checkin">14:00</b> / <b data-cms="site.checkout">12:00</b></p><a class="btn btn-gold btn-sm" href="rooms.html#booking">Забронювати</a></div>
+  </div>
+  <div class="wrap f-bottom"><span>© 2026 Ярослав Діденко · «<span data-cms="site.name">Смерекова Хата</span>»</span><span><a href="admin.html">Адмін-панель</a> · зроблено з любов’ю до Карпат</span></div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Перегляд фото">
+  <button class="lb-close" aria-label="Закрити">×</button>
+  <button class="lb-prev" aria-label="Попереднє">‹</button>
+  <figure><div class="lb-img"></div><figcaption class="lb-cap"></figcaption></figure>
+  <button class="lb-next" aria-label="Наступне">›</button>
+</div>
+<script src="js/content.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/art.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

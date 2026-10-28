@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="70%" cy="25%" r="85%">
+      <stop offset="0" stop-color="#5b5852"/><stop offset=".45" stop-color="#262522"/><stop offset="1" stop-color="#0b0b0b"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#e9e4da"/><stop offset=".35" stop-color="#b8b2a7"/><stop offset=".8" stop-color="#5d5951"/><stop offset="1" stop-color="#3a3833"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b3936"/><stop offset=".6" stop-color="#151514"/><stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2a29"/><stop offset="1" stop-color="#0c0c0c"/>
+    </linearGradient>
+    <radialGradient id="glass" cx="38%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#9aa2aa"/><stop offset=".25" stop-color="#3b4046"/><stop offset=".7" stop-color="#0d0f12"/><stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <!-- light rays from window -->
+  <g opacity=".08" fill="#fff">
+    <path d="M800 0 L520 1000 L640 1000 L800 260Z"/><path d="M800 300 L700 1000 L760 1000 L800 600Z"/>
+  </g>
+  <!-- shoulders / coat -->
+  <path d="M90 1000 C110 820 200 730 330 700 L470 700 C600 730 690 820 710 1000Z" fill="url(#coat)"/>
+  <path d="M330 700 L400 830 L470 700" fill="none" stroke="#4a4844" stroke-width="3"/>
+  <path d="M352 700 L400 790 L448 700Z" fill="#d9d4ca" opacity=".85"/>
+  <!-- neck -->
+  <path d="M352 600 L352 712 Q400 740 448 712 L448 600Z" fill="url(#skin)"/>
+  <!-- head -->
+  <ellipse cx="400" cy="450" rx="142" ry="178" fill="url(#skin)"/>
+  <!-- ear -->
+  <ellipse cx="262" cy="470" rx="18" ry="34" fill="#55524b"/>
+  <ellipse cx="538" cy="470" rx="18" ry="34" fill="#cfc9be"/>
+  <!-- hair -->
+  <path d="M252 430 C240 300 320 238 410 240 C500 242 560 290 556 420 C540 360 512 330 470 322 C430 340 380 336 330 318 C292 340 268 380 252 430Z" fill="#141413"/>
+  <path d="M330 318 C360 300 420 296 470 322" fill="none" stroke="#3b3a37" stroke-width="5" opacity=".7"/>
+  <!-- mouth/chin hint -->
+  <path d="M370 585 Q402 598 436 584" fill="none" stroke="#6e6a62" stroke-width="4" stroke-linecap="round"/>
+  <!-- hands -->
+  <path d="M210 640 C200 590 230 560 270 560 L300 600 L280 690 C250 700 220 680 210 640Z" fill="#8e897f"/>
+  <path d="M590 640 C600 590 570 560 530 560 L500 600 L520 690 C550 700 580 680 590 640Z" fill="#d6d0c5"/>
+  <!-- camera -->
+  <g>
+    <rect x="228" y="420" width="344" height="196" rx="18" fill="url(#body)"/>
+    <rect x="228" y="420" width="344" height="40" rx="18" fill="#3a3a38"/>
+    <path d="M330 420 L350 380 L450 380 L470 420Z" fill="#232322"/>
+    <rect x="378" y="390" width="44" height="14" rx="3" fill="#0b0b0b"/>
+    <rect x="512" y="398" width="34" height="22" rx="4" fill="#2e2e2c"/>
+    <rect x="254" y="404" width="40" height="16" rx="4" fill="#2e2e2c"/>
+    <!-- leatherette texture -->
+    <g stroke="#1b1b1a" stroke-width="2" opacity=".7">
+      <line x1="236" y1="480" x2="564" y2="480"/><line x1="236" y1="500" x2="564" y2="500"/><line x1="236" y1="580" x2="564" y2="580"/><line x1="236" y1="600" x2="564" y2="600"/>
+    </g>
+    <!-- lens -->
+    <circle cx="400" cy="528" r="104" fill="#0e0e0e"/>
+    <circle cx="400" cy="528" r="96" fill="none" stroke="#3e3e3c" stroke-width="6"/>
+    <g stroke="#2a2a28" stroke-width="3">
+      <circle cx="400" cy="528" r="84" fill="none"/>
+    </g>
+    <circle cx="400" cy="528" r="70" fill="url(#glass)"/>
+    <circle cx="400" cy="528" r="40" fill="none" stroke="#5a6068" stroke-width="2" opacity=".6"/>
+    <circle cx="374" cy="500" r="16" fill="#fff" opacity=".55" filter="url(#soft)"/>
+    <circle cx="372" cy="498" r="6" fill="#fff" opacity=".9"/>
+    <path d="M430 570 a50 50 0 0 0 26 -36" fill="none" stroke="#b9c4cf" stroke-width="3" opacity=".35"/>
+    <text x="400" y="452" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" letter-spacing="5" fill="#8b8780">35 MM · 1:1.8</text>
+    <circle cx="540" cy="450" r="7" fill="#e8442e"/>
+  </g>
+  <!-- strap -->
+  <path d="M232 470 C180 520 170 640 190 760" fill="none" stroke="#0c0c0c" stroke-width="12"/>
+  <path d="M568 470 C620 520 630 640 610 760" fill="none" stroke="#2b2a28" stroke-width="12"/>
+</svg>

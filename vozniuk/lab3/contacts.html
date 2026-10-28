@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакти — Ліхтар</title>
+<meta name="description" content="Адреса, телефон каси, SVG-карта і форма зворотного зв'язку арт-кінотеатру «Ліхтар» у Луцьку.">
+<meta name="author" content="Максим Вознюк">
+<meta name="theme-color" content="#1E070D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="countdown"><span class="sweep"></span><b>3</b></div></div>
+<a class="sr" href="#main">Перейти до змісту</a>
+<div class="announce" id="announce"></div>
+<header class="header" id="header">
+  <div class="container hd">
+    <a class="brand" href="index.html" data-brand aria-label="На головну"><span><b data-cms="site.name">Ліхтар</b><small data-cms="site.sub">арт-кінотеатр · Луцьк</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"></nav>
+    <a class="btn sm" href="schedule.html">Купити квиток</a>
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="beam" aria-hidden="true"></div>
+  <div class="container"><div class="crumbs"><a href="index.html">Головна</a> / Контакти</div>
+  <h1><span class="titles"><span>Контакти</span></span></h1><p class="lead">Ми в Старому місті Луцька, за п'ять хвилин пішки від Луцького замку. Пишіть, телефонуйте або просто приходьте на сеанс.</p></div></section><div class="filmstrip" aria-hidden="true"><span></span></div>
+<section class="section" style="padding-top:60px">
+  <div class="container">
+    <div class="contact-grid" id="contactCards"></div>
+    <div class="map-card reveal-s">
+      <div class="map-wrap"><svg id="cityMap" viewBox="0 0 1000 673" role="img" aria-label="Карта України з позначкою кінотеатру у Луцьку"></svg><div class="map-tip"></div></div>
+      <div class="map-info"><span class="kicker">Ми на карті</span><h3>Луцьк, Старе місто</h3><span class="coords" id="coords"></span><p>Промінь на карті світить з Луцька — саме звідси щоосені стартує фестиваль «Світлячок», на який з'їжджаються гості з усієї країни.</p><a class="btn" id="gmapsLink" href="https://www.google.com/maps?q=50.7385,25.3226" target="_blank" rel="noopener">Відкрити в Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+<section class="section bg-v0" id="form">
+  <div class="container form-wrap">
+    <div class="reveal-l"><span class="kicker">Зворотний зв'язок</span><h2 style="font-size:clamp(34px,4vw,52px)">Напишіть нам</h2><p class="lead">Оренда зали, корпоративний перегляд, заявка на фестиваль чи відгук — відповідаємо протягом дня.</p>
+      <div class="faq"><details open><summary>Чи можна орендувати зал?</summary><p>Так, Камерна зала доступна для приватних переглядів і презентацій до 42 гостей. Великий зал — для подій від 100 людей.</p></details><details><summary>Як подати фільм на «Світлячок»?</summary><p>Оберіть тему «Заявка на фестиваль» і додайте посилання на фільм. Прийом заявок — до 1 жовтня.</p></details><details><summary>Чи є знижки для шкіл?</summary><p>Для шкільних груп від 15 осіб діє ціна 90 гривень на ранкові сеанси.</p></details></div></div>
+    <div class="form-card reveal-r">
+      <form class="form" id="contactForm" novalidate>
+        <div class="row2"><div class="field"><input id="fName" placeholder=" " autocomplete="name"><label for="fName">Ваше ім'я</label><span class="err">Вкажіть ім'я (від 2 літер)</span></div>
+        <div class="field"><input id="fEmail" type="email" placeholder=" " autocomplete="email"><label for="fEmail">E-mail</label><span class="err">Перевірте адресу пошти</span></div></div>
+        <div class="field"><select id="fTopic" aria-label="Тема"><option>Питання щодо квитків</option><option>Запис на подію або кіноклуб</option><option>Оренда зали</option><option>Заявка на фестиваль</option><option>Відгук або пропозиція</option></select></div>
+        <div class="field"><textarea id="fMsg" rows="5" placeholder=" "></textarea><label for="fMsg">Повідомлення</label><span class="err">Напишіть хоча б 10 символів</span></div>
+        <label class="check"><input type="checkbox" id="fAgree"><span>Погоджуюся на обробку даних для відповіді на звернення</span></label>
+        <div><button class="btn" type="submit">Надіслати <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </form>
+      <div class="success" id="formOk" aria-live="polite"><svg viewBox="0 0 120 120"><circle class="circ" cx="60" cy="60" r="46" fill="none" stroke="#D4A84B" stroke-width="4"/><path class="tick" d="M40 61l14 14 27-30" fill="none" stroke="#F1D88E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Повідомлення надіслано!</h3><p>Дякуємо! Відповімо протягом дня. А поки — зазирніть в афішу.</p><button class="btn ghost sm" id="againBtn" type="button">Написати ще</button></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer" id="footer"><div class="container"><p>© 2026 Максим Вознюк · Ліхтар</p></div></footer>
+<script src="js/content.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/posters.js"></script>
+<script src="js/uamap.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

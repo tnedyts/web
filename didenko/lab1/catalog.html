@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог ігор — Кидай кубик</title>
+<meta name="description" content="Каталог настільних ігор з колекції: кількість гравців, час, складність, вік, фільтри та пошук.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="catalog">
+<div id="preloader" aria-hidden="true"><div class="pl-cube"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div><span>Кидаємо кубик…</span></div>
+<header class="header">
+  <div class="wrap hd">
+    <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Головна</a><a href="catalog.html" data-p="catalog">Каталог</a><a href="rules.html" data-p="rules">Правила</a><a href="club.html" data-p="club">Клуб</a><a href="author.html" data-p="author">Автор</a></nav>
+    <a class="wish-link" href="catalog.html?wish=1" title="Мій список бажань" aria-label="Мій список бажань"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="currentColor"/></svg><em id="wishN">0</em></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="phead-bg" aria-hidden="true"></div>
+  <div class="wrap phead-in">
+    <div>
+      <nav class="crumbs" aria-label="Навігація"><a href="index.html">Головна</a><span>/</span><span>Каталог</span></nav>
+      <span class="eyebrow reveal">Каталог колекції</span>
+      <h1 class="reveal" style="--i:1">Моя полиця з іграми</h1>
+      <p class="lead reveal" style="--i:2">Двадцять чотири коробки, які я сам граю і раджу. Фільтруйте за жанром, кількістю гравців, часом і складністю, відкривайте картку гри та додавайте у свій список бажань.</p>
+    </div>
+    <div class="phead-art reveal" style="--i:2" data-art="catalog"></div>
+  </div>
+</section>
+
+<section class="section cat-sec">
+  <div class="wrap">
+    <div class="filters reveal" id="filters">
+      <div class="f-row">
+        <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Пошук: назва, механіка, настрій…" aria-label="Пошук ігор"></label>
+        <label class="sel"><span>Гравців</span><select id="fPlayers"><option value="0">будь-скільки</option><option value="1">1 (соло)</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6+</option></select></label>
+        <label class="sel"><span>Сортування</span><select id="sort"><option value="name">за назвою</option><option value="weight">за складністю</option><option value="time">за тривалістю</option><option value="year">новіші спочатку</option></select></label>
+      </div>
+      <div class="f-row">
+        <div class="chips" id="gChips" role="group" aria-label="Жанр"></div>
+      </div>
+      <div class="f-row f-row2">
+        <div class="chips" id="tChips" role="group" aria-label="Тривалість"><button class="chip on" data-t="0">будь-який час</button><button class="chip" data-t="1">до 30 хв</button><button class="chip" data-t="2">30–60 хв</button><button class="chip" data-t="3">понад годину</button></div>
+        <label class="range"><span>Складність до <b id="wVal">5.0</b></span><input id="fWeight" type="range" min="1" max="5" step="0.1" value="5"></label>
+        <button class="chip wish-chip" id="wishOnly" aria-pressed="false">♥ мій список</button>
+        <p class="found">Знайдено: <b id="count">24</b> <button class="link" id="reset">скинути</button></p>
+      </div>
+    </div>
+    <div class="game-grid" id="grid"></div>
+    <div class="empty" id="empty" hidden><div class="empty-die" aria-hidden="true"></div><h3>Нічого не випало</h3><p>Спробуйте змінити фільтри — або киньте кубик ще раз.</p><button class="btn btn-ind" id="reset2">Скинути фільтри</button></div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="f-dice" aria-hidden="true"></div>
+  <div class="wrap f-grid">
+    <div>
+      <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+      <p>Особистий проєкт про хобі, яке збирає друзів за одним столом: огляди, правила простими словами й ігрові вечори в Житомирі.</p>
+    </div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Головна</a></li><li><a href="catalog.html">Каталог</a></li><li><a href="rules.html">Правила</a></li><li><a href="club.html">Клуб</a></li><li><a href="author.html">Автор</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Україна</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li><a href="author.html#contact">Написати автору</a></li></ul></div>
+    <div><h4>Кинь кубик</h4><button class="f-roll" id="footRoll" type="button" aria-label="Кинути кубик">⚄</button><p class="small" id="footMsg">Натисни — і отримай пораду на вечір.</p></div>
+  </div>
+  <div class="wrap f-bottom"><span>© 2026 Ярослав Діденко · Кидай кубик</span><span>Зроблено вручну: HTML, CSS, JS і трохи удачі 🎲</span></div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Опис гри"><div class="m-card"><button class="m-x" aria-label="Закрити">×</button><div class="m-body" id="mBody"></div></div></div>
+<script src="js/data.js"></script>
+<script src="js/art.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

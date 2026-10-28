@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Архів — Зоряний щоденник</title>
+<meta name="description" content="Архів записів блогу «Зоряний щоденник» за роками і місяцями.">
+<meta name="author" content="Олександр Дидюк">
+<meta name="theme-color" content="#04050e">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>(function(){try{if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot')}catch(e){}})();</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="archive">
+<div class="preloader" aria-hidden="true"><div class="orb"><i></i></div></div>
+<canvas id="sky" aria-hidden="true"></canvas><div class="nebula" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Зоряний щоденник — головна"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="lg" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#fff3cf"/><stop offset=".5" stop-color="#ffc861"/><stop offset="1" stop-color="#ff7a45"/></radialGradient></defs>
+<circle cx="20" cy="20" r="10" fill="url(#lg)"/><g class="ring"><ellipse cx="20" cy="20" rx="18" ry="5.5" fill="none" stroke="#8b7dff" stroke-width="2" transform="rotate(-20 20 20)"/></g><circle cx="34" cy="8" r="1.6" fill="#7dd3fc"/></svg><span>Зоряний <b>щоденник</b></span></a>
+    <nav class="nav" id="nav" aria-label="Меню"><a href="index.html">Стрічка</a><a href="archive.html" class="active" aria-current="page">Архів</a><a href="about.html">Про блог</a><a class="write" href="new.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Новий запис</a></nav>
+    <button class="burger" aria-label="Меню" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="top">
+<section class="section" style="padding-bottom:30px">
+  <div class="wrap">
+    <span class="kicker reveal">Архів</span>
+    <h1 class="reveal" data-d="1" style="font-size:clamp(40px,6vw,80px);margin:16px 0 14px">Усі ночі <span class="grad">щоденника</span></h1>
+    <p class="muted reveal" data-d="2" style="max-width:60ch;font-size:18px">Хронологія записів за роками й місяцями. Оберіть рубрику, щоб звузити список, або перегляньте статистику блогу праворуч.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:10px">
+  <div class="wrap archive-layout">
+    <div>
+      <div class="chips reveal" id="archChips" style="margin-bottom:34px"></div>
+      <div id="archive"></div>
+    </div>
+    <aside class="sidebar">
+      <div class="panel widget reveal" id="statsBox"><h4>Записи за рубриками</h4><div class="bars" id="bars"></div></div>
+      <div class="panel widget reveal"><h4>Цифри блогу</h4><div id="numbers" class="cat-list"></div></div>
+      <div class="panel widget reveal"><h4>Розсилка</h4><form class="sub-form" novalidate data-sub><input type="email" name="email" placeholder="ваш@email.com" aria-label="E-mail для підписки" autocomplete="email"><button class="btn btn-gold" type="submit">Підписатися <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><div class="msg" aria-live="polite">Без спаму. Лише небо, раз на два тижні.</div></form></div>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div><a class="logo" href="index.html" style="margin-bottom:14px"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="lg" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#fff3cf"/><stop offset=".5" stop-color="#ffc861"/><stop offset="1" stop-color="#ff7a45"/></radialGradient></defs>
+<circle cx="20" cy="20" r="10" fill="url(#lg)"/><g class="ring"><ellipse cx="20" cy="20" rx="18" ry="5.5" fill="none" stroke="#8b7dff" stroke-width="2" transform="rotate(-20 20 20)"/></g><circle cx="34" cy="8" r="1.6" fill="#7dd3fc"/></svg><span>Зоряний <b>щоденник</b></span></a>
+        <p>Особистий блог астронома-аматора Олександра Дидюка: спостереження, техніка, космічні місії та трохи філософії під зоряним небом.</p></div>
+      <div><h4>Блог</h4><a href="index.html">Стрічка записів</a><a href="archive.html">Архів</a><a href="new.html">Новий запис</a><a href="about.html">Про блог і автора</a></div>
+      <div><h4>Рубрики</h4><a href="index.html?cat=obs#feed">Спостереження</a><a href="index.html?cat=tech#feed">Техніка</a><a href="index.html?cat=space#feed">Космонавтика</a><a href="index.html?cat=astro#feed">Астрофізика</a></div>
+      <div><h4>Зв’язок</h4><a href="mailto:oleksandr.dydiuk@gmail.com">oleksandr.dydiuk@gmail.com</a><a href="about.html#map">Рівне, Україна</a><a href="about.html">@dydiuk.stargazer</a></div>
+    </div>
+    <div class="f-bottom"><span>© 2026 Олександр Дидюк — «Зоряний щоденник»</span><span>Ясного неба! ✦ <a href="#top" style="display:inline;color:var(--gold)">Нагору ↑</a></span></div>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/posts.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

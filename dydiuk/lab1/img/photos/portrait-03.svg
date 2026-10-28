@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" preserveAspectRatio="xMidYMid slice">
+<defs>
+<radialGradient id="vig" cx="50%" cy="50%" r="75%"><stop offset="55%" stop-color="#080808" stop-opacity="0"/><stop offset="100%" stop-color="#080808" stop-opacity=".75"/></radialGradient>
+<linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8b6b2"/><stop offset="1" stop-color="#373635"/></linearGradient>
+<radialGradient id="dl" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#f3f0ea"/><stop offset="1" stop-color="#b1afab"/></radialGradient>
+<filter id="bl"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<rect width="800" height="1200" fill="#0f0f0f"/><rect x="250" y="220" width="300" height="640" fill="url(#dl)"/><path d="M250,860 L550,860 L800,1200 L0,1200Z" fill="url(#fl)" opacity=".55"/><path d="M250,860 L550,860 L800,1200 L0,1200Z" fill="#f3f0ea" opacity=".15" filter="url(#bl)"/><path d="M380,860 L384,700 L372,560 Q368,500 392,470 Q372,452 376,420 a24,24 0 1,1 46,4 Q432,452 412,472 Q436,500 430,560 L418,700 L420,860 Z" fill="#0d0d0d"/><path d="M384,860 L420,860 L520,1200 L330,1200Z" fill="#0d0d0d" opacity=".85"/>
+<rect width="800" height="1200" fill="url(#vig)"/>
+</svg>

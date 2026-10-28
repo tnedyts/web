@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Адмін-панель — Вертикаль CMS</title>
+<meta name="description" content="Панель керування контентом сайту скеледрому «Вертикаль».">
+<meta name="author" content="Олександр Дидюк">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>(function(){var h=document.documentElement;h.className+=' js';if(/[?&]shot=1/.test(location.search))h.className+=' shot';})();</script>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ============ ВХІД ============ -->
+<section class="login" id="login">
+  <div class="login-art" aria-hidden="true">
+    <div class="la-holds" id="laHolds"></div>
+    <div class="la-copy">
+      <svg class="la-logo" viewBox="0 0 44 44"><path d="M6 36 L19 8 L25 20 L29 13 L38 36 Z" fill="#c6ff3d"/><circle cx="29.5" cy="27.5" r="4.2" fill="#ff6b1a"/></svg>
+      <h1>Вертикаль <span>CMS</span></h1>
+      <p>Керуйте новинами, подіями, цінами й текстами сайту. Зміни з’являються на сайті миттєво.</p>
+    </div>
+  </div>
+  <div class="login-side">
+    <form class="login-card" id="loginForm" novalidate>
+      <span class="lc-kicker">Панель адміністратора</span>
+      <h2>Вхід у систему</h2>
+      <label class="fld"><span>Логін</span><input name="user" type="text" autocomplete="username" placeholder="admin" required></label>
+      <label class="fld"><span>Пароль</span><span class="pw"><input name="pass" type="password" autocomplete="current-password" placeholder="••••••••" required><button type="button" class="pw-eye" aria-label="Показати пароль"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></span></label>
+      <p class="login-err" id="loginErr" role="alert"></p>
+      <button class="abtn abtn-lime wide" type="submit">Увійти</button>
+      <div class="hint"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><span>Демо-доступ: логін <b>admin</b>, пароль <b>admin123</b></span></div>
+      <a class="back" href="index.html">← Повернутися на сайт</a>
+    </form>
+    <p class="login-foot">© 2026 Олександр Дидюк — «Вертикаль»</p>
+  </div>
+</section>
+
+<!-- ============ ПАНЕЛЬ ============ -->
+<div class="app" id="app" hidden>
+  <aside class="side" id="side">
+    <a class="side-logo" href="index.html" target="_blank" rel="noopener"><svg viewBox="0 0 44 44"><path d="M6 36 L19 8 L25 20 L29 13 L38 36 Z" fill="#c6ff3d"/><circle cx="29.5" cy="27.5" r="4.2" fill="#ff6b1a"/></svg><span><b id="sideName">Вертикаль</b><small>CMS · v2.4</small></span></a>
+    <nav class="side-nav" id="sideNav" aria-label="Розділи панелі"></nav>
+    <div class="side-foot">
+      <div class="storage"><span>Сховище localStorage</span><div class="st-bar"><i id="stBar"></i></div><small id="stTxt">—</small></div>
+    </div>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <button class="side-toggle" id="sideToggle" type="button" aria-label="Меню панелі"><span></span><span></span><span></span></button>
+      <div class="top-title"><small id="crumb">Вертикаль CMS</small><h1 id="viewTitle">Дашборд</h1></div>
+      <div class="top-actions">
+        <a class="abtn abtn-ghost" href="index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span>Переглянути сайт</span></a>
+        <div class="user"><span class="ava">А</span><span class="u-txt"><b>Адміністратор</b><small>admin</small></span></div>
+        <button class="icon-btn" id="logout" type="button" aria-label="Вийти" title="Вийти"><svg viewBox="0 0 24 24"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l5-5-5-5M15 12H3"/></svg></button>
+      </div>
+    </header>
+    <main class="view" id="view"></main>
+    <footer class="afoot">© 2026 Олександр Дидюк — «Вертикаль» · панель керування контентом</footer>
+  </div>
+</div>
+
+<div class="modal" id="modal" hidden><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><h3 id="modalTitle">Запис</h3><button class="icon-btn" type="button" data-close aria-label="Закрити"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><form id="modalForm" novalidate></form></div></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="js/content.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

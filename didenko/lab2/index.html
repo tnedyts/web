@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Смак Полісся — кулінарний блог</title>
+<meta name="description" content="Кулінарний блог про поліську та українську кухню: рецепти, історії, калькулятор порцій.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+<div id="preloader" aria-hidden="true"><div><div class="pot"><b></b><i></i><i></i><i></i></div><div class="pot-t">Смачного!</div></div></div>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#b8322a"/><circle cx="32" cy="34" r="22" fill="none" stroke="#fdf7ee" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M15 36 h34 a17 15 0 0 1 -34 0z" fill="#fdf7ee"/><path d="M12 36 h40" stroke="#fdf7ee" stroke-width="3" stroke-linecap="round"/><g stroke="#fdf7ee" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M24 29 c-3 -4 3 -6 0 -10"/><path d="M32 29 c-3 -4 3 -6 0 -10"/><path d="M40 29 c-3 -4 3 -6 0 -10"/></g></svg><span><b>Смак Полісся</b><span>рецепти з бабусиної кухні</span></span></a>
+    <nav class="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Рецепти</a><a href="archive.html" data-p="archive">Архів</a><a href="about.html" data-p="about">Про блог</a><a href="new.html" data-p="new" class="cta">+ Новий запис</a></nav>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker reveal">Привіт, я Ярослав! 👋</span>
+      <h1 class="reveal" style="--i:1">Смак Полісся <span class="hand">рецепти з бабусиної кухні</span></h1>
+      <p class="hero-lead reveal" style="--i:2">Бабка картопляна, деруни з грибами, юшка після тихого полювання й пиріг із лісовою чорницею. Записую родинні рецепти Житомирщини, щоб вони не загубилися, — з історіями, точними пропорціями й калькулятором порцій.</p>
+      <form class="hero-search reveal" style="--i:3" onsubmit="event.preventDefault();document.getElementById('search').value=this.q.value;document.getElementById('search').dispatchEvent(new Event('input'));document.getElementById('feedTop').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#8a7b70" stroke-width="2.2"/><path d="M16.5 16.5 21 21" stroke="#8a7b70" stroke-width="2.2" stroke-linecap="round"/></svg><input name="q" type="search" placeholder="Що готуємо сьогодні? Напр., «гриби»" aria-label="Пошук рецептів"><button class="btn" type="submit">Знайти</button></form>
+      <div class="hero-stats reveal" style="--i:4"><div><b id="postCount" data-count="10">0</b><span>рецептів у блозі</span></div><div><b data-count="3">0</b><span>покоління кухарів</span></div><div><b data-count="461">0</b><span>вподобань</span></div></div>
+    </div>
+    <div class="hero-art reveal" style="--i:2">
+      <div class="main" id="heroDish"></div>
+      <div class="side" id="heroDish2"></div>
+      <div class="note">Смачного!<small>деруни + узвар = неділя</small></div>
+      <span class="float b1" data-par="-.08"><svg viewBox="0 0 50 50"><path d="M6 44 C 6 20 22 6 46 4 C 44 28 30 44 6 44Z" fill="#6aa046"/><path d="M6 44 L 36 14" stroke="#4f7a3a" stroke-width="2"/></svg></span><span class="float b2"><svg viewBox="0 0 40 40"><circle cx="20" cy="22" r="14" fill="#3b3a6e"/><circle cx="15" cy="16" r="4" fill="#fff" opacity=".5"/><path d="M16 9 l4 4 4 -4" stroke="#2b2350" stroke-width="2" fill="none"/></svg></span><span class="float b3" data-par="-.12"><svg viewBox="0 0 40 40"><circle cx="20" cy="22" r="14" fill="#3b3a6e"/><circle cx="15" cy="16" r="4" fill="#fff" opacity=".5"/><path d="M16 9 l4 4 4 -4" stroke="#2b2350" stroke-width="2" fill="none"/></svg></span>
+    </div>
+  </div>
+</section>
+<div class="rush" aria-hidden="true"></div>
+
+<section class="section" style="padding-bottom:40px">
+  <div class="wrap" id="featured"></div>
+</section>
+
+<section class="section" style="padding-top:30px" id="feedTop">
+  <div class="wrap blog">
+    <div>
+      <div class="sec-head reveal" style="margin-bottom:22px"><span class="kicker">Стрічка записів</span><h2>Усі рецепти</h2></div>
+      <div class="toolbar" id="cats"></div>
+      <p class="feed-info" id="feedInfo"></p>
+      <div class="feed" id="feed"></div>
+      <div class="more"><button class="btn btn-soft" id="more">Показати ще рецепти ↓</button></div>
+    </div>
+    <aside class="side">
+      <div class="widget w-about reveal"><svg class="ava" viewBox="0 0 220 220" role="img" aria-label="Аватар Ярослава Діденка">
+<defs><clipPath id="avc"><circle cx="110" cy="110" r="100"/></clipPath><filter id="avw"><feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="18"/></filter></defs>
+<circle cx="110" cy="110" r="104" fill="#f3c98b" filter="url(#avw)"/>
+<g clip-path="url(#avc)">
+<path d="M30 230 C 36 172 70 156 110 156 C 150 156 184 172 190 230Z" fill="#fffdf9"/>
+<path d="M70 230 V178 h80 V230" fill="#b8322a"/><path d="M70 186 h80" stroke="#fdf7ee" stroke-width="5" stroke-dasharray="5 4"/>
+<path d="M92 156 h36 v20 c-10 8 -26 8 -36 0z" fill="#d9ad86"/>
+<ellipse cx="110" cy="112" rx="36" ry="42" fill="#ecc9a4"/>
+<path d="M72 106 C 66 62 98 52 116 56 C 142 58 156 78 148 108 C 144 88 134 80 120 78 C 110 86 90 80 82 90 C 78 94 74 100 72 106Z" fill="#5a3b28"/>
+<path d="M68 70 C 64 40 90 28 110 36 C 130 26 158 40 152 70 C 150 82 70 82 68 70Z" fill="#fffdf9" stroke="#efe0c8" stroke-width="2"/><rect x="70" y="66" width="80" height="14" rx="5" fill="#fffdf9" stroke="#efe0c8" stroke-width="2"/>
+<ellipse cx="74" cy="116" rx="6" ry="9" fill="#e2bb94"/><ellipse cx="146" cy="116" rx="6" ry="9" fill="#e2bb94"/>
+<path d="M90 106 q 6 -4 12 0 M118 106 q 6 -4 12 0" stroke="#3a2a20" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<circle cx="96" cy="114" r="3" fill="#2a1f18"/><circle cx="124" cy="114" r="3" fill="#2a1f18"/>
+<circle cx="88" cy="128" r="6" fill="#e89a8a" opacity=".45"/><circle cx="132" cy="128" r="6" fill="#e89a8a" opacity=".45"/>
+<path d="M98 136 q 12 10 24 0" stroke="#a5654f" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g transform="translate(150 150) rotate(20)"><rect x="-4" y="0" width="8" height="54" rx="4" fill="#a0522d"/><ellipse cx="0" cy="-2" rx="12" ry="16" fill="#c27a45"/></g>
+</g></svg><h4 style="justify-content:center">Ярослав Діденко</h4><p>Студент із Житомира, онук найкращої кухарки Коростеня. Готую, фотографую й записую.</p><a class="btn btn-soft" href="about.html">Більше про блог</a></div>
+      <div class="widget reveal"><h4>Пошук</h4><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#8a7b70" stroke-width="2.2"/><path d="M16.5 16.5 21 21" stroke="#8a7b70" stroke-width="2.2" stroke-linecap="round"/></svg><input id="search" type="search" placeholder="Інгредієнт або страва…" aria-label="Пошук у блозі"></label></div>
+      <div class="widget reveal"><h4>Теги</h4><div class="tagcloud" id="tagcloud"></div></div>
+      <div class="widget reveal"><h4>Найулюбленіші</h4><ol class="popular" id="popular"></ol></div>
+      <div class="widget w-sub reveal sub-wrap"><svg class="env" viewBox="0 0 100 80"><path d="M4 8 h92 v64 h-92z M4 8 l46 36 46 -36" fill="none" stroke="#fff" stroke-width="4"/></svg><h4>Розсилка</h4><p>Новий рецепт щонеділі.</p><form class="subscribe" novalidate><input type="email" placeholder="ваш e-mail" aria-label="E-mail"><button class="btn" type="submit">OK</button></form><p class="sub-msg"></p></div>
+    </aside>
+  </div>
+</section>
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sub-band reveal sub-wrap">
+      <div><span class="kicker">Щонеділі о 9:00</span><h2>Рецепт тижня — просто у вашу пошту</h2><p>Один лист на тиждень: нова страва, історія до неї та невелика порада. Без реклами й спаму, лише запах домашньої кухні.</p></div>
+      <div><form class="subscribe" novalidate><input type="email" placeholder="ваш e-mail" aria-label="E-mail для підписки"><button class="btn" type="submit">Підписатися</button></form><p class="sub-msg">Відписатися можна будь-коли одним кліком.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="rush thin" aria-hidden="true"></div>
+  <div class="wrap">
+    <div><a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#b8322a"/><circle cx="32" cy="34" r="22" fill="none" stroke="#fdf7ee" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M15 36 h34 a17 15 0 0 1 -34 0z" fill="#fdf7ee"/><path d="M12 36 h40" stroke="#fdf7ee" stroke-width="3" stroke-linecap="round"/><g stroke="#fdf7ee" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M24 29 c-3 -4 3 -6 0 -10"/><path d="M32 29 c-3 -4 3 -6 0 -10"/><path d="M40 29 c-3 -4 3 -6 0 -10"/></g></svg><span><b>Смак Полісся</b></span></a><p style="margin-top:16px;max-width:400px">Кулінарний блог про поліську та українську домашню кухню: історії, рецепти й поради, перевірені на родинних застіллях.</p></div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Рецепти</a></li><li><a href="archive.html">Архів</a></li><li><a href="about.html">Про блог</a></li><li><a href="new.html">Новий запис</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Полісся</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li>@smak.polissia</li></ul></div>
+    <div class="fbottom"><span>© 2026 Ярослав Діденко · «Смак Полісся»</span><span>Зварено з любов’ю та щіпкою солі</span></div>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/posts.js"></script>
+<script src="js/dish.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

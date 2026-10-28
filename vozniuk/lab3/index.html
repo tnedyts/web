@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ліхтар — арт-кінотеатр у Луцьку</title>
+<meta name="description" content="Незалежний арт-кінотеатр «Ліхтар» у Луцьку: афіша, розклад сеансів, кіноклуб, фестиваль короткого метру «Світлячок».">
+<meta name="author" content="Максим Вознюк">
+<meta name="theme-color" content="#1E070D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="countdown"><span class="sweep"></span><b>3</b></div></div>
+<a class="sr" href="#main">Перейти до змісту</a>
+<div class="announce" id="announce"></div>
+<header class="header" id="header">
+  <div class="container hd">
+    <a class="brand" href="index.html" data-brand aria-label="На головну"><span><b data-cms="site.name">Ліхтар</b><small data-cms="site.sub">арт-кінотеатр · Луцьк</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"></nav>
+    <a class="btn sm" href="schedule.html">Купити квиток</a>
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="screen-glow" aria-hidden="true"></div>
+  <div class="beam" aria-hidden="true"></div>
+  <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+  <div class="curtain l" aria-hidden="true" data-depth=".08"></div><div class="curtain r" aria-hidden="true" data-depth=".08"></div><div class="valance" aria-hidden="true"></div>
+  <svg class="projector-ico" viewBox="0 0 160 120" aria-hidden="true"><g fill="#2A1A20" stroke="#D4A84B" stroke-width="2"><circle class="reel" cx="50" cy="32" r="26"/><circle class="reel" cx="108" cy="32" r="22"/><rect x="30" y="58" width="100" height="44" rx="8"/><rect x="4" y="68" width="30" height="24" rx="4"/><path d="M60 102v14M100 102v14"/></g><g fill="#D4A84B"><circle cx="50" cy="32" r="5"/><circle cx="108" cy="32" r="5"/><circle cx="35" cy="22" r="5"/><circle cx="62" cy="20" r="5"/><circle cx="50" cy="52" r="5"/><circle cx="96" cy="22" r="4"/><circle cx="120" cy="26" r="4"/><circle cx="108" cy="48" r="4"/></g><circle cx="6" cy="80" r="6" fill="#FFE3A6"/></svg>
+  <div class="container hero-in">
+    <span class="kicker reveal" data-cms="home.kicker">Луцьк · з 2018 року</span>
+    <h1 class="reveal" style="--d:.1s" data-cms-html="home.title">Кіно, яке <em>світить</em> у темряві</h1>
+    <p class="lead reveal" style="--d:.2s" data-cms="home.text"></p>
+    <div class="hero-actions reveal" style="--d:.3s"><a class="btn" href="films.html"><span data-cms="home.ctaPrimary">Дивитися афішу</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="schedule.html" data-cms="home.ctaSecondary">Розклад сеансів</a></div>
+    <div class="now reveal" style="--d:.4s" id="nowShowing"></div>
+  </div>
+</section>
+<div class="filmstrip" aria-hidden="true"><span></span></div>
+<section class="section">
+  <div class="container">
+    <div class="sec-head"><div><span class="kicker reveal">Прем'єри та хіти</span><h2 class="reveal">Зараз на великому екрані</h2></div><p class="reveal">Афіші змінюються самі кожні шість секунд. Гортайте стрілками, точками, свайпом або клавішами ← →.</p></div>
+    <div class="slider reveal-s" id="slider" aria-label="Слайдер афіш"></div>
+  </div>
+</section>
+<section class="section tight"><div class="container"><div class="stats" id="stats"></div></div></section>
+<section class="section">
+  <div class="container">
+    <div class="sec-head"><div><span class="kicker reveal">Афіша тижня</span><h2 class="reveal">Що подивитися найближчими днями</h2></div><a class="btn ghost reveal" href="films.html">Уся афіша <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="films" id="filmGrid" data-limit="8"></div>
+  </div>
+</section>
+<section class="section bg-v0">
+  <div class="container">
+    <div class="sec-head"><div><span class="kicker reveal">Кіноклуб і фестивалі</span><h2 class="reveal">Найближчі події</h2></div><a class="btn ghost reveal" href="schedule.html">Календар <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="events" id="events" data-limit="3"></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container split">
+    <div class="frame reveal-l"><img src="img/hall.svg" alt="Великий зал кінотеатру «Ліхтар»"></div>
+    <div class="reveal-r"><span class="kicker">Про нас</span><h2 style="font-size:clamp(34px,4vw,54px)">Старий кінотеатр, у якому знову світло</h2>
+      <p class="lead" data-cms="about.lead"></p>
+      <blockquote class="q"><span data-cms="home.quote"></span><cite data-cms="home.quoteAuthor"></cite></blockquote>
+      <p style="margin-top:30px"><a class="link" href="about.html">Історія та зали <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p></div>
+  </div>
+</section>
+<section class="section bg-v2">
+  <div class="container">
+    <div class="sec-head"><div><span class="kicker reveal">Галерея</span><h2 class="reveal">Атмосфера «Ліхтаря»</h2></div><p class="reveal">Натисніть на кадр, щоб відкрити його у повноекранному перегляді.</p></div>
+    <div class="gallery" id="gallery" data-limit="5"></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="sec-head"><div><span class="kicker reveal">Новини</span><h2 class="reveal">З будки кіномеханіка</h2></div><a class="btn ghost reveal" href="news.html">Усі новини <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="news-grid" id="newsGrid" data-limit="3"></div>
+  </div>
+</section>
+<section class="section bg-v0">
+  <div class="container"><div class="sec-head"><div><span class="kicker reveal">Відгуки</span><h2 class="reveal">Що кажуть глядачі</h2></div></div><div class="testi" id="testi"></div></div>
+</section>
+
+</main>
+<footer class="footer" id="footer"><div class="container"><p>© 2026 Максим Вознюк · Ліхтар</p></div></footer>
+<script src="js/content.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/posters.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

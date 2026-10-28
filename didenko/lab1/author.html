@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Автор — Кидай кубик</title>
+<meta name="description" content="Сторінка автора блогу «Кидай кубик» Ярослава Діденка: біографія, улюблені ігри, карта Житомира та форма зв’язку.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="author">
+<div id="preloader" aria-hidden="true"><div class="pl-cube"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div><span>Кидаємо кубик…</span></div>
+<header class="header">
+  <div class="wrap hd">
+    <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Головна</a><a href="catalog.html" data-p="catalog">Каталог</a><a href="rules.html" data-p="rules">Правила</a><a href="club.html" data-p="club">Клуб</a><a href="author.html" data-p="author">Автор</a></nav>
+    <a class="wish-link" href="catalog.html?wish=1" title="Мій список бажань" aria-label="Мій список бажань"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="currentColor"/></svg><em id="wishN">0</em></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+
+<section class="section author-top">
+  <div class="wrap author-card">
+    <div class="ava-wrap reveal">
+      <div class="ava" id="ava"></div>
+      <span class="ava-badge">🎲 6 років у хобі</span>
+    </div>
+    <div class="reveal" style="--i:1">
+      <span class="eyebrow">Автор блогу</span>
+      <h1>Ярослав Діденко</h1>
+      <p class="lead">Студент із Житомира, колекціонер настільних ігор і ведучий клубних вечорів. Вірю, що будь-яку компанію можна подружити за одним столом — треба лише правильно підібрати гру.</p>
+      <div class="idcard">
+        <div><span>Нік</span><b>@yarko.rolls</b></div>
+        <div><span>E-mail</span><b>yaroslav.didenko@gmail.com</b></div>
+        <div><span>Місто</span><b>Житомир</b></div>
+      </div>
+      <a class="btn btn-ind" href="#contact">Написати мені <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section bio-sec">
+  <div class="wrap bio-grid">
+    <div class="reveal">
+      <span class="eyebrow">Біографія</span>
+      <h2>Як усе почалося</h2>
+      <p>У 2020 році друг привіз з Польщі «Каркасон», і ми зіграли п’ять партій поспіль. Наступного тижня я купив власну коробку, а за рік на полиці стояло вже десять ігор. Зараз їх двадцять чотири — і я намагаюся тримати колекцію компактною: лише те, у що справді граємо.</p>
+      <p>Навчаюся на ІТ-спеціальності й люблю, коли логіка зустрічається з дизайном, — тому настільні ігри для мене ще й приклад чудового інтерфейсу: картон, правила й ергономіка мають працювати разом. Цей сайт я зробив вручну: усі обкладинки, кубики й мипли малює JavaScript.</p>
+      <p>З 2023 року разом із друзями проводжу відкриті вечори в житомирському антикафе «Фішка». Найбільше люблю пояснювати правила новачкам і бачити, як після першої партії людина каже: «А давайте ще одну».</p>
+    </div>
+    <div class="reveal" style="--i:1">
+      <h3 class="fav-h">Мій топ-5</h3>
+      <ol class="fav" id="fav"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="section map-sec">
+  <div class="wrap map-grid">
+    <div class="map-box reveal" id="map"></div>
+    <div class="reveal" style="--i:1">
+      <span class="eyebrow">Домівка</span>
+      <h2>Житомир</h2>
+      <p>Місто на скелястих берегах Тетерева, батьківщина Корольова й одне з найзеленіших міст Полісся. Тут живу, навчаюся і щоп’ятниці розкладаю коробки з іграми. Наведіть курсор на позначку, щоб побачити підказку.</p>
+      <a class="btn btn-y" href="https://www.google.com/maps?q=50.25,28.66" target="_blank" rel="noopener">Відкрити в Google Maps ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section form-sec" id="contact">
+  <div class="wrap form-grid">
+    <div class="reveal">
+      <span class="eyebrow">Зворотний зв’язок</span>
+      <h2>Запропонуйте гру або запитайте про клуб</h2>
+      <p>Хочете, щоб я розповів про вашу улюблену гру, приніс її на вечір або допоміг обрати подарунок? Напишіть — відповідаю протягом дня.</p>
+      <p class="small muted">Форма навчальна: дані перевіряються в браузері й нікуди не надсилаються.</p>
+    </div>
+    <div class="form-card reveal" style="--i:1">
+      <form id="contactForm" novalidate>
+        <div class="row2">
+          <div class="field"><label for="f-name">Ім’я</label><input id="f-name" name="name" autocomplete="name" placeholder="Як до вас звертатися"><span class="err"></span></div>
+          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@gmail.com"><span class="err"></span></div>
+        </div>
+        <div class="field"><label for="f-topic">Тема</label><select id="f-topic" name="topic"><option value="">— оберіть —</option><option>Порадити гру</option><option>Запитання про клуб</option><option>Допомога з вибором подарунка</option><option>Співпраця</option></select><span class="err"></span></div>
+        <div class="field"><label for="f-msg">Повідомлення <small id="msgLen">0 / 500</small></label><textarea id="f-msg" name="message" maxlength="500" rows="5" placeholder="Ваш лист…"></textarea><span class="err"></span></div>
+        <button class="btn btn-ind btn-wide" type="submit"><span>Надіслати</span></button>
+      </form>
+      <div class="sent" aria-live="polite">
+        <div class="sent-dice" aria-hidden="true"></div>
+        <h3>Дякую, <span id="okName"></span>!</h3>
+        <p>Лист отримано. Кубик кинуто — відповідь прилетить найближчим часом.</p>
+        <button class="btn btn-y" id="again" type="button">Написати ще</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="f-dice" aria-hidden="true"></div>
+  <div class="wrap f-grid">
+    <div>
+      <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+      <p>Особистий проєкт про хобі, яке збирає друзів за одним столом: огляди, правила простими словами й ігрові вечори в Житомирі.</p>
+    </div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Головна</a></li><li><a href="catalog.html">Каталог</a></li><li><a href="rules.html">Правила</a></li><li><a href="club.html">Клуб</a></li><li><a href="author.html">Автор</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Україна</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li><a href="author.html#contact">Написати автору</a></li></ul></div>
+    <div><h4>Кинь кубик</h4><button class="f-roll" id="footRoll" type="button" aria-label="Кинути кубик">⚄</button><p class="small" id="footMsg">Натисни — і отримай пораду на вечір.</p></div>
+  </div>
+  <div class="wrap f-bottom"><span>© 2026 Ярослав Діденко · Кидай кубик</span><span>Зроблено вручну: HTML, CSS, JS і трохи удачі 🎲</span></div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/data.js"></script>
+<script src="js/art.js"></script>
+<script src="js/uamap.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

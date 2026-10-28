@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Афіша — Ліхтар</title>
+<meta name="description" content="Афіша арт-кінотеатру «Ліхтар»: фільми, постери, жанри, рейтинги й найближчі сеанси.">
+<meta name="author" content="Максим Вознюк">
+<meta name="theme-color" content="#1E070D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="countdown"><span class="sweep"></span><b>3</b></div></div>
+<a class="sr" href="#main">Перейти до змісту</a>
+<div class="announce" id="announce"></div>
+<header class="header" id="header">
+  <div class="container hd">
+    <a class="brand" href="index.html" data-brand aria-label="На головну"><span><b data-cms="site.name">Ліхтар</b><small data-cms="site.sub">арт-кінотеатр · Луцьк</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"></nav>
+    <a class="btn sm" href="schedule.html">Купити квиток</a>
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="beam" aria-hidden="true"></div>
+  <div class="container"><div class="crumbs"><a href="index.html">Головна</a> / Афіша</div>
+  <h1><span class="titles"><span>Афіша</span></span></h1><p class="lead">Авторські прем'єри, документалістика, анімація для всієї родини й класика на плівці. Натисніть на постер, щоб прочитати про фільм і обрати сеанс.</p></div></section><div class="filmstrip" aria-hidden="true"><span></span></div>
+<section class="section" style="padding-top:60px">
+  <div class="container">
+    <div class="filters reveal"><div class="fgroup" id="genreFilter"></div><label class="search"><span class="sr">Пошук фільму</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="filmSearch" type="search" placeholder="Назва або режисер…"></label></div>
+    <div class="films" id="filmGrid"></div>
+    <p class="empty" id="filmEmpty" style="display:none">Нічого не знайшли — спробуйте інший жанр.</p>
+  </div>
+</section>
+<section class="section bg-v0">
+  <div class="container split">
+    <div class="reveal-l"><span class="kicker">Ціни на квитки</span><h2 style="font-size:clamp(34px,4vw,54px)">Скільки коштує вечір у кіно</h2><p class="lead">Квитки можна забронювати онлайн і викупити на касі за 30 хвилин до сеансу.</p><a class="btn" href="schedule.html">Обрати сеанс <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="prices reveal-r" id="prices"></div>
+  </div>
+</section>
+
+</main>
+<footer class="footer" id="footer"><div class="container"><p>© 2026 Максим Вознюк · Ліхтар</p></div></footer>
+<script src="js/content.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/posters.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

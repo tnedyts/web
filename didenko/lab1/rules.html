@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Правила ігор — Кидай кубик</title>
+<meta name="description" content="Правила популярних настільних ігор простими словами та анкета «Яку гру обрати для компанії».">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="rules">
+<div id="preloader" aria-hidden="true"><div class="pl-cube"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div><span>Кидаємо кубик…</span></div>
+<header class="header">
+  <div class="wrap hd">
+    <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Головна</a><a href="catalog.html" data-p="catalog">Каталог</a><a href="rules.html" data-p="rules">Правила</a><a href="club.html" data-p="club">Клуб</a><a href="author.html" data-p="author">Автор</a></nav>
+    <a class="wish-link" href="catalog.html?wish=1" title="Мій список бажань" aria-label="Мій список бажань"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="currentColor"/></svg><em id="wishN">0</em></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="phead-bg" aria-hidden="true"></div>
+  <div class="wrap phead-in">
+    <div>
+      <nav class="crumbs" aria-label="Навігація"><a href="index.html">Головна</a><span>/</span><span>Правила</span></nav>
+      <span class="eyebrow reveal">Правила простими словами</span>
+      <h1 class="reveal" style="--i:1">Як у це грати?</h1>
+      <p class="lead reveal" style="--i:2">П’ять ігор, які найчастіше з’являються на наших вечорах, — без товстих буклетів. Мета, хід гравця, порада й відповіді на часті запитання. А нижче — анкета, що підбере гру саме для вашої компанії.</p>
+    </div>
+    <div class="phead-art reveal" style="--i:2" data-art="rules"></div>
+  </div>
+</section>
+
+<section class="section rules-sec">
+  <div class="wrap">
+    <div class="r-tabs reveal" role="tablist" aria-label="Ігри"><button role="tab" id="t-carcassonne" aria-controls="p-carcassonne" aria-selected="true" class="on" data-tab="carcassonne"><span class="t-ico" data-ico="carcassonne"></span>Каркасон</button><button role="tab" id="t-catan" aria-controls="p-catan" aria-selected="false" data-tab="catan"><span class="t-ico" data-ico="catan"></span>Колонізатори</button><button role="tab" id="t-dixit" aria-controls="p-dixit" aria-selected="false" data-tab="dixit"><span class="t-ico" data-ico="dixit"></span>Діксіт</button><button role="tab" id="t-codenames" aria-controls="p-codenames" aria-selected="false" data-tab="codenames"><span class="t-ico" data-ico="codenames"></span>Кодові імена</button><button role="tab" id="t-pandemic" aria-controls="p-pandemic" aria-selected="false" data-tab="pandemic"><span class="t-ico" data-ico="pandemic"></span>Пандемія</button></div>
+    <div class="r-panels reveal"><article class="r-panel on" role="tabpanel" id="p-carcassonne" aria-labelledby="t-carcassonne">
+  <div class="rp-side"><div class="rp-cover" data-cover="carcassonne"></div><div class="rp-meta" data-meta="carcassonne"></div></div>
+  <div class="rp-main">
+    <h3>Каркасон: правила за дві хвилини</h3>
+    <div class="goal"><b>🎯 Мета.</b> Набрати найбільше очок за завершені дороги, міста й монастирі, а наприкінці — за поля, що постачають міста.</div>
+    <h4>Хід гравця</h4>
+    <ol class="steps"><li><span>1</span><p>Витягніть тайл і прикладіть його до карти так, щоб краї збігалися: дорога до дороги, місто до міста.</p></li><li><span>2</span><p>За бажанням поставте одного мипла на щойно покладений тайл — на дорогу (розбійник), місто (лицар), монастир (монах) або поле (селянин). Але тільки якщо цей об’єкт ще ніхто не зайняв.</p></li><li><span>3</span><p>Якщо ваш тайл завершив дорогу, місто чи монастир — порахуйте очки і поверніть мипла собі.</p></li><li><span>4</span><p>Гра закінчується, коли тайли вичерпано. Тоді рахують незавершені об’єкти й поля.</p></li></ol>
+    <div class="tip"><b>Порада від Ярослава</b><p>Міста приносять удвічі більше очок, ніж дороги, а щит на тайлі міста — бонус. Тримайте одного-двох миплів у запасі: без них ви не зможете вскочити у вигідне місто.</p></div>
+    <h4>Часті запитання</h4>
+    <div class="faq"><details><summary>Чи можна поставити мипла в чуже місто?</summary><p>Не напряму. Але можна поставити його в окреме місто поруч, а потім з’єднати їх тайлом — тоді в місті буде два власники, і очки отримає той, у кого більше миплів.</p></details><details><summary>Що буде, якщо тайл нікуди не підходить?</summary><p>Його відкладають з гри і тягнуть інший. Таке трапляється рідко.</p></details></div>
+  </div>
+</article>
+<article class="r-panel" role="tabpanel" id="p-catan" aria-labelledby="t-catan" hidden>
+  <div class="rp-side"><div class="rp-cover" data-cover="catan"></div><div class="rp-meta" data-meta="catan"></div></div>
+  <div class="rp-main">
+    <h3>Колонізатори: правила за дві хвилини</h3>
+    <div class="goal"><b>🎯 Мета.</b> Першим набрати 10 переможних очок: поселення дає 1, місто — 2, плюс бонуси за найдовшу дорогу, найбільше військо й карти розвитку.</div>
+    <h4>Хід гравця</h4>
+    <ol class="steps"><li><span>1</span><p>Киньте два кубики. Усі гравці, чиї поселення стоять біля гексів із цим числом, отримують ресурси.</p></li><li><span>2</span><p>Торгуйтеся: з іншими гравцями — на будь-яких умовах, з банком — 4 до 1 (або вигідніше біля портів).</p></li><li><span>3</span><p>Будуйте: дорога (дерево + глина), поселення (дерево, глина, зерно, вовна), місто (2 зерна + 3 руди), карта розвитку (зерно, вовна, руда).</p></li><li><span>4</span><p>Якщо випала сімка — рухайте розбійника: він блокує гекс і дозволяє вкрасти карту в сусіда. Хто має понад 7 карт, скидає половину.</p></li></ol>
+    <div class="tip"><b>Порада від Ярослава</b><p>На старті ставте поселення на перетини з різними ресурсами і частими числами (6 і 8 випадають найчастіше). Руда й зерно — двигун пізньої гри.</p></div>
+    <h4>Часті запитання</h4>
+    <div class="faq"><details><summary>Чи можна будувати поселення поруч із чужим?</summary><p>Ні: між будь-якими двома поселеннями має бути щонайменше дві дороги відстані.</p></details><details><summary>Скільки разів можна торгувати за хід?</summary><p>Скільки завгодно, але тільки у свій хід, і лише гравець, чий хід, може брати участь у кожному обміні.</p></details></div>
+  </div>
+</article>
+<article class="r-panel" role="tabpanel" id="p-dixit" aria-labelledby="t-dixit" hidden>
+  <div class="rp-side"><div class="rp-cover" data-cover="dixit"></div><div class="rp-meta" data-meta="dixit"></div></div>
+  <div class="rp-main">
+    <h3>Діксіт: правила за дві хвилини</h3>
+    <div class="goal"><b>🎯 Мета.</b> Дійти першим до кінця доріжки очок, вгадуючи картки інших і даючи вдалі асоціації, коли ви — оповідач.</div>
+    <h4>Хід гравця</h4>
+    <ol class="steps"><li><span>1</span><p>Оповідач таємно обирає карту з руки й каже до неї асоціацію: слово, фразу, звук або жест.</p></li><li><span>2</span><p>Інші гравці добирають зі своєї руки картку, яка найкраще пасує до асоціації, і віддають оповідачу закритою.</p></li><li><span>3</span><p>Оповідач перемішує карти й викладає їх. Усі, крім нього, таємно голосують, яка карта — оригінальна.</p></li><li><span>4</span><p>Якщо вгадали всі або ніхто — оповідач отримує 0, решта по 2. Інакше оповідач і ті, хто вгадав, отримують по 3, а гравці — бонуси за голоси за їхні карти.</p></li></ol>
+    <div class="tip"><b>Порада від Ярослава</b><p>Ідеальна асоціація зрозуміла не всім, а приблизно половині стола. Цитата з пісні, яку знає ваша компанія, — класичний хід.</p></div>
+    <h4>Часті запитання</h4>
+    <div class="faq"><details><summary>Чи можна описувати картинку прямо?</summary><p>Можна, але тоді, найімовірніше, вгадають усі — і ви отримаєте нуль. У цьому й хитрість.</p></details></div>
+  </div>
+</article>
+<article class="r-panel" role="tabpanel" id="p-codenames" aria-labelledby="t-codenames" hidden>
+  <div class="rp-side"><div class="rp-cover" data-cover="codenames"></div><div class="rp-meta" data-meta="codenames"></div></div>
+  <div class="rp-main">
+    <h3>Кодові імена: правила за дві хвилини</h3>
+    <div class="goal"><b>🎯 Мета.</b> Командою першими знайти всіх своїх агентів серед 25 слів і не вказати на вбивцю.</div>
+    <h4>Хід гравця</h4>
+    <ol class="steps"><li><span>1</span><p>Розділіться на дві команди. У кожній — один капітан, який бачить секретну карту-ключ.</p></li><li><span>2</span><p>Капітан дає підказку: одне слово й число. Наприклад, «Космос, 2» — означає два слова, пов’язані з космосом.</p></li><li><span>3</span><p>Команда торкається слів по одному. Своє слово — можна продовжувати, нейтральне чи чуже — хід закінчується.</p></li><li><span>4</span><p>Якщо команда вказала на вбивцю — вона миттєво програє.</p></li></ol>
+    <div class="tip"><b>Порада від Ярослава</b><p>Капітане, не поспішайте: краще впевнена підказка на два слова, ніж ризикована на чотири. Перевіряйте, чи не підходить ваше слово до вбивці.</p></div>
+    <h4>Часті запитання</h4>
+    <div class="faq"><details><summary>Чи можна давати підказку зі спільним коренем?</summary><p>Ні. Підказка не може бути формою слова на столі чи його частиною.</p></details><details><summary>Скільки разів можна вгадувати?</summary><p>Число з підказки плюс одна спроба — щоб наздоганяти минулі підказки.</p></details></div>
+  </div>
+</article>
+<article class="r-panel" role="tabpanel" id="p-pandemic" aria-labelledby="t-pandemic" hidden>
+  <div class="rp-side"><div class="rp-cover" data-cover="pandemic"></div><div class="rp-meta" data-meta="pandemic"></div></div>
+  <div class="rp-main">
+    <h3>Пандемія: правила за дві хвилини</h3>
+    <div class="goal"><b>🎯 Мета.</b> Разом знайти вакцини від усіх чотирьох хвороб, поки не скінчилися карти, не сталося восьми спалахів або не вичерпалися кубики хвороб.</div>
+    <h4>Хід гравця</h4>
+    <ol class="steps"><li><span>1</span><p>У свій хід зробіть 4 дії: переїзди, лікування (зняти кубик), будівництво станції, обмін картами, створення вакцини.</p></li><li><span>2</span><p>Візьміть дві карти гравця. Якщо трапилася «Епідемія» — у новому місті з’являються три кубики, а старі загрози повертаються нагору колоди.</p></li><li><span>3</span><p>Заразіть міста: відкрийте стільки карт зараження, скільки показує трекер, і додайте по кубику.</p></li><li><span>4</span><p>Якщо в місті вже три кубики — стається спалах, і хвороба перекидається на сусідні міста.</p></li></ol>
+    <div class="tip"><b>Порада від Ярослава</b><p>Обговорюйте плани вголос, але залишайте кожному право останнього слова за свій хід — так гра не перетвориться на «один грає за всіх».</p></div>
+    <h4>Часті запитання</h4>
+    <div class="faq"><details><summary>Скільки карт треба для вакцини?</summary><p>П’ять карт одного кольору на дослідницькій станції (вченій — чотири).</p></details><details><summary>Чи можна програти, якщо вакцини вже є?</summary><p>Так, якщо скінчиться колода гравців. Тому не затягуйте.</p></details></div>
+  </div>
+</article>
+</div>
+  </div>
+</section>
+
+<section class="section quiz-sec" id="quiz">
+  <div class="wrap quiz-grid">
+    <div class="quiz-intro reveal">
+      <span class="eyebrow">Інтерактивна анкета</span>
+      <h2>Яку гру обрати для компанії?</h2>
+      <p>Чотири запитання — і алгоритм підбере з каталогу три найкращі варіанти. Враховуються кількість гравців, час, настрій вечора й досвід компанії.</p>
+      <div class="quiz-art" id="quizArt" aria-hidden="true"></div>
+    </div>
+    <div class="quiz-card reveal" style="--i:1" id="quizCard">
+      <div class="q-progress"><i id="qBar"></i></div>
+      <div class="q-stage" id="qStage"></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="f-dice" aria-hidden="true"></div>
+  <div class="wrap f-grid">
+    <div>
+      <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+      <p>Особистий проєкт про хобі, яке збирає друзів за одним столом: огляди, правила простими словами й ігрові вечори в Житомирі.</p>
+    </div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Головна</a></li><li><a href="catalog.html">Каталог</a></li><li><a href="rules.html">Правила</a></li><li><a href="club.html">Клуб</a></li><li><a href="author.html">Автор</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Україна</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li><a href="author.html#contact">Написати автору</a></li></ul></div>
+    <div><h4>Кинь кубик</h4><button class="f-roll" id="footRoll" type="button" aria-label="Кинути кубик">⚄</button><p class="small" id="footMsg">Натисни — і отримай пораду на вечір.</p></div>
+  </div>
+  <div class="wrap f-bottom"><span>© 2026 Ярослав Діденко · Кидай кубик</span><span>Зроблено вручну: HTML, CSS, JS і трохи удачі 🎲</span></div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Опис гри"><div class="m-card"><button class="m-x" aria-label="Закрити">×</button><div class="m-body" id="mBody"></div></div></div>
+<script src="js/data.js"></script>
+<script src="js/art.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

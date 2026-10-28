@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Рецепт — Смак Полісся</title>
+<meta name="description" content="Запис кулінарного блогу «Смак Полісся».">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="post">
+<div id="preloader" aria-hidden="true"><div><div class="pot"><b></b><i></i><i></i><i></i></div><div class="pot-t">Смачного!</div></div></div>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#b8322a"/><circle cx="32" cy="34" r="22" fill="none" stroke="#fdf7ee" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M15 36 h34 a17 15 0 0 1 -34 0z" fill="#fdf7ee"/><path d="M12 36 h40" stroke="#fdf7ee" stroke-width="3" stroke-linecap="round"/><g stroke="#fdf7ee" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M24 29 c-3 -4 3 -6 0 -10"/><path d="M32 29 c-3 -4 3 -6 0 -10"/><path d="M40 29 c-3 -4 3 -6 0 -10"/></g></svg><span><b>Смак Полісся</b><span>рецепти з бабусиної кухні</span></span></a>
+    <nav class="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Рецепти</a><a href="archive.html" data-p="archive">Архів</a><a href="about.html" data-p="about">Про блог</a><a href="new.html" data-p="new" class="cta">+ Новий запис</a></nav>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+
+<div id="progress" aria-hidden="true"></div>
+<section class="post-hero">
+  <div class="wrap">
+    <div>
+      <div class="crumbs"><a href="index.html">Рецепти</a> / запис</div>
+      <a class="cat-link" id="pCat" href="index.html">Рубрика</a>
+      <h1 id="pTitle">Рецепт</h1>
+      <div class="pmeta" id="pMeta"></div>
+    </div>
+    <div class="post-img" id="pImg"></div>
+  </div>
+</section>
+<div class="rush thin" aria-hidden="true"></div>
+<section class="section" style="padding-top:60px">
+  <div class="wrap article">
+    <div>
+      <div class="story" id="pStory"></div>
+      <div class="ptags" id="pTags"></div>
+      <h2 class="h-sec">Як готувати</h2>
+      <p style="color:var(--muted);margin-top:-10px">Натискайте на номер кроку, щоб позначити його виконаним.</p>
+      <ol class="steps" id="steps"></ol>
+      <div class="tip" id="tip"></div>
+      <div class="actions">
+        <button class="like" id="like" aria-label="Вподобати"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.3C1 8 3.4 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.6 0 6 3.5 4.5 7.2C19.5 16.4 12 21 12 21z"/></svg><span id="likeN">0</span></button>
+        <button class="btn btn-soft" id="share">🔗 Поділитися</button>
+        <button class="btn btn-soft" id="print">🖨 Друкувати</button>
+      </div>
+      <div class="comments">
+        <h2 class="h-sec"><span>Коментарі (<span id="cN">0</span>)</span></h2>
+        <ul class="clist" id="clist"></ul>
+        <form class="cform" id="cform" novalidate>
+          <input name="cname" placeholder="Ваше ім’я" aria-label="Ім’я" maxlength="40">
+          <textarea name="ctext" placeholder="Як вийшло у вас? Поділіться порадою…" aria-label="Коментар" maxlength="600"></textarea>
+          <div><button class="btn" type="submit">Залишити коментар</button></div>
+        </form>
+      </div>
+      <nav class="pnav" id="pnav" aria-label="Інші записи"></nav>
+    </div>
+    <aside class="ing-card">
+      <h3>Інгредієнти</h3>
+      <div class="calc"><button id="srvMinus" aria-label="Менше порцій">−</button><div class="srv"><b id="srv">4</b><span id="srvW">порції</span></div><button id="srvPlus" aria-label="Більше порцій">+</button></div>
+      <div class="srv-quick"><button data-k=".5">×½</button><button data-k="base">базово</button><button data-k="2">×2</button><button data-k="3">×3</button></div>
+      <ul class="ing" id="ing"></ul>
+      <p style="font-size:.85rem;color:var(--muted);margin:14px 0 0">Кількості перераховуються автоматично. Відмічайте те, що вже є на кухні.</p>
+    </aside>
+  </div>
+  <div class="wrap"><h2 class="h-sec">Вам також сподобається</h2><div class="related" id="related"></div></div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="rush thin" aria-hidden="true"></div>
+  <div class="wrap">
+    <div><a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#b8322a"/><circle cx="32" cy="34" r="22" fill="none" stroke="#fdf7ee" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M15 36 h34 a17 15 0 0 1 -34 0z" fill="#fdf7ee"/><path d="M12 36 h40" stroke="#fdf7ee" stroke-width="3" stroke-linecap="round"/><g stroke="#fdf7ee" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M24 29 c-3 -4 3 -6 0 -10"/><path d="M32 29 c-3 -4 3 -6 0 -10"/><path d="M40 29 c-3 -4 3 -6 0 -10"/></g></svg><span><b>Смак Полісся</b></span></a><p style="margin-top:16px;max-width:400px">Кулінарний блог про поліську та українську домашню кухню: історії, рецепти й поради, перевірені на родинних застіллях.</p></div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Рецепти</a></li><li><a href="archive.html">Архів</a></li><li><a href="about.html">Про блог</a></li><li><a href="new.html">Новий запис</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Полісся</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li>@smak.polissia</li></ul></div>
+    <div class="fbottom"><span>© 2026 Ярослав Діденко · «Смак Полісся»</span><span>Зварено з любов’ю та щіпкою солі</span></div>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/posts.js"></script>
+<script src="js/dish.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

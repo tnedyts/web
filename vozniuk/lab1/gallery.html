@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Галерея — Ретро Гараж</title>
+<meta name="description" content="Галерея ретро-плакатів і сцен з класичними авто з лайтбоксом і canvas-анімацією «Нічна траса».">
+<meta name="author" content="Максим Вознюк">
+<meta name="theme-color" content="#B3202E">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="gauge"><svg viewBox="0 0 150 90"><path d="M10 80a65 65 0 0 1 130 0" fill="none" stroke="#3A322C" stroke-width="10" stroke-linecap="round"/><path d="M10 80a65 65 0 0 1 130 0" fill="none" stroke="#B3202E" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 10"/><g class="needle"><path d="M75 80 L75 22" stroke="#E3A72F" stroke-width="5" stroke-linecap="round"/></g><circle cx="75" cy="80" r="8" fill="#F3E9D2"/></svg><b>Заводимо мотор</b></div></div>
+<a class="sr" href="#main">Перейти до змісту</a>
+<div class="topbar" aria-hidden="true"><div class="track"><span>ЗАЗ-965 «Горбатий»</span><span>ГАЗ-21 «Волга»</span><span>Москвич-412</span><span>ВАЗ-2101 «Копійка»</span><span>VW Beetle</span><span>Ford Mustang 1965</span><span>Citroën DS</span><span>Mini Cooper</span><span>Porsche 911</span><span>Chevrolet Bel Air</span><span>ЗАЗ-965 «Горбатий»</span><span>ГАЗ-21 «Волга»</span><span>Москвич-412</span><span>ВАЗ-2101 «Копійка»</span><span>VW Beetle</span><span>Ford Mustang 1965</span><span>Citroën DS</span><span>Mini Cooper</span><span>Porsche 911</span><span>Chevrolet Bel Air</span></div></div>
+<header class="header">
+  <div class="container hd">
+    <a class="logo" href="index.html" aria-label="Ретро Гараж — на головну"><svg class="badge" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#9AA2A8"/><stop offset="1" stop-color="#E6E9EB"/></linearGradient></defs><circle cx="32" cy="32" r="30" fill="url(#lgc)" stroke="#1F1A17" stroke-width="2.5"/><circle cx="32" cy="32" r="23" fill="#B3202E" stroke="#1F1A17" stroke-width="2.5"/><path d="M16 38a16 16 0 0 1 32 0" fill="none" stroke="#F3E9D2" stroke-width="3" stroke-dasharray="2 4"/><path d="M32 38 L42 24" stroke="#E3A72F" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="38" r="4" fill="#F3E9D2"/><path d="M22 46h20" stroke="#F3E9D2" stroke-width="3" stroke-linecap="round"/></svg><span><b>Ретро Гараж</b><small>класика · Вінниця</small></span></a>
+    <nav class="nav" aria-label="Головне меню"><a href="index.html">Головна</a><a href="collection.html">Колекція</a><a href="restoration.html">Реставрація</a><a href="gallery.html">Галерея</a><a href="author.html">Автор</a></nav>
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero dark"><div class="container ph-grid">
+  <div class="reveal-l"><div class="crumbs"><a href="index.html">Головна</a> / Галерея</div><h1>Галерея</h1><p class="lead">Плакати в дусі шістдесятих і сцени з гаражного життя. Натисніть на кадр, щоб відкрити його на весь екран або запустити слайд-шоу.</p></div>
+  <div class="ph-art reveal-r"><img src="img/cars/beetle.svg" alt=""></div></div></section><div class="stripes" aria-hidden="true"></div>
+<section class="section">
+  <div class="container">
+    <div class="sec-head"><div><span class="label reveal">Кадри</span><h2 class="reveal">Дев'ять ретро-плакатів</h2></div><div class="fgroup reveal" id="gFilter"></div></div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+<div class="stripes" aria-hidden="true"></div>
+<section class="section bg-paper" id="media">
+  <div class="container media">
+    <div class="screen reveal-l"><canvas id="roadCanvas" width="960" height="600" aria-label="Анімація: нічна траса й спідометр"></canvas>
+      <div class="ctrl"><button class="btn sm" id="playBtn">Пауза</button><button class="btn alt sm gas" id="gasBtn">Газ (тримати)</button><span class="read" id="speedRead">0 км/год</span></div></div>
+    <div class="reveal-r"><span class="label">Медіа</span><h2 style="font-size:clamp(34px,4vw,54px)">Нічна траса</h2><p class="lead">Інтерактивний ролик, намальований кодом на canvas: вечірня дорога з тополями та справжній ретро-спідометр.</p><p>Натисніть і тримайте «Газ» — стрілка поповзе вгору, а тополі замиготять швидше. Відпустіть — і машина плавно скине швидкість. Кнопка «Пауза» зупиняє анімацію.</p></div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div><a class="logo" href="index.html"><svg class="badge" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lgc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#9AA2A8"/><stop offset="1" stop-color="#E6E9EB"/></linearGradient></defs><circle cx="32" cy="32" r="30" fill="url(#lgc)" stroke="#1F1A17" stroke-width="2.5"/><circle cx="32" cy="32" r="23" fill="#B3202E" stroke="#1F1A17" stroke-width="2.5"/><path d="M16 38a16 16 0 0 1 32 0" fill="none" stroke="#F3E9D2" stroke-width="3" stroke-dasharray="2 4"/><path d="M32 38 L42 24" stroke="#E3A72F" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="38" r="4" fill="#F3E9D2"/><path d="M22 46h20" stroke="#F3E9D2" stroke-width="3" stroke-linecap="round"/></svg><span><b>Ретро Гараж</b><small>класика · Вінниця</small></span></a><p style="margin-top:18px;max-width:380px">Особистий сайт-щоденник про реставрацію та колекціонування класичних автомобілів. Без реклами, зате з мастилом під нігтями.</p></div>
+      <div><h4>Розділи</h4><ul><li><a href="index.html">Головна</a></li><li><a href="collection.html">Колекція</a></li><li><a href="restoration.html">Реставрація</a></li><li><a href="gallery.html">Галерея</a></li><li><a href="author.html">Автор</a></li></ul></div>
+      <div><h4>Контакти</h4><ul><li>м. Вінниця</li><li><a href="mailto:maksym.voznyuk@gmail.com">maksym.voznyuk@gmail.com</a></li><li>нік: maks_retrogarage</li><li><a href="author.html#form">Написати в гараж</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><span>© 2026 Максим Вознюк · Ретро Гараж</span><span>Зроблено з любов'ю до хрому ★ 1956–1976</span></div>
+  </div>
+</footer>
+<script src="js/cars.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

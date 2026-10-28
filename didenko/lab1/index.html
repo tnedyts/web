@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кидай кубик — блог про настільні ігри</title>
+<meta name="description" content="Кидай кубик — хобі-блог Ярослава Діденка про настільні ігри: каталог колекції, правила простими словами, ігрові вечори в Житомирі.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+<div id="preloader" aria-hidden="true"><div class="pl-cube"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div><span>Кидаємо кубик…</span></div>
+<header class="header">
+  <div class="wrap hd">
+    <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Головна</a><a href="catalog.html" data-p="catalog">Каталог</a><a href="rules.html" data-p="rules">Правила</a><a href="club.html" data-p="club">Клуб</a><a href="author.html" data-p="author">Автор</a></nav>
+    <a class="wish-link" href="catalog.html?wish=1" title="Мій список бажань" aria-label="Мій список бажань"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="currentColor"/></svg><em id="wishN">0</em></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="hero-txt">
+      <span class="eyebrow reveal">Хобі-блог про настільні ігри</span>
+      <h1 class="reveal" style="--i:1">Кидай <span class="hl">кубик</span>,<br>збирай друзів</h1>
+      <p class="lead reveal" style="--i:2">Двадцять чотири гри з моєї полиці, правила без нудних інструкцій і щотижневі ігрові вечори в Житомирі. Від п’ятихвилинних «вечірок» до стратегій на три години.</p>
+      <div class="btns reveal" style="--i:3"><a class="btn btn-y" href="catalog.html">Дивитися каталог <span class="ar">→</span></a><a class="btn btn-ghost" href="rules.html#quiz">Підібрати гру</a></div>
+      <ul class="hero-chips reveal" style="--i:4"><li>🎲 кубики</li><li>🃏 картки</li><li>♟ мипли</li><li>🧩 тайли</li></ul>
+    </div>
+    <div class="hero-art reveal" style="--i:2" id="heroArt" aria-hidden="true"></div>
+  </div>
+  <div class="marquee" aria-hidden="true"><div class="mq-track" id="marquee"></div></div>
+</section>
+
+<section class="section what">
+  <div class="wrap what-grid">
+    <div class="what-txt">
+      <span class="eyebrow reveal">Що таке настілки</span>
+      <h2 class="reveal" style="--i:1">Не «Монополія» і не шахи. Щось між ними — і набагато веселіше</h2>
+      <p class="reveal" style="--i:2">Сучасні настільні ігри — це окремий світ із тисячами нових назв щороку. Тут є економічні стратегії, детективи, кооперативи, де всі грають проти самої гри, і вечірки на пояснення в одне речення.</p>
+      <p class="reveal" style="--i:3">Мені вони подобаються тим, що повертають живе спілкування: телефони лежать екраном донизу, всі дивляться одне на одного, сміються і сперечаються. Наведіть курсор на картку — вона перевернеться й розповість про жанр.</p>
+    </div>
+    <div class="flip-grid" id="genreFlip"></div>
+  </div>
+</section>
+
+<section class="counters">
+  <div class="wrap cnt-grid">
+    <div class="cnt reveal"><b data-count="24">0</b><span>ігор у колекції</span></div>
+    <div class="cnt reveal" style="--i:1"><b data-count="187">0</b><span>ігрових вечорів</span></div>
+    <div class="cnt reveal" style="--i:2"><b data-count="42">0</b><span>гравці клубу</span></div>
+    <div class="cnt reveal" style="--i:3"><b data-count="6">0</b><span>років хобі</span></div>
+  </div>
+</section>
+
+<section class="section gotw">
+  <div class="wrap gotw-grid">
+    <div class="box3d reveal" id="gotwBox"></div>
+    <div>
+      <span class="eyebrow reveal">Гра тижня</span>
+      <h2 class="reveal" style="--i:1">Каркасон</h2>
+      <p class="reveal" style="--i:2">Цього тижня в клубі — турнір із «Каркасона». Гра, з якої почалася моя колекція: кожен хід ви тягнете квадратний тайл і прибудовуєте його до спільної карти середньовічної Франції. Дорога, місто чи монастир — і вирішуєте, чи варто поставити туди свого мипла.</p>
+      <blockquote class="reveal" style="--i:3">«Найкраща порада новачкам: не поспішайте ставити всіх миплів у поля. Вони там залишаться до кінця гри».</blockquote>
+      <div class="stats reveal" style="--i:4"><div><b>2–5</b><span>гравців</span></div><div><b>40</b><span>хвилин</span></div><div><b>7+</b><span>років</span></div><div><b>1.9</b><span>складність</span></div></div>
+      <a class="btn btn-ind reveal" style="--i:5" href="catalog.html?game=carcassonne">Детальніше в каталозі <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section media">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow">Медіа</span><h2>Кинь кубики просто тут</h2><p>Анімація намальована на canvas: кубики падають на зелене сукно, відскакують і показують результат. Оберіть, скільки кидати.</p></div>
+    <div class="dice-box reveal">
+      <canvas id="diceCanvas" aria-label="Анімація кидка кубиків" role="img"></canvas>
+      <div class="dice-ui">
+        <div class="dice-n" role="group" aria-label="Кількість кубиків"><button data-n="1">1</button><button data-n="2" class="on">2</button><button data-n="3">3</button></div>
+        <button class="btn btn-y btn-roll" id="rollBtn"><span class="ar">🎲</span> Кинути</button>
+        <div class="dice-res"><small>Сума</small><b id="rollRes">—</b></div>
+      </div>
+      <p class="dice-hist" id="rollHist">Історія кидків з’явиться тут.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section picks">
+  <div class="wrap">
+    <div class="sec-row"><div class="sec-head reveal"><span class="eyebrow">З чого почати</span><h2>Чотири гри для першого вечора</h2></div><a class="btn btn-line reveal" href="catalog.html">Увесь каталог →</a></div>
+    <div class="pick-grid" id="picks"></div>
+  </div>
+</section>
+
+<section class="section cta-sec">
+  <div class="wrap cta">
+    <div class="cta-txt reveal">
+      <span class="eyebrow">Ігрові вечори</span>
+      <h2>Щоп’ятниці о 18:30 — у Житомирі</h2>
+      <p>Приходьте самі або з друзями: пояснимо правила, підберемо гру під настрій і пригостимо чаєм. Вхід вільний, потрібен лише гарний настрій.</p>
+      <a class="btn btn-y" href="club.html">Розклад клубу →</a>
+    </div>
+    <div class="cta-art" id="ctaArt" aria-hidden="true"></div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="f-dice" aria-hidden="true"></div>
+  <div class="wrap f-grid">
+    <div>
+      <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="13" fill="#2a2466"/><path d="M24 9 L37 16.5 L24 24 L11 16.5Z" fill="#ffc93c"/><path d="M11 16.5 L24 24 V39 L11 31.5Z" fill="#ff6b5b"/><path d="M37 16.5 L24 24 V39 L37 31.5Z" fill="#e0503f"/><ellipse cx="24" cy="16.5" rx="2.6" ry="1.6" fill="#2a2466"/><circle cx="16" cy="25" r="1.7" fill="#fff"/><circle cx="19.5" cy="31" r="1.7" fill="#fff"/><circle cx="28.5" cy="27" r="1.7" fill="#fff"/><circle cx="32" cy="32" r="1.7" fill="#fff"/></svg><span><b>Кидай кубик</b><small>блог про настільні ігри</small></span></a>
+      <p>Особистий проєкт про хобі, яке збирає друзів за одним столом: огляди, правила простими словами й ігрові вечори в Житомирі.</p>
+    </div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Головна</a></li><li><a href="catalog.html">Каталог</a></li><li><a href="rules.html">Правила</a></li><li><a href="club.html">Клуб</a></li><li><a href="author.html">Автор</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Україна</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li><a href="author.html#contact">Написати автору</a></li></ul></div>
+    <div><h4>Кинь кубик</h4><button class="f-roll" id="footRoll" type="button" aria-label="Кинути кубик">⚄</button><p class="small" id="footMsg">Натисни — і отримай пораду на вечір.</p></div>
+  </div>
+  <div class="wrap f-bottom"><span>© 2026 Ярослав Діденко · Кидай кубик</span><span>Зроблено вручну: HTML, CSS, JS і трохи удачі 🎲</span></div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Опис гри"><div class="m-card"><button class="m-x" aria-label="Закрити">×</button><div class="m-body" id="mBody"></div></div></div>
+<script src="js/data.js"></script>
+<script src="js/art.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новий запис — Смак Полісся</title>
+<meta name="description" content="Редактор нового запису блогу.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="new">
+<div id="preloader" aria-hidden="true"><div><div class="pot"><b></b><i></i><i></i><i></i></div><div class="pot-t">Смачного!</div></div></div>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#b8322a"/><circle cx="32" cy="34" r="22" fill="none" stroke="#fdf7ee" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M15 36 h34 a17 15 0 0 1 -34 0z" fill="#fdf7ee"/><path d="M12 36 h40" stroke="#fdf7ee" stroke-width="3" stroke-linecap="round"/><g stroke="#fdf7ee" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M24 29 c-3 -4 3 -6 0 -10"/><path d="M32 29 c-3 -4 3 -6 0 -10"/><path d="M40 29 c-3 -4 3 -6 0 -10"/></g></svg><span><b>Смак Полісся</b><span>рецепти з бабусиної кухні</span></span></a>
+    <nav class="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Рецепти</a><a href="archive.html" data-p="archive">Архів</a><a href="about.html" data-p="about">Про блог</a><a href="new.html" data-p="new" class="cta">+ Новий запис</a></nav>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+
+<section class="section" style="padding-bottom:20px">
+  <div class="wrap"><div class="sec-head"><span class="kicker reveal">Редактор</span><h1 class="reveal" style="font-size:clamp(2.2rem,5vw,3.4rem);--i:1">Новий запис</h1><p class="reveal" style="--i:2">Поділіться своїм рецептом: він збережеться у вашому браузері (localStorage) і з’явиться у стрічці блогу разом з усіма функціями — калькулятором порцій, лайками й коментарями.</p></div></div>
+</section>
+<section class="section" style="padding-top:10px">
+  <div class="wrap editor-grid">
+    <form class="editor reveal" id="editor" novalidate>
+      <div class="field"><label for="etitle">Назва рецепта</label><input id="etitle" name="etitle" maxlength="90" placeholder="Напр., «Печена гарбузова каша з пшоном»"></div>
+      <div class="row3">
+        <div class="field"><label for="ecat">Рубрика</label><select id="ecat" name="ecat"></select></div>
+        <div class="field"><label for="edish">Ілюстрація</label><select id="edish" name="edish"></select></div>
+        <div class="field"><label for="eserv">Порцій</label><input id="eserv" name="eserv" type="number" min="1" max="40" value="4"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="etags">Теги <small>(через кому)</small></label><input id="etags" name="etags" placeholder="картопля, свято"></div>
+        <div class="field"><label for="etime">Час приготування</label><input id="etime" name="etime" placeholder="45 хв"></div>
+      </div>
+      <div class="field"><label for="eexc">Анонс</label><input id="eexc" name="eexc" maxlength="200" placeholder="Одне-два речення для картки у стрічці"></div>
+      <div class="field"><label for="estory">Історія <small>(абзаци через порожній рядок · слів: <span id="wc">0</span>)</small></label><textarea id="estory" name="estory" style="min-height:170px"></textarea></div>
+      <div class="field"><label for="eing">Інгредієнти <small>(кожен з нового рядка: назва | кількість | одиниця)</small></label><textarea id="eing" name="eing" placeholder="Картопля | 1 | кг"></textarea></div>
+      <div class="field"><label for="esteps">Кроки <small>(кожен з нового рядка)</small></label><textarea id="esteps" name="esteps"></textarea></div>
+      <div class="field"><label for="etip">Порада <small>(необов’язково)</small></label><input id="etip" name="etip"></div>
+      <p class="eerr" id="eerr" aria-live="polite"></p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn" type="submit">Опублікувати</button><button class="btn btn-soft" type="button" id="fillDemo">Заповнити прикладом</button></div>
+    </form>
+    <div class="prev-col">
+      <div><span class="kicker" style="margin-bottom:10px">Попередній перегляд</span><article class="card" id="prev"></article></div>
+      <div class="widget"><h4>Мої записи</h4><ul class="mine" id="mine"></ul></div>
+    </div>
+  </div>
+</section>
+<div class="published" role="dialog" aria-modal="true" aria-label="Опубліковано"><div class="pub-card"><span class="big">🎉</span><h2>Рецепт опубліковано!</h2><p>Він уже з’явився у стрічці на головній сторінці.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn" id="goNew" href="index.html">Переглянути запис</a><button class="btn btn-soft" id="closePub" type="button">Закрити</button></div></div></div>
+
+</main>
+<footer class="footer">
+  <div class="rush thin" aria-hidden="true"></div>
+  <div class="wrap">
+    <div><a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#b8322a"/><circle cx="32" cy="34" r="22" fill="none" stroke="#fdf7ee" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M15 36 h34 a17 15 0 0 1 -34 0z" fill="#fdf7ee"/><path d="M12 36 h40" stroke="#fdf7ee" stroke-width="3" stroke-linecap="round"/><g stroke="#fdf7ee" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M24 29 c-3 -4 3 -6 0 -10"/><path d="M32 29 c-3 -4 3 -6 0 -10"/><path d="M40 29 c-3 -4 3 -6 0 -10"/></g></svg><span><b>Смак Полісся</b></span></a><p style="margin-top:16px;max-width:400px">Кулінарний блог про поліську та українську домашню кухню: історії, рецепти й поради, перевірені на родинних застіллях.</p></div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Рецепти</a></li><li><a href="archive.html">Архів</a></li><li><a href="about.html">Про блог</a></li><li><a href="new.html">Новий запис</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Полісся</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li>@smak.polissia</li></ul></div>
+    <div class="fbottom"><span>© 2026 Ярослав Діденко · «Смак Полісся»</span><span>Зварено з любов’ю та щіпкою солі</span></div>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/posts.js"></script>
+<script src="js/dish.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

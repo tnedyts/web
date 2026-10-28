@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Про кінотеатр — Ліхтар</title>
+<meta name="description" content="Історія арт-кінотеатру «Ліхтар», зали, ціни на квитки, фестиваль «Світлячок» і галерея.">
+<meta name="author" content="Максим Вознюк">
+<meta name="theme-color" content="#1E070D">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="countdown"><span class="sweep"></span><b>3</b></div></div>
+<a class="sr" href="#main">Перейти до змісту</a>
+<div class="announce" id="announce"></div>
+<header class="header" id="header">
+  <div class="container hd">
+    <a class="brand" href="index.html" data-brand aria-label="На головну"><span><b data-cms="site.name">Ліхтар</b><small data-cms="site.sub">арт-кінотеатр · Луцьк</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"></nav>
+    <a class="btn sm" href="schedule.html">Купити квиток</a>
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="beam" aria-hidden="true"></div>
+  <div class="container"><div class="crumbs"><a href="index.html">Головна</a> / Про кінотеатр</div>
+  <h1><span class="titles"><span>Про кінотеатр</span></span></h1><p class="lead">Як закинутий міський кінотеатр став улюбленим місцем лучан: історія, три зали, ціни, кіноклуб і фестиваль «Світлячок».</p></div></section><div class="filmstrip" aria-hidden="true"><span></span></div>
+<section class="section">
+  <div class="container split">
+    <div class="story reveal-l"><span class="kicker">Наша історія</span><h2 style="font-size:clamp(32px,3.6vw,48px)">Від бібліотечного кіноклубу до трьох залів</h2><div data-cms-html="about.story"></div></div>
+    <div class="reveal-r"><div class="frame"><img src="img/projector.svg" alt="35-мм проектор у будці кіномеханіка"></div><blockquote class="q"><span data-cms="home.quote"></span><cite data-cms="home.quoteAuthor"></cite></blockquote></div>
+  </div>
+</section>
+<section class="section bg-v0">
+  <div class="container"><div class="sec-head"><div><span class="kicker reveal">Простір</span><h2 class="reveal">Три зали — три настрої</h2></div><p class="reveal">Разом 246 місць: від оксамитових крісел до шезлонгів під зоряним небом.</p></div><div class="halls" id="halls"></div></div>
+</section>
+<section class="section">
+  <div class="container split">
+    <div class="reveal-l frame"><img src="img/festival.svg" alt="Фестиваль «Світлячок»"></div>
+    <div class="reveal-r"><span class="kicker">Фестиваль</span><h2 style="font-size:clamp(32px,3.6vw,48px)">«Світлячок» — свято короткого метру</h2><p class="lead">Щолистопада ми показуємо найкращі короткометражки молодих українських режисерів. Три дні конкурсних програм, лекції, майстер-класи й вечірки у фоє.</p><p>Цьогоріч — 36 фільмів з 14 міст, студентський день і церемонія нагородження у Великому залі. Пропуск на всі дні коштує 450 гривень.</p><a class="btn" href="schedule.html?date=2026-11-13">Програма фестивалю <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+<section class="section bg-v2">
+  <div class="container split">
+    <div class="reveal-l"><span class="kicker">Квитки</span><h2 style="font-size:clamp(32px,3.6vw,48px)">Ціни</h2><p class="lead">Студентам і пенсіонерам — знижка 30 % на будь-який сеанс, окрім фестивальних.</p></div>
+    <div class="prices reveal-r" id="prices"></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container"><div class="sec-head"><div><span class="kicker reveal">Галерея</span><h2 class="reveal">Кадри з «Ліхтаря»</h2></div><div class="g-filter reveal" id="gFilter" style="margin:0"></div></div><div class="gallery" id="gallery"></div></div>
+</section>
+
+</main>
+<footer class="footer" id="footer"><div class="container"><p>© 2026 Максим Вознюк · Ліхтар</p></div></footer>
+<script src="js/content.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/posters.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Архів — Смак Полісся</title>
+<meta name="description" content="Архів записів кулінарного блогу за місяцями.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="archive">
+<div id="preloader" aria-hidden="true"><div><div class="pot"><b></b><i></i><i></i><i></i></div><div class="pot-t">Смачного!</div></div></div>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#b8322a"/><circle cx="32" cy="34" r="22" fill="none" stroke="#fdf7ee" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M15 36 h34 a17 15 0 0 1 -34 0z" fill="#fdf7ee"/><path d="M12 36 h40" stroke="#fdf7ee" stroke-width="3" stroke-linecap="round"/><g stroke="#fdf7ee" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M24 29 c-3 -4 3 -6 0 -10"/><path d="M32 29 c-3 -4 3 -6 0 -10"/><path d="M40 29 c-3 -4 3 -6 0 -10"/></g></svg><span><b>Смак Полісся</b><span>рецепти з бабусиної кухні</span></span></a>
+    <nav class="nav" aria-label="Головне меню"><a href="index.html" data-p="home">Рецепти</a><a href="archive.html" data-p="archive">Архів</a><a href="about.html" data-p="about">Про блог</a><a href="new.html" data-p="new" class="cta">+ Новий запис</a></nav>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+
+<section class="section" style="padding-bottom:30px">
+  <div class="wrap"><div class="sec-head"><span class="kicker reveal">Усе, що наварено</span><h1 class="reveal" style="font-size:clamp(2.4rem,5vw,3.8rem);--i:1">Архів записів</h1><p class="reveal" style="--i:2">Рецепти за місяцями — від масничних млинців до осінньої бабки. Сезонність на Поліссі важить багато: кожна страва має свій час.</p></div></div>
+</section>
+<section class="section" style="padding-top:10px">
+  <div class="wrap arch-grid">
+    <div class="timeline" id="arch"></div>
+    <aside class="side">
+      <div class="widget reveal"><h4>Блог у цифрах</h4><div class="astats" id="aStats"></div></div>
+      <div class="widget reveal"><h4>Рубрики</h4><div id="catBars"></div></div>
+      <div class="widget w-sub reveal sub-wrap"><h4>Розсилка</h4><p>Не пропускайте нові записи.</p><form class="subscribe" novalidate><input type="email" placeholder="ваш e-mail" aria-label="E-mail"><button class="btn" type="submit">OK</button></form><p class="sub-msg"></p></div>
+    </aside>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="rush thin" aria-hidden="true"></div>
+  <div class="wrap">
+    <div><a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#b8322a"/><circle cx="32" cy="34" r="22" fill="none" stroke="#fdf7ee" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M15 36 h34 a17 15 0 0 1 -34 0z" fill="#fdf7ee"/><path d="M12 36 h40" stroke="#fdf7ee" stroke-width="3" stroke-linecap="round"/><g stroke="#fdf7ee" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M24 29 c-3 -4 3 -6 0 -10"/><path d="M32 29 c-3 -4 3 -6 0 -10"/><path d="M40 29 c-3 -4 3 -6 0 -10"/></g></svg><span><b>Смак Полісся</b></span></a><p style="margin-top:16px;max-width:400px">Кулінарний блог про поліську та українську домашню кухню: історії, рецепти й поради, перевірені на родинних застіллях.</p></div>
+    <div><h4>Розділи</h4><ul><li><a href="index.html">Рецепти</a></li><li><a href="archive.html">Архів</a></li><li><a href="about.html">Про блог</a></li><li><a href="new.html">Новий запис</a></li></ul></div>
+    <div><h4>Зв’язок</h4><ul><li>Житомир, Полісся</li><li><a href="mailto:yaroslav.didenko@gmail.com">yaroslav.didenko@gmail.com</a></li><li>@smak.polissia</li></ul></div>
+    <div class="fbottom"><span>© 2026 Ярослав Діденко · «Смак Полісся»</span><span>Зварено з любов’ю та щіпкою солі</span></div>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/posts.js"></script>
+<script src="js/dish.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

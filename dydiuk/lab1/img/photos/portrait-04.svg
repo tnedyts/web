@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" preserveAspectRatio="xMidYMid slice">
+<defs>
+<radialGradient id="vig" cx="50%" cy="50%" r="75%"><stop offset="55%" stop-color="#080808" stop-opacity="0"/><stop offset="100%" stop-color="#080808" stop-opacity=".75"/></radialGradient>
+<radialGradient id="head" cx="30%" cy="35%" r="70%"><stop offset="0" stop-color="#e0ddd8"/><stop offset=".45" stop-color="#72706e"/><stop offset=".75" stop-color="#161616"/><stop offset="1" stop-color="#0a0a0a"/></radialGradient>
+<radialGradient id="sh" cx="25%" cy="20%" r="90%"><stop offset="0" stop-color="#959390"/><stop offset=".5" stop-color="#201f1f"/><stop offset="1" stop-color="#0a0a0a"/></radialGradient>
+<filter id="bl"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect width="1000" height="1250" fill="#0d0d0d"/><path d="M80,1250 C120,1000 300,920 500,910 C700,920 880,1000 920,1250Z" fill="url(#sh)"/><path d="M430,930 L440,800 L560,800 L570,930 Z" fill="#242423"/><ellipse cx="500" cy="560" rx="220" ry="290" fill="url(#head)"/><path d="M282,520 C270,330 400,250 510,262 C640,270 730,360 718,540 C690,420 620,370 540,370 C440,372 360,420 282,520Z" fill="#0f0f0f"/><ellipse cx="420" cy="560" rx="30" ry="9" fill="#1b1b1a" opacity=".35" filter="url(#bl)"/><ellipse cx="575" cy="560" rx="30" ry="9" fill="#0d0d0d" opacity=".5" filter="url(#bl)"/><path d="M490,580 Q470,650 492,662" fill="none" stroke="#2b2b2a" stroke-width="5" filter="url(#bl)" opacity=".6"/><rect x="500" y="250" width="260" height="700" fill="#0a0a0a" opacity=".55" filter="url(#bl)"/>
+<rect width="1000" height="1250" fill="url(#vig)"/>
+</svg>

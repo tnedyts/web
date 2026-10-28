@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Номери і ціни — Смерекова Хата</title>
+<meta name="description" content="Номери, люкси та шале еко-готелю «Смерекова Хата»: ціни, зручності та онлайн-бронювання з календарем.">
+<script>if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot');</script>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="rooms" class="over-hero">
+<div id="preloader" aria-hidden="true"><div class="pl-in"><svg class="pl-tree" viewBox="0 0 60 80"><path class="pl-p" d="M30 4 L42 24 H36 L48 42 H40 L54 62 H6 L20 42 H12 L24 24 H18Z"/><path class="pl-p" d="M30 62 V76"/></svg><span class="pl-name">Смерекова Хата</span></div></div>
+<a class="skip" href="#main">До вмісту</a>
+<header class="header">
+  <div class="wrap hd">
+    <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#0f3b2e" stroke="#c9a46a" stroke-width="1.5"/><path d="M6 34 L17 22 L23 28 L31 17 L42 34Z" fill="#1d5a45"/><path d="M31 17 L34.5 22 L31 21 L28.5 22.5Z" fill="#f6efe3"/><path d="M24 9 L29 17 H26.5 L31 24 H27.5 L32 31 H16 L20.5 24 H17 L21.5 17 H19Z" fill="#c9a46a"/><rect x="23" y="31" width="2" height="4" fill="#c9a46a"/><path d="M8 35 H40" stroke="#c9a46a" stroke-width="1.2"/></svg><span><b data-cms="site.name">Смерекова Хата</b><small data-cms="site.tagline">еко-готель у Карпатах</small></span></a>
+    <nav class="nav" id="nav" aria-label="Головне меню"></nav>
+    <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main"><section class="phero">
+  <div class="phero-bg" data-scene="room4" data-seed="0" data-label="Люкс із каміном" data-par=".18"></div>
+  <div class="phero-shade"></div>
+  <canvas class="snow" data-auto aria-hidden="true"></canvas>
+  <div class="fog f1"></div>
+  <div class="wrap phero-txt">
+    <nav class="crumbs" aria-label="Навігація"><a href="index.html">Головна</a><span>/</span><span>Номери</span></nav>
+    <span class="script reveal">Номери та ціни</span>
+    <h1 class="reveal" style="--i:1">Ночі, що пахнуть деревом</h1>
+    <p class="reveal" style="--i:2">П’ять типів номерів — від затишної «Ялиці» до окремого шале «Кедр» із власним чаном. Сніданок і чай із травами вже у вартості.</p>
+  </div>
+  <svg class="phero-edge" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 V48 L120 30 L210 46 L330 14 L460 44 L560 26 L690 52 L820 18 L940 42 L1060 22 L1190 50 L1310 28 L1440 46 V80Z"/></svg>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="info-strip reveal">
+      <div><b>Заїзд</b><span data-cms="site.checkin">14:00</span></div>
+      <div><b>Виїзд</b><span data-cms="site.checkout">12:00</span></div>
+      <div><b>Сніданок</b><span>8:00 – 10:30</span></div>
+      <div><b>Тварини</b><span>за домовленістю</span></div>
+      <div><b>Паркінг</b><span>безкоштовно</span></div>
+    </div>
+    <div class="room-list" id="roomList"></div>
+  </div>
+</section>
+
+<section class="section booking-band" id="booking">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="script">Онлайн-бронювання</span><h2>Оберіть дати в календарі</h2><p>Клацніть на день заїзду, потім — на день виїзду. Закреслені дати вже зайняті для обраного номера.</p></div>
+    <div class="book-card reveal">
+      <form id="bookForm" novalidate>
+        <div class="bk-main">
+          <div class="bk-fields">
+            <div class="field"><label for="b-room">Номер</label><select id="b-room" name="room"></select></div>
+            <div class="field"><label for="b-guests">Гостей</label><select id="b-guests" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+          </div>
+          <div class="book-cal" id="bookCal"></div>
+          <p class="cal-legend"><i class="lg-sel"></i> обрані дати <i class="lg-busy"></i> зайнято</p>
+        </div>
+        <aside class="bk-side">
+          <h3>Ваше бронювання</h3>
+          <div class="sum" id="sum"></div>
+          <p class="sum-note" id="sumNote"></p>
+          <div class="field"><label for="b-name">Ім’я та прізвище</label><input id="b-name" name="name" autocomplete="name" placeholder="Олена Коваль"><span class="err"></span></div>
+          <div class="field"><label for="b-phone">Телефон</label><input id="b-phone" name="phone" type="tel" autocomplete="tel" placeholder="+380 __ ___ __ __"><span class="err"></span></div>
+          <div class="field"><label for="b-note">Побажання</label><textarea id="b-note" name="note" rows="2" placeholder="Пізній заїзд, дитяче ліжечко…"></textarea></div>
+          <button class="btn btn-gold btn-wide" type="submit">Надіслати запит</button>
+          <small class="muted">Оплата — на місці. Безкоштовне скасування за 7 днів.</small>
+        </aside>
+      </form>
+      <div class="book-ok">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="ok-c" cx="60" cy="60" r="52"/><path class="ok-t" d="M36 62 L54 78 L86 44"/></svg>
+        <h3>Запит надіслано!</h3>
+        <p id="okText"></p>
+        <button class="btn btn-gold" id="again" type="button">Нове бронювання</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <svg class="f-mount" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 V80 L90 50 L170 70 L260 20 L360 66 L450 40 L560 78 L660 30 L760 64 L860 10 L980 60 L1080 36 L1190 72 L1300 34 L1440 64 V120Z" fill="#0b2e24"/><path d="M0 120 V96 L140 76 L260 92 L400 70 L540 96 L700 74 L860 98 L1020 72 L1180 94 L1320 78 L1440 92 V120Z" fill="#08241c"/></svg>
+  <div class="wrap f-grid">
+    <div class="f-about">
+      <a class="logo" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#0f3b2e" stroke="#c9a46a" stroke-width="1.5"/><path d="M6 34 L17 22 L23 28 L31 17 L42 34Z" fill="#1d5a45"/><path d="M31 17 L34.5 22 L31 21 L28.5 22.5Z" fill="#f6efe3"/><path d="M24 9 L29 17 H26.5 L31 24 H27.5 L32 31 H16 L20.5 24 H17 L21.5 17 H19Z" fill="#c9a46a"/><rect x="23" y="31" width="2" height="4" fill="#c9a46a"/><path d="M8 35 H40" stroke="#c9a46a" stroke-width="1.2"/></svg><span><b data-cms="site.name">Смерекова Хата</b><small data-cms="site.tagline">еко-готель у Карпатах</small></span></a>
+      <p>Родинний еко-готель у Яблуниці: дерев’яні шале, чани на дровах, гуцульська кухня і тиша смерекового лісу.</p>
+      <div class="f-social"><a href="contacts.html" aria-label="Написати нам"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a><a href="news.html" aria-label="Події"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8"/></svg></a><a href="rooms.html#booking" aria-label="Бронювання"><svg viewBox="0 0 24 24"><path d="M3 20V10l9-6 9 6v10z M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></div>
+    </div>
+    <div><h4>Меню</h4><ul id="fmenu"></ul></div>
+    <div><h4>Контакти</h4><ul class="f-contacts"><li><a class="f-phone" href="tel:+380671234567">+380 67 123 45 67</a></li><li><a class="f-mail" href="mailto:hello.smerekova@gmail.com">hello.smerekova@gmail.com</a></li><li data-cms="site.address">с. Яблуниця, Івано-Франківська обл.</li></ul></div>
+    <div><h4>Заїзд / виїзд</h4><p class="f-time"><b data-cms="site.checkin">14:00</b> / <b data-cms="site.checkout">12:00</b></p><a class="btn btn-gold btn-sm" href="rooms.html#booking">Забронювати</a></div>
+  </div>
+  <div class="wrap f-bottom"><span>© 2026 Ярослав Діденко · «<span data-cms="site.name">Смерекова Хата</span>»</span><span><a href="admin.html">Адмін-панель</a> · зроблено з любов’ю до Карпат</span></div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/content.js"></script>
+<script src="js/cms.js"></script>
+<script src="js/art.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

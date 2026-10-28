@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зоряний щоденник — блог астронома-аматора</title>
+<meta name="description" content="Блог Олександра Дидюка про спостереження неба, телескопи, метеорні потоки, місії NASA та ESA і чорні діри.">
+<meta name="author" content="Олександр Дидюк">
+<meta name="theme-color" content="#04050e">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>(function(){try{if(/[?&]shot=1/.test(location.search))document.documentElement.classList.add('shot')}catch(e){}})();</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+<div class="preloader" aria-hidden="true"><div class="orb"><i></i></div></div>
+<canvas id="sky" aria-hidden="true"></canvas><div class="nebula" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Зоряний щоденник — головна"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="lg" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#fff3cf"/><stop offset=".5" stop-color="#ffc861"/><stop offset="1" stop-color="#ff7a45"/></radialGradient></defs>
+<circle cx="20" cy="20" r="10" fill="url(#lg)"/><g class="ring"><ellipse cx="20" cy="20" rx="18" ry="5.5" fill="none" stroke="#8b7dff" stroke-width="2" transform="rotate(-20 20 20)"/></g><circle cx="34" cy="8" r="1.6" fill="#7dd3fc"/></svg><span>Зоряний <b>щоденник</b></span></a>
+    <nav class="nav" id="nav" aria-label="Меню"><a href="index.html" class="active" aria-current="page">Стрічка</a><a href="archive.html">Архів</a><a href="about.html">Про блог</a><a class="write" href="new.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Новий запис</a></nav>
+    <button class="burger" aria-label="Меню" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker reveal">Щоденник астронома-аматора · Рівне</span>
+      <h1 class="reveal" data-d="1"><span>Зоряний</span><span class="grad">щоденник</span></h1>
+      <p class="lead reveal" data-d="2">Нотатки з нічних спостережень, чесні поради про телескопи, новини місій NASA та ESA і пояснення найдивніших об’єктів Всесвіту — простою мовою, з балкона й поля під Рівним.</p>
+      <div class="ctas reveal" data-d="3"><a class="btn btn-gold" href="#feed">Читати записи <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost" href="about.html">Про автора</a></div>
+      <div class="hero-stats reveal" data-d="4">
+        <div><b data-count="posts">0</b><span>записів у блозі</span></div>
+        <div><b data-count="214">0</b><span>ночей спостережень</span></div>
+        <div><b data-count="1386">0</b><span>метеорів у журналі</span></div>
+      </div>
+    </div>
+    <div class="orrery reveal" data-d="2" data-parallax><svg viewBox="0 0 560 560" role="img" aria-label="Анімована модель планетної системи">
+<defs>
+<radialGradient id="pl" cx="35%" cy="32%" r="72%"><stop offset="0" stop-color="#fff1cf"/><stop offset=".45" stop-color="#f3c27a"/><stop offset=".8" stop-color="#c46b3c"/><stop offset="1" stop-color="#5a2a1a"/></radialGradient>
+<radialGradient id="pl2" cx="35%" cy="32%" r="72%"><stop offset="0" stop-color="#c9f0ff"/><stop offset=".5" stop-color="#4f8df5"/><stop offset="1" stop-color="#1b2a7a"/></radialGradient>
+<radialGradient id="pl3" cx="35%" cy="32%" r="72%"><stop offset="0" stop-color="#ffd1e6"/><stop offset=".55" stop-color="#e05a9c"/><stop offset="1" stop-color="#5a1640"/></radialGradient>
+<radialGradient id="halo"><stop offset="0" stop-color="#ffc861" stop-opacity=".35"/><stop offset="1" stop-color="#ffc861" stop-opacity="0"/></radialGradient>
+<linearGradient id="ringg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b7dff" stop-opacity=".2"/><stop offset=".5" stop-color="#ffe0a8"/><stop offset="1" stop-color="#8b7dff" stop-opacity=".2"/></linearGradient>
+<clipPath id="front"><rect x="0" y="280" width="560" height="280"/></clipPath>
+<linearGradient id="comet" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7dd3fc" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
+</defs>
+<circle cx="280" cy="280" r="250" fill="url(#halo)"/>
+<circle class="orbit" cx="280" cy="280" r="135"/><circle class="orbit" cx="280" cy="280" r="200"/><circle class="orbit" cx="280" cy="280" r="262"/>
+<g class="spin s3"><circle cx="415" cy="280" r="9" fill="#d9dcf5"/><circle cx="412" cy="277" r="3" fill="#fff" opacity=".6"/></g>
+<g class="spin"><circle cx="80" cy="280" r="20" fill="url(#pl2)"/><ellipse cx="80" cy="280" rx="30" ry="6" fill="none" stroke="#7dd3fc" stroke-opacity=".5"/></g>
+<g class="spin s2"><circle cx="280" cy="18" r="14" fill="url(#pl3)"/></g>
+<g class="float">
+ <g class="rings"><ellipse cx="280" cy="280" rx="150" ry="36" fill="none" stroke="url(#ringg)" stroke-width="14" opacity=".55" transform="rotate(-16 280 280)"/></g>
+ <circle cx="280" cy="280" r="92" fill="url(#pl)"/>
+ <path d="M196 262 q84 -18 168 0 M192 292 q88 16 176 0 M204 324 q76 10 152 0" stroke="#a24f2c" stroke-width="7" fill="none" opacity=".35"/>
+ <g class="rings" clip-path="url(#front)"><ellipse cx="280" cy="280" rx="150" ry="36" fill="none" stroke="url(#ringg)" stroke-width="14" opacity=".9" transform="rotate(-16 280 280)"/><ellipse cx="280" cy="280" rx="126" ry="28" fill="none" stroke="#ffe7ba" stroke-width="3" opacity=".7" transform="rotate(-16 280 280)"/></g>
+</g>
+<path d="M40 110 L150 150" stroke="url(#comet)" stroke-width="3" stroke-linecap="round"/><circle cx="150" cy="150" r="4" fill="#fff"/>
+<text class="label" x="300" y="545">ОРБІТА III · 262 тис. км</text>
+<text class="label" x="400" y="120">✦ ВЕГА</text>
+</svg></div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><i></i>ГОРТАЙ</div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="kicker">Небо сьогодні</span><h2 class="h2" style="margin-top:12px">Що подивитися найближчим часом</h2></div></div>
+    <div class="sky-today">
+      <div class="panel moon-card reveal" id="moon"></div>
+      <div class="panel events reveal" data-d="1" id="events"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:30px">
+  <div class="wrap"><div id="featured"></div></div>
+</section>
+
+<section class="section" id="feed" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="kicker">Стрічка</span><h2 class="h2" style="margin-top:12px">Усі записи</h2><p>Фільтруйте за рубриками й тегами або шукайте за словом — пошук працює по заголовках, тексту і тегах.</p></div></div>
+    <div class="feed-layout">
+      <div>
+        <div class="toolbar panel reveal">
+          <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr">Пошук</span><input type="search" id="q" placeholder="Пошук: Юпітер, метеори, телескоп…" autocomplete="off"><kbd>/</kbd></label>
+          <select class="select" id="sort" aria-label="Сортування"><option value="new">Спершу нові</option><option value="old">Спершу старі</option><option value="pop">Найпопулярніші</option><option value="long">Найдовші</option></select>
+          <div class="chips" id="chips" role="toolbar" aria-label="Рубрики"></div>
+        </div>
+        <div class="active-filter" id="activeFilter"></div>
+        <div class="grid" id="grid"></div>
+      </div>
+      <aside class="sidebar">
+        <div class="panel widget reveal"><div class="mini-author"><img src="img/avatar.svg" alt="Аватар автора"><div><b>Олександр Дидюк</b><span>@dydiuk.stargazer · Рівне</span></div></div><p class="muted" style="margin:0;font-size:14.5px">Студент, астроном-аматор і власник 200-мм Добсона. Пишу про небо так, як хотів би, щоб пояснили мені.</p></div>
+        <div class="panel widget reveal"><h4>Рубрики</h4><div class="cat-list" id="catList"></div></div>
+        <div class="panel widget reveal"><h4>Теги</h4><div class="cloud" id="cloud"></div></div>
+        <div class="panel widget reveal"><h4>Популярне</h4><div class="pop" id="popular"></div></div>
+        <div class="panel widget reveal"><h4>Розсилка</h4><p class="muted" style="margin:0 0 14px;font-size:14.5px">Нові записи й календар подій неба — на пошту.</p><form class="sub-form" novalidate data-sub><input type="email" name="email" placeholder="ваш@email.com" aria-label="E-mail для підписки" autocomplete="email"><button class="btn btn-gold" type="submit">Підписатися <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><div class="msg" aria-live="polite">Без спаму. Лише небо, раз на два тижні.</div></form></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="panel subscribe reveal">
+      <div><span class="kicker">Розсилка «Небо на два тижні»</span><h2>Не пропустіть наступний метеорний потік</h2><p>Раз на два тижні — короткий лист: що видно на небі, коли найкраще дивитися і новий запис із щоденника. Відписатися можна в один клік.</p></div>
+      <form class="sub-form" novalidate data-sub><input type="email" name="email" placeholder="ваш@email.com" aria-label="E-mail для підписки" autocomplete="email"><button class="btn btn-gold" type="submit">Підписатися <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><div class="msg" aria-live="polite">Без спаму. Лише небо, раз на два тижні.</div></form>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div><a class="logo" href="index.html" style="margin-bottom:14px"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="lg" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#fff3cf"/><stop offset=".5" stop-color="#ffc861"/><stop offset="1" stop-color="#ff7a45"/></radialGradient></defs>
+<circle cx="20" cy="20" r="10" fill="url(#lg)"/><g class="ring"><ellipse cx="20" cy="20" rx="18" ry="5.5" fill="none" stroke="#8b7dff" stroke-width="2" transform="rotate(-20 20 20)"/></g><circle cx="34" cy="8" r="1.6" fill="#7dd3fc"/></svg><span>Зоряний <b>щоденник</b></span></a>
+        <p>Особистий блог астронома-аматора Олександра Дидюка: спостереження, техніка, космічні місії та трохи філософії під зоряним небом.</p></div>
+      <div><h4>Блог</h4><a href="index.html">Стрічка записів</a><a href="archive.html">Архів</a><a href="new.html">Новий запис</a><a href="about.html">Про блог і автора</a></div>
+      <div><h4>Рубрики</h4><a href="index.html?cat=obs#feed">Спостереження</a><a href="index.html?cat=tech#feed">Техніка</a><a href="index.html?cat=space#feed">Космонавтика</a><a href="index.html?cat=astro#feed">Астрофізика</a></div>
+      <div><h4>Зв’язок</h4><a href="mailto:oleksandr.dydiuk@gmail.com">oleksandr.dydiuk@gmail.com</a><a href="about.html#map">Рівне, Україна</a><a href="about.html">@dydiuk.stargazer</a></div>
+    </div>
+    <div class="f-bottom"><span>© 2026 Олександр Дидюк — «Зоряний щоденник»</span><span>Ясного неба! ✦ <a href="#top" style="display:inline;color:var(--gold)">Нагору ↑</a></span></div>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/posts.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
