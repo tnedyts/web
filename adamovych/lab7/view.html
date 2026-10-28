@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Перегляд — Берегові вогні</title>
+<script>(function(){var s=/[?&]shot=1/.test(location.search);try{if(!s&&/[?&]shot=1/.test(top.location.search))s=true}catch(e){}if(s)document.documentElement.className+=' shot'})()</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="viewer" bgcolor="#07080b" text="#eeeeee" link="#f2b84b">
+<img id="v" src="images/photo-01.jpg" alt="Світанок біля скелястого мису" width="1920" height="1080">
+<h1 id="vc">Світанок біля скелястого мису</h1>
+<div class="cnt" id="vn">1 / 12 · JPEG 1920×1080</div>
+<div class="vnav"><a id="prev" href="view.html?n=12">← Назад</a><a href="gallery.html">▦ До галереї</a><a id="orig" href="images/photo-01.jpg" target="_blank">Оригінал</a><a id="next" href="view.html?n=2">Вперед →</a></div>
+<script>var CAPS=["Світанок біля скелястого мису", "Полудень: біла вежа над бірюзою", "Золота година на маяку", "Шторм: хвилі б’ються об мол", "Зоряна ніч і світловий промінь", "Туман над північною протокою", "Бузкові сутінки", "Зимовий маяк у кризі", "Місячна доріжка", "Вітрильник повертає до гавані", "Грозові спалахи на обрії", "Ранкове сонце крізь хмари"];(function(){var m=location.search.match(/[?&]n=(\d+)/),n=m?Math.min(12,Math.max(1,+m[1])):1,p=function(x){return (x<10?"0":"")+x};var v=document.getElementById("v");v.src="images/photo-"+p(n)+".jpg";v.alt=CAPS[n-1];document.getElementById("vc").textContent=CAPS[n-1];document.getElementById("vn").textContent=n+" / 12 · JPEG 1920×1080";document.getElementById("orig").href="images/photo-"+p(n)+".jpg";var sh=/shot=1/.test(location.search)?"&shot=1":"";document.getElementById("prev").href="view.html?n="+((n+10)%12+1)+sh;document.getElementById("next").href="view.html?n="+(n%12+1)+sh;document.addEventListener("keydown",function(e){if(e.key==="ArrowLeft")location.href=document.getElementById("prev").href;if(e.key==="ArrowRight")location.href=document.getElementById("next").href})})();</script>
+<p style="font-size:12px;opacity:.5;margin-top:18px">© 2026 Вадим Адамович</p>
+</body>
+</html>
